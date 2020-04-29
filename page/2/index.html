@@ -1304,6 +1304,184 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2019/04/07/2019-04-07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/07/2019-04-07/" itemprop="url">React.js/HTML5和iOS双向通信</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T16:26:18+08:00">
+                2019-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/07/2019-04-07/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/07/2019-04-07/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近，我使用WKWebView和React.js进行双向通信,自己写了React.js嵌入到Native中。</p>
+<h2 id="Native操作Web，通过两种方式传值"><a href="#Native操作Web，通过两种方式传值" class="headerlink" title="Native操作Web，通过两种方式传值"></a>Native操作Web，通过两种方式传值</h2><h3 id="第一种，通过JS传值给Native"><a href="#第一种，通过JS传值给Native" class="headerlink" title="第一种，通过JS传值给Native"></a>第一种，通过JS传值给Native</h3><p>通过这种方式，可以通过Swift执行DOM操作，顺便说一句，webView.evaluateJavaScript返回脚本执行结果的内容。这个处理程序似乎是在主线程上执行的。</p>
+<p>Native调用JS代码方法如下:</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"payResult(true)"</span></span><br><span class="line">    webView.evaluateJavaScript(str) &#123; (result, error) <span class="keyword">in</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Javascript处理逻辑方法如下:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">payResult = <span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (value === <span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'true'</span>)</span><br><span class="line">        <span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> (&#123;</span><br><span class="line">            pushnotice: <span class="string">'1'</span></span><br><span class="line">        &#125;));</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'false'</span>)</span><br><span class="line">        <span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> (&#123;</span><br><span class="line">            pushnotice: <span class="string">'0'</span></span><br><span class="line">        &#125;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果JS的payResult方法没有调用，那就加上这样一句话window.payResult，有可能被组件屏蔽无法全局调用。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="built_in">window</span>.payResult = <span class="keyword">this</span>.payResult</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第二种，通过get请求传值"><a href="#第二种，通过get请求传值" class="headerlink" title="第二种，通过get请求传值"></a>第二种，通过get请求传值</h3><p>通过get请求方式将参数传到js的请求URL链接中。</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> url = <span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> webUrl = webUrl &#123;</span><br><span class="line">    url = webUrl</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> uid = userID &#123;</span><br><span class="line">        url += <span class="string">"?"</span> + <span class="string">"uid="</span> + uid</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> topicId = topicId &#123;</span><br><span class="line">        url += <span class="string">"&amp;"</span> + <span class="string">"topic="</span> + topicId</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> isRank == <span class="literal">true</span> &#123;</span><br><span class="line">        url += <span class="string">"&amp;"</span> + <span class="string">"type=2"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>react.js通过URL拼接方式解析传递的参数,方法如下:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> params = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> str = <span class="keyword">this</span>.props.location.search</span><br><span class="line"><span class="keyword">let</span> seg = str.replace(<span class="regexp">/^\?/</span>, <span class="string">''</span>).split(<span class="string">'&amp;'</span>)</span><br><span class="line"><span class="keyword">let</span> len = seg.length</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (seg[i]) &#123;</span><br><span class="line">       <span class="keyword">let</span> p = seg[i].split(<span class="string">'='</span>);</span><br><span class="line">       params[p[<span class="number">0</span>]] = p[<span class="number">1</span>];   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过这种方式params.uid | param.topic | param.type 来获取参数</p>
+<h2 id="Native操作Web，通过两种方式传值-1"><a href="#Native操作Web，通过两种方式传值-1" class="headerlink" title="Native操作Web，通过两种方式传值"></a>Native操作Web，通过两种方式传值</h2><h3 id="Native操作"><a href="#Native操作" class="headerlink" title="Native操作"></a>Native操作</h3><ol>
+<li>实例化WKWebViewConfiguration和WKUserContentController,userController在JavaScript的注册处理调用名称。并设置实现WKScriptMessageHandler协议的代理。</li>
+</ol>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> webConfiguration = <span class="type">WKWebViewConfiguration</span>()</span><br><span class="line">webConfiguration.preferences = <span class="type">WKPreferences</span>()</span><br><span class="line">webConfiguration.preferences.minimumFontSize = <span class="number">10</span>;</span><br><span class="line">webConfiguration.preferences.javaScriptEnabled = <span class="literal">true</span>;</span><br><span class="line">webConfiguration.preferences.javaScriptCanOpenWindowsAutomatically = <span class="literal">false</span>;</span><br><span class="line">webConfiguration.userContentController = <span class="type">WKUserContentController</span>()</span><br><span class="line">webConfiguration.processPool = <span class="type">WKProcessPool</span>()</span><br><span class="line">webConfiguration.userContentController.add(<span class="keyword">self</span> <span class="keyword">as</span> <span class="type">WKScriptMessageHandler</span>, name:<span class="string">"pushAction"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> webView = <span class="type">WKWebView</span>(frame: .zero, configuration: webConfiguration)</span><br><span class="line">webView.scrollView.bounces = <span class="literal">false</span></span><br><span class="line">webView.scrollView.showsVerticalScrollIndicator = <span class="literal">false</span></span><br><span class="line">webView.scrollView.showsHorizontalScrollIndicator = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>通过WKScriptMessageHandler协议进行监控</li>
+</ol>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">userContentController</span><span class="params">(<span class="number">_</span> userContentController: WKUserContentController, didReceive message: WKScriptMessage)</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(message.name)</span><br><span class="line">    <span class="built_in">print</span>(message.body)</span><br><span class="line">    jsInvokeNativeHandler(message)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">jsInvokeNativeHandler</span><span class="params">(<span class="number">_</span> message: WKScriptMessage)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> message.isKind(of: <span class="type">WKScriptMessage</span>.<span class="keyword">self</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> serialQueue = <span class="type">DispatchQueue</span>(label: <span class="string">"com.test.mySerialQueue"</span>)</span><br><span class="line">        serialQueue.sync &#123;</span><br><span class="line">            <span class="keyword">if</span> message.name == <span class="string">"pushAction"</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">let</span> dict : <span class="type">NSDictionary</span> = message.body <span class="keyword">as</span>? <span class="type">NSDictionary</span> &#123;</span><br><span class="line">                     <span class="keyword">if</span> <span class="keyword">let</span> content = dict[<span class="string">"content"</span>] <span class="keyword">as</span>? <span class="type">String</span> &#123;</span><br><span class="line">                        <span class="keyword">self</span>.sendPushNotification(content)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于解析，和Web进行协议，我在H5写的代码通过message传过来的是一个字典类型 {content: ‘…’}。</p>
+<h3 id="web端操作"><a href="#web端操作" class="headerlink" title="web端操作"></a>web端操作</h3><p>H5如何传递方法给native？</p>
+<p>传值方法如下，iOS和Android接受的方法不同，要单独进行处理:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.htmlCallMobileDeja = <span class="function"><span class="keyword">function</span>(<span class="params">handlerMethod, parameters</span>)</span>&#123;    </span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> u = navigator.userAgent; </span><br><span class="line">        <span class="keyword">var</span> isAndroid = u.indexOf(<span class="string">'Android'</span>) &gt; <span class="number">-1</span> || u.indexOf(<span class="string">'Adr'</span>) &gt; <span class="number">-1</span> </span><br><span class="line">        <span class="keyword">var</span> isiOS = !!u.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>) </span><br><span class="line">        <span class="keyword">if</span> (isiOS) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">window</span>.webkit) &#123;</span><br><span class="line">                <span class="built_in">window</span>.webkit.messageHandlers[handlerMethod].postMessage(dic);</span><br><span class="line">                <span class="built_in">console</span>.log(handlerMethod)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(isAndroid)&#123;</span><br><span class="line">            <span class="built_in">window</span>[<span class="string">'JsClient'</span>][handlerMethod](parameters)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'The native context does not exist yet'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>javascript通过这种方式进行传值</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dic = &#123;</span><br><span class="line">    <span class="string">'event_name'</span>: event_name + <span class="string">''</span>,</span><br><span class="line">    <span class="string">'event_first_param'</span>: event_first_param + <span class="string">''</span>,</span><br><span class="line">    <span class="string">'event_second_param'</span>: event_second_param + <span class="string">''</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.htmlCallMobileDeja(<span class="string">'hideMBP'</span>, dic)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leviduan.com/2019/04/07/2019-04-07-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1455,184 +1633,6 @@
 </li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> win = <span class="built_in">window</span>;</span><br><span class="line"><span class="keyword">var</span> doc = win.document;</span><br><span class="line"><span class="keyword">var</span> docEl = doc.documentElement;</span><br><span class="line"><span class="keyword">var</span> tid;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">refreshRem</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> width = docEl.clientWidth;</span><br><span class="line">    <span class="keyword">var</span> height = docEl.clientHeight;</span><br><span class="line">    <span class="keyword">if</span>(width&gt;=<span class="number">640</span>)&#123;</span><br><span class="line">        docEl.style.fontSize = <span class="string">'100px'</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        docEl.style.fontSize = <span class="number">100</span> * (width / <span class="number">375</span>) + <span class="string">'px'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">win.addEventListener(<span class="string">'resize'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    clearTimeout(tid);</span><br><span class="line">    tid = setTimeout(refreshRem, <span class="number">300</span>);</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">win.addEventListener(<span class="string">'pageshow'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e.persisted) &#123;</span><br><span class="line">        clearTimeout(tid);</span><br><span class="line">        tid = setTimeout(refreshRem, <span class="number">300</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">refreshRem();</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2019/04/07/2019-04-07/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Levi Duan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Levi's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/07/2019-04-07/" itemprop="url">React.js/HTML5和iOS双向通信</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T16:26:18+08:00">
-                2019-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/07/2019-04-07/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/07/2019-04-07/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近，我使用WKWebView和React.js进行双向通信,自己写了React.js嵌入到Native中。</p>
-<h2 id="Native操作Web，通过两种方式传值"><a href="#Native操作Web，通过两种方式传值" class="headerlink" title="Native操作Web，通过两种方式传值"></a>Native操作Web，通过两种方式传值</h2><h3 id="第一种，通过JS传值给Native"><a href="#第一种，通过JS传值给Native" class="headerlink" title="第一种，通过JS传值给Native"></a>第一种，通过JS传值给Native</h3><p>通过这种方式，可以通过Swift执行DOM操作，顺便说一句，webView.evaluateJavaScript返回脚本执行结果的内容。这个处理程序似乎是在主线程上执行的。</p>
-<p>Native调用JS代码方法如下:</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"payResult(true)"</span></span><br><span class="line">    webView.evaluateJavaScript(str) &#123; (result, error) <span class="keyword">in</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Javascript处理逻辑方法如下:</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">payResult = <span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (value === <span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'true'</span>)</span><br><span class="line">        <span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> (&#123;</span><br><span class="line">            pushnotice: <span class="string">'1'</span></span><br><span class="line">        &#125;));</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'false'</span>)</span><br><span class="line">        <span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> (&#123;</span><br><span class="line">            pushnotice: <span class="string">'0'</span></span><br><span class="line">        &#125;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果JS的payResult方法没有调用，那就加上这样一句话window.payResult，有可能被组件屏蔽无法全局调用。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="built_in">window</span>.payResult = <span class="keyword">this</span>.payResult</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="第二种，通过get请求传值"><a href="#第二种，通过get请求传值" class="headerlink" title="第二种，通过get请求传值"></a>第二种，通过get请求传值</h3><p>通过get请求方式将参数传到js的请求URL链接中。</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> url = <span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> webUrl = webUrl &#123;</span><br><span class="line">    url = webUrl</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> uid = userID &#123;</span><br><span class="line">        url += <span class="string">"?"</span> + <span class="string">"uid="</span> + uid</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> topicId = topicId &#123;</span><br><span class="line">        url += <span class="string">"&amp;"</span> + <span class="string">"topic="</span> + topicId</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> isRank == <span class="literal">true</span> &#123;</span><br><span class="line">        url += <span class="string">"&amp;"</span> + <span class="string">"type=2"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>react.js通过URL拼接方式解析传递的参数,方法如下:</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> params = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> str = <span class="keyword">this</span>.props.location.search</span><br><span class="line"><span class="keyword">let</span> seg = str.replace(<span class="regexp">/^\?/</span>, <span class="string">''</span>).split(<span class="string">'&amp;'</span>)</span><br><span class="line"><span class="keyword">let</span> len = seg.length</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (seg[i]) &#123;</span><br><span class="line">       <span class="keyword">let</span> p = seg[i].split(<span class="string">'='</span>);</span><br><span class="line">       params[p[<span class="number">0</span>]] = p[<span class="number">1</span>];   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过这种方式params.uid | param.topic | param.type 来获取参数</p>
-<h2 id="Native操作Web，通过两种方式传值-1"><a href="#Native操作Web，通过两种方式传值-1" class="headerlink" title="Native操作Web，通过两种方式传值"></a>Native操作Web，通过两种方式传值</h2><h3 id="Native操作"><a href="#Native操作" class="headerlink" title="Native操作"></a>Native操作</h3><ol>
-<li>实例化WKWebViewConfiguration和WKUserContentController,userController在JavaScript的注册处理调用名称。并设置实现WKScriptMessageHandler协议的代理。</li>
-</ol>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> webConfiguration = <span class="type">WKWebViewConfiguration</span>()</span><br><span class="line">webConfiguration.preferences = <span class="type">WKPreferences</span>()</span><br><span class="line">webConfiguration.preferences.minimumFontSize = <span class="number">10</span>;</span><br><span class="line">webConfiguration.preferences.javaScriptEnabled = <span class="literal">true</span>;</span><br><span class="line">webConfiguration.preferences.javaScriptCanOpenWindowsAutomatically = <span class="literal">false</span>;</span><br><span class="line">webConfiguration.userContentController = <span class="type">WKUserContentController</span>()</span><br><span class="line">webConfiguration.processPool = <span class="type">WKProcessPool</span>()</span><br><span class="line">webConfiguration.userContentController.add(<span class="keyword">self</span> <span class="keyword">as</span> <span class="type">WKScriptMessageHandler</span>, name:<span class="string">"pushAction"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> webView = <span class="type">WKWebView</span>(frame: .zero, configuration: webConfiguration)</span><br><span class="line">webView.scrollView.bounces = <span class="literal">false</span></span><br><span class="line">webView.scrollView.showsVerticalScrollIndicator = <span class="literal">false</span></span><br><span class="line">webView.scrollView.showsHorizontalScrollIndicator = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>通过WKScriptMessageHandler协议进行监控</li>
-</ol>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">userContentController</span><span class="params">(<span class="number">_</span> userContentController: WKUserContentController, didReceive message: WKScriptMessage)</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(message.name)</span><br><span class="line">    <span class="built_in">print</span>(message.body)</span><br><span class="line">    jsInvokeNativeHandler(message)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">jsInvokeNativeHandler</span><span class="params">(<span class="number">_</span> message: WKScriptMessage)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> message.isKind(of: <span class="type">WKScriptMessage</span>.<span class="keyword">self</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> serialQueue = <span class="type">DispatchQueue</span>(label: <span class="string">"com.test.mySerialQueue"</span>)</span><br><span class="line">        serialQueue.sync &#123;</span><br><span class="line">            <span class="keyword">if</span> message.name == <span class="string">"pushAction"</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">let</span> dict : <span class="type">NSDictionary</span> = message.body <span class="keyword">as</span>? <span class="type">NSDictionary</span> &#123;</span><br><span class="line">                     <span class="keyword">if</span> <span class="keyword">let</span> content = dict[<span class="string">"content"</span>] <span class="keyword">as</span>? <span class="type">String</span> &#123;</span><br><span class="line">                        <span class="keyword">self</span>.sendPushNotification(content)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>关于解析，和Web进行协议，我在H5写的代码通过message传过来的是一个字典类型 {content: ‘…’}。</p>
-<h3 id="web端操作"><a href="#web端操作" class="headerlink" title="web端操作"></a>web端操作</h3><p>H5如何传递方法给native？</p>
-<p>传值方法如下，iOS和Android接受的方法不同，要单独进行处理:</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.htmlCallMobileDeja = <span class="function"><span class="keyword">function</span>(<span class="params">handlerMethod, parameters</span>)</span>&#123;    </span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> u = navigator.userAgent; </span><br><span class="line">        <span class="keyword">var</span> isAndroid = u.indexOf(<span class="string">'Android'</span>) &gt; <span class="number">-1</span> || u.indexOf(<span class="string">'Adr'</span>) &gt; <span class="number">-1</span> </span><br><span class="line">        <span class="keyword">var</span> isiOS = !!u.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>) </span><br><span class="line">        <span class="keyword">if</span> (isiOS) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">window</span>.webkit) &#123;</span><br><span class="line">                <span class="built_in">window</span>.webkit.messageHandlers[handlerMethod].postMessage(dic);</span><br><span class="line">                <span class="built_in">console</span>.log(handlerMethod)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(isAndroid)&#123;</span><br><span class="line">            <span class="built_in">window</span>[<span class="string">'JsClient'</span>][handlerMethod](parameters)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'The native context does not exist yet'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>javascript通过这种方式进行传值</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dic = &#123;</span><br><span class="line">    <span class="string">'event_name'</span>: event_name + <span class="string">''</span>,</span><br><span class="line">    <span class="string">'event_first_param'</span>: event_first_param + <span class="string">''</span>,</span><br><span class="line">    <span class="string">'event_second_param'</span>: event_second_param + <span class="string">''</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.htmlCallMobileDeja(<span class="string">'hideMBP'</span>, dic)</span><br></pre></td></tr></table></figure>
 
           
         
