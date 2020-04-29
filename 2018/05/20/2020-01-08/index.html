@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="前言：   这篇没有太多技术细节以及底层知识，仅仅是解决需求的操作步骤以及解决方案。 代码会放在Github上，希望大家一起讨论下存在的问题，以及更好的解决方案。 正文的代码大部分是伪代码，供学习以及讨论用，因此没有写太多防御式编程的思想，如果用于工作中，需要自己做好防御式编程的措施。   为防止有着同样需求的伙伴无法通过关键字搜索到本文，所以将标题起的如此冗长以及不符合正常标题的起名规范，希望">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS下载H5游戏zip包，并解压在本地运行H5游戏">
+<meta property="og:url" content="http://leviduan.com/2018/05/20/2020-01-08/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="前言：   这篇没有太多技术细节以及底层知识，仅仅是解决需求的操作步骤以及解决方案。 代码会放在Github上，希望大家一起讨论下存在的问题，以及更好的解决方案。 正文的代码大部分是伪代码，供学习以及讨论用，因此没有写太多防御式编程的思想，如果用于工作中，需要自己做好防御式编程的措施。   为防止有着同样需求的伙伴无法通过关键字搜索到本文，所以将标题起的如此冗长以及不符合正常标题的起名规范，希望">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11043052-23ce60706b927589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11043052-efb7c8fa35f93d29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2020-04-29T09:33:47.481Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS下载H5游戏zip包，并解压在本地运行H5游戏">
+<meta name="twitter:description" content="前言：   这篇没有太多技术细节以及底层知识，仅仅是解决需求的操作步骤以及解决方案。 代码会放在Github上，希望大家一起讨论下存在的问题，以及更好的解决方案。 正文的代码大部分是伪代码，供学习以及讨论用，因此没有写太多防御式编程的思想，如果用于工作中，需要自己做好防御式编程的措施。   为防止有着同样需求的伙伴无法通过关键字搜索到本文，所以将标题起的如此冗长以及不符合正常标题的起名规范，希望">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/11043052-23ce60706b927589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2018/05/20/2020-01-08/">
+
+
+
+
+
+  <title>iOS下载H5游戏zip包，并解压在本地运行H5游戏 | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2018/05/20/2020-01-08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">iOS下载H5游戏zip包，并解压在本地运行H5游戏</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T22:53:02+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/20/2020-01-08/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/20/2020-01-08/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>前言： </p>
+<ul>
+<li>这篇没有太多技术细节以及底层知识，仅仅是解决需求的操作步骤以及解决方案。</li>
+<li>代码会放在Github上，希望大家一起讨论下存在的问题，以及更好的解决方案。</li>
+<li>正文的代码大部分是伪代码，供学习以及讨论用，因此没有写太多防御式编程的思想，如果用于工作中，需要自己做好防御式编程的措施。</li>
+</ul>
+</blockquote>
+<p>为防止有着同样需求的伙伴无法通过关键字搜索到本文，所以将标题起的如此冗长以及不符合正常标题的起名规范，希望大家谅解，这篇文目的不是为了分享知识，而是为了解决需求以及问题，这个下载器是我们做H5游戏实时匹配对战时用到一个小组件，简要的说下实现原理。</p>
+<h2 id="需求如下"><a href="#需求如下" class="headerlink" title="需求如下"></a>需求如下</h2><ul>
+<li>从后端API接口下载游戏压缩包，并保存在本地。</li>
+<li>在本地沙盒目录进行解压缩</li>
+<li>解压成功后保存在本地指定目录，进行文件管理</li>
+<li>如果版本号变更，需要将本地游戏删除，并保存最新版本的H5游戏到本地</li>
+<li>在本地搭建代理服务器，通过iOS本地服务器以及端口号，运行H5游戏。</li>
+</ul>
+<h2 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h2><p>尽量用最简洁的方法来实现功能，尽量用最新的API来解决技术场景，为了供大家理解流程。简化不需要的冗余代码。</p>
+<h3 id="一、关于API下载"><a href="#一、关于API下载" class="headerlink" title="一、关于API下载"></a>一、关于API下载</h3><h4 id="下载流程图"><a href="#下载流程图" class="headerlink" title="下载流程图"></a>下载流程图</h4><p><img src="https://upload-images.jianshu.io/upload_images/11043052-23ce60706b927589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载流程类方法流程图.png"></p>
+<h5 id="中文版"><a href="#中文版" class="headerlink" title="中文版"></a>中文版</h5><p><img src="https://upload-images.jianshu.io/upload_images/11043052-efb7c8fa35f93d29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载流程类方法流程图（中文版）.png"></p>
+<h4 id="建立游戏模块Model"><a href="#建立游戏模块Model" class="headerlink" title="建立游戏模块Model"></a>建立游戏模块Model</h4><p>主要用到的字段有：H5下载链接，游戏唯一标识符，游戏版本号字段等。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 游戏字段 Model</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">WPGGamePageGames</span> : <span class="title">NSObject</span></span></span><br><span class="line"><span class="comment">// 游戏id</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *gameId;</span><br><span class="line"><span class="comment">// H5游戏版本</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *h5Version;</span><br><span class="line"><span class="comment">// H5游戏包下载</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *h5Down;</span><br><span class="line"><span class="comment">// H5游戏包MD5</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *h5Md5;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<h4 id="调用-NSURLSession-API进行请求下载"><a href="#调用-NSURLSession-API进行请求下载" class="headerlink" title="调用 NSURLSession API进行请求下载"></a>调用 NSURLSession API进行请求下载</h4><p>对NSURLSession进行初始化加载：</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">NSURLSession</span> *)session</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!_session) &#123;</span><br><span class="line">        _session = [<span class="built_in">NSURLSession</span> sessionWithConfiguration:[<span class="built_in">NSURLSessionConfiguration</span> defaultSessionConfiguration]</span><br><span class="line">                                                 delegate:<span class="keyword">self</span> delegateQueue:[<span class="built_in">NSOperationQueue</span> mainQueue]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _session;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>建立一个下载请求，如果不需要断点续传，可以自动忽略 (void)pause 和 (void)resume 方法。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSURLSessionDownloadTask</span> *task;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSData</span> *resumeData;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开始创建下载请求并进行下载（_gameModel.h5Down 为H5游戏的下载链接）</span></span><br><span class="line">- (<span class="keyword">void</span>)start</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:_gameModel.h5Down];</span><br><span class="line">    <span class="built_in">NSMutableURLRequest</span> *request = [<span class="built_in">NSMutableURLRequest</span> requestWithURL:url];</span><br><span class="line">    request.HTTPMethod = <span class="string">@"GET"</span>;</span><br><span class="line">    <span class="keyword">self</span>.task = [<span class="keyword">self</span>.session downloadTaskWithRequest:request];</span><br><span class="line">    [<span class="keyword">self</span>.task resume];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 暂停下载请求</span></span><br><span class="line">- (<span class="keyword">void</span>)pause</span><br><span class="line">&#123;</span><br><span class="line">    __<span class="keyword">weak</span> __<span class="keyword">typeof</span>(<span class="keyword">self</span>) weakSelf = <span class="keyword">self</span>;</span><br><span class="line">    [<span class="keyword">self</span>.task cancelByProducingResumeData:^(<span class="built_in">NSData</span> * _Nullable resumeData) &#123;</span><br><span class="line">        weakSelf.resumeData = resumeData;</span><br><span class="line">        weakSelf.task = <span class="literal">nil</span>;</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 恢复下载请求进行断点续传</span></span><br><span class="line">- (<span class="keyword">void</span>)resume</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">self</span>.task = [<span class="keyword">self</span>.session downloadTaskWithResumeData:<span class="keyword">self</span>.resumeData];</span><br><span class="line">    [<span class="keyword">self</span>.task resume];</span><br><span class="line">    <span class="keyword">self</span>.resumeData = <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4个重要下载回调代理如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)URLSession:(<span class="built_in">NSURLSession</span> *)session downloadTask:(<span class="built_in">NSURLSessionDownloadTask</span> *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 展示下载进度</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)URLSession:(<span class="built_in">NSURLSession</span> *)session downloadTask:(<span class="built_in">NSURLSessionDownloadTask</span> *)downloadTask</span><br><span class="line">didFinishDownloadingToURL:(<span class="built_in">NSURL</span> *)location</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 下载成功</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)URLSession:(<span class="built_in">NSURLSession</span> *)session task:(<span class="built_in">NSURLSessionTask</span> *)task didCompleteWithError:(<span class="built_in">NSError</span> *)error</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        <span class="comment">// 下载失败</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)URLSession:(<span class="built_in">NSURLSession</span> *)session downloadTask:(<span class="built_in">NSURLSessionDownloadTask</span> *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 断点续传的代理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二、在本地沙盒目录进行解压缩"><a href="#二、在本地沙盒目录进行解压缩" class="headerlink" title="二、在本地沙盒目录进行解压缩"></a>二、在本地沙盒目录进行解压缩</h3><p>解压缩需要用到第三方库，SSZipArchive下载地址如下：<a href="https://github.com/ZipArchive/ZipArchive" target="_blank" rel="noopener">https://github.com/ZipArchive/ZipArchive</a></p>
+<p>注意 SSZipArchive 引入到工程时需要添加 libz.tbd 库，否则编译时通不过。使用SSZipArchive解压文件的方法为：</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="built_in">BOOL</span> ret1 = [SSZipArchive unzipFileAtPath:file toDestination:destination delegate:<span class="keyword">self</span>];</span><br><span class="line"><span class="keyword">if</span> (!ret1) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"解压失败"</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>SSZipArchive解压缩的代理方法如下</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)zipArchiveWillUnzipArchiveAtPath:(<span class="built_in">NSString</span> *)path zipInfo:(unz_global_info)zipInfo</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"将要解压。"</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)zipArchiveDidUnzipArchiveAtPath:(<span class="built_in">NSString</span> *)path zipInfo:(unz_global_info)zipInfo unzippedPath:(<span class="built_in">NSString</span> *)unzippedPath</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"解压完成！"</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于SSZipArchive所有方法说明详细API以及调用方法，已放在附录栏中，不在正文说明。</p>
+<h3 id="三、文件管理"><a href="#三、文件管理" class="headerlink" title="三、文件管理"></a>三、文件管理</h3><p>当游戏较多的时候，我们需要进行本地管理，我的管理目录如下：</p>
+<p>Library/Caches/Game/(文件夹名为：GameId)/H5游戏资源存放的地方</p>
+<p>由于GameId为所有H5游戏的唯一标识符，所以我的做法是将所有H5游戏存放在Caches/Game/文件目录下，文件路径命名为GameId,这便不会出现游戏重名导致游戏覆盖安装的情况。</p>
+<p>当版本更新的时候，之前存在沙盒目录中的游戏需要删除，并重新下载安装，我通过本地数据库去存取版本信息。当然首先要装一个本地数据库，我是通过FMDB第三方库进行管理。</p>
+<p>数据表字段如下：Id(自增Id),gameId(游戏唯一标识符),version（游戏版本号）,exist（文件是否在本地存在）</p>
+<p>版本管理业务逻辑：</p>
+<p>1）若数据库表中GameId存在，版本号在数据库列表中不存在，则删除本地GameId的文件夹进行下载<br>2）若数据库表中GameId不存在，则直接进行下载H5游戏保存在本地<br>3）若数据库表中GameId存在且版本号也存在，则直接读取Library/Caches/Game/(文件夹名为：GameId)目录，加载H5游戏资源。<br>4）当游戏下载成功后解压到Library/Caches/Game/(文件夹名为：GameId)目录下，将数据库写入最新的GameId,version字段写入数据表中。表明本地存在Gameid=XX，version=X.X.X的H5游戏。</p>
+<p>本地数据库操作代码如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"FMDB.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> WPGameDownloader *_instance;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">WPGameDownloader</span>() &lt;<span class="title">NSURLSessionDownloadDelegate</span>, <span class="title">SSZipArchiveDelegate</span>&gt;</span></span><br><span class="line">&#123;</span><br><span class="line">    FMDatabase *_db;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">instancetype</span>)shareManager</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!_instance) &#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</span><br><span class="line">        <span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</span><br><span class="line">            _instance = [[<span class="keyword">self</span> alloc] init];</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _instance;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)init</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> init]) &#123;</span><br><span class="line">        _queenArray = [<span class="built_in">NSMutableArray</span> new];</span><br><span class="line">        _isDownloading = <span class="literal">NO</span>;</span><br><span class="line">        [<span class="keyword">self</span> createTable];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建表</span></span><br><span class="line">- (<span class="keyword">void</span>)createTable</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先打开数据库,然后创建表,最后关闭数据库</span></span><br><span class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span> openDataBase]) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//tableExists 判断表是否存在,当表不存在的时候再去创建  参数:表名</span></span><br><span class="line">    <span class="keyword">if</span> (![_db tableExists:<span class="string">@"Game_Version_isExist"</span>]) &#123;</span><br><span class="line">        <span class="built_in">NSString</span> *sql = <span class="string">@"CREATE TABLE IF NOT EXISTS Game_Version_IsExist ('ID' INTEGER PRIMARY KEY AUTOINCREMENT,'gameid' TEXT NOT NULL, 'version' TEXT NOT NULL,'exist' INTEGER NOT NULL)"</span>;</span><br><span class="line">        <span class="built_in">BOOL</span> result = [_db executeUpdate:sql];</span><br><span class="line">        <span class="keyword">if</span> (result) &#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"create table success"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    [_db close];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印全部数据</span></span><br><span class="line">- (<span class="keyword">void</span>)printAllData</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span> openDataBase]) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    FMResultSet *set = [_db executeQuery:<span class="string">@"SELECT * FROM Game_Version_isExist"</span>];</span><br><span class="line">    <span class="comment">// next 单步查询</span></span><br><span class="line">    <span class="keyword">while</span> ([set next]) &#123;组</span><br><span class="line">        <span class="built_in">NSLOG</span>(<span class="string">@"===%d,%@,%@,%d"</span>, [set intForColumnIndex:<span class="number">0</span>],[set stringForColumn:<span class="string">@"gameid"</span>],[set stringForColumn:<span class="string">@"version"</span>],[set intForColumn:<span class="string">@"exist"</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    [set close];</span><br><span class="line">    [_db close];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询全部数据</span></span><br><span class="line">- (<span class="built_in">NSMutableArray</span> *)selectAllData</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span> openDataBase]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    FMResultSet *set = [_db executeQuery:<span class="string">@"SELECT * FROM Game_Version_isExist"</span>];</span><br><span class="line">    <span class="built_in">NSMutableArray</span> *array = [<span class="built_in">NSMutableArray</span> array];</span><br><span class="line">    <span class="comment">// next 单步查询</span></span><br><span class="line">    <span class="keyword">while</span> ([set next]) &#123;</span><br><span class="line">        <span class="comment">//把每一条数据(包含id,name,phone),存入一个对象，再把对象放入数组</span></span><br><span class="line">        WPGameDataBaseModel *game = [[WPGameDataBaseModel alloc] init];</span><br><span class="line">        game.auto_id = [set intForColumnIndex:<span class="number">0</span>];</span><br><span class="line">        game.gameId = [set stringForColumn:<span class="string">@"gameid"</span>];</span><br><span class="line">        game.version = [set stringForColumn:<span class="string">@"version"</span>];</span><br><span class="line">        game.value = [set intForColumn:<span class="string">@"exist"</span>];</span><br><span class="line">        <span class="comment">//把查询的每一条数据分别放入数组</span></span><br><span class="line">        [array addObject:game];</span><br><span class="line">    &#125;</span><br><span class="line">    [set close];</span><br><span class="line">    [_db close];</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)searchDataGameId:(<span class="built_in">NSString</span> *)gameId versiton:(<span class="built_in">NSString</span> *)version</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">self</span> printAllData];</span><br><span class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span> openDataBase]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">NSString</span> *sql = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"SELECT * FROM Game_Version_isExist WHERE gameid = %@ and version = '%@'"</span>, gameId,version];</span><br><span class="line">    FMResultSet *set = [_db executeQuery:sql];</span><br><span class="line">    <span class="built_in">BOOL</span> returnValue = <span class="literal">NO</span>;</span><br><span class="line">    <span class="keyword">while</span> ([set next]) &#123;</span><br><span class="line">        returnValue = <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    [set close];</span><br><span class="line">    [_db close];</span><br><span class="line">    <span class="keyword">return</span> returnValue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 增加数据</span></span><br><span class="line">- (<span class="keyword">void</span>)inserIntoData:(WPGameDataBaseModel *)gameModel</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ([<span class="keyword">self</span> openDataBase]) &#123;</span><br><span class="line">        [_db executeUpdateWithFormat:<span class="string">@"DELETE FROM Game_Version_IsExist WHERE gameid = %@"</span>, gameModel.gameId];</span><br><span class="line">        [_db executeUpdateWithFormat:<span class="string">@"INSERT INTO Game_Version_IsExist (gameid, version, exist) VALUES (%@,%@,%d)"</span>,gameModel.gameId, gameModel.version,gameModel.value];</span><br><span class="line">        [_db close];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过gameId进行修改</span></span><br><span class="line">- (<span class="keyword">void</span>)updateData:(WPGameDataBaseModel *)gameModel</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//根据id找到具体的联系人</span></span><br><span class="line">    <span class="keyword">if</span> ([<span class="keyword">self</span> openDataBase]) &#123;</span><br><span class="line">        [_db executeUpdateWithFormat:<span class="string">@"UPDATE Game_Version_IsExist SET version = %@, exist = %d WHERE gameid = %@"</span>,gameModel.version,gameModel.value,gameModel.gameId];</span><br><span class="line">        [_db close];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line">- (<span class="keyword">void</span>)deleteData:(<span class="built_in">NSString</span> *)game_id</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ([<span class="keyword">self</span> openDataBase]) &#123;</span><br><span class="line">        <span class="comment">//根据联系人的id进行删除</span></span><br><span class="line">        [_db executeUpdateWithFormat:<span class="string">@"DELETE FROM Game_Version_IsExist WHERE gameid = %@"</span>,game_id];</span><br><span class="line">        [_db close];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三、通过代理服务器运行H5游戏"><a href="#三、通过代理服务器运行H5游戏" class="headerlink" title="三、通过代理服务器运行H5游戏"></a>三、通过代理服务器运行H5游戏</h3><p>JS游戏想要运行到iOS设备的WebView, 是需要自己搭建一套Web Server的。通过CocoaHTTPServer三方库的这个可以满足我们的需求，CocoaHTTPServer是个很强大的三方库，不但可以通过加载H5游戏运行在本地，还能通过ip局域网和电脑传输文件，作用强大。</p>
+<p>项目中, 我使用了 Cocoapods 来管理第三方库.在 podfile 中直接添加下面的代码:</p>
+<p>pod ‘CocoaHTTPServer’, ‘~&gt; 2.3’</p>
+<p>然后 pod install 即可</p>
+<p>主要的核心代码如下:</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) HTTPServer *localHttpServer;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)_configLocalHttpServer</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *webPath = [<span class="built_in">NSHomeDirectory</span>() stringByAppendingPathComponent:<span class="string">@"Library/Caches/Game/snake/game/"</span>];</span><br><span class="line">    _localHttpServer = [[HTTPServer alloc] init];</span><br><span class="line">    [_localHttpServer setType:<span class="string">@"_http.tcp"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSFileManager</span> *fileManager = [[<span class="built_in">NSFileManager</span> alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, webPath);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (![fileManager fileExistsAtPath:webPath]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"File path error!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">NSString</span> *webLocalPath = webPath;</span><br><span class="line">        [_localHttpServer setDocumentRoot:webLocalPath];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"webLocalPath:%@"</span>, webLocalPath);</span><br><span class="line">        [<span class="keyword">self</span> _startWebServer];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)_startWebServer</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSError</span> *error;</span><br><span class="line">    <span class="keyword">if</span> ([_localHttpServer start:&amp;error]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Started HTTP Server on port %hu"</span>, [_localHttpServer listeningPort]);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Start Server Successfully."</span>);</span><br><span class="line">        <span class="keyword">self</span>.port = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%d"</span>, [_localHttpServer listeningPort]];</span><br><span class="line">        _startServerSuccess = <span class="literal">YES</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">UIWebView</span> *webView = [[<span class="built_in">UIWebView</span> alloc]initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, [<span class="built_in">UIScreen</span> mainScreen].bounds.size.width, [<span class="built_in">UIScreen</span> mainScreen].bounds.size.height)];</span><br><span class="line">        [<span class="keyword">self</span>.view addSubview:webView];</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"http://127.0.0.1:%@/index.html"</span>, <span class="keyword">self</span>.port]];</span><br><span class="line">        [webView loadRequest:[<span class="built_in">NSURLRequest</span> requestWithURL:url]];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Error starting HTTP Server: %@"</span>, error);</span><br><span class="line">        _startServerSuccess = <span class="literal">NO</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>到这里流程就已经跑通了，然后说一下我下载器的实现。</p>
+<h2 id="我的实现"><a href="#我的实现" class="headerlink" title="我的实现"></a>我的实现</h2><h3 id="代理以及方法"><a href="#代理以及方法" class="headerlink" title="代理以及方法"></a>代理以及方法</h3><p>.h文件所提供的方法如下：</p>
+<ol>
+<li>通过 isExistGame:gameModel 方法来判断本地是否存在这个H5游戏。</li>
+<li>通过 downloadGameModel:gameModel 方法来下载游戏，下载多个游戏的时候，是通过串行队列的方式进行下载。</li>
+<li>下载进度在delegate中进行监听，下载成功或者失败也在delegate中进行监听</li>
+</ol>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">WPGameDownloaderDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 下载成功回调（通过gameId判断是否为本次下载任务）</span></span><br><span class="line">- (<span class="keyword">void</span>)downloadSuccess:(WPGameDownloader *)gamedownloader gameId:(<span class="built_in">NSString</span> *)gameId;</span><br><span class="line"><span class="comment">// 下载失败回调（通过gameId判断是否为本次下载任务）</span></span><br><span class="line">- (<span class="keyword">void</span>)downloadFail:(WPGameDownloader *)gamedownloader gameId:(<span class="built_in">NSString</span> *)gameId;</span><br><span class="line"><span class="comment">// 下载进度回调（通过gameId判断是否为本次下载任务）</span></span><br><span class="line">- (<span class="keyword">void</span>)downloadProgress:(<span class="built_in">NSInteger</span>)progress gamedownloader:(WPGameDownloader *)gamedownloader gameId:(<span class="built_in">NSString</span> *)gameId;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">WPGameDownloader</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span> &lt;WPGameDownloaderDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单例</span></span><br><span class="line">+ (<span class="keyword">instancetype</span>)shareManager;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 下载游戏</span></span><br><span class="line">- (<span class="keyword">void</span>)downloadGameModel:(WPGGamePageGames *)gameModel;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 游戏是否下载到本地</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)isExistGame:(WPGGamePageGames *)gameModel;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<h3 id="声明变量并用单例进行实现"><a href="#声明变量并用单例进行实现" class="headerlink" title="声明变量并用单例进行实现"></a>声明变量并用单例进行实现</h3><p>通过单例对H5游戏下载器进行更安全的控制，以防止并行下载会出现的问题，以及多线程同时读写数据库出现的问题。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">WPGameDownloader</span>() &lt;<span class="title">NSURLSessionDownloadDelegate</span>, <span class="title">SSZipArchiveDelegate</span>&gt;</span></span><br><span class="line">&#123;</span><br><span class="line">    FMDatabase *_db;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSURLSession</span> *session;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSURLSessionDownloadTask</span> *task;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSMutableArray</span> *queenArray;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) WPGGamePageGames *gameModel;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">BOOL</span> isDownloading;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">WPGameDownloader</span></span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">instancetype</span>)shareManager</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!_instance) &#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</span><br><span class="line">        <span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</span><br><span class="line">            _instance = [[<span class="keyword">self</span> alloc] init];</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _instance;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)init</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> init]) &#123;</span><br><span class="line">        _queenArray = [<span class="built_in">NSMutableArray</span> new];</span><br><span class="line">        _isDownloading = <span class="literal">NO</span>;</span><br><span class="line">        [<span class="keyword">self</span> createTable];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下载器已经将代码放入github中，关于下载器的部分下载操作如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)isExistGame:(WPGGamePageGames *)gameModel</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">self</span> searchDataGameId:gameModel.gameId versiton:gameModel.h5Version];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)downloadGameModel:(WPGGamePageGames *)gameModel</span><br><span class="line">&#123;</span><br><span class="line">    [_queenArray addObject:gameModel];</span><br><span class="line">    [<span class="keyword">self</span> startDownLoad];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)startDownLoad</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (_queenArray.count&lt;=<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (_isDownloading) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    _isDownloading = <span class="literal">YES</span>;</span><br><span class="line">    _gameModel = [_queenArray cl_objectAtIndex:<span class="number">0</span>];</span><br><span class="line">    [_queenArray cl_removeObjectAtIndex:<span class="number">0</span>];</span><br><span class="line">    [<span class="keyword">self</span> start];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)removefile</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSFileManager</span> *manager = [<span class="built_in">NSFileManager</span> defaultManager];</span><br><span class="line">    <span class="built_in">NSString</span> *docsDir = [<span class="built_in">NSHomeDirectory</span>() stringByAppendingPathComponent:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"Library/Caches/Game/%@/"</span>, _gameModel.gameId]];</span><br><span class="line">    [manager removeItemAtPath:docsDir error:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)downloadFailed</span><br><span class="line">&#123;</span><br><span class="line">    _isDownloading = <span class="literal">NO</span>;</span><br><span class="line">    IDSLOG(<span class="string">@"FAILED : GAMEID: %@"</span>, _gameModel.gameId);</span><br><span class="line">    [<span class="keyword">self</span> removefile];</span><br><span class="line">    [<span class="keyword">self</span>.session finishTasksAndInvalidate];</span><br><span class="line">    _session = <span class="literal">nil</span>;</span><br><span class="line">    <span class="keyword">if</span> ([<span class="keyword">self</span>.delegate respondsToSelector:<span class="keyword">@selector</span>(downloadFail:gameId:)]) &#123;</span><br><span class="line">        [<span class="keyword">self</span>.delegate downloadFail:<span class="keyword">self</span> gameId:_gameModel.gameId];</span><br><span class="line">    &#125;</span><br><span class="line">    [<span class="keyword">self</span> startDownLoad];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)downloadSuccess</span><br><span class="line">&#123;</span><br><span class="line">    IDSLOG(<span class="string">@"SUEECSS : GAMEID: %@"</span>, _gameModel.gameId);</span><br><span class="line">    WPGameDataBaseModel *model = [[WPGameDataBaseModel alloc] init];</span><br><span class="line">    model.gameId = _gameModel.gameId;</span><br><span class="line">    model.version = _gameModel.h5Version;</span><br><span class="line">    model.value = <span class="number">1</span>;</span><br><span class="line">    [<span class="keyword">self</span> inserIntoData:model];</span><br><span class="line">    <span class="keyword">if</span> ([<span class="keyword">self</span>.delegate respondsToSelector:<span class="keyword">@selector</span>(downloadSuccess:gameId:)]) &#123;</span><br><span class="line">        [<span class="keyword">self</span>.delegate downloadSuccess:<span class="keyword">self</span> gameId:model.gameId];</span><br><span class="line">    &#125;</span><br><span class="line">    _isDownloading = <span class="literal">NO</span>;</span><br><span class="line">    [<span class="keyword">self</span> startDownLoad];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)start</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:_gameModel.h5Down];</span><br><span class="line">    <span class="built_in">NSMutableURLRequest</span> *request = [<span class="built_in">NSMutableURLRequest</span> requestWithURL:url];</span><br><span class="line">    request.HTTPMethod = <span class="string">@"GET"</span>;</span><br><span class="line">    <span class="keyword">self</span>.task = [<span class="keyword">self</span>.session downloadTaskWithRequest:request];</span><br><span class="line">    [<span class="keyword">self</span>.task resume];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta"># pragma mark - delegate</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)URLSession:(<span class="built_in">NSURLSession</span> *)session downloadTask:(<span class="built_in">NSURLSessionDownloadTask</span> *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ([<span class="keyword">self</span>.delegate respondsToSelector:<span class="keyword">@selector</span>(downloadProgress:gamedownloader:gameId:)]) &#123;</span><br><span class="line">        [<span class="keyword">self</span>.delegate downloadProgress:(totalBytesWritten*<span class="number">100</span>/totalBytesExpectedToWrite) gamedownloader:<span class="keyword">self</span> gameId:_gameModel.gameId];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)URLSession:(<span class="built_in">NSURLSession</span> *)session downloadTask:(<span class="built_in">NSURLSessionDownloadTask</span> *)downloadTask</span><br><span class="line">didFinishDownloadingToURL:(<span class="built_in">NSURL</span> *)location;</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">self</span> createGameFolder];</span><br><span class="line">    </span><br><span class="line">    [<span class="keyword">self</span> createGameFolderName:_gameModel.gameId];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *docPath = [<span class="built_in">NSHomeDirectory</span>() stringByAppendingPathComponent:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"Library/Caches/Game/%@/"</span>, _gameModel.gameId]];</span><br><span class="line">    <span class="built_in">NSString</span> *file = [docPath stringByAppendingPathComponent:downloadTask.response.suggestedFilename];</span><br><span class="line">    <span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</span><br><span class="line">    <span class="built_in">NSFileManager</span> *manager = [<span class="built_in">NSFileManager</span> defaultManager];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">BOOL</span> result = [manager fileExistsAtPath:location.path];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"移动之前 这个文件已经存在：%@"</span>,result?<span class="string">@"是的"</span>:<span class="string">@"不存在"</span>);</span><br><span class="line">    <span class="keyword">if</span> ([manager fileExistsAtPath:location.path]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"移动之前文件大小为: %.1fM"</span>, [[manager attributesOfItemAtPath:location.path error:<span class="literal">nil</span>] fileSize]/<span class="number">1000000.0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (![[manager attributesOfItemAtPath:location.path error:<span class="literal">nil</span>] fileSize]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"文件为空返回"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断文件是否存在</span></span><br><span class="line">    <span class="built_in">BOOL</span> ret = [manager moveItemAtPath:location.path toPath:file error:&amp;error];</span><br><span class="line">    <span class="keyword">if</span> (!ret) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"MOVE FILE IS WRONG"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"move failed:%@"</span>, [error localizedDescription]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">BOOL</span> resultdd = [manager fileExistsAtPath:file];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"移动之后 这个文件已经存在：%@"</span>,resultdd?<span class="string">@"是的"</span>:<span class="string">@"不存在"</span>);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"储存路径 移动之后:%@, \n移动之前:%@"</span>,file,location.path);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSString</span> *destination = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@/"</span>, docPath];</span><br><span class="line">    <span class="built_in">BOOL</span> ret1 = [SSZipArchive unzipFileAtPath:file toDestination:destination delegate:<span class="keyword">self</span>];</span><br><span class="line">    <span class="keyword">if</span> (!ret1) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"解压失败"</span>);</span><br><span class="line">        [<span class="keyword">self</span> downloadFailed];</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    [manager removeItemAtPath:file error:<span class="literal">nil</span>];</span><br><span class="line">    <span class="comment">// 遍历文件</span></span><br><span class="line">    <span class="built_in">NSDirectoryEnumerator</span> *dirEnum = [manager enumeratorAtPath:docPath];</span><br><span class="line">    <span class="built_in">NSString</span> *fileName;</span><br><span class="line">    <span class="keyword">while</span> (fileName = [dirEnum nextObject]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"FileFull&gt;&gt;&gt; : %@"</span> , [docPath stringByAppendingPathComponent:fileName]) ;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    [<span class="keyword">self</span> downloadSuccess];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">long</span> <span class="keyword">long</span>)fileSizeAtPath:(<span class="built_in">NSString</span> *)filePath &#123;</span><br><span class="line">    <span class="built_in">NSFileManager</span> *manager = [<span class="built_in">NSFileManager</span> defaultManager];</span><br><span class="line">    <span class="keyword">if</span> ([manager fileExistsAtPath:filePath]) &#123;</span><br><span class="line">        <span class="keyword">return</span> [[manager attributesOfItemAtPath:filePath error:<span class="literal">nil</span>] fileSize];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)URLSession:(<span class="built_in">NSURLSession</span> *)session task:(<span class="built_in">NSURLSessionTask</span> *)task didCompleteWithError:(<span class="built_in">NSError</span> *)error</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        [<span class="keyword">self</span> downloadFailed];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>上面的例子本人亲自实践过的, 给大家提供了一个实现思路, 算是抛砖引玉.</p>
+<p>如果想做好这个模式, 还需要很多工作要做, 这里列出来给大家分享一下.</p>
+<p>1.游戏资源包管理和下载.<br>2.游戏中需要和 Native 的交互逻辑.<br>3.数据加密.<br>4.移动端游戏本身的加载优化.</p>
+<p>代码示例我放在了 GitHub上。<br>下载器代码如下：<a href="https://github.com/Yulei-Duan/WPGameDownloader" target="_blank" rel="noopener">https://github.com/Yulei-Duan/WPGameDownloader</a><br>游戏代理服务器代码如下：<a href="https://github.com/Yulei-Duan/testProjestAboutGameRun" target="_blank" rel="noopener">https://github.com/Yulei-Duan/testProjestAboutGameRun</a></p>
+<p>有问题，请在下面评论, 非常感谢能来看我的Demo分享!</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="SSZipArchive所有方法说明"><a href="#SSZipArchive所有方法说明" class="headerlink" title="SSZipArchive所有方法说明"></a>SSZipArchive所有方法说明</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">SSZipArchive</span> : <span class="title">NSObject</span>  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// Unzip 解压  </span></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * @param          path    源文件 </span></span><br><span class="line"><span class="comment"> * @param   destination    目的文件 </span></span><br><span class="line"><span class="comment"> * @param      uniqueId    标记，用于区别多个解压操作 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 返回 YES 表示成功，返回 NO 表示解压失败。 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">+ (<span class="built_in">BOOL</span>)unzipFileAtPath:(<span class="built_in">NSString</span> *)path toDestination:(<span class="built_in">NSString</span> *)destination  uniqueId:(<span class="built_in">NSString</span> *)uniqueId;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * @param          path    源文件 </span></span><br><span class="line"><span class="comment"> * @param   destination    目的文件 </span></span><br><span class="line"><span class="comment"> * @param     overwrite    YES 会覆盖 destination 路径下的同名文件，NO 则不会。 </span></span><br><span class="line"><span class="comment"> * @param      password    需要输入密码的才能解压的压缩包 </span></span><br><span class="line"><span class="comment"> * @param         error    返回解压时遇到的错误信息 </span></span><br><span class="line"><span class="comment"> * @param      uniqueId    标记，用于区别多个解压操作 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 返回 YES 表示成功，返回 NO 表示解压失败。 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">+ (<span class="built_in">BOOL</span>)unzipFileAtPath:(<span class="built_in">NSString</span> *)path toDestination:(<span class="built_in">NSString</span> *)destination overwrite:(<span class="built_in">BOOL</span>)overwrite password:(<span class="built_in">NSString</span> *)password error:(<span class="built_in">NSError</span> **)error  uniqueId:(<span class="built_in">NSString</span> *)uniqueId;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * @param          path    源文件 </span></span><br><span class="line"><span class="comment"> * @param   destination    目的文件 </span></span><br><span class="line"><span class="comment"> * @param      delegate    设置代理 </span></span><br><span class="line"><span class="comment"> * @param      uniqueId    标记，用于区别多个解压操作 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 返回 YES 表示成功，返回 NO 表示解压失败。 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">+ (<span class="built_in">BOOL</span>)unzipFileAtPath:(<span class="built_in">NSString</span> *)path toDestination:(<span class="built_in">NSString</span> *)destination delegate:(<span class="keyword">id</span>&lt;SSZipArchiveDelegate&gt;)delegate  uniqueId:(<span class="built_in">NSString</span> *)uniqueId;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * @param          path    源文件 </span></span><br><span class="line"><span class="comment"> * @param   destination    目的文件 </span></span><br><span class="line"><span class="comment"> * @param     overwrite    YES 会覆盖 destination 路径下的同名文件，NO 则不会。 </span></span><br><span class="line"><span class="comment"> * @param      password    需要输入密码的才能解压的压缩包 </span></span><br><span class="line"><span class="comment"> * @param         error    返回解压时遇到的错误信息 </span></span><br><span class="line"><span class="comment"> * @param      delegate    设置代理 </span></span><br><span class="line"><span class="comment"> * @param      uniqueId    标记，用于区别多个解压操作 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 返回 YES 表示成功，返回 NO 表示解压失败。 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">+ (<span class="built_in">BOOL</span>)unzipFileAtPath:(<span class="built_in">NSString</span> *)path toDestination:(<span class="built_in">NSString</span> *)destination overwrite:(<span class="built_in">BOOL</span>)overwrite password:(<span class="built_in">NSString</span> *)password error:(<span class="built_in">NSError</span> **)error delegate:(<span class="keyword">id</span>&lt;SSZipArchiveDelegate&gt;)delegate uniqueId:(<span class="built_in">NSString</span> *)uniqueId;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// Zip 压缩  </span></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * @param       path    目的路径（格式：～／xxx.zip 结尾的路径） </span></span><br><span class="line"><span class="comment"> * @param  filenames    要压缩的文件路径 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 返回 YES 表示成功，返回 NO 表示压缩失败。 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">+ (<span class="built_in">BOOL</span>)createZipFileAtPath:(<span class="built_in">NSString</span> *)path withFilesAtPaths:(<span class="built_in">NSArray</span> *)filenames;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * @param       path    目的路径（格式：～／xxx.zip 结尾的路径） </span></span><br><span class="line"><span class="comment"> * @param  filenames    要压缩的文件目录路径 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 返回 YES 表示成功，返回 NO 表示压缩失败。 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">+ (<span class="built_in">BOOL</span>)createZipFileAtPath:(<span class="built_in">NSString</span> *)path withContentsOfDirectory:(<span class="built_in">NSString</span> *)directoryPath;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * 初始化压缩对象 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param  path    目的路径（格式：～／xxx.zip 结尾的路径） </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 初始化后的对像 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">- (<span class="keyword">id</span>)initWithPath:(<span class="built_in">NSString</span> *)path;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> *  打开压缩对象 </span></span><br><span class="line"><span class="comment"> * @return 返回 YES 表示成功，返回 NO 表示失败。 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">- (<span class="built_in">BOOL</span>)open;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * 添加要压缩的文件的路径 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param  path    文件路径 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 返回 YES 表示成功，返回 NO 表示失败。 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">- (<span class="built_in">BOOL</span>)writeFile:(<span class="built_in">NSString</span> *)path;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * 向此路径的文件里写入数据 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param      data    要写入的数据 </span></span><br><span class="line"><span class="comment"> * @param  filename    文件路径 </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 返回 YES 表示成功，返回 NO 表示失败。 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">- (<span class="built_in">BOOL</span>)writeData:(<span class="built_in">NSData</span> *)data filename:(<span class="built_in">NSString</span> *)filename;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> *  关闭压缩对象 </span></span><br><span class="line"><span class="comment"> * @return 返回 YES 表示成功，返回 NO 表示失败。 </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line">- (<span class="built_in">BOOL</span>)close;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">@end</span>  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">SSZipArchiveDelegate</span> &lt;<span class="title">NSObject</span>&gt;  </span></span><br><span class="line">  </span><br><span class="line"><span class="keyword">@optional</span>  </span><br><span class="line">  </span><br><span class="line"><span class="comment">//将要解压  </span></span><br><span class="line">- (<span class="keyword">void</span>)zipArchiveWillUnzipArchiveAtPath:(<span class="built_in">NSString</span> *)path zipInfo:(unz_global_info)zipInfo;  </span><br><span class="line"><span class="comment">//解压完成  </span></span><br><span class="line">- (<span class="keyword">void</span>)zipArchiveDidUnzipArchiveAtPath:(<span class="built_in">NSString</span> *)path zipInfo:(unz_global_info)zipInfo unzippedPath:(<span class="built_in">NSString</span> *)unzippedPat uniqueId:(<span class="built_in">NSString</span> *)uniqueId;  </span><br><span class="line"><span class="comment">//将要解压  </span></span><br><span class="line">- (<span class="keyword">void</span>)zipArchiveWillUnzipFileAtIndex:(<span class="built_in">NSInteger</span>)fileIndex totalFiles:(<span class="built_in">NSInteger</span>)totalFiles archivePath:(<span class="built_in">NSString</span> *)archivePath fileInfo:(unz_file_info)fileInfo;  </span><br><span class="line"><span class="comment">//解压完成  </span></span><br><span class="line">- (<span class="keyword">void</span>)zipArchiveDidUnzipFileAtIndex:(<span class="built_in">NSInteger</span>)fileIndex totalFiles:(<span class="built_in">NSInteger</span>)totalFiles archivePath:(<span class="built_in">NSString</span> *)archivePath fileInfo:(unz_file_info)fileInfo;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/26/2020-01-08-12/" rel="next" title="前言">
+                <i class="fa fa-chevron-left"></i> 前言
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/12/2020-01-08-13/" rel="prev" title="iOS App导入自定义字体">
+                iOS App导入自定义字体 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求如下"><span class="nav-number">1.</span> <span class="nav-text">需求如下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的思路"><span class="nav-number">2.</span> <span class="nav-text">我的思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、关于API下载"><span class="nav-number">2.1.</span> <span class="nav-text">一、关于API下载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载流程图"><span class="nav-number">2.1.1.</span> <span class="nav-text">下载流程图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#中文版"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">中文版</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立游戏模块Model"><span class="nav-number">2.1.2.</span> <span class="nav-text">建立游戏模块Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调用-NSURLSession-API进行请求下载"><span class="nav-number">2.1.3.</span> <span class="nav-text">调用 NSURLSession API进行请求下载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、在本地沙盒目录进行解压缩"><span class="nav-number">2.2.</span> <span class="nav-text">二、在本地沙盒目录进行解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、文件管理"><span class="nav-number">2.3.</span> <span class="nav-text">三、文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、通过代理服务器运行H5游戏"><span class="nav-number">2.4.</span> <span class="nav-text">三、通过代理服务器运行H5游戏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的实现"><span class="nav-number">3.</span> <span class="nav-text">我的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代理以及方法"><span class="nav-number">3.1.</span> <span class="nav-text">代理以及方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明变量并用单例进行实现"><span class="nav-number">3.2.</span> <span class="nav-text">声明变量并用单例进行实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写在最后"><span class="nav-number">3.3.</span> <span class="nav-text">写在最后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">4.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSZipArchive所有方法说明"><span class="nav-number">4.1.</span> <span class="nav-text">SSZipArchive所有方法说明</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2018/05/20/2020-01-08/';
+          this.page.identifier = '2018/05/20/2020-01-08/';
+          this.page.title = 'iOS下载H5游戏zip包，并解压在本地运行H5游戏';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

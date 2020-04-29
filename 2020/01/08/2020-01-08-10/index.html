@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="When we use share function, the best library is react-native-share. React Native Share, a simple tool for share message and file to other apps. Git website: https://github.com/react-native-community/r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React native - react-native-share">
+<meta property="og:url" content="http://leviduan.com/2020/01/08/2020-01-08-10/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="When we use share function, the best library is react-native-share. React Native Share, a simple tool for share message and file to other apps. Git website: https://github.com/react-native-community/r">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-29T09:33:47.478Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React native - react-native-share">
+<meta name="twitter:description" content="When we use share function, the best library is react-native-share. React Native Share, a simple tool for share message and file to other apps. Git website: https://github.com/react-native-community/r">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2020/01/08/2020-01-08-10/">
+
+
+
+
+
+  <title>React native - react-native-share | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/01/08/2020-01-08-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">React native - react-native-share</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-08T22:51:02+08:00">
+                2020-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/08/2020-01-08-10/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/08/2020-01-08-10/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>When we use share function, the best library is react-native-share. React Native Share, a simple tool for share message and file to other apps.</p>
+<p>Git website: <a href="https://github.com/react-native-community/react-native-share/" target="_blank" rel="noopener">https://github.com/react-native-community/react-native-share/</a></p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install react-native-share --save</span><br><span class="line"></span><br><span class="line">react-native link react-native-share</span><br><span class="line"></span><br><span class="line">cd ios &amp;&amp; pod install &amp;&amp; cd ../</span><br></pre></td></tr></table></figure>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Share <span class="keyword">from</span> <span class="string">'react-native-share'</span>;</span><br><span class="line"></span><br><span class="line">Share.open(options)</span><br><span class="line">.then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123; <span class="built_in">console</span>.log(res) &#125;)</span><br><span class="line">.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123; err &amp;&amp; <span class="built_in">console</span>.log(err); &#125;);</span><br><span class="line"></span><br><span class="line">Share.open(&#123;<span class="attr">url</span> : ScreenUtil.webUrl + <span class="string">'/streetsnapShareToPhoto?id='</span> + <span class="keyword">this</span>.state.data.id, <span class="attr">message</span>: <span class="string">"Deja"</span>&#125;)</span><br><span class="line">.then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123; <span class="built_in">console</span>.warn(res) &#125;)</span><br><span class="line">.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123; err &amp;&amp; <span class="built_in">console</span>.warn(err); &#125;);</span><br></pre></td></tr></table></figure>
+<p>Supported options:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">url</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">URL you want to share (only support base64 string in iOS &amp; Android).</td>
+</tr>
+<tr>
+<td style="text-align:left">urls</td>
+<td style="text-align:center">Array[string]</td>
+<td style="text-align:left">array of base64 string you want to share (only support iOS &amp; Android).</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">File mime type (optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">message</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">(optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">subject</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">(optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">email</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">Email of addressee (optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">excludedActivityTypes</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">(optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">failOnCancel</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:left">(defaults to true) Specifies whether promise should reject if user cancels share dialog (optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">showAppsToView</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:left">(optional) only android</td>
+</tr>
+<tr>
+<td style="text-align:left">filename</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">only support base64 string in Android</td>
+</tr>
+</tbody>
+</table>
+<p>These can be assessed using Share.Social property For eg.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Share <span class="keyword">from</span> <span class="string">'react-native-share'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> shareOptions = &#123;</span><br><span class="line">    title: <span class="string">'Share via'</span>,</span><br><span class="line">    message: <span class="string">'some message'</span>,</span><br><span class="line">    url: <span class="string">'some share url'</span>,</span><br><span class="line">    social: Share.Social.WHATSAPP,</span><br><span class="line">    whatsAppNumber: <span class="string">"9199999999"</span>  <span class="comment">// country code + phone number(currently only works on Android)</span></span><br><span class="line">    filename: <span class="string">'test'</span> , <span class="comment">// only for base64 file in Android </span></span><br><span class="line">&#125;;</span><br><span class="line">Share.shareSingle(shareOptions);</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:center">Android</th>
+<th style="text-align:left">iOS</th>
+<th style="text-align:left">Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>FACEBOOK</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PAGESMANAGER</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>WHATSAPP</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>INSTAGRAM</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>GOOGLEPLUS</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>EMAIL</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PINTEREST</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>SMS</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>SNAPCHAT</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>MESSENGER</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LINKEDIN</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+</tbody>
+</table>
+<h4 id="React-native-share-library-question-Currently-on-iOS-13-the-app-will-crash"><a href="#React-native-share-library-question-Currently-on-iOS-13-the-app-will-crash" class="headerlink" title="React native share library question - Currently on iOS 13 the app will crash"></a>React native share library question - Currently on iOS 13 the app will crash</h4><p>Currently on iOS 13 the app will crash if you:</p>
+<ul>
+<li>Open the share sheet</li>
+<li>Tap something like messages or photos</li>
+<li>Cancel the dialog</li>
+<li>Perform any other action</li>
+</ul>
+<p>This is because shareController.completionWithItemsHandler is called when the dialog box is canceled and currently failureCallback or successCallback will always be called. In the situation above, activityError is nil so successCallback will be called even though completed is false. This leaves us in a state where the callback has been invoked but the ShareSheet is still active, meaning the success or error callback will be invoked again, leading to the crash.</p>
+<p>This PR adds a check to make sure completed is true before calling successCallback. This way successCallback will only be called when the user has successfully completed an action and the ShareSheet is closed.</p>
+<p>Only call successCallback when completed is true (iOS 13 crash)</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">shareController.completionWithItemsHandler = ^(<span class="built_in">NSString</span> *activityType, <span class="built_in">BOOL</span> completed, __unused <span class="built_in">NSArray</span> *returnedItems, <span class="built_in">NSError</span> *activityError) &#123;</span><br><span class="line">    <span class="keyword">if</span> (activityError) &#123;</span><br><span class="line">        failureCallback(activityError);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (completed) &#123;</span><br><span class="line">        successCallback(@[@(completed), RCTNullIfNil(activityType)]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/08/2020-01-08-9/" rel="next" title="React native - DeviceEventEmitter API">
+                <i class="fa fa-chevron-left"></i> React native - DeviceEventEmitter API
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/08/2020-01-08-11/" rel="prev" title="React native - contentContainerStyle (Flatlist)">
+                React native - contentContainerStyle (Flatlist) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Installation"><span class="nav-number">1.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Usage"><span class="nav-number">2.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#React-native-share-library-question-Currently-on-iOS-13-the-app-will-crash"><span class="nav-number">2.1.</span> <span class="nav-text">React native share library question - Currently on iOS 13 the app will crash</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2020/01/08/2020-01-08-10/';
+          this.page.identifier = '2020/01/08/2020-01-08-10/';
+          this.page.title = 'React native - react-native-share';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

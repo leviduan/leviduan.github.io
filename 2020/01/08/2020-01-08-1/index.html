@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Q1 :  Android studio Error “Unsupported Modules Detected: Compilation is not supported for following modules” File -&amp;gt; Invalidate Caches / Restart -&amp;gt; Invalidate Caches &amp;amp; Restart. close Androi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Week Tips | 2019.12.23 - 2019.12.27">
+<meta property="og:url" content="http://leviduan.com/2020/01/08/2020-01-08-1/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="Q1 :  Android studio Error “Unsupported Modules Detected: Compilation is not supported for following modules” File -&amp;gt; Invalidate Caches / Restart -&amp;gt; Invalidate Caches &amp;amp; Restart. close Androi">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-29T09:33:47.478Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Week Tips | 2019.12.23 - 2019.12.27">
+<meta name="twitter:description" content="Q1 :  Android studio Error “Unsupported Modules Detected: Compilation is not supported for following modules” File -&amp;gt; Invalidate Caches / Restart -&amp;gt; Invalidate Caches &amp;amp; Restart. close Androi">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2020/01/08/2020-01-08-1/">
+
+
+
+
+
+  <title>Week Tips | 2019.12.23 - 2019.12.27 | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/01/08/2020-01-08-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Week Tips | 2019.12.23 - 2019.12.27</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-08T22:30:01+08:00">
+                2020-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/08/2020-01-08-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/08/2020-01-08-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="Q1-Android-studio-Error-“Unsupported-Modules-Detected-Compilation-is-not-supported-for-following-modules”"><a href="#Q1-Android-studio-Error-“Unsupported-Modules-Detected-Compilation-is-not-supported-for-following-modules”" class="headerlink" title="Q1 :  Android studio Error “Unsupported Modules Detected: Compilation is not supported for following modules”"></a>Q1 :  Android studio Error “Unsupported Modules Detected: Compilation is not supported for following modules”</h4><ol>
+<li>File -&gt; Invalidate Caches / Restart -&gt; Invalidate Caches &amp; Restart.</li>
+<li>close Android Studio IDE and delete the <code>.idea</code> directory.</li>
+<li>delete all .iml files</li>
+<li>open Android Studio IDE and Sync with <code>Gradle</code>.</li>
+</ol>
+<h4 id="Q2-React-Native-iOS-StatusBar-background-colour-is-not-dark-in-the-dark-mode"><a href="#Q2-React-Native-iOS-StatusBar-background-colour-is-not-dark-in-the-dark-mode" class="headerlink" title="Q2 :  React Native iOS StatusBar background colour is not dark in the dark mode."></a>Q2 :  React Native iOS StatusBar background colour is not dark in the dark mode.</h4><p>we will change the file about react native library</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">RCT_ENUM_CONVERTER(<span class="built_in">UIStatusBarStyle</span>, (@&#123;</span><br><span class="line">  <span class="string">@"default"</span>: @(<span class="built_in">UIStatusBarStyleDefault</span>), </span><br><span class="line">  <span class="string">@"light-content"</span>: @(<span class="built_in">UIStatusBarStyleLightContent</span>), </span><br><span class="line">  <span class="string">@"dark-content"</span>: @(@available(iOS <span class="number">13.0</span>, *) ? <span class="built_in">UIStatusBarStyleDarkContent</span> : <span class="built_in">UIStatusBarStyleDefault</span>), </span><br><span class="line">&#125;), <span class="built_in">UIStatusBarStyleDefault</span>, integerValue);</span><br></pre></td></tr></table></figure>
+<h4 id="Q3-React-native-share-library-question-Currently-on-iOS-13-the-app-will-crash"><a href="#Q3-React-native-share-library-question-Currently-on-iOS-13-the-app-will-crash" class="headerlink" title="Q3 : React native share library question - Currently on iOS 13 the app will crash"></a>Q3 : React native share library question - Currently on iOS 13 the app will crash</h4><p>Currently on iOS 13 the app will crash if you:</p>
+<ul>
+<li>Open the share sheet</li>
+<li>Tap something like messages or photos</li>
+<li>Cancel the dialog</li>
+<li>Perform any other action</li>
+</ul>
+<p>This is because shareController.completionWithItemsHandler is called when the dialog box is canceled and currently failureCallback or successCallback will always be called. In the situation above, activityError is nil so successCallback will be called even though completed is false. This leaves us in a state where the callback has been invoked but the ShareSheet is still active, meaning the success or error callback will be invoked again, leading to the crash.</p>
+<p>This PR adds a check to make sure completed is true before calling successCallback. This way successCallback will only be called when the user has successfully completed an action and the ShareSheet is closed.</p>
+<p>Only call successCallback when completed is true (iOS 13 crash)</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">shareController.completionWithItemsHandler = ^(<span class="built_in">NSString</span> *activityType, <span class="built_in">BOOL</span> completed, __unused <span class="built_in">NSArray</span> *returnedItems, <span class="built_in">NSError</span> *activityError) &#123;</span><br><span class="line">    <span class="keyword">if</span> (activityError) &#123;</span><br><span class="line">        failureCallback(activityError);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (completed) &#123;</span><br><span class="line">        successCallback(@[@(completed), RCTNullIfNil(activityType)]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="Q4-The-question-about-React-native-share-Android-release-build-doesn’t-work-with-react-native-0-60"><a href="#Q4-The-question-about-React-native-share-Android-release-build-doesn’t-work-with-react-native-0-60" class="headerlink" title="Q4 :  The question about React native share - Android release build doesn’t work with react-native@0.60"></a>Q4 :  The question about React native share - Android release build doesn’t work with <a href="mailto:react-native@0.60" target="_blank" rel="noopener">react-native@0.60</a></h4><p>You can run <code>npx jetify</code> in the current react native directory on the terminal.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/08/2020-01-08-2/" rel="next" title="Week Tips | 2019.12.30 - 2019.01.03">
+                <i class="fa fa-chevron-left"></i> Week Tips | 2019.12.30 - 2019.01.03
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/08/2020-01-08-3/" rel="prev" title="React native - Search bar">
+                React native - Search bar <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Q1-Android-studio-Error-“Unsupported-Modules-Detected-Compilation-is-not-supported-for-following-modules”"><span class="nav-number">1.</span> <span class="nav-text">Q1 :  Android studio Error “Unsupported Modules Detected: Compilation is not supported for following modules”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Q2-React-Native-iOS-StatusBar-background-colour-is-not-dark-in-the-dark-mode"><span class="nav-number">2.</span> <span class="nav-text">Q2 :  React Native iOS StatusBar background colour is not dark in the dark mode.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Q3-React-native-share-library-question-Currently-on-iOS-13-the-app-will-crash"><span class="nav-number">3.</span> <span class="nav-text">Q3 : React native share library question - Currently on iOS 13 the app will crash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Q4-The-question-about-React-native-share-Android-release-build-doesn’t-work-with-react-native-0-60"><span class="nav-number">4.</span> <span class="nav-text">Q4 :  The question about React native share - Android release build doesn’t work with react-native@0.60</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2020/01/08/2020-01-08-1/';
+          this.page.identifier = '2020/01/08/2020-01-08-1/';
+          this.page.title = 'Week Tips | 2019.12.23 - 2019.12.27';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

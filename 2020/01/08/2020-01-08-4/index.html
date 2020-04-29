@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="How to use axios in React Native Axios InterceptorsAxios interceptors allow us to run code or modify the request and response before the request and response is started. In simple words, it allows you">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React native network library - Axios">
+<meta property="og:url" content="http://leviduan.com/2020/01/08/2020-01-08-4/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="How to use axios in React Native Axios InterceptorsAxios interceptors allow us to run code or modify the request and response before the request and response is started. In simple words, it allows you">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-29T09:33:47.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React native network library - Axios">
+<meta name="twitter:description" content="How to use axios in React Native Axios InterceptorsAxios interceptors allow us to run code or modify the request and response before the request and response is started. In simple words, it allows you">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2020/01/08/2020-01-08-4/">
+
+
+
+
+
+  <title>React native network library - Axios | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/01/08/2020-01-08-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">React native network library - Axios</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-08T22:47:04+08:00">
+                2020-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/08/2020-01-08-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/08/2020-01-08-4/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>How to use axios in React Native</p>
+<h3 id="Axios-Interceptors"><a href="#Axios-Interceptors" class="headerlink" title="Axios Interceptors"></a>Axios Interceptors</h3><p>Axios interceptors allow us to run code or modify the request and response before the request and response is started.</p>
+<p>In simple words, it allows you write or execute a piece of your code before the request gets sent.</p>
+<h3 id="Write-into-a-file-to-package-Axios"><a href="#Write-into-a-file-to-package-Axios" class="headerlink" title="Write into a file to package Axios"></a>Write into a file to package Axios</h3><p>The simple example: </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"></span><br><span class="line">axios.defaults.retry = <span class="number">4</span>;</span><br><span class="line">axios.defaults.timeout = <span class="number">10000</span>;</span><br><span class="line">axios.defaults.headers.common[<span class="string">'x-dejafashion-ua'</span>] = <span class="string">' '</span></span><br><span class="line">axios.defaults.headers.common[<span class="string">'uid'</span>] = <span class="string">'0'</span></span><br><span class="line">axios.defaults.headers.common[<span class="string">'User-Agent'</span>] = <span class="string">'iphone ... CFNetwork/1098.7 Darwin/19.0.0'</span></span><br><span class="line"></span><br><span class="line">axios.defaults.headers.post[<span class="string">'Content-Type'</span>] = <span class="string">'application/json;charset=UTF-8'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> stylepedia_DT = <span class="string">'https://cloud-dt.co/'</span></span><br><span class="line"><span class="keyword">const</span> stylepedia_DP = <span class="string">'http://cloud-dp.co/'</span></span><br><span class="line"><span class="keyword">const</span> stylepedia_PR = <span class="string">'https://cloud.co/'</span></span><br><span class="line"></span><br><span class="line">axios.interceptors.response.use(<span class="literal">undefined</span>, <span class="function"><span class="keyword">function</span> <span class="title">axiosRetryInterceptor</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> config = err.config;</span><br><span class="line">  <span class="comment">// If config does not exist or the retry option is not set, reject</span></span><br><span class="line">  <span class="keyword">if</span>(!config || !config.retry) <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Set the variable for keeping track of the retry count</span></span><br><span class="line">  config.__retryCount = config.__retryCount || <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Check if we've maxed out the total number of retries</span></span><br><span class="line">  <span class="keyword">if</span>(config.__retryCount &gt;= config.retry) &#123;</span><br><span class="line">      <span class="comment">// Reject with the error</span></span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Increase the retry count</span></span><br><span class="line">  config.__retryCount += <span class="number">1</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Create new promise to handle exponential backoff</span></span><br><span class="line">  <span class="keyword">var</span> backoff = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          resolve();</span><br><span class="line">      &#125;, config.retryDelay || <span class="number">1</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Return the promise in which recalls axios to retry the request</span></span><br><span class="line">  <span class="keyword">return</span> backoff.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> axios(config);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> axios.create(&#123;</span><br><span class="line">  baseURL: stylepedia_DP</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="You-can-use-this-file-to-send-a-Get-request"><a href="#You-can-use-this-file-to-send-a-Get-request" class="headerlink" title="You can use this file to send a Get request"></a>You can use this file to send a Get request</h3><p>if you want bring params, don’t forget to use <code>params</code> dictionary to add params</p>
+<p>For example:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> API <span class="keyword">from</span> <span class="string">'../../Network/api'</span></span><br><span class="line"></span><br><span class="line">    searchInfluencersRequest() &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            influencerLoading: <span class="literal">true</span>,</span><br><span class="line">        &#125;);</span><br><span class="line">        API.get(<span class="string">'search/influencers'</span>, &#123;</span><br><span class="line">            params: &#123;</span><br><span class="line">                key: <span class="keyword">this</span>.state.searchText,</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        </span><br><span class="line">            <span class="keyword">if</span> (res.data.ret === <span class="number">0</span> &amp;&amp; res.data.data !== <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                    influencerArray: res.data.data.infuencer_item_list,</span><br><span class="line">                    influencerLoading: <span class="literal">false</span>,</span><br><span class="line">                &#125;)             </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">this</span>.setState(&#123; </span><br><span class="line">                    influencerArray: [],</span><br><span class="line">                    influencerLoading: <span class="literal">false</span>,</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                influencerArray: [],</span><br><span class="line">                influencerLoading: <span class="literal">false</span>,</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="You-can-use-this-file-to-send-a-Post-request"><a href="#You-can-use-this-file-to-send-a-Post-request" class="headerlink" title="You can use this file to send a Post request"></a>You can use this file to send a Post request</h3><p>Send a Post request, the way is really similar to Get request</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">likeStatusRequest(likeStatus, street_id) &#123;</span><br><span class="line">    API.post(<span class="string">'favourite/favourite_status'</span>, &#123;</span><br><span class="line">      street_id: street_id,</span><br><span class="line">      like: likeStatus ? <span class="number">1</span> : <span class="number">0</span>,</span><br><span class="line">    &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        likeStatus</span><br><span class="line">          ? Toast.show(<span class="string">'Added to Favourites'</span>, &#123;</span><br><span class="line">              position: Toast.positions.CENTER,</span><br><span class="line">            &#125;)</span><br><span class="line">          : Toast.show(<span class="string">'Removed from Favourites'</span>, &#123;</span><br><span class="line">              position: Toast.positions.CENTER,</span><br><span class="line">            &#125;);</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Sometimes-you-want-change-defaults-header"><a href="#Sometimes-you-want-change-defaults-header" class="headerlink" title="Sometimes you want change defaults header"></a>Sometimes you want change defaults header</h3><p>You can do it like this:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">API.defaults.headers.common[<span class="string">'uid'</span>] = global.uid;</span><br><span class="line">API.defaults.headers.common[<span class="string">'sig'</span>] = global.sig;</span><br></pre></td></tr></table></figure>
+<h3 id="How-to-send-an-image-to-server？"><a href="#How-to-send-an-image-to-server？" class="headerlink" title="How to send an image to server？"></a>How to send an image to server？</h3><p>You need to new a FormData to add your image path 、image type and image rename.</p>
+<p>don’t forget to change your ‘Content-Type’ headers.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">uploadImageRequest() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> formData = <span class="keyword">new</span> FormData();</span><br><span class="line">    <span class="keyword">let</span> file = &#123;<span class="attr">uri</span>: ../.../levi.png, <span class="attr">type</span>: <span class="string">'multipart/form-data'</span>, <span class="attr">name</span>: <span class="string">'image.png'</span>&#125;;   </span><br><span class="line">    formData.append(<span class="string">"file"</span>,file);  </span><br><span class="line">    <span class="keyword">let</span> config = &#123;</span><br><span class="line">        headers:&#123;<span class="string">'Content-Type'</span>:<span class="string">'multipart/form-data'</span>&#125;</span><br><span class="line">    &#125;; </span><br><span class="line">    API.post(<span class="string">'customer/upload'</span>,formData,config)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            imageResponseUrl: res.data.url,</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error);</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            isLookLoading: <span class="literal">false</span>,</span><br><span class="line">            noRequest: <span class="literal">false</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/08/2020-01-08-3/" rel="next" title="React native - Search bar">
+                <i class="fa fa-chevron-left"></i> React native - Search bar
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/08/2020-01-08-6/" rel="prev" title="React native - ActionSheetIOS">
+                React native - ActionSheetIOS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Axios-Interceptors"><span class="nav-number">1.</span> <span class="nav-text">Axios Interceptors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Write-into-a-file-to-package-Axios"><span class="nav-number">2.</span> <span class="nav-text">Write into a file to package Axios</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#You-can-use-this-file-to-send-a-Get-request"><span class="nav-number">3.</span> <span class="nav-text">You can use this file to send a Get request</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#You-can-use-this-file-to-send-a-Post-request"><span class="nav-number">4.</span> <span class="nav-text">You can use this file to send a Post request</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sometimes-you-want-change-defaults-header"><span class="nav-number">5.</span> <span class="nav-text">Sometimes you want change defaults header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-send-an-image-to-server？"><span class="nav-number">6.</span> <span class="nav-text">How to send an image to server？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2020/01/08/2020-01-08-4/';
+          this.page.identifier = '2020/01/08/2020-01-08-4/';
+          this.page.title = 'React native network library - Axios';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Demand如图所示，UICollectionVIew的背景渐变，滑动的时候，渐变背景也需要跟着滑动。渐变背景在UICollectionView layer 和 Cell之间存在。  implementation增加新的渐变Layerprivate lazy var gradientLayer : CAGradientLayer = &amp;#123;    let TColor : UIColor =">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UICollectionVIew的渐变背景">
+<meta property="og:url" content="http://leviduan.com/2020/04/29/UICollectionVIewJianBianMD/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="Demand如图所示，UICollectionVIew的背景渐变，滑动的时候，渐变背景也需要跟着滑动。渐变背景在UICollectionView layer 和 Cell之间存在。  implementation增加新的渐变Layerprivate lazy var gradientLayer : CAGradientLayer = &amp;#123;    let TColor : UIColor =">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://leviduan.com/images/15477101810038.jpg">
+<meta property="og:updated_time" content="2020-04-29T09:33:47.482Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UICollectionVIew的渐变背景">
+<meta name="twitter:description" content="Demand如图所示，UICollectionVIew的背景渐变，滑动的时候，渐变背景也需要跟着滑动。渐变背景在UICollectionView layer 和 Cell之间存在。  implementation增加新的渐变Layerprivate lazy var gradientLayer : CAGradientLayer = &amp;#123;    let TColor : UIColor =">
+<meta name="twitter:image" content="http://leviduan.com/images/15477101810038.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2020/04/29/UICollectionVIewJianBianMD/">
+
+
+
+
+
+  <title>UICollectionVIew的渐变背景 | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/04/29/UICollectionVIewJianBianMD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">UICollectionVIew的渐变背景</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-29T17:33:47+08:00">
+                2020-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/29/UICollectionVIewJianBianMD/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/04/29/UICollectionVIewJianBianMD/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Demand"><a href="#Demand" class="headerlink" title="Demand"></a>Demand</h2><p>如图所示，UICollectionVIew的背景渐变，滑动的时候，渐变背景也需要跟着滑动。渐变背景在UICollectionView layer 和 Cell之间存在。</p>
+<p><img src="/images/15477101810038.jpg" alt></p>
+<h2 id="implementation"><a href="#implementation" class="headerlink" title="implementation"></a>implementation</h2><h3 id="增加新的渐变Layer"><a href="#增加新的渐变Layer" class="headerlink" title="增加新的渐变Layer"></a>增加新的渐变Layer</h3><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="built_in">lazy</span> <span class="keyword">var</span> gradientLayer : <span class="type">CAGradientLayer</span> = &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="type">TColor</span> : <span class="type">UIColor</span> = <span class="type">UIColor</span>(fromHexString: <span class="string">"FF8E8A"</span>)</span><br><span class="line">    <span class="keyword">let</span> <span class="type">BColor</span> = <span class="type">UIColor</span>.white</span><br><span class="line">    <span class="keyword">let</span> gradientColors: [<span class="type">CGColor</span>] = [<span class="type">TColor</span>.cgColor, <span class="type">BColor</span>.cgColor]</span><br><span class="line">    <span class="keyword">let</span> gradientLayer: <span class="type">CAGradientLayer</span> = <span class="type">CAGradientLayer</span>()</span><br><span class="line">    gradientLayer.colors = gradientColors</span><br><span class="line">    gradientLayer.startPoint = <span class="type">CGPoint</span>(x: <span class="number">0</span>, y: <span class="number">0</span>)</span><br><span class="line">    gradientLayer.endPoint = <span class="type">CGPoint</span>(x: <span class="number">0</span>, y: <span class="number">1</span>)</span><br><span class="line">    gradientLayer.frame = <span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: <span class="type">ScreenWidth</span>, height: <span class="type">ScreenHeight</span>)</span><br><span class="line">    <span class="keyword">return</span> gradientLayer</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+<h3 id="添加UICollectionView"><a href="#添加UICollectionView" class="headerlink" title="添加UICollectionView"></a>添加UICollectionView</h3><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="built_in">lazy</span> <span class="keyword">var</span> flowLayout: <span class="type">UICollectionViewFlowLayout</span> = &#123;</span><br><span class="line">    <span class="keyword">let</span> flowLayout = <span class="type">UICollectionViewFlowLayout</span>()</span><br><span class="line">    flowLayout.scrollDirection = .vertical</span><br><span class="line">    flowLayout.minimumInteritemSpacing = <span class="number">15.0</span></span><br><span class="line">    flowLayout.minimumLineSpacing = <span class="number">15.0</span></span><br><span class="line">    <span class="keyword">return</span> flowLayout</span><br><span class="line">&#125;()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">private</span> <span class="built_in">lazy</span> <span class="keyword">var</span> collectionView: <span class="type">UICollectionView</span> = &#123;</span><br><span class="line">    <span class="keyword">let</span> collectionView = <span class="type">UICollectionView</span>(frame: .zero, collectionViewLayout: flowLayout)</span><br><span class="line">    collectionView.backgroundColor = <span class="type">UIColor</span>.clear</span><br><span class="line">    collectionView.delegate = <span class="keyword">self</span></span><br><span class="line">    collectionView.dataSource = <span class="keyword">self</span></span><br><span class="line">    collectionView.scrollsToTop = <span class="literal">false</span></span><br><span class="line">    collectionView.showsVerticalScrollIndicator = <span class="literal">false</span></span><br><span class="line">    collectionView.register(<span class="type">DJProductCollectionViewCell</span>.<span class="keyword">self</span>, forCellWithReuseIdentifier: <span class="string">"DJRedeemptionVCstreetSnapCell"</span>)</span><br><span class="line">    collectionView.alwaysBounceVertical = <span class="literal">false</span></span><br><span class="line">    collectionView.bounces = <span class="literal">false</span></span><br><span class="line">    refreshControl = <span class="type">DJRefreshControl</span>(<span class="keyword">in</span>: collectionView)</span><br><span class="line">    refreshControl?.addTarget(<span class="keyword">self</span>, action: #selector(pullRefresh), <span class="keyword">for</span>: .valueChanged)</span><br><span class="line">    <span class="keyword">return</span> collectionView</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+<h3 id="UICollectionView-Delegate"><a href="#UICollectionView-Delegate" class="headerlink" title="UICollectionView Delegate"></a>UICollectionView Delegate</h3><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">DJRedeemptionVC</span> : <span class="title">UICollectionViewDelegate</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">collectionView</span><span class="params">(<span class="number">_</span> collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> vc = <span class="type">DJRedeemProductDetailVC</span>() &#123;</span><br><span class="line">            <span class="keyword">if</span> pageResult.<span class="built_in">count</span> &gt; indexPath.row &#123;</span><br><span class="line">                <span class="keyword">let</span> pageResultItem = pageResult[indexPath.row]</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">let</span> shopItemId = pageResultItem.shopItemId, <span class="keyword">let</span> shopItemGroupId = pageResultItem.shopItemGroupId &#123;</span><br><span class="line">                    vc.shopItemId = shopItemId <span class="keyword">as</span> <span class="type">NSNumber</span></span><br><span class="line">                    vc.shopItemGroupId = shopItemGroupId</span><br><span class="line">                    <span class="keyword">self</span>.navigationController?.pushViewController(vc, animated: <span class="literal">true</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">DJRedeemptionVC</span> : <span class="title">UICollectionViewDataSource</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">collectionView</span><span class="params">(<span class="number">_</span> collectionView: UICollectionView, numberOfItemsInSection section: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> pageResult.<span class="built_in">count</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">collectionView</span><span class="params">(<span class="number">_</span> collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)</span></span> -&gt; <span class="type">UICollectionViewCell</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> cell = collectionView.dequeueReusableCell(withReuseIdentifier: <span class="string">"DJRedeemptionVCstreetSnapCell"</span>, <span class="keyword">for</span>: indexPath) <span class="keyword">as</span>! <span class="type">DJProductCollectionViewCell</span></span><br><span class="line">        <span class="keyword">if</span> pageResult.<span class="built_in">count</span> &gt; indexPath.row &#123;</span><br><span class="line">            <span class="keyword">let</span> pageResultItem = pageResult[indexPath.row]</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> shopItemId = pageResultItem.shopItemId &#123;</span><br><span class="line">                cell.shopItemId = shopItemId</span><br><span class="line">            &#125;</span><br><span class="line">            cell.setImageUrl(pageResultItem.image?.imageUrl)</span><br><span class="line">            cell.setBrandName(pageResultItem.shopName)</span><br><span class="line">            cell.setClothName(pageResultItem.shopItemName)</span><br><span class="line">            cell.setPriceInfo(pageResultItem.currentPrice, uprice: pageResultItem.originalPrice, currency: pageResultItem.currency)</span><br><span class="line">            cell.setRecommendReason(pageResultItem.recommendReason)</span><br><span class="line">            cell.clipsToBounds = <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cell</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">DJRedeemptionVC</span> : <span class="title">UICollectionViewDelegateFlowLayout</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">collectionView</span><span class="params">(<span class="number">_</span> collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath)</span></span> -&gt; <span class="type">CGSize</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">DJProductCollectionViewCell</span>.calculateFixedCellSize()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">collectionView</span><span class="params">(<span class="number">_</span> collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int)</span></span> -&gt; <span class="type">UIEdgeInsets</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIEdgeInsets</span>.<span class="keyword">init</span>(top: <span class="number">180</span>, <span class="keyword">left</span>: <span class="number">23</span>, bottom: <span class="number">20</span>, <span class="keyword">right</span>: <span class="number">23</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="最关键的两句话"><a href="#最关键的两句话" class="headerlink" title="最关键的两句话"></a>最关键的两句话</h3><p>collectionView的layer上面插入gradientLayer，位置放在最下面。</p>
+<p>之前我写了好多方法都没能成功的把这个layer或者View放在collectionview和cell之间。每次尝试都是新添加的layer或者view依然在cell的上面。</p>
+<p>查了一些资料，然后找到一个最适合的方法，只要加一句代码：</p>
+<p>Layer.zPosition = -1</p>
+<p>layer可以通过设置zPosition属性来固定层级关系，默认是0，设置为-1的话就在最下层，值越大层级的关系就越高。CollectionView本来的layer设置为0,所以将新加入的layer设置为-1即可达到需求的效果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">override func viewDidLoad() &#123;</span><br><span class="line">    super.viewDidLoad()</span><br><span class="line">    view.backgroundColor = UIColor.white</span><br><span class="line">    view.addSubview(collectionView)</span><br><span class="line">    gradientLayer.zPosition = -1</span><br><span class="line">    collectionView.layer.insertSublayer(gradientLayer, at: 0)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="下拉刷新的判断方法"><a href="#下拉刷新的判断方法" class="headerlink" title="下拉刷新的判断方法"></a>下拉刷新的判断方法</h3><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">DJRedeemptionVC</span> : <span class="title">UIScrollViewDelegate</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">scrollViewDidScroll</span><span class="params">(<span class="number">_</span> scrollView: UIScrollView)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> scrollView.contentSize.height &lt; <span class="type">ScreenHeight</span> &#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"scrollView.contentSize.height: \(scrollView.contentSize.height)"</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"scrollView.contentOffset.y: \(scrollView.contentOffset.y)"</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"scrollView.frame.size.height: \(scrollView.frame.size.height)"</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"scrollView.contentInset.bottom: \(scrollView.contentInset.bottom)"</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"scrollView.contentInset.top: \(scrollView.contentInset.top)"</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"left Value : \(scrollView.contentSize.height - scrollView.contentOffset.y)"</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"&lt;=right Value: \(scrollView.frame.size.height - scrollView.contentInset.bottom + scrollView.contentInset.top + 40)"</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> scrollView.contentSize.height - scrollView.contentOffset.y &lt;= scrollView.frame.size.height - scrollView.contentInset.bottom + scrollView.contentInset.top + <span class="number">40</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (!isLoadingMore &amp;&amp; redeemptionHomeNetTask.last == <span class="literal">false</span>) &#123;</span><br><span class="line">                isLoadingMore = <span class="literal">true</span></span><br><span class="line">                page += <span class="number">1</span></span><br><span class="line">                getShopDetailListNetTask(page: page)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Thinking-And-Summarized"><a href="#Thinking-And-Summarized" class="headerlink" title="Thinking And Summarized"></a>Thinking And Summarized</h2><p>上面说的是第一种方法，第二种方法是通过CollectionView增加View来进行实现，这个View在CollectionView和Cell之间插入一个渐变的View.当然View上也可以增加其他label以及imageView</p>
+<h3 id="增加DJPassThroughView的类如下："><a href="#增加DJPassThroughView的类如下：" class="headerlink" title="增加DJPassThroughView的类如下："></a>增加DJPassThroughView的类如下：</h3><p>DJPassThroughView创建这个View是为了可以将这个View插入到CollectionView的cell上面，且不会挡住cell的点击事件</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  Created by levi duan on 2019/1/13.</span></span><br><span class="line"><span class="comment">//  Copyright © 2019 Mozat. All rights reserved.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJPassThroughView</span>: <span class="title">UIView</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">point</span><span class="params">(inside point: CGPoint, with event: UIEvent?)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> subview <span class="keyword">in</span> subviews &#123;</span><br><span class="line">            <span class="keyword">if</span> !subview.isHidden &amp;&amp; subview.isUserInteractionEnabled &amp;&amp; subview.point(inside: convert(point, to: subview), with: event) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="初始化DJPassThroughView的变量"><a href="#初始化DJPassThroughView的变量" class="headerlink" title="初始化DJPassThroughView的变量"></a>初始化DJPassThroughView的变量</h3><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="built_in">lazy</span> <span class="keyword">var</span> passThroughView : <span class="type">DJPassThroughView</span> = &#123;</span><br><span class="line">    <span class="keyword">let</span> passThroughView = <span class="type">DJPassThroughView</span>(frame: <span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: <span class="type">ScreenWidth</span>, height: <span class="number">180</span>+<span class="number">422</span>))</span><br><span class="line">    <span class="keyword">let</span> <span class="type">TColor</span> : <span class="type">UIColor</span> = <span class="type">UIColor</span>(fromHexString: <span class="string">"FF8E8A"</span>)</span><br><span class="line">    <span class="keyword">let</span> <span class="type">BColor</span> = <span class="type">UIColor</span>.white</span><br><span class="line">    <span class="keyword">let</span> gradientColors: [<span class="type">CGColor</span>] = [<span class="type">TColor</span>.cgColor, <span class="type">BColor</span>.cgColor]</span><br><span class="line">    <span class="comment">//创建并实例化</span></span><br><span class="line">    <span class="keyword">let</span> gradientLayer: <span class="type">CAGradientLayer</span> = <span class="type">CAGradientLayer</span>()</span><br><span class="line">    gradientLayer.colors = gradientColors</span><br><span class="line">    <span class="comment">//(这里的起始和终止位置就是按照坐标系,四个角分别是左上(0,0),左下(0,1),右上(1,0),右下(1,1))</span></span><br><span class="line">    <span class="comment">//渲染的起始位置</span></span><br><span class="line">    gradientLayer.startPoint = <span class="type">CGPoint</span>(x: <span class="number">0</span>, y: <span class="number">0</span>)</span><br><span class="line">    <span class="comment">//渲染的终止位置</span></span><br><span class="line">    gradientLayer.endPoint = <span class="type">CGPoint</span>(x: <span class="number">0</span>, y: <span class="number">1</span>)</span><br><span class="line">    <span class="comment">//设置frame和插入view的layer</span></span><br><span class="line">    gradientLayer.frame = <span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">180</span>, width: <span class="type">ScreenWidth</span>, height: <span class="number">422</span>)</span><br><span class="line">    passThroughView.layer.insertSublayer(gradientLayer, at: <span class="number">0</span>)</span><br><span class="line">    passThroughView.isUserInteractionEnabled = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">return</span> passThroughView</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+<h3 id="最关键的两句话-1"><a href="#最关键的两句话-1" class="headerlink" title="最关键的两句话"></a>最关键的两句话</h3><p>放在Cell下面CollectionView上面可以加上这句话:</p>
+<p>passThroughView.layer.zPosition = -1;</p>
+<p>如果放在Cell上面，不影响点击Cell，可以不加上面这句话</p>
+<p>collectionView.addSubview(passThroughView)</p>
+<p>到这，需求就结束啦</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/10/2020-01-10/" rel="next" title="React native - React-native-image-crop-picker">
+                <i class="fa fa-chevron-left"></i> React native - React-native-image-crop-picker
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/29/DejaPacking/" rel="prev" title="Deja Packing">
+                Deja Packing <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Demand"><span class="nav-number">1.</span> <span class="nav-text">Demand</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implementation"><span class="nav-number">2.</span> <span class="nav-text">implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加新的渐变Layer"><span class="nav-number">2.1.</span> <span class="nav-text">增加新的渐变Layer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加UICollectionView"><span class="nav-number">2.2.</span> <span class="nav-text">添加UICollectionView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UICollectionView-Delegate"><span class="nav-number">2.3.</span> <span class="nav-text">UICollectionView Delegate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最关键的两句话"><span class="nav-number">2.4.</span> <span class="nav-text">最关键的两句话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下拉刷新的判断方法"><span class="nav-number">2.5.</span> <span class="nav-text">下拉刷新的判断方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thinking-And-Summarized"><span class="nav-number">3.</span> <span class="nav-text">Thinking And Summarized</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加DJPassThroughView的类如下："><span class="nav-number">3.1.</span> <span class="nav-text">增加DJPassThroughView的类如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化DJPassThroughView的变量"><span class="nav-number">3.2.</span> <span class="nav-text">初始化DJPassThroughView的变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最关键的两句话-1"><span class="nav-number">3.3.</span> <span class="nav-text">最关键的两句话</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2020/04/29/UICollectionVIewJianBianMD/';
+          this.page.identifier = '2020/04/29/UICollectionVIewJianBianMD/';
+          this.page.title = 'UICollectionVIew的渐变背景';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

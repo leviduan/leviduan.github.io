@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="OJ addressLeetcode website : 15. 3Sum DescriptionGiven an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the su">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode 15 3Sum">
+<meta property="og:url" content="http://leviduan.com/2019/01/28/2019-01-28-4/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="OJ addressLeetcode website : 15. 3Sum DescriptionGiven an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the su">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-29T09:33:47.473Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode 15 3Sum">
+<meta name="twitter:description" content="OJ addressLeetcode website : 15. 3Sum DescriptionGiven an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the su">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2019/01/28/2019-01-28-4/">
+
+
+
+
+
+  <title>Leetcode 15 3Sum | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2019/01/28/2019-01-28-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Leetcode 15 3Sum</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-28T22:26:00+08:00">
+                2019-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/28/2019-01-28-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/28/2019-01-28-4/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="OJ-address"><a href="#OJ-address" class="headerlink" title="OJ address"></a>OJ address</h3><p>Leetcode website : <a href="https://leetcode.com/problems/3sum/" target="_blank" rel="noopener">15. 3Sum</a></p>
+<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</p>
+<p>Note:</p>
+<p>The solution set must not contain duplicate triplets.</p>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Given array nums = [-1, 0, 1, 2, -1, -4],</span><br><span class="line"></span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [-1, 0, 1],</span><br><span class="line">  [-1, -1, 2]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="Solution-in-C-（ONE）"><a href="#Solution-in-C-（ONE）" class="headerlink" title="Solution in C （ONE）"></a>Solution in C （ONE）</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Return an array of arrays of size *returnSize.</span></span><br><span class="line"><span class="comment"> * Note: The returned array must be malloced, assume caller calls free().</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *a, <span class="keyword">const</span> <span class="keyword">void</span> *b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> *(<span class="keyword">int</span>*)a - *(<span class="keyword">int</span>*)b; <span class="comment">//由小到大排序</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span>** <span class="title">threeSum</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize, <span class="keyword">int</span>* returnSize)</span> </span>&#123;</span><br><span class="line">    qsort(nums, numsSize, <span class="keyword">sizeof</span>(<span class="keyword">int</span>), cmp);</span><br><span class="line">    <span class="keyword">int</span> **returnArray = (<span class="keyword">int</span>**)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span> *) * (numsSize*(numsSize<span class="number">-1</span>)*(numsSize<span class="number">-2</span>))/<span class="number">6</span>);  </span><br><span class="line">    <span class="keyword">if</span> (numsSize &lt; <span class="number">3</span>) &#123;</span><br><span class="line">        *returnSize = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> pre = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numsSize<span class="number">-2</span>;++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i&gt;<span class="number">0</span> &amp;&amp; nums[i] == nums[i<span class="number">-1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">int</span> index = numsSize<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;numsSize<span class="number">-1</span>;++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index &lt;= j) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span> (j&gt;i+<span class="number">1</span> &amp;&amp; nums[j] == nums[j<span class="number">-1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> res = <span class="number">0</span> - nums[i] - nums[j];</span><br><span class="line">            <span class="keyword">if</span> (res == nums[index]) &#123;</span><br><span class="line">                returnArray[top] = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="number">3</span>*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">                returnArray[top][<span class="number">0</span>] = nums[i];</span><br><span class="line">                returnArray[top][<span class="number">1</span>] = nums[j];</span><br><span class="line">                returnArray[top][<span class="number">2</span>] = nums[index];</span><br><span class="line">                ++top;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (res &lt; nums[index]) &#123;</span><br><span class="line">                --index;</span><br><span class="line">                <span class="keyword">while</span> (index &gt; j) &#123;</span><br><span class="line">                    <span class="keyword">int</span> res = <span class="number">0</span> - nums[i] - nums[j];</span><br><span class="line">                    <span class="keyword">if</span> (res == nums[index]) &#123;</span><br><span class="line">                        returnArray[top] = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="number">3</span>*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">                        returnArray[top][<span class="number">0</span>] = nums[i];</span><br><span class="line">                        returnArray[top][<span class="number">1</span>] = nums[j];</span><br><span class="line">                        returnArray[top][<span class="number">2</span>] = nums[index];</span><br><span class="line">                        ++top;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span> (res &lt; nums[index])&#123;</span><br><span class="line">                        --index;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    *returnSize = top;</span><br><span class="line">    <span class="keyword">return</span> returnArray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Solution-in-C-（TWO）"><a href="#Solution-in-C-（TWO）" class="headerlink" title="Solution in C （TWO）"></a>Solution in C （TWO）</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int cmp(const void *a, const void *b) &#123;</span><br><span class="line">    return *(int*)a - *(int*)b; //由小到大排序</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int** threeSum(int* nums, int numsSize, int* returnSize) &#123;</span><br><span class="line">    qsort(nums, numsSize, sizeof(int), cmp);</span><br><span class="line">    int **returnArray = (int**)malloc(sizeof(int *) * (numsSize*(numsSize-1)*(numsSize-2))/6);  </span><br><span class="line">    if (numsSize &lt; 3) &#123;</span><br><span class="line">        *returnSize = 0;</span><br><span class="line">        return returnArray;</span><br><span class="line">    &#125;</span><br><span class="line">    int top = 0;</span><br><span class="line">    int pre = nums[0];</span><br><span class="line">    for(int i=0;i&lt;numsSize-2;++i) &#123;</span><br><span class="line">        if (i&gt;0 &amp;&amp; nums[i] == nums[i-1]) continue;</span><br><span class="line">        if (nums[i] &gt; 0) break;</span><br><span class="line">        int index = numsSize-1;</span><br><span class="line">        for(int j=i+1;j&lt;numsSize-1;++j) &#123;</span><br><span class="line">            if (index &lt;= j) break;</span><br><span class="line">            if (j&gt;i+1 &amp;&amp; nums[j] == nums[j-1]) continue;</span><br><span class="line">            int res = 0 - nums[i] - nums[j];</span><br><span class="line">            if (res == nums[index]) &#123;</span><br><span class="line">                returnArray[top] = (int*)malloc(3*sizeof(int));</span><br><span class="line">                returnArray[top][0] = nums[i];</span><br><span class="line">                returnArray[top][1] = nums[j];</span><br><span class="line">                returnArray[top][2] = nums[index];</span><br><span class="line">                ++top;</span><br><span class="line">            &#125;</span><br><span class="line">            else if (res &lt; nums[index]) &#123;</span><br><span class="line">                if (index &gt; j+1) &#123;</span><br><span class="line">                    --j;</span><br><span class="line">                    --index;   </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    *returnSize = top;</span><br><span class="line">    return returnArray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="My-Idea"><a href="#My-Idea" class="headerlink" title="My Idea"></a>My Idea</h3><p>关于解题技巧，第一个数字以及第二个数字正常从第一个位置到最后一个位置遍历就好，第三个位置要注意要从后往前数，这样效率会比较高，因为如果三个数相加为0的第三个数字大于最后一个位置的数字，第二个数字直接变动就好，不用每次移动第三个数字，会大大减少移动次数，来提高算法效率。</p>
+<p>这道题是很有意思，中等类型，第一次运行，88 ms，速度仅仅打败了30%的人，然后加了一句第一个数字&gt;0：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (nums[i] &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<p>瞬间打败了49%的人，就是上面第二种解法，然后在稍微修改了一下，防止多次运行以下两句代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (index &lt;= j) <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">if</span> (j&gt;i+<span class="number">1</span> &amp;&amp; nums[j] == nums[j<span class="number">-1</span>]) <span class="keyword">continue</span>;</span><br></pre></td></tr></table></figure>
+<p>就瞬间打败了100%的人，也就是第一种解法，速度是最快的。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/28/2019-01-28-3/" rel="next" title="Leetcode 13 Roman to Integer">
+                <i class="fa fa-chevron-left"></i> Leetcode 13 Roman to Integer
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/28/2019-01-28-5/" rel="prev" title="Leetcode 16 3Sum Closest">
+                Leetcode 16 3Sum Closest <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#OJ-address"><span class="nav-number">1.</span> <span class="nav-text">OJ address</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">2.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-in-C-（ONE）"><span class="nav-number">3.</span> <span class="nav-text">Solution in C （ONE）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-in-C-（TWO）"><span class="nav-number">4.</span> <span class="nav-text">Solution in C （TWO）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Idea"><span class="nav-number">5.</span> <span class="nav-text">My Idea</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2019/01/28/2019-01-28-4/';
+          this.page.identifier = '2019/01/28/2019-01-28-4/';
+          this.page.title = 'Leetcode 15 3Sum';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

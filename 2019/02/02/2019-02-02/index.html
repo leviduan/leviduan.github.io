@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Lecture two: JavaScript, ES6这一节东西有点多，按照上课的顺序，将例子讲解一下. closure Bug关于一个作用域引起的bug，代码如下： function makeFunctionArray() &amp;#123;  const arr = []  for (var i = 0; i &amp;lt; 5; i++) &amp;#123;    arr.push(function ()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS50&#39;s Mobile App Development with React Native (Lecture two)">
+<meta property="og:url" content="http://leviduan.com/2019/02/02/2019-02-02/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="Lecture two: JavaScript, ES6这一节东西有点多，按照上课的顺序，将例子讲解一下. closure Bug关于一个作用域引起的bug，代码如下： function makeFunctionArray() &amp;#123;  const arr = []  for (var i = 0; i &amp;lt; 5; i++) &amp;#123;    arr.push(function ()">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-29T09:33:47.475Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CS50&#39;s Mobile App Development with React Native (Lecture two)">
+<meta name="twitter:description" content="Lecture two: JavaScript, ES6这一节东西有点多，按照上课的顺序，将例子讲解一下. closure Bug关于一个作用域引起的bug，代码如下： function makeFunctionArray() &amp;#123;  const arr = []  for (var i = 0; i &amp;lt; 5; i++) &amp;#123;    arr.push(function ()">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2019/02/02/2019-02-02/">
+
+
+
+
+
+  <title>CS50's Mobile App Development with React Native (Lecture two) | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2019/02/02/2019-02-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CS50's Mobile App Development with React Native (Lecture two)</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-02T00:14:00+08:00">
+                2019-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/02/2019-02-02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/02/2019-02-02/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Lecture-two-JavaScript-ES6"><a href="#Lecture-two-JavaScript-ES6" class="headerlink" title="Lecture two: JavaScript, ES6"></a>Lecture two: JavaScript, ES6</h3><p>这一节东西有点多，按照上课的顺序，将例子讲解一下.</p>
+<h3 id="closure-Bug"><a href="#closure-Bug" class="headerlink" title="closure Bug"></a>closure Bug</h3><p>关于一个作用域引起的bug，代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeFunctionArray</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> arr = []</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">    arr.push(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(i) &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> functionArr = makeFunctionArray()</span><br><span class="line"></span><br><span class="line"><span class="comment">// we expect this to log 0, but it doesn't</span></span><br><span class="line">functionArr[<span class="number">0</span>]()</span><br></pre></td></tr></table></figure>
+<p>输出的结果不是0，这个bug估计也只有javascript的程序员才能看得出来。</p>
+<p>因为var的作用域的原因，只要i++了，那么之后所有的i值都是最新的，所有打印出来的结果是5,arr保存的是i变量的输出值，所以数组输出都是5.<br>如果用let或者const替换var，输出的结果就是正确答案：（0、1、2、3、4）</p>
+<p>这个就是colure可能引起的问题,尽量不要用var，因为var的生命周期太久。</p>
+<p>如何用var的方式打印出来不是var的值呢？通过IIFEs进行解决,例子如下:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makefunctionArray</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> arr = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">5</span>; ++i) &#123;</span><br><span class="line">        arr.push((<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(x)&#125;</span><br><span class="line">        &#125;)(i))</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> functionArr = makefunctionArray()</span><br><span class="line"></span><br><span class="line">functionArr[<span class="number">0</span>]()</span><br></pre></td></tr></table></figure>
+<p>这样的话 functionArr<a href>0</a> 打印出来就是我们的excepted result.</p>
+<h3 id="IIFEs-Immediately-Invoked-Functions-Expressions"><a href="#IIFEs-Immediately-Invoked-Functions-Expressions" class="headerlink" title="IIFEs(Immediately Invoked Functions Expressions)"></a>IIFEs(Immediately Invoked Functions Expressions)</h3><p>是一种用來建立 function 的方法，就是用 function expression 的方式建立函数后并立即执行</p>
+<p>建立 function 的方法通常有 function statement 和 function expression，下面是三种建立函数的方法：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// function statement</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</span><br><span class="line">&#125;</span><br><span class="line">sayHello(<span class="string">'PJCHEN'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// function expression</span></span><br><span class="line"><span class="keyword">var</span> sayWelcome = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Welcome, '</span> + name);</span><br><span class="line">&#125;</span><br><span class="line">sayWelcome(<span class="string">'PJCHEN'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Immediately Invoked Functions Expressions (IIFEs)</span></span><br><span class="line"><span class="keyword">var</span> sayWelcomeIIFEs = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Welcome '</span> + name);</span><br><span class="line">&#125;(<span class="string">'Levi'</span>);</span><br></pre></td></tr></table></figure>
+<p>IIFEs，可以直接用.语法来调用return的函数，这种写法比较奇特，算是javascript专有的特性。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> sayHello = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> message = <span class="string">'Hello!'</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(message)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> sayHello</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counter = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    inc: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; count = count + <span class="number">1</span> &#125;,</span><br><span class="line">    get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(count) &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line">counter.get()</span><br><span class="line">counter.inc()</span><br><span class="line">counter.get()</span><br></pre></td></tr></table></figure>
+<h3 id="Higher-Order-Functions"><a href="#Higher-Order-Functions" class="headerlink" title="Higher Order Functions"></a>Higher Order Functions</h3><p>函数的参数是可以传函数进来，下面是例子，这也是JavaScript独到的新特性。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">map</span>(<span class="params">arr, fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> newArr = []</span><br><span class="line"></span><br><span class="line">  arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">    newArr.push(fn(val))</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newArr</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addOne</span>(<span class="params">num</span>) </span>&#123; <span class="keyword">return</span> num + <span class="number">1</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> x = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(map(x, addOne))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter</span>(<span class="params">arr, fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> newArr = []</span><br><span class="line">  arr.forEach(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (fn(val)) newArr.push(val)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newArr</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reduce</span>(<span class="params">arr, fn, initialVal</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> returnVal = initialVal</span><br><span class="line"></span><br><span class="line">  arr.forEach(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">    returnVal = fn(returnVal, val)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> returnVal</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="async"><a href="#async" class="headerlink" title="async"></a>async</h3><p>利用setTimeout函数来进行异步线程运行</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printOne</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'one'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printTwo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'two'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printThree</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'three'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this may not print in the order that you expect, because of the way the JS</span></span><br><span class="line"><span class="comment">// function queue works</span></span><br><span class="line">setTimeout(printOne, <span class="number">1000</span>)</span><br><span class="line">setTimeout(printTwo, <span class="number">0</span>)</span><br><span class="line">printThree()</span><br></pre></td></tr></table></figure>
+<h3 id="Callback"><a href="#Callback" class="headerlink" title="Callback"></a>Callback</h3><p>下面是Callback的函数用法，callback类似于objective-c中的block函数，由于函数可以当做参数使用，所以就不需要block的函数定义了，直接传函数进去就好了，这一点javascript是真的方便。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// this is a HOF that invokes the function argument on 1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomethingWithOne</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> callback(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">doSomethingWithOne(<span class="built_in">console</span>.log)</span><br><span class="line"></span><br><span class="line"><span class="comment">// this is the same thing, but done asynchronously</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomethingWithOneAsync</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> callback(<span class="number">1</span>), <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">doSomethingWithOneAsync(<span class="built_in">console</span>.log)</span><br><span class="line"></span><br><span class="line"><span class="comment">// this simulates a database call that returns an object representing a person</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserFromDatabase</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// simulates getting data from db</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> callback(&#123;<span class="attr">firstName</span>: <span class="string">'Jordan'</span>, <span class="attr">lastName</span>: <span class="string">'Hayashi'</span>&#125;), <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this is a function that greets a user, which we pass as a callback to getUserFromDatabase</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greetUser</span>(<span class="params">user</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hi, '</span> + user.firstName)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getUserFromDatabase(greetUser)</span><br></pre></td></tr></table></figure>
+<p>需要注意的是 （）=&gt;  这个肥括号的含义，(-&gt;这个叫做瘦括号)</p>
+<p>简单例子，用法如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> func = <span class="function">(<span class="params">x</span>) =&gt;</span> x + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>相当于</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> func = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123; <span class="keyword">return</span> x + <span class="number">1</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是：</p>
+<ol>
+<li>花括號({})是有意義的，如果函式沒回傳東西就要花括號。例如 ()=&gt;{}</li>
+<li>只有單一個傳入參數時，括號(())可以不用，例如 x=&gt;x*x</li>
+</ol>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> funcA = <span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">1</span></span><br><span class="line"><span class="keyword">const</span> funcB = <span class="function"><span class="params">x</span> =&gt;</span> &#123; x + <span class="number">1</span> &#125;</span><br><span class="line"></span><br><span class="line">funcA(<span class="number">1</span>) <span class="comment">//2</span></span><br><span class="line">funcB(<span class="number">1</span>) <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<p>當沒用花括號({})時，代表會自動加return，也只能在一行的語句的時候使用。使用花括號({})則是可以加入多行的語句，不過return不會自動加，有需要你要自己加上，沒加這個函式最後等於return undefined(註: 這是JavaScript語言中函式的設計)。</p>
+<p>callback的一个Demo</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params">req, res, callback</span>) </span>&#123;</span><br><span class="line">  User.findOne(&#123;<span class="attr">email</span>: req.body.email&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) <span class="keyword">return</span> callback(err)</span><br><span class="line"></span><br><span class="line">    user.comparePassword(req.body.password, (err, isMatch) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (err) <span class="keyword">return</span> callback(err)</span><br><span class="line">      <span class="keyword">if</span> (!isMatch) <span class="keyword">return</span> res.status(<span class="number">401</span>).send(<span class="string">'Incorrect password'</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// add relevant data to token</span></span><br><span class="line">      <span class="keyword">const</span> payload = &#123;<span class="attr">id</span>: user._id, <span class="attr">email</span>: user.email&#125;</span><br><span class="line"></span><br><span class="line">      jwt.sign(payload, config.secret, &#123;&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, token</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) <span class="keyword">return</span> callback(err)</span><br><span class="line"></span><br><span class="line">        user.token = token</span><br><span class="line">        user.save(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (err) <span class="keyword">return</span> callback(err)</span><br><span class="line">          res.json(&#123;token&#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然可以用promise的写法，如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params">req, res, callback</span>) </span>&#123;</span><br><span class="line">  User.findOne(&#123;<span class="attr">email</span>: req.body.email&#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">user</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> user.comparePassword(req.body.password)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">isMatch</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// have to throw in order to break Promise chain</span></span><br><span class="line">      <span class="keyword">if</span> (!isMatch) &#123;</span><br><span class="line">        res.status(<span class="number">401</span>).send(<span class="string">'Incorrect password'</span>)</span><br><span class="line">        <span class="keyword">throw</span> &#123;<span class="attr">earlyExit</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">const</span> payload = &#123;<span class="attr">id</span>: user._id, <span class="attr">email</span>: user.email&#125;</span><br><span class="line">      <span class="keyword">return</span> jwt.sign(payload, config.secret, &#123;&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">token</span>) </span>&#123;</span><br><span class="line">      user.token = token</span><br><span class="line">      <span class="keyword">return</span> user.save()</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      res.json(&#123;token&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (!err.earlyExit) callback(err)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还有第三种写法，通过await的方式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params">req, res, callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> user = <span class="keyword">await</span> User.findOne(&#123;<span class="attr">email</span>: req.body.email&#125;)</span><br><span class="line">    <span class="keyword">const</span> isMatch = <span class="keyword">await</span> user.comparePassword(req.body.password)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!isMatch) <span class="keyword">return</span> res.status(<span class="number">401</span>).send(<span class="string">'Incorrect password'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> payload = &#123;<span class="attr">id</span>: user._id, <span class="attr">email</span>: user.email&#125;</span><br><span class="line">    <span class="keyword">const</span> token = <span class="keyword">await</span> jwt.sign(payload, config.secret, &#123;&#125;)</span><br><span class="line"></span><br><span class="line">    user.token = token</span><br><span class="line">    <span class="keyword">const</span> success = <span class="keyword">await</span> user.save()</span><br><span class="line"></span><br><span class="line">    res.json(&#123;token&#125;)</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    callback(err)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="bind-call-apply"><a href="#bind-call-apply" class="headerlink" title="bind / call / apply"></a>bind / call / apply</h3><p>bind() 方法用于在调用时设置this关键字为提供的值。并且创建一个新的function方法。<br>call()/apply() 方法用于在调用时设置this关键字为提供的值，但不能创建新的function方法，可以进行变量赋值.</p>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> dd = &#123;</span><br><span class="line">    name : <span class="string">'levi'</span>,</span><br><span class="line">    greet: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.name &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> string = dd.greet.call(&#123;<span class="attr">name</span>: <span class="string">'Yowon'</span>&#125;)</span><br><span class="line"><span class="keyword">const</span> func = dd.greet.bind(&#123;<span class="attr">name</span>: <span class="string">'Rayna'</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(string) <span class="comment">// 输出 'Yowon'</span></span><br><span class="line">func()    <span class="comment">// 输出 'Rayna'</span></span><br></pre></td></tr></table></figure>
+<p>关于肥箭头，要注意一点，箭头方法運算式最適合用在非方法的函式。來看看如果要把它們當成方法來用，會發生什麼事</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  i: <span class="number">10</span>,</span><br><span class="line">  b: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>.i, <span class="keyword">this</span>),</span><br><span class="line">  c: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.i, <span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.b(); <span class="comment">// 印出 undefined, Object &#123;...&#125;</span></span><br><span class="line">obj.c(); <span class="comment">// 印出 10, Object &#123;...&#125;</span></span><br></pre></td></tr></table></figure>
+<p>箭头沒有自己的 this？ 即使有也只会绑定了全局的this,所以不会绑定变量局部的this.</p>
+<p>下面是哈佛老师讲解的例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// <span class="doctag">NOTE:</span> this doesn't work as a node script, since they are run as modules</span></span><br><span class="line"><span class="comment">// `this` in this case is equal to module.exports, which is an empty object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// this logs the global object</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">whatIsThis</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">whatIsThis()</span><br><span class="line"></span><br><span class="line"><span class="comment">// =======================================</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Jordan'</span>,</span><br><span class="line">  greet: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'Hi, '</span> + <span class="keyword">this</span>.name) &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person.greet() <span class="comment">// Hi, Jordan</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// =====================================</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> friend = &#123;</span><br><span class="line">  name: <span class="string">'David'</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">friend.greet = person.greet</span><br><span class="line"></span><br><span class="line">friend.greet() <span class="comment">// Hi, david</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ====================================</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> greetPerson = person.greet</span><br><span class="line"></span><br><span class="line">greetPerson() <span class="comment">// Hi, undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// make greetPerson() work, but not in node</span></span><br><span class="line"><span class="keyword">this</span>.name = <span class="string">'Global'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// browser console or node REPL: Hi, Global</span></span><br><span class="line"><span class="comment">// node script: Hi, undefined</span></span><br><span class="line">greetPerson()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> reallyGreetPerson = person.greet.bind(person)</span><br><span class="line">reallyGreetPerson() <span class="comment">// Hi, Jordan</span></span><br><span class="line"></span><br><span class="line">person.greet.call(&#123;<span class="attr">name</span>: <span class="string">'Yowon'</span>&#125;) <span class="comment">// Hi, Yowon</span></span><br><span class="line">person.greet.apply(&#123;<span class="attr">name</span>: <span class="string">'Raylen'</span>&#125;) <span class="comment">// Hi, Raylen</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ====================================</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> newPerson = &#123;</span><br><span class="line">  name: <span class="string">'Jordan'</span>,</span><br><span class="line">  <span class="comment">// arrow notation binds `this` lexically</span></span><br><span class="line">  greet: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Hi, '</span> + <span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">newPerson.greet() <span class="comment">// Hi, Global</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// bound functions cannot be bound again</span></span><br><span class="line">newPerson.greet.call(person) <span class="comment">// Hi, Global</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/30/2019-01-30-1/" rel="next" title="2019/1/30 思考感悟">
+                <i class="fa fa-chevron-left"></i> 2019/1/30 思考感悟
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/03/2019-02-03/" rel="prev" title="Leetcode 17 Letter Combinations of a Phone Number">
+                Leetcode 17 Letter Combinations of a Phone Number <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-two-JavaScript-ES6"><span class="nav-number">1.</span> <span class="nav-text">Lecture two: JavaScript, ES6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#closure-Bug"><span class="nav-number">2.</span> <span class="nav-text">closure Bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IIFEs-Immediately-Invoked-Functions-Expressions"><span class="nav-number">3.</span> <span class="nav-text">IIFEs(Immediately Invoked Functions Expressions)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Higher-Order-Functions"><span class="nav-number">4.</span> <span class="nav-text">Higher Order Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async"><span class="nav-number">5.</span> <span class="nav-text">async</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Callback"><span class="nav-number">6.</span> <span class="nav-text">Callback</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind-call-apply"><span class="nav-number">7.</span> <span class="nav-text">bind / call / apply</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2019/02/02/2019-02-02/';
+          this.page.identifier = '2019/02/02/2019-02-02/';
+          this.page.title = 'CS50\'s Mobile App Development with React Native (Lecture two)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

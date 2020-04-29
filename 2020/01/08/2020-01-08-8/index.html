@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="ScreenUtil.js is my tool JS file, you can use it simple. just like: import * as ScreenUtil from &apos;../../ScreenUtil&apos;;style=&amp;#123;&amp;#123;  width: ScreenUtil.screenW,  height: ((ScreenUtil.screenW - 42) /">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React native - My ScreenUtil Library">
+<meta property="og:url" content="http://leviduan.com/2020/01/08/2020-01-08-8/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="ScreenUtil.js is my tool JS file, you can use it simple. just like: import * as ScreenUtil from &apos;../../ScreenUtil&apos;;style=&amp;#123;&amp;#123;  width: ScreenUtil.screenW,  height: ((ScreenUtil.screenW - 42) /">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-29T09:33:47.481Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React native - My ScreenUtil Library">
+<meta name="twitter:description" content="ScreenUtil.js is my tool JS file, you can use it simple. just like: import * as ScreenUtil from &apos;../../ScreenUtil&apos;;style=&amp;#123;&amp;#123;  width: ScreenUtil.screenW,  height: ((ScreenUtil.screenW - 42) /">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2020/01/08/2020-01-08-8/">
+
+
+
+
+
+  <title>React native - My ScreenUtil Library | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/01/08/2020-01-08-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">React native - My ScreenUtil Library</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-08T22:50:01+08:00">
+                2020-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/08/2020-01-08-8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/08/2020-01-08-8/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>ScreenUtil.js</code> is my tool JS file, you can use it simple. just like:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> ScreenUtil <span class="keyword">from</span> <span class="string">'../../ScreenUtil'</span>;</span><br><span class="line"></span><br><span class="line">style=&#123;&#123;</span><br><span class="line">  width: ScreenUtil.screenW,</span><br><span class="line">  height: ((ScreenUtil.screenW - <span class="number">42</span>) / <span class="number">2.0</span> / <span class="number">3.0</span>) * <span class="number">4.0</span>,</span><br><span class="line">  borderRadius: <span class="number">5</span>,</span><br><span class="line">  overflow: <span class="string">'hidden'</span>,</span><br><span class="line">&#125;&#125;&gt;</span><br></pre></td></tr></table></figure>
+<p>You can use this file by copying this code.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 屏幕工具类 以及一些常用的工具类封装</span></span><br><span class="line"><span class="comment"> * ui设计基准,iphone 6 2倍图</span></span><br><span class="line"><span class="comment"> * width:750px</span></span><br><span class="line"><span class="comment"> * height:1334px</span></span><br><span class="line"><span class="comment"> * @2x</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  PixelRatio,</span><br><span class="line">  Dimensions,</span><br><span class="line">  Platform,</span><br><span class="line">  AsyncStorage</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> screenW = Dimensions.get(<span class="string">'window'</span>).width;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> screenH = Dimensions.get(<span class="string">'window'</span>).height;</span><br><span class="line"><span class="keyword">const</span> fontScale = PixelRatio.getFontScale();</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> pixelRatio = PixelRatio.get();</span><br><span class="line"><span class="comment">//像素密度</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> DEFAULT_DENSITY = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//px转换成dp</span></span><br><span class="line"><span class="comment">//以iphone6为基准,如果以其他尺寸为基准的话,请修改下面的defaultWidth和defaultHeight为对应尺寸即可. 以下为1倍图时</span></span><br><span class="line"><span class="keyword">const</span> defaultWidth = <span class="number">375</span>;</span><br><span class="line"><span class="keyword">const</span> defaultHeight = <span class="number">667</span>;</span><br><span class="line"><span class="keyword">const</span> w2 = defaultWidth / DEFAULT_DENSITY;</span><br><span class="line"><span class="comment">//px转换成dp</span></span><br><span class="line"><span class="keyword">const</span> h2 = defaultHeight / DEFAULT_DENSITY;</span><br><span class="line"></span><br><span class="line"><span class="comment">//缩放比例</span></span><br><span class="line"><span class="keyword">const</span> _scaleWidth = screenW / defaultWidth;</span><br><span class="line"><span class="keyword">const</span> _scaleHeight = screenH / defaultHeight;</span><br><span class="line"></span><br><span class="line"><span class="comment">// iPhoneX</span></span><br><span class="line"><span class="keyword">const</span> X_WIDTH = <span class="number">375</span>;</span><br><span class="line"><span class="keyword">const</span> X_HEIGHT = <span class="number">812</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> web_DT = <span class="string">'https://dt.xx.co/'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> web_DP = <span class="string">'https://dp.xx.co'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> web_PR = <span class="string">'https://xx.co'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> webUrl = web_PR</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 屏幕适配,缩放size , 默认根据宽度适配，纵向也可以使用此方法</span></span><br><span class="line"><span class="comment">* 横向的尺寸直接使用此方法</span></span><br><span class="line"><span class="comment">* 如：width ,paddingHorizontal ,paddingLeft ,paddingRight ,marginHorizontal ,marginLeft ,marginRight</span></span><br><span class="line"><span class="comment">* @param size 设计图的尺寸</span></span><br><span class="line"><span class="comment">* @returns &#123;number&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">scaleSize</span>(<span class="params">size: Number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> size * _scaleWidth;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 屏幕适配 , 纵向的尺寸使用此方法应该会更趋近于设计稿</span></span><br><span class="line"><span class="comment">* 如：height ,paddingVertical ,paddingTop ,paddingBottom ,marginVertical ,marginTop ,marginBottom</span></span><br><span class="line"><span class="comment">* @param size 设计图的尺寸</span></span><br><span class="line"><span class="comment">* @returns &#123;number&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">scaleHeight</span>(<span class="params">size: Number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> size * _scaleHeight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 最初版本尺寸适配方案 也许你会更喜欢这个</span></span><br><span class="line"><span class="comment">export function scaleSize(size: Number) &#123;</span></span><br><span class="line"><span class="comment">  let scaleWidth = screenW / w2;</span></span><br><span class="line"><span class="comment">  let scaleHeight = screenH / h2;</span></span><br><span class="line"><span class="comment">  let scale = Math.min(scaleWidth, scaleHeight);</span></span><br><span class="line"><span class="comment">  size = Math.round((size * scale + 0.5));</span></span><br><span class="line"><span class="comment">  return size / DEFAULT_DENSITY;</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 设置字体的size（单位px）</span></span><br><span class="line"><span class="comment">* @param size 传入设计稿上的px , allowFontScaling 是否根据设备文字缩放比例调整，默认不会</span></span><br><span class="line"><span class="comment">* @returns &#123;Number&#125; 返回实际sp</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setSpText</span>(<span class="params">size: Number, allowFontScaling = false</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> scale = <span class="built_in">Math</span>.min(_scaleWidth, _scaleHeight);</span><br><span class="line">  <span class="keyword">const</span> fontSize = allowFontScaling ? <span class="number">1</span> : fontScale;</span><br><span class="line">  <span class="keyword">return</span> size * scale / fontSize;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">setSpText2</span>(<span class="params">size: Number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> scaleWidth = screenW / w2;</span><br><span class="line">  <span class="keyword">let</span> scaleHeight = screenH / h2;</span><br><span class="line">  <span class="keyword">let</span> scale = <span class="built_in">Math</span>.min(scaleWidth, scaleHeight);</span><br><span class="line">  size = <span class="built_in">Math</span>.round((size * scale + <span class="number">0.5</span>));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> size / DEFAULT_DENSITY * fontScale;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 判断是否为iphoneX</span></span><br><span class="line"><span class="comment">* @returns &#123;boolean&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isIphoneX</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">      Platform.OS === <span class="string">'ios'</span> &amp;&amp;</span><br><span class="line">      ((screenH === X_HEIGHT &amp;&amp; screenW === X_WIDTH) ||</span><br><span class="line">          (screenH === X_WIDTH &amp;&amp; screenW === X_HEIGHT))</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 根据是否是iPhoneX返回不同的样式</span></span><br><span class="line"><span class="comment">* @param iphoneXStyle</span></span><br><span class="line"><span class="comment">* @param iosStyle</span></span><br><span class="line"><span class="comment">* @param androidStyle</span></span><br><span class="line"><span class="comment">* @returns &#123;*&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">ifIphoneX</span>(<span class="params">iphoneXStyle, iosStyle = &#123;&#125;, androidStyle</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (isIphoneX()) &#123;</span><br><span class="line">      <span class="keyword">return</span> iphoneXStyle;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (Platform.OS === <span class="string">'ios'</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> iosStyle</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (androidStyle) <span class="keyword">return</span> androidStyle;</span><br><span class="line">      <span class="keyword">return</span> iosStyle</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 判断对象，数组，字符串是否为空</span></span><br><span class="line"><span class="comment">* @param str  (null|undefined|''|'   '|[]|&#123;&#125;) 均判断为空，返回true</span></span><br><span class="line"><span class="comment">* @returns &#123;boolean&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isEmpty</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!str) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> str === <span class="string">'object'</span> &amp;&amp; <span class="built_in">Object</span>.keys(str).length === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">""</span>).length === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//时间处理</span></span><br><span class="line"><span class="built_in">Date</span>.prototype.format = <span class="function"><span class="keyword">function</span> (<span class="params">format</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> date = &#123;</span><br><span class="line">      <span class="string">"M+"</span>: <span class="keyword">this</span>.getMonth() + <span class="number">1</span>,</span><br><span class="line">      <span class="string">"d+"</span>: <span class="keyword">this</span>.getDate(),</span><br><span class="line">      <span class="string">"h+"</span>: <span class="keyword">this</span>.getHours(),</span><br><span class="line">      <span class="string">"m+"</span>: <span class="keyword">this</span>.getMinutes(),</span><br><span class="line">      <span class="string">"s+"</span>: <span class="keyword">this</span>.getSeconds(),</span><br><span class="line">      <span class="string">"q+"</span>: <span class="built_in">Math</span>.floor((<span class="keyword">this</span>.getMonth() + <span class="number">3</span>) / <span class="number">3</span>),</span><br><span class="line">      <span class="string">"S+"</span>: <span class="keyword">this</span>.getMilliseconds()</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">if</span> (<span class="regexp">/(y+)/i</span>.test(format)) &#123;</span><br><span class="line">      format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="keyword">this</span>.getFullYear() + <span class="string">''</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> k <span class="keyword">in</span> date) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span> + k + <span class="string">")"</span>).test(format)) &#123;</span><br><span class="line">          format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, <span class="built_in">RegExp</span>.$<span class="number">1.</span>length === <span class="number">1</span></span><br><span class="line">              ? date[k] : (<span class="string">"00"</span> + date[k]).substr((<span class="string">""</span> + date[k]).length));</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> format;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取时间差 current:1497235409744 当前时间  start:1497235419744 开始时间</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getRemainingime</span>(<span class="params">current: Number, start: Number</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> time = start - current;</span><br><span class="line">  <span class="keyword">if</span> (time &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> [<span class="string">"0"</span>, <span class="string">"0"</span>, <span class="string">"0"</span>, <span class="string">"0"</span>, <span class="string">"0"</span>, <span class="string">"0"</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> year = <span class="built_in">Math</span>.floor(time / (<span class="number">365</span> * <span class="number">30</span> * <span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));<span class="comment">//年</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> month = <span class="built_in">Math</span>.floor(time / (<span class="number">30</span> * <span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));<span class="comment">//月</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> days = <span class="built_in">Math</span>.floor(time / (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));<span class="comment">//日</span></span><br><span class="line">  <span class="keyword">let</span> temp1 = time % (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">let</span> temp2 = temp1 % (<span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">let</span> minutes = <span class="built_in">Math</span>.floor(temp2 / (<span class="number">60</span> * <span class="number">1000</span>));<span class="comment">//分</span></span><br><span class="line">  <span class="keyword">let</span> hours = <span class="built_in">Math</span>.floor(temp1 / (<span class="number">3600</span> * <span class="number">1000</span>));<span class="comment">//时</span></span><br><span class="line">  <span class="keyword">let</span> temp3 = temp2 % (<span class="number">60</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">let</span> seconds = <span class="built_in">Math</span>.round(temp3 / <span class="number">1000</span>);<span class="comment">//秒</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> strs = [year, toNormal(month), toNormal(days), toNormal(hours), toNormal(minutes), toNormal(seconds)];</span><br><span class="line">  <span class="keyword">return</span> strs;<span class="comment">//["0", "0", "2", "7", "33", "30"]0年0月2日 7时33分30秒</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1497235419</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getRemainingimeDistance</span>(<span class="params">distance: Number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> time = distance * <span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">if</span> (time &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> [<span class="string">"0"</span>, <span class="string">"0"</span>, <span class="string">"0"</span>, <span class="string">"0"</span>, <span class="string">"0"</span>, <span class="string">"0"</span>];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> year = <span class="built_in">Math</span>.floor(time / (<span class="number">365</span> * <span class="number">30</span> * <span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));<span class="comment">//年</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> month = <span class="built_in">Math</span>.floor(time / (<span class="number">30</span> * <span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));<span class="comment">//月</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> days = <span class="built_in">Math</span>.floor(time / (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));<span class="comment">//日</span></span><br><span class="line">  <span class="keyword">let</span> temp1 = time % (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">let</span> hours = <span class="built_in">Math</span>.floor(temp1 / (<span class="number">3600</span> * <span class="number">1000</span>));<span class="comment">//时</span></span><br><span class="line">  <span class="keyword">let</span> temp2 = temp1 % (<span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">let</span> minutes = <span class="built_in">Math</span>.floor(temp2 / (<span class="number">60</span> * <span class="number">1000</span>));<span class="comment">//分</span></span><br><span class="line">  <span class="keyword">let</span> temp3 = temp2 % (<span class="number">60</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">let</span> seconds = <span class="built_in">Math</span>.round(temp3 / <span class="number">1000</span>);<span class="comment">//秒</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> strs = [year, toNormal(month), toNormal(days), toNormal(hours), toNormal(minutes), toNormal(seconds)];</span><br><span class="line">  <span class="comment">// strs.splice(0, 1, String(Number(strs[0]) - 1970));//年</span></span><br><span class="line">  <span class="comment">// strs.splice(1, 1, String(Number(strs[1]) - 1));</span></span><br><span class="line">  <span class="comment">// strs.splice(2, 1, (Number(strs[2]) - 1) &lt; 10 ? '0' + (Number(strs[2]) - 1) : String(Number(strs[2]) - 1));</span></span><br><span class="line">  <span class="comment">// strs.splice(3, 1, (Number(strs[3]) - 8) &lt; 10 ? '0' + (Number(strs[3]) - 8) : String(Number(strs[3]) - 8));</span></span><br><span class="line">  <span class="comment">// strs.splice(4, 1, Number(strs[4]) &lt; 10 ? '0' + Number(strs[4]) : String(Number(strs[4])));</span></span><br><span class="line">  <span class="comment">// strs.splice(5, 1, Number(strs[5]) &lt; 10 ? '0' + Number(strs[5]) : String(Number(strs[5])));</span></span><br><span class="line">  <span class="keyword">return</span> strs;<span class="comment">//["0", "0", "2", "7", "33", "30"]0年0月2日 7时33分30秒</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">toNormal</span>(<span class="params">time: Number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> time &gt;= <span class="number">10</span> ? time : <span class="string">'0'</span> + time;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//转换成日期</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">toDate</span>(<span class="params">timestamp: Number, format1 = <span class="string">'yyyy-MM-dd hh:mm:ss'</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (timestamp &gt; <span class="number">10000</span>) &#123;</span><br><span class="line">          <span class="keyword">let</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">          date.setTime(timestamp);</span><br><span class="line">          <span class="keyword">return</span> date.format(format1);<span class="comment">//2014-07-10 10:21:12</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (erro) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//转换成时间搓</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">toTimestamp</span>(<span class="params">date: String</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timestamp = <span class="built_in">Date</span>.parse(date);</span><br><span class="line">  <span class="keyword">return</span> timestamp / <span class="number">1000</span>;  <span class="comment">// 1497233827569/1000</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//CST时间=&gt;转换成日期yyyy-MM-dd hh:mm:ss</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getTaskTime</span>(<span class="params">strDate</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">null</span> == strDate || <span class="string">""</span> == strDate) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> dateStr = strDate.trim().split(<span class="string">" "</span>);</span><br><span class="line">  <span class="keyword">let</span> strGMT = dateStr[<span class="number">0</span>] + <span class="string">" "</span> + dateStr[<span class="number">1</span>] + <span class="string">" "</span> + dateStr[<span class="number">2</span>] + <span class="string">" "</span> + dateStr[<span class="number">5</span>] + <span class="string">" "</span> + dateStr[<span class="number">3</span>] + <span class="string">" GMT+0800"</span>;</span><br><span class="line">  <span class="keyword">let</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">Date</span>.parse(strGMT));</span><br><span class="line">  <span class="keyword">let</span> y = date.getFullYear();</span><br><span class="line">  <span class="keyword">let</span> m = date.getMonth() + <span class="number">1</span>;</span><br><span class="line">  m = m &lt; <span class="number">10</span> ? (<span class="string">'0'</span> + m) : m;</span><br><span class="line">  <span class="keyword">let</span> d = date.getDate();</span><br><span class="line">  d = d &lt; <span class="number">10</span> ? (<span class="string">'0'</span> + d) : d;</span><br><span class="line">  <span class="keyword">let</span> h = date.getHours();</span><br><span class="line">  <span class="keyword">let</span> minute = date.getMinutes();</span><br><span class="line">  minute = minute &lt; <span class="number">10</span> ? (<span class="string">'0'</span> + minute) : minute;</span><br><span class="line">  <span class="keyword">let</span> second = date.getSeconds();</span><br><span class="line">  second = second &lt; <span class="number">10</span> ? (<span class="string">'0'</span> + second) : second;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> y + <span class="string">"-"</span> + m + <span class="string">"-"</span> + d + <span class="string">" "</span> + h + <span class="string">":"</span> + minute + <span class="string">":"</span> + second;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1497235419</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getRemainingimeDistance2</span>(<span class="params">distance: Number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> time = distance;</span><br><span class="line">  <span class="keyword">let</span> days = <span class="built_in">Math</span>.floor(time / (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));</span><br><span class="line">  <span class="keyword">let</span> temp1 = time % (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">let</span> hours = <span class="built_in">Math</span>.floor(temp1 / (<span class="number">3600</span> * <span class="number">1000</span>));</span><br><span class="line">  <span class="keyword">let</span> temp2 = temp1 % (<span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">let</span> minutes = <span class="built_in">Math</span>.floor(temp2 / (<span class="number">60</span> * <span class="number">1000</span>));</span><br><span class="line">  <span class="keyword">if</span> (time &lt;= <span class="number">60</span> * <span class="number">1000</span>) &#123;</span><br><span class="line">      minutes = <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> temp3 = temp2 % (<span class="number">60</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">let</span> seconds = <span class="built_in">Math</span>.round(temp3 / <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">return</span> [hours, minutes];<span class="comment">//["0", "0", "2", "7", "33", "30"]0年0月2日 7时33分30秒</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 存储</span></span><br><span class="line"><span class="comment">* @param key</span></span><br><span class="line"><span class="comment">* @param value</span></span><br><span class="line"><span class="comment">* @param successCallback</span></span><br><span class="line"><span class="comment">* @param errorCallback</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">saveAsyncStorage</span>(<span class="params">key, value, successCallback, errorCallback</span>) </span>&#123;</span><br><span class="line">  AsyncStorage.setItem(key, value, error =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (error) &#123;</span><br><span class="line">          errorCallback(error);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">          successCallback();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 取值</span></span><br><span class="line"><span class="comment">* @param key</span></span><br><span class="line"><span class="comment">* @param successCallback</span></span><br><span class="line"><span class="comment">* @param errorCallback</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getAsyncStorage</span>(<span class="params">key, successCallback, errorCallback</span>) </span>&#123;</span><br><span class="line">  AsyncStorage.getItem(key, (error, result) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (error) &#123;</span><br><span class="line">          errorCallback(error);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">          successCallback(result);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 删除对应key的</span></span><br><span class="line"><span class="comment">* @param key</span></span><br><span class="line"><span class="comment">* @param successCallback</span></span><br><span class="line"><span class="comment">* @param errorCallback</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">removeAsyncStorage</span>(<span class="params">key, successCallback, errorCallback</span>) </span>&#123;</span><br><span class="line">  AsyncStorage.getItem(key, error =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (error) &#123;</span><br><span class="line">          errorCallback(error);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">          successCallback();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/08/2020-01-08-7/" rel="next" title="React native network library - Axios">
+                <i class="fa fa-chevron-left"></i> React native network library - Axios
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/08/2020-01-08-9/" rel="prev" title="React native - DeviceEventEmitter API">
+                React native - DeviceEventEmitter API <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2020/01/08/2020-01-08-8/';
+          this.page.identifier = '2020/01/08/2020-01-08-8/';
+          this.page.title = 'React native - My ScreenUtil Library';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

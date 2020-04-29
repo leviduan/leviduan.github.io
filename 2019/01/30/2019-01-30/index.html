@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Lecture one: Overview, JavaScript最近在学习RN课程，这是哈佛大学2018年的公开课，再次总结第一节课的知识点，按照slides的顺序进行总结. JavaScript ： 简称JS，解释执行语言，多范式语言，支持面向对象变成，命令式变成以及函数式编程，提供语法来操控文本。 ES6：ECMAScript 6.0,是JavaScript语言的下一代标准，在2015年6月">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS50&#39;s Mobile App Development with React Native (Lecture one)">
+<meta property="og:url" content="http://leviduan.com/2019/01/30/2019-01-30/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="Lecture one: Overview, JavaScript最近在学习RN课程，这是哈佛大学2018年的公开课，再次总结第一节课的知识点，按照slides的顺序进行总结. JavaScript ： 简称JS，解释执行语言，多范式语言，支持面向对象变成，命令式变成以及函数式编程，提供语法来操控文本。 ES6：ECMAScript 6.0,是JavaScript语言的下一代标准，在2015年6月">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-29T09:33:47.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CS50&#39;s Mobile App Development with React Native (Lecture one)">
+<meta name="twitter:description" content="Lecture one: Overview, JavaScript最近在学习RN课程，这是哈佛大学2018年的公开课，再次总结第一节课的知识点，按照slides的顺序进行总结. JavaScript ： 简称JS，解释执行语言，多范式语言，支持面向对象变成，命令式变成以及函数式编程，提供语法来操控文本。 ES6：ECMAScript 6.0,是JavaScript语言的下一代标准，在2015年6月">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2019/01/30/2019-01-30/">
+
+
+
+
+
+  <title>CS50's Mobile App Development with React Native (Lecture one) | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2019/01/30/2019-01-30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CS50's Mobile App Development with React Native (Lecture one)</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-30T22:50:00+08:00">
+                2019-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/30/2019-01-30/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/30/2019-01-30/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Lecture-one-Overview-JavaScript"><a href="#Lecture-one-Overview-JavaScript" class="headerlink" title="Lecture one: Overview, JavaScript"></a>Lecture one: Overview, JavaScript</h3><p>最近在学习RN课程，这是哈佛大学2018年的公开课，再次总结第一节课的知识点，按照slides的顺序进行总结.</p>
+<p>JavaScript ： 简称JS，解释执行语言，多范式语言，支持面向对象变成，命令式变成以及函数式编程，提供语法来操控文本。</p>
+<p>ES6：ECMAScript 6.0,是JavaScript语言的下一代标准，在2015年6月发布，</p>
+<p>React：用于构建用户界面的 JavaScript 库，React 可以非常轻松地创建用户交互界面。为你应用的每一个状态设计简洁的视图，在数据改变时 React 也可以高效地更新渲染界面</p>
+<p>JSX：一种 JavaScript 的语法扩展。 我们推荐在 React 中使用 JSX 来描述用户界面。JSX 乍看起来可能比较像是模版语言，但事实上它完全是在 JavaScript 内部实现的。</p>
+<h3 id="Syntex"><a href="#Syntex" class="headerlink" title="Syntex"></a>Syntex</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// comments are prefixed with double slashes</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Multi-line comments look like this</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// camelCase is preferred</span></span><br><span class="line"><span class="comment">// double-quotes create strings</span></span><br><span class="line"><span class="keyword">const</span> firstName = <span class="string">"jordan"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// semicolons are optional</span></span><br><span class="line"><span class="comment">// single-quotes also create strings</span></span><br><span class="line"><span class="keyword">const</span> lastName = <span class="string">'Hayashi'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// arrays can be declared inline</span></span><br><span class="line"><span class="comment">// arrays can have multiple types (more on types later)</span></span><br><span class="line"><span class="keyword">const</span> arr = [</span><br><span class="line">  <span class="string">'string'</span>,</span><br><span class="line">  <span class="number">42</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'hi'</span>) &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// this returns the element at the 2nd index and invokes it</span></span><br><span class="line">arr[<span class="number">2</span>]()</span><br><span class="line"></span><br><span class="line"><span class="comment">// this will iterate through the array and console log each element</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Typecasting-Coercion"><a href="#Typecasting-Coercion" class="headerlink" title="Typecasting? Coercion"></a>Typecasting? Coercion</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">42</span>;</span><br><span class="line"><span class="keyword">const</span> explicit = <span class="built_in">String</span>(x); <span class="comment">// explicit === "42"</span></span><br><span class="line"><span class="keyword">const</span> implicit = x + <span class="string">""</span>; <span class="comment">// implicit === "42"</span></span><br></pre></td></tr></table></figure>
+<p>== coerces the types<br>=== requires equivalent types</p>
+<h3 id="New-Object"><a href="#New-Object" class="headerlink" title="New Object"></a>New Object</h3><p>声明一个对象，有三种方式如下，可以任选一种方式进行对象初始化</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line">o.firstName = <span class="string">'Jordan'</span></span><br><span class="line">o.lastName = <span class="string">'Hayashi'</span></span><br><span class="line">o.isTeaching = <span class="literal">true</span></span><br><span class="line">o.greet = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'Hello!'</span>) &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(o))</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> o2 = &#123;&#125;</span><br><span class="line">o2[<span class="string">'firstName'</span>] = <span class="string">'Jordan'</span></span><br><span class="line"><span class="keyword">const</span> ab = <span class="string">'lastName'</span></span><br><span class="line">o2[ab] = <span class="string">'Hayashi'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> o3 = &#123;</span><br><span class="line">  firstName: <span class="string">'dd'</span>,</span><br><span class="line">  lastName: <span class="string">'ee'</span>,</span><br><span class="line">  greet: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hi'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  address: &#123;</span><br><span class="line">    street: <span class="string">"Main st."</span>,</span><br><span class="line">    number: <span class="string">'111'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Deep-copy"><a href="#Deep-copy" class="headerlink" title="Deep copy"></a>Deep copy</h3><p>o2 是通过指针进行的浅拷贝，下面是两种深拷贝的方法，o3是通过assign的方法进行的深拷贝，o4是通过函数方法进行的递归深拷贝。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> o = &#123;</span><br><span class="line">  a: <span class="string">'a'</span>,</span><br><span class="line">  b: <span class="string">'b'</span>,</span><br><span class="line">  obj: &#123;</span><br><span class="line">    key: <span class="string">'key'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> o2 = o</span><br><span class="line"></span><br><span class="line">o2.a = <span class="string">'new value'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// o and o2 reference the same object</span></span><br><span class="line"><span class="built_in">console</span>.log(o.a)</span><br><span class="line"></span><br><span class="line"><span class="comment">// this shallow-copies o into o3</span></span><br><span class="line"><span class="keyword">const</span> o3 = <span class="built_in">Object</span>.assign(&#123;&#125;, o)</span><br><span class="line"></span><br><span class="line"><span class="comment">// deep copy</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// check if vals are objects</span></span><br><span class="line">  <span class="comment">// if so, copy that object (deep copy)</span></span><br><span class="line">  <span class="comment">// else return the value</span></span><br><span class="line">  <span class="keyword">const</span> keys = <span class="built_in">Object</span>.keys(obj)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> newObject = &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; keys.length; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> key = keys[i]</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span>) &#123;</span><br><span class="line">      newObject[key] = deepCopy(obj[key])</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      newObject[key] = obj[key]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newObject</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> o4 = deepCopy(o)</span><br><span class="line"></span><br><span class="line">o.obj.key = <span class="string">'new key!'</span></span><br><span class="line"><span class="built_in">console</span>.log(o4.obj.key)</span><br></pre></td></tr></table></figure>
+<h3 id="const、var、let"><a href="#const、var、let" class="headerlink" title="const、var、let"></a>const、var、let</h3><p>通过下面的代码很详细的说明三者的区别</p>
+<p>const 定义的变量是不能被改变的,作用域在 block scoped 内。<br>let 定义的变量是可以改变的,作用域在 block scoped 内。<br>var 定义的变量是可以改变的，作用域在整个函数内的，第一行或者最后一行都可以调用。</p>
+<p>Lexical scoping (var): from when they’re declared until when their<br>function ends.</p>
+<p>Block scoping (const, let): until the next } is reached.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// "var" is lexically scoped, meaning it exists from time of declaration to end of func</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> lexicallyScoped = <span class="string">'This exists until the end of the function'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(lexicallyScoped)</span><br><span class="line"></span><br><span class="line"><span class="comment">// "let" and "const" are block scoped</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> blockScoped = <span class="string">'This exists until the next &#125;'</span></span><br><span class="line">  <span class="keyword">const</span> alsoBlockScoped = <span class="string">'As does this'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this variable doesn't exist</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> blockScoped)</span><br><span class="line"></span><br><span class="line">thisIsAlsoAVariable = <span class="string">"hello"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> thisIsAConst = <span class="number">50</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// thisIsAConst++ // error!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> constObj = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// consts are still mutable</span></span><br><span class="line">constObj.a = <span class="string">'a'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> thisIsALet = <span class="number">51</span></span><br><span class="line">thisIsALet = <span class="number">50</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// let thisIsALet = 51 // errors!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> thisIsAVar = <span class="number">50</span></span><br><span class="line">thisIsAVar = <span class="number">51</span></span><br><span class="line"><span class="keyword">var</span> thisIsAVar = <span class="string">'new value!'</span></span><br></pre></td></tr></table></figure>
+<h3 id="Function-Scope"><a href="#Function-Scope" class="headerlink" title="Function Scope"></a>Function Scope</h3><p>函数的作用域是在整个函数内，后面声明的函数，在声明前面可以直接调用。例如下面代码的hoistedFunction函数。</p>
+<p>需要注意的一点是将函数复制给变量的时候，如果赋值给var变量，由于var变量是整个函数内，所以在函数第一行查看这个变量，变量是存在的，函数值不存在。如果赋值给let变量，在第一行查看这个变量就会报错了，因为let的作用域在let定义函数的代码行下方才能调用。</p>
+<p>关于变量赋值的函数方法，需要在赋值后才能执行这个function.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// functions are hoisted</span></span><br><span class="line">hoistedFunction()</span><br><span class="line"><span class="comment">// but only if they are declared as functions and not as variables initialized to</span></span><br><span class="line"><span class="comment">// anonymous functions</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"typeof butNotThis: "</span> + <span class="keyword">typeof</span> butNotThis)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">thisShouldWork</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"functions are hoisted"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> butNotThis = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"but variables aren't"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">butNotThis()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"typeof butNotThis: "</span> + <span class="keyword">typeof</span> butNotThis)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hoistedFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"dd"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="The-Global-Object"><a href="#The-Global-Object" class="headerlink" title="The Global Object"></a>The Global Object</h3><p>浏览器和Node.js的全局对象有区别，需要注意下</p>
+<p>Browser global object is the <code>window</code> object<br>Node.js global object is the <code>global</code> object</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/28/2019-01-28-5/" rel="next" title="Leetcode 16 3Sum Closest">
+                <i class="fa fa-chevron-left"></i> Leetcode 16 3Sum Closest
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/30/2019-01-30-1/" rel="prev" title="2019/1/30 思考感悟">
+                2019/1/30 思考感悟 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-one-Overview-JavaScript"><span class="nav-number">1.</span> <span class="nav-text">Lecture one: Overview, JavaScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Syntex"><span class="nav-number">2.</span> <span class="nav-text">Syntex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Typecasting-Coercion"><span class="nav-number">3.</span> <span class="nav-text">Typecasting? Coercion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#New-Object"><span class="nav-number">4.</span> <span class="nav-text">New Object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deep-copy"><span class="nav-number">5.</span> <span class="nav-text">Deep copy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const、var、let"><span class="nav-number">6.</span> <span class="nav-text">const、var、let</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-Scope"><span class="nav-number">7.</span> <span class="nav-text">Function Scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Global-Object"><span class="nav-number">8.</span> <span class="nav-text">The Global Object</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2019/01/30/2019-01-30/';
+          this.page.identifier = '2019/01/30/2019-01-30/';
+          this.page.title = 'CS50\'s Mobile App Development with React Native (Lecture one)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

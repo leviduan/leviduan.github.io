@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Redemption Server APIAPI: Redemption ListDescriptionRedemption页面的CollectionView的网络数据请求List. URLGET: /shop/redeemption_list Query Parameters   Parameter Type Description     page Int 页码   pageSize Int">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redemption Server API">
+<meta property="og:url" content="http://leviduan.com/2019/01/20/RedemptionProject/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="Redemption Server APIAPI: Redemption ListDescriptionRedemption页面的CollectionView的网络数据请求List. URLGET: /shop/redeemption_list Query Parameters   Parameter Type Description     page Int 页码   pageSize Int">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-29T09:33:47.482Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redemption Server API">
+<meta name="twitter:description" content="Redemption Server APIAPI: Redemption ListDescriptionRedemption页面的CollectionView的网络数据请求List. URLGET: /shop/redeemption_list Query Parameters   Parameter Type Description     page Int 页码   pageSize Int">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2019/01/20/RedemptionProject/">
+
+
+
+
+
+  <title>Redemption Server API | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2019/01/20/RedemptionProject/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Redemption Server API</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-20T20:46:25+08:00">
+                2019-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Deja/" itemprop="url" rel="index">
+                    <span itemprop="name">Deja</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/20/RedemptionProject/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/20/RedemptionProject/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Redemption-Server-API"><a href="#Redemption-Server-API" class="headerlink" title="Redemption Server API"></a>Redemption Server API</h2><h3 id="API-Redemption-List"><a href="#API-Redemption-List" class="headerlink" title="API: Redemption List"></a>API: Redemption List</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>Redemption页面的CollectionView的网络数据请求List.</p>
+<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><p>GET: /shop/redeemption_list</p>
+<h4 id="Query-Parameters"><a href="#Query-Parameters" class="headerlink" title="Query Parameters"></a>Query Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page</td>
+<td>Int</td>
+<td>页码</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Int</td>
+<td>一页最多显示的data item</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>last</td>
+<td>Bool</td>
+<td>是否为最后一页</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Bool</td>
+<td>true: jump to detail page false: jump to 库存不足页面.</td>
+</tr>
+<tr>
+<td>shopItems</td>
+<td>[DJShopItem]</td>
+<td>商品类型</td>
+</tr>
+</tbody>
+</table>
+<h3 id="API：Redemption-detail-Page"><a href="#API：Redemption-detail-Page" class="headerlink" title="API：Redemption detail Page"></a>API：Redemption detail Page</h3><h4 id="Description-1"><a href="#Description-1" class="headerlink" title="Description"></a>Description</h4><p>Redemption Page‘s shop detail page</p>
+<h4 id="URL-1"><a href="#URL-1" class="headerlink" title="URL"></a>URL</h4><p>GET /redeemption_shop_item/{shopItemId}/shop_item_group_id/{shopItemGroupId}</p>
+<p>GET: shop/redeemption_shop_item/%@/shop_item_group_id/%@”</p>
+<h4 id="Query-Parameters-1"><a href="#Query-Parameters-1" class="headerlink" title="Query Parameters"></a>Query Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shopItemId</td>
+<td>Int</td>
+<td>商品Id</td>
+</tr>
+<tr>
+<td>shopItemGroupId</td>
+<td>String</td>
+<td>品牌Id</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Response-1"><a href="#Response-1" class="headerlink" title="Response"></a>Response</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shopItems</td>
+<td>[DJShopItem]</td>
+<td>商品类型数组</td>
+</tr>
+<tr>
+<td>isOutOfStock</td>
+<td>Bool</td>
+<td>库存不足</td>
+</tr>
+<tr>
+<td>isOcbProduct</td>
+<td>Bool</td>
+<td>Obc商品</td>
+</tr>
+</tbody>
+</table>
+<h3 id="API：Redemption-order-Page"><a href="#API：Redemption-order-Page" class="headerlink" title="API：Redemption order Page"></a>API：Redemption order Page</h3><h4 id="Description-2"><a href="#Description-2" class="headerlink" title="Description"></a>Description</h4><p>Redemption详情页面点击购买，字段跳转到订单页面，订单页面数据网络接口</p>
+<h4 id="URL-2"><a href="#URL-2" class="headerlink" title="URL"></a>URL</h4><p>POST: /redeem/preview</p>
+<h4 id="Query-Parameters-2"><a href="#Query-Parameters-2" class="headerlink" title="Query Parameters"></a>Query Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>inventoryItemId</td>
+<td>Int</td>
+<td>库存ID</td>
+</tr>
+<tr>
+<td>productId</td>
+<td>Int</td>
+<td>产品ID</td>
+</tr>
+<tr>
+<td>productGroupId</td>
+<td>String</td>
+<td>产品品牌ID</td>
+</tr>
+<tr>
+<td>size</td>
+<td>String</td>
+<td>尺寸</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>Int</td>
+<td>数量</td>
+</tr>
+<tr>
+<td>productName</td>
+<td>String</td>
+<td>产品名称</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Response-2"><a href="#Response-2" class="headerlink" title="Response"></a>Response</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td>DJCheckoutModel</td>
+<td>订单数据模型</td>
+</tr>
+</tbody>
+</table>
+<h3 id="API：Redemption订单确认支付接口"><a href="#API：Redemption订单确认支付接口" class="headerlink" title="API：Redemption订单确认支付接口"></a>API：Redemption订单确认支付接口</h3><h4 id="Description-3"><a href="#Description-3" class="headerlink" title="Description"></a>Description</h4><p>点击Redemption活动的订单页面确认支付，将要请求这个网络接口</p>
+<h4 id="URL-3"><a href="#URL-3" class="headerlink" title="URL"></a>URL</h4><p>POST /redeem/create_and_pay</p>
+<h4 id="Query-Parameters-3"><a href="#Query-Parameters-3" class="headerlink" title="Query Parameters"></a>Query Parameters</h4><p>checkoutModel : DJCheckoutModel</p>
+<h4 id="Response-3"><a href="#Response-3" class="headerlink" title="Response"></a>Response</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td>DJCheckoutCreatandPayModel</td>
+<td>订单支付数据模型</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Data-Model"><a href="#Data-Model" class="headerlink" title="Data Model"></a>Data Model</h3><h4 id="DJShopItem-商品类型"><a href="#DJShopItem-商品类型" class="headerlink" title="DJShopItem 商品类型"></a>DJShopItem 商品类型</h4><p>cashback: Int<br>color: String<br>currency : String | 货币类型<br>currentPrice: Int<br>image: DJShopItemImage<br>images: [DJShopItemImage]<br>originalPrice: Int<br>recommendReason: String<br>shopItemGroupId: String<br>shopId: String<br>shopItemId: Int<br>shopItemName: String | 商品名称<br>shopName: String | 品牌名称<br>cashbackDescription: String<br>buttonDescription: String<br>specialAttribute : [Int]</p>
+<h4 id="DJShopItemImage"><a href="#DJShopItemImage" class="headerlink" title="DJShopItemImage"></a>DJShopItemImage</h4><p>height: CGFloat<br>width: CGFloat<br>imageUrl: String</p>
+<h4 id="DJCheckoutModel"><a href="#DJCheckoutModel" class="headerlink" title="DJCheckoutModel"></a>DJCheckoutModel</h4><p>shippingAddress : DJAddressInfo<br>orderItemsInShopList = <a href>DJOrderItemsInShopInfo</a><br>paymentPriceDetailInfo = DJPaymentPriceDetailInfo()<br>isOverallOutOfStock : Bool = false<br>outOfStockMessage : String</p>
+<h4 id="DJAddressInfo"><a href="#DJAddressInfo" class="headerlink" title="DJAddressInfo"></a>DJAddressInfo</h4><p>id: Int<br>firstName: String<br>lastName: String<br>postalCode: String<br>floorUnitNumber: String<br>phone : String<br>isDefault: Bool = false<br>searchval: String<br>blockNumber: String<br>roadName: String<br>building: String<br>address: String<br>fullAddress : String = “”<br>country: String<br>formatAddress : String</p>
+<h4 id="DJOrderItemsInShopInfo"><a href="#DJOrderItemsInShopInfo" class="headerlink" title="DJOrderItemsInShopInfo"></a>DJOrderItemsInShopInfo</h4><p>currency : String<br>shopId : String<br>shopName : String<br>itemCount : Int<br>orderSubtotal : Int<br>selectedShippingMethodInfo = DJShippingMethodInfo()<br>availableShippingMethodInfo = <a href>DJShippingMethodInfo</a><br>shopItemList = <a href>DJOrderShopItem</a></p>
+<h4 id="DJPaymentPriceDetailInfo"><a href="#DJPaymentPriceDetailInfo" class="headerlink" title="DJPaymentPriceDetailInfo"></a>DJPaymentPriceDetailInfo</h4><p>cashbackDiscount :Int           | 使用的返现金额<br>cashbackDiscountMaximum :Int    | 最多可以使用多少返现<br>cashbackReward :Int             | 可以拿到多少返现<br>currency : String = “”<br>orderCount : Int                | 商品总数<br>orderGroupSubtotal :Int         | 商品加物流的总费用 ，未减Cashback和Promotion<br>orderGroupTotal :Int            | 使用过各种折扣后需要 Card 付的实际金额<br>promotionDiscount :Int          | Deja Promotion 的折扣金额<br>cashbackPayRateDescription : String</p>
+<h4 id="DJShippingMethodInfo"><a href="#DJShippingMethodInfo" class="headerlink" title="DJShippingMethodInfo"></a>DJShippingMethodInfo</h4><p>currency : String<br>shippingMethod = DJShippingMethod()<br>shippingFeeSubtotal : Int</p>
+<h4 id="DJShippingMethod"><a href="#DJShippingMethod" class="headerlink" title="DJShippingMethod"></a>DJShippingMethod</h4><p>shippingMethodId : Int<br>shippingMethodName : String<br>shippingMethod : String<br>shippingFee : Int<br>currency : String<br>estimatedDeliveryTimeDescription : String<br>courierUrl : String</p>
+<h4 id="DJCheckoutCreatandPayModel"><a href="#DJCheckoutCreatandPayModel" class="headerlink" title="DJCheckoutCreatandPayModel"></a>DJCheckoutCreatandPayModel</h4><p>checkTitle : String            | the title of payment pop-up window<br>checkSubTitle : String         | reserved field<br>checkDescription : String      | the description of payment pop-up window<br>checkBtnName : String          | the name of button, for example：Got it<br>checkType : Int                | checkType, return : 20 success , 10 failure</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/19/201901181009/" rel="next" title="Work Style">
+                <i class="fa fa-chevron-left"></i> Work Style
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/20/201901211013/" rel="prev" title="iOS Custom URL Scheme">
+                iOS Custom URL Scheme <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redemption-Server-API"><span class="nav-number">1.</span> <span class="nav-text">Redemption Server API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#API-Redemption-List"><span class="nav-number">1.1.</span> <span class="nav-text">API: Redemption List</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-number">1.1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL"><span class="nav-number">1.1.2.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Query-Parameters"><span class="nav-number">1.1.3.</span> <span class="nav-text">Query Parameters</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Response"><span class="nav-number">1.1.4.</span> <span class="nav-text">Response</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API：Redemption-detail-Page"><span class="nav-number">1.2.</span> <span class="nav-text">API：Redemption detail Page</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Query-Parameters-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">Query Parameters</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Response-1"><span class="nav-number">1.2.4.</span> <span class="nav-text">Response</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API：Redemption-order-Page"><span class="nav-number">1.3.</span> <span class="nav-text">API：Redemption order Page</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Query-Parameters-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">Query Parameters</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Response-2"><span class="nav-number">1.3.4.</span> <span class="nav-text">Response</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API：Redemption订单确认支付接口"><span class="nav-number">1.4.</span> <span class="nav-text">API：Redemption订单确认支付接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description-3"><span class="nav-number">1.4.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL-3"><span class="nav-number">1.4.2.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Query-Parameters-3"><span class="nav-number">1.4.3.</span> <span class="nav-text">Query Parameters</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Response-3"><span class="nav-number">1.4.4.</span> <span class="nav-text">Response</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Model"><span class="nav-number">1.5.</span> <span class="nav-text">Data Model</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DJShopItem-商品类型"><span class="nav-number">1.5.1.</span> <span class="nav-text">DJShopItem 商品类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DJShopItemImage"><span class="nav-number">1.5.2.</span> <span class="nav-text">DJShopItemImage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DJCheckoutModel"><span class="nav-number">1.5.3.</span> <span class="nav-text">DJCheckoutModel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DJAddressInfo"><span class="nav-number">1.5.4.</span> <span class="nav-text">DJAddressInfo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DJOrderItemsInShopInfo"><span class="nav-number">1.5.5.</span> <span class="nav-text">DJOrderItemsInShopInfo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DJPaymentPriceDetailInfo"><span class="nav-number">1.5.6.</span> <span class="nav-text">DJPaymentPriceDetailInfo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DJShippingMethodInfo"><span class="nav-number">1.5.7.</span> <span class="nav-text">DJShippingMethodInfo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DJShippingMethod"><span class="nav-number">1.5.8.</span> <span class="nav-text">DJShippingMethod</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DJCheckoutCreatandPayModel"><span class="nav-number">1.5.9.</span> <span class="nav-text">DJCheckoutCreatandPayModel</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2019/01/20/RedemptionProject/';
+          this.page.identifier = '2019/01/20/RedemptionProject/';
+          this.page.title = 'Redemption Server API';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
