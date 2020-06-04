@@ -1617,6 +1617,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/01/08/2020-01-08-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/08/2020-01-08-6/" itemprop="url">React native - ActionSheetIOS</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-08T22:48:01+08:00">
+                2020-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/08/2020-01-08-6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/08/2020-01-08-6/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Sometime, We need to make a actionsheet on Rect native，so the best way to do it by ActionSheetIOS API from react-native, however, ActionSheetIOS can not be used in Android mobile. so we need an unofficial library from github to achieve an Android ActionSheet UI.</p>
+<p>choosing the github library from <code>beefe/react-native-actionsheet</code></p>
+<p>website: <a href="https://github.com/beefe/react-native-actionsheet/" target="_blank" rel="noopener">https://github.com/beefe/react-native-actionsheet/</a></p>
+<p>Cross platform ActionSheet, This component implements a custom ActionSheet and provides the same way to drawing it on the different platforms (iOS and Android). Actually, In order to keep the best effect, it still uses the ActionSheetIOS on iOS.</p>
+<p><img src="https://raw.githubusercontent.com/beefe/react-native-actionsheet/master/docs/ios-native.png" alt="iOS png"></p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>npm install react-native-actionsheet –save</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> ActionSheet <span class="keyword">from</span> <span class="string">'react-native-actionsheet'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  showActionSheet = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.ActionSheet.show()</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;View&gt;</span><br><span class="line">        &lt;Text onPress=&#123;<span class="keyword">this</span>.showActionSheet&#125;&gt;Open ActionSheet&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">        &lt;ActionSheet</span></span><br><span class="line"><span class="regexp">          ref=&#123;o =&gt; this.ActionSheet = o&#125;</span></span><br><span class="line"><span class="regexp">          title=&#123;'Which one do you like ?'&#125;</span></span><br><span class="line"><span class="regexp">          options=&#123;['Apple', 'Banana', 'cancel']&#125;</span></span><br><span class="line"><span class="regexp">          cancelButtonIndex=&#123;2&#125;</span></span><br><span class="line"><span class="regexp">          destructiveButtonIndex=&#123;1&#125;</span></span><br><span class="line"><span class="regexp">          onPress=&#123;(index) =&gt; &#123; /</span>* <span class="keyword">do</span> something *<span class="regexp">/ &#125;&#125;</span></span><br><span class="line"><span class="regexp">        /</span>&gt;</span><br><span class="line">      &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="My-Example"><a href="#My-Example" class="headerlink" title="My Example"></a>My Example</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> ActionSheet <span class="keyword">from</span> <span class="string">'react-native-actionsheet'</span></span><br><span class="line"></span><br><span class="line">showActionSheet = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.ActionSheet.show()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.props.navigation.setParams(&#123; <span class="attr">increaseCount</span>: <span class="keyword">this</span>.showActionSheet &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;ActionSheet</span><br><span class="line">      ref=&#123;o =&gt; <span class="keyword">this</span>.ActionSheet = o&#125;</span><br><span class="line">      options=&#123;[<span class="string">'Similar items'</span>, <span class="string">'Similar looks'</span>, <span class="string">'Cancel'</span>]&#125;</span><br><span class="line">      cancelButtonIndex=&#123;<span class="number">2</span>&#125;</span><br><span class="line">      destructiveButtonIndex=&#123;<span class="number">5</span>&#125;</span><br><span class="line">      onPress=&#123;(index) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (index === <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.props.navigation.setParams(&#123; <span class="attr">otherParam</span>: <span class="string">'Similar items'</span> &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (index === <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.props.navigation.setParams(&#123; <span class="attr">otherParam</span>: <span class="string">'Similar looks'</span> &#125;)</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                similarLooks: <span class="literal">true</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            () =&gt; &#123;</span><br><span class="line">                <span class="comment">// do something in here</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h3><p>If you don’t need the destructive ( red font ), you should write code <code>destructiveButtonIndex={value}</code> the value that you didn’t write in the options.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/01/08/2020-01-08-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1741,166 +1901,6 @@
 <p>I store data by this way: </p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> global = <span class="built_in">require</span>(<span class="string">'../../../global'</span>);</span><br><span class="line">global.uid = res.data.uid ? res.data.uid : <span class="number">0</span>;</span><br><span class="line">global.sig = <span class="string">''</span>;</span><br><span class="line">global.name = <span class="string">''</span>;</span><br><span class="line">global.email = <span class="string">''</span>;</span><br><span class="line">global.avatar = <span class="string">''</span>;</span><br><span class="line">global.loginStatus = <span class="literal">false</span>;</span><br><span class="line">API.defaults.headers.common[<span class="string">'uid'</span>] = global.uid;</span><br><span class="line">API.defaults.headers.common[<span class="string">'sig'</span>] = global.sig;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> jsonStr = <span class="built_in">JSON</span>.stringify(global);</span><br><span class="line"></span><br><span class="line">AsyncStorage.setItem(<span class="string">'@global'</span>, jsonStr, <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>That’s all</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/01/08/2020-01-08-6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Levi Duan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Levi's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/08/2020-01-08-6/" itemprop="url">React native - ActionSheetIOS</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-08T22:48:01+08:00">
-                2020-01-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/08/2020-01-08-6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/08/2020-01-08-6/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Sometime, We need to make a actionsheet on Rect native，so the best way to do it by ActionSheetIOS API from react-native, however, ActionSheetIOS can not be used in Android mobile. so we need an unofficial library from github to achieve an Android ActionSheet UI.</p>
-<p>choosing the github library from <code>beefe/react-native-actionsheet</code></p>
-<p>website: <a href="https://github.com/beefe/react-native-actionsheet/" target="_blank" rel="noopener">https://github.com/beefe/react-native-actionsheet/</a></p>
-<p>Cross platform ActionSheet, This component implements a custom ActionSheet and provides the same way to drawing it on the different platforms (iOS and Android). Actually, In order to keep the best effect, it still uses the ActionSheetIOS on iOS.</p>
-<p><img src="https://raw.githubusercontent.com/beefe/react-native-actionsheet/master/docs/ios-native.png" alt="iOS png"></p>
-<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>npm install react-native-actionsheet –save</p>
-<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> ActionSheet <span class="keyword">from</span> <span class="string">'react-native-actionsheet'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  showActionSheet = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.ActionSheet.show()</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;View&gt;</span><br><span class="line">        &lt;Text onPress=&#123;<span class="keyword">this</span>.showActionSheet&#125;&gt;Open ActionSheet&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">        &lt;ActionSheet</span></span><br><span class="line"><span class="regexp">          ref=&#123;o =&gt; this.ActionSheet = o&#125;</span></span><br><span class="line"><span class="regexp">          title=&#123;'Which one do you like ?'&#125;</span></span><br><span class="line"><span class="regexp">          options=&#123;['Apple', 'Banana', 'cancel']&#125;</span></span><br><span class="line"><span class="regexp">          cancelButtonIndex=&#123;2&#125;</span></span><br><span class="line"><span class="regexp">          destructiveButtonIndex=&#123;1&#125;</span></span><br><span class="line"><span class="regexp">          onPress=&#123;(index) =&gt; &#123; /</span>* <span class="keyword">do</span> something *<span class="regexp">/ &#125;&#125;</span></span><br><span class="line"><span class="regexp">        /</span>&gt;</span><br><span class="line">      &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="My-Example"><a href="#My-Example" class="headerlink" title="My Example"></a>My Example</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> ActionSheet <span class="keyword">from</span> <span class="string">'react-native-actionsheet'</span></span><br><span class="line"></span><br><span class="line">showActionSheet = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.ActionSheet.show()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.props.navigation.setParams(&#123; <span class="attr">increaseCount</span>: <span class="keyword">this</span>.showActionSheet &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;ActionSheet</span><br><span class="line">      ref=&#123;o =&gt; <span class="keyword">this</span>.ActionSheet = o&#125;</span><br><span class="line">      options=&#123;[<span class="string">'Similar items'</span>, <span class="string">'Similar looks'</span>, <span class="string">'Cancel'</span>]&#125;</span><br><span class="line">      cancelButtonIndex=&#123;<span class="number">2</span>&#125;</span><br><span class="line">      destructiveButtonIndex=&#123;<span class="number">5</span>&#125;</span><br><span class="line">      onPress=&#123;(index) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (index === <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.props.navigation.setParams(&#123; <span class="attr">otherParam</span>: <span class="string">'Similar items'</span> &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (index === <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.props.navigation.setParams(&#123; <span class="attr">otherParam</span>: <span class="string">'Similar looks'</span> &#125;)</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                similarLooks: <span class="literal">true</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            () =&gt; &#123;</span><br><span class="line">                <span class="comment">// do something in here</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h3><p>If you don’t need the destructive ( red font ), you should write code <code>destructiveButtonIndex={value}</code> the value that you didn’t write in the options.</p>
 
           
         
