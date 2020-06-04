@@ -127,17 +127,17 @@
 
 
 
-<meta name="description" content="React native - Push Notification (Firebase)How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “https://rnfireba">
+<meta name="description" content="How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “https://rnfirebase.io/&amp;quot; , and click menu “Cloud Messag">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UICollectionVIew的渐变背景">
+<meta property="og:title" content="React native - Push Notification (Firebase)">
 <meta property="og:url" content="http://leviduan.com/2020/06/04/2020-06-04/index.html">
 <meta property="og:site_name" content="Levi&#39;s blog">
-<meta property="og:description" content="React native - Push Notification (Firebase)How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “https://rnfireba">
+<meta property="og:description" content="How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “https://rnfirebase.io/&amp;quot; , and click menu “Cloud Messag">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-04T08:00:02.980Z">
+<meta property="og:updated_time" content="2020-06-04T08:02:50.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UICollectionVIew的渐变背景">
-<meta name="twitter:description" content="React native - Push Notification (Firebase)How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “https://rnfireba">
+<meta name="twitter:title" content="React native - Push Notification (Firebase)">
+<meta name="twitter:description" content="How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “https://rnfirebase.io/&amp;quot; , and click menu “Cloud Messag">
 
 
 
@@ -173,7 +173,7 @@
 
 
 
-  <title>UICollectionVIew的渐变背景 | Levi's blog</title>
+  <title>React native - Push Notification (Firebase) | Levi's blog</title>
   
 
 
@@ -327,7 +327,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">UICollectionVIew的渐变背景</h2>
+          <h2 class="post-title" itemprop="name headline">React native - Push Notification (Firebase)</h2>
         
 
         <div class="post-meta">
@@ -409,7 +409,7 @@
       
 
       
-        <h1 id="React-native-Push-Notification-Firebase"><a href="#React-native-Push-Notification-Firebase" class="headerlink" title="React native - Push Notification (Firebase)"></a>React native - Push Notification (Firebase)</h1><p>How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “<a href="https://rnfirebase.io/&quot;" target="_blank" rel="noopener">https://rnfirebase.io/&quot;</a> , and click menu “Cloud Messaging”</p>
+        <p>How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “<a href="https://rnfirebase.io/&quot;" target="_blank" rel="noopener">https://rnfirebase.io/&quot;</a> , and click menu “Cloud Messaging”</p>
 <h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Install &amp; setup the app module</span><br><span class="line">yarn add @react-native-firebase/app</span><br><span class="line"></span><br><span class="line"># Install the messaging module</span><br><span class="line">yarn add @react-native-firebase/messaging</span><br><span class="line"></span><br><span class="line"># If you&apos;re developing your app using iOS, run this command</span><br><span class="line">cd ios/ &amp;&amp; pod install</span><br></pre></td></tr></table></figure>
 <h3 id="iOS-Setup"><a href="#iOS-Setup" class="headerlink" title="iOS Setup"></a>iOS Setup</h3><p>AppDelegate.m</p>
 <figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@import</span> Firebase;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">AppDelegate</span> () &lt;<span class="title">FIRMessagingDelegate</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AppDelegate</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions</span><br><span class="line">&#123;</span><br><span class="line">    [FIRApp configure];</span><br><span class="line">    [application registerForRemoteNotifications];</span><br><span class="line">    [FIRMessaging messaging].delegate = <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>) messaging:(FIRMessaging *)messaging didReceiveRegistrationToken:(<span class="built_in">NSString</span> *)fcmToken &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"FCM registration token: %@"</span>, fcmToken);</span><br><span class="line">    <span class="comment">// Notify about received token.</span></span><br><span class="line">    <span class="built_in">NSDictionary</span> *dataDict = [<span class="built_in">NSDictionary</span> dictionaryWithObject:fcmToken forKey:<span class="string">@"token"</span>];</span><br><span class="line">    [[<span class="built_in">NSNotificationCenter</span> defaultCenter] postNotificationName:</span><br><span class="line">     <span class="string">@"FCMToken"</span> object:<span class="literal">nil</span> userInfo:dataDict];</span><br><span class="line">    <span class="comment">// <span class="doctag">TODO:</span> If necessary send token to application server.</span></span><br><span class="line">    <span class="comment">// Note: This callback is fired at each app startup and whenever a new token is generated.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application didFailToRegisterForRemoteNotificationsWithError:(<span class="built_in">NSError</span> *)error &#123;</span><br><span class="line">  <span class="built_in">NSLog</span>(<span class="string">@"error: %@"</span>, error);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -678,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-native-Push-Notification-Firebase"><span class="nav-number">1.</span> <span class="nav-text">React native - Push Notification (Firebase)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Installation"><span class="nav-number">1.0.1.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-Setup"><span class="nav-number">1.0.2.</span> <span class="nav-text">iOS Setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Setup"><span class="nav-number">1.0.3.</span> <span class="nav-text">Android Setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Native"><span class="nav-number">1.0.4.</span> <span class="nav-text">React Native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-Notification-Service-Extension"><span class="nav-number">1.0.5.</span> <span class="nav-text">Create Notification Service Extension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-format-of-Push-Notification-Service-be-sent-by-Server"><span class="nav-number">1.0.6.</span> <span class="nav-text">the format of Push Notification Service be sent by Server</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Installation"><span class="nav-number">1.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-Setup"><span class="nav-number">2.</span> <span class="nav-text">iOS Setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Setup"><span class="nav-number">3.</span> <span class="nav-text">Android Setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Native"><span class="nav-number">4.</span> <span class="nav-text">React Native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-Notification-Service-Extension"><span class="nav-number">5.</span> <span class="nav-text">Create Notification Service Extension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-format-of-Push-Notification-Service-be-sent-by-Server"><span class="nav-number">6.</span> <span class="nav-text">the format of Push Notification Service be sent by Server</span></a></li></ol></div>
             
 
           </div>
@@ -841,7 +841,7 @@
         var disqus_config = function () {
           this.page.url = 'http://leviduan.com/2020/06/04/2020-06-04/';
           this.page.identifier = '2020/06/04/2020-06-04/';
-          this.page.title = 'UICollectionVIew的渐变背景';
+          this.page.title = 'React native - Push Notification (Firebase)';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://leviduan-com.disqus.com/embed.js';
