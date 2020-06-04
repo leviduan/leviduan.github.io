@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Lbqbq-u0Mn24a7n3Er0wVtGF9AUxR-o_FZsCOl4YEOQ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lucida Grande:300,300italic,400,400italic,700,700italic|Zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar1.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar1.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Levi">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Levi's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="React native - Push Notification (Firebase)How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “https://rnfireba">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UICollectionVIew的渐变背景">
+<meta property="og:url" content="http://leviduan.com/2020/06/04/2020-06-04/index.html">
+<meta property="og:site_name" content="Levi&#39;s blog">
+<meta property="og:description" content="React native - Push Notification (Firebase)How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “https://rnfireba">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-04T08:00:02.980Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UICollectionVIew的渐变背景">
+<meta name="twitter:description" content="React native - Push Notification (Firebase)How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “https://rnfireba">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: false,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://leviduan.com/2020/06/04/2020-06-04/">
+
+
+
+
+
+  <title>UICollectionVIew的渐变背景 | Levi's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Levi's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-time">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Time
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ios">
+          <a href="/categories/iOS/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            iOS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-react-n.">
+          <a href="/categories/web/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-html5"></i> <br>
+            
+            React N.
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/Algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Algorithm
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/Idea/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            Idea
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/06/04/2020-06-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">UICollectionVIew的渐变背景</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-04T15:50:02+08:00">
+                2020-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/04/2020-06-04/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/04/2020-06-04/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="React-native-Push-Notification-Firebase"><a href="#React-native-Push-Notification-Firebase" class="headerlink" title="React native - Push Notification (Firebase)"></a>React native - Push Notification (Firebase)</h1><p>How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “<a href="https://rnfirebase.io/&quot;" target="_blank" rel="noopener">https://rnfirebase.io/&quot;</a> , and click menu “Cloud Messaging”</p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Install &amp; setup the app module</span><br><span class="line">yarn add @react-native-firebase/app</span><br><span class="line"></span><br><span class="line"># Install the messaging module</span><br><span class="line">yarn add @react-native-firebase/messaging</span><br><span class="line"></span><br><span class="line"># If you&apos;re developing your app using iOS, run this command</span><br><span class="line">cd ios/ &amp;&amp; pod install</span><br></pre></td></tr></table></figure>
+<h3 id="iOS-Setup"><a href="#iOS-Setup" class="headerlink" title="iOS Setup"></a>iOS Setup</h3><p>AppDelegate.m</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@import</span> Firebase;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">AppDelegate</span> () &lt;<span class="title">FIRMessagingDelegate</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AppDelegate</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions</span><br><span class="line">&#123;</span><br><span class="line">    [FIRApp configure];</span><br><span class="line">    [application registerForRemoteNotifications];</span><br><span class="line">    [FIRMessaging messaging].delegate = <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>) messaging:(FIRMessaging *)messaging didReceiveRegistrationToken:(<span class="built_in">NSString</span> *)fcmToken &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"FCM registration token: %@"</span>, fcmToken);</span><br><span class="line">    <span class="comment">// Notify about received token.</span></span><br><span class="line">    <span class="built_in">NSDictionary</span> *dataDict = [<span class="built_in">NSDictionary</span> dictionaryWithObject:fcmToken forKey:<span class="string">@"token"</span>];</span><br><span class="line">    [[<span class="built_in">NSNotificationCenter</span> defaultCenter] postNotificationName:</span><br><span class="line">     <span class="string">@"FCMToken"</span> object:<span class="literal">nil</span> userInfo:dataDict];</span><br><span class="line">    <span class="comment">// <span class="doctag">TODO:</span> If necessary send token to application server.</span></span><br><span class="line">    <span class="comment">// Note: This callback is fired at each app startup and whenever a new token is generated.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application didFailToRegisterForRemoteNotificationsWithError:(<span class="built_in">NSError</span> *)error &#123;</span><br><span class="line">  <span class="built_in">NSLog</span>(<span class="string">@"error: %@"</span>, error);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Android-Setup"><a href="#Android-Setup" class="headerlink" title="Android Setup"></a>Android Setup</h3><p>/appName/android/app/src/main/AndroidManifest.xml</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;service android:name=<span class="string">".MyFirebaseMessagingService"</span> android:exported=<span class="string">"false"</span>&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=<span class="string">"com.google.firebase.MESSAGING_EVENT"</span> /&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">&lt;/service&gt;</span><br></pre></td></tr></table></figure>
+<p>/android/app/src/main/java/com/appName/MyFirebaseMessagingService.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.stylepedia;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.firebase.messaging.FirebaseMessagingService;</span><br><span class="line"><span class="keyword">import</span> com.google.firebase.messaging.RemoteMessage;</span><br><span class="line"><span class="keyword">import</span> android.util.Log;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyFirebaseMessagingService</span> <span class="keyword">extends</span> <span class="title">FirebaseMessagingService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String TAG = <span class="string">"FCMDemo"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMessageReceived</span><span class="params">(RemoteMessage remoteMessage)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// TODO(developer): Handle FCM messages here.</span></span><br><span class="line">        Log.d(TAG, <span class="string">"From: "</span> + remoteMessage.getFrom());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (remoteMessage.getData().size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            Log.d(TAG, <span class="string">"Message data payload: "</span> + remoteMessage.getData());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Check if message contains a notification payload.</span></span><br><span class="line">        <span class="keyword">if</span> (remoteMessage.getNotification() != <span class="keyword">null</span>) &#123;</span><br><span class="line">            Log.d(TAG, <span class="string">"Message Notification Body: "</span> + remoteMessage.getNotification().getBody());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Also if you intend on generating your own notifications as a result of a received FCM</span></span><br><span class="line">        <span class="comment">// message, here is where that should be initiated. See sendNotification method below.</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendRegistrationToServer</span><span class="params">(String token)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// <span class="doctag">TODO:</span> Implement this method to send token to your app server.</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNewToken</span><span class="params">(String token)</span> </span>&#123;</span><br><span class="line">        Log.d(TAG, <span class="string">"From: "</span> + token);</span><br><span class="line">        sendRegistrationToServer(token);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h3><p>You can get token by this function, if the device didn’t open Push Notification, you won’t get the token, so you make sure that the user have opened the notifications.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> messaging <span class="keyword">from</span> <span class="string">'@react-native-firebase/messaging'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!messaging().isDeviceRegisteredForRemoteMessages) &#123;</span><br><span class="line">    messaging().registerDeviceForRemoteMessages()</span><br><span class="line">&#125;</span><br><span class="line">messaging().getToken()</span><br><span class="line">.then(<span class="function"><span class="params">fcmToken</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (fcmToken) &#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(fcmToken)</span><br><span class="line">    <span class="keyword">if</span> (Platform.OS === <span class="string">'ios'</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.iosTokenNetWork(fcmToken)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.androidTokenNetWork(fcmToken)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(<span class="string">'user doesn t have a device token yet'</span>)</span><br><span class="line">    <span class="comment">// user doesn't have a device token yet</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>You can use this function to check if user open the push notification switch in user’s device.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">messaging().requestPermission().then(<span class="function">(<span class="params">response: any</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// if user click allow app push notification on pop-up，I can get token by function: </span></span><br><span class="line"></span><br><span class="line">messaging().requestPermission().then(<span class="function">(<span class="params">response: any</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!messaging().isDeviceRegisteredForRemoteMessages) &#123;</span><br><span class="line">        messaging().registerDeviceForRemoteMessages()</span><br><span class="line">      &#125;</span><br><span class="line">      messaging().getToken()</span><br><span class="line">        .then(<span class="function"><span class="params">fcmToken</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (fcmToken) &#123;</span><br><span class="line">            <span class="keyword">if</span> (Platform.OS === <span class="string">'ios'</span>) &#123;</span><br><span class="line">              <span class="keyword">this</span>.iosTokenNetWork(fcmToken)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="keyword">this</span>.androidTokenNetWork(fcmToken)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.warn(<span class="string">'user doesn t have a device token yet'</span>)</span><br><span class="line">            <span class="comment">// user doesn't have a device token yet</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>You can click Push notification and go to another page when the App is in the background.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">messaging().setBackgroundMessageHandler(<span class="keyword">async</span> remoteMessage =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (remoteMessage) &#123;</span><br><span class="line">          appsFlyer.trackEvent(<span class="string">"Open_notification"</span>)</span><br><span class="line">          analytics().logEvent(<span class="string">'Open_notification'</span>, &#123;</span><br><span class="line">            value: <span class="string">''</span>,</span><br><span class="line">          &#125;);</span><br><span class="line">          <span class="keyword">if</span> (remoteMessage.data.send_user_history_id) &#123;</span><br><span class="line">            <span class="keyword">this</span>.pushRequest(remoteMessage.data.send_user_history_id)</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (remoteMessage.data.url === <span class="string">"MixMatch"</span>) &#123;  </span><br><span class="line">              <span class="keyword">this</span>.props.navigation.push(<span class="string">'MyClosetDetailPage'</span>, &#123;</span><br><span class="line">                product_id: remoteMessage.data.push_id,</span><br><span class="line">                returnPage: <span class="string">'Tabs'</span>,</span><br><span class="line">              &#125;)</span><br><span class="line">  </span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (remoteMessage.data.url === <span class="string">"StreetSnap"</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">this</span>.props.navigation.navigate(<span class="string">'PushlookbookStreetSnapPage'</span>, &#123;</span><br><span class="line">                streetId: remoteMessage.data.push_id,</span><br><span class="line">                returnPage: <span class="string">'Tabs'</span>,</span><br><span class="line">              &#125;)</span><br><span class="line">            &#125;, <span class="number">500</span>);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>You can click Push notification and go to another page when the App is closed</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">messaging()</span><br><span class="line">      .getInitialNotification()</span><br><span class="line">      .then(<span class="function"><span class="params">remoteMessage</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (remoteMessage) &#123;</span><br><span class="line">          appsFlyer.trackEvent(<span class="string">"Open_notification"</span>)</span><br><span class="line">          analytics().logEvent(<span class="string">'Open_notification'</span>, &#123;</span><br><span class="line">            value: <span class="string">''</span>,</span><br><span class="line">          &#125;);</span><br><span class="line">          <span class="comment">// alert(JSON.stringify(remoteMessage) )</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (remoteMessage.data.url === <span class="string">"MixMatch"</span>) &#123;</span><br><span class="line"></span><br><span class="line">              <span class="keyword">this</span>.timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">this</span>.props.navigation.push(<span class="string">'MyClosetDetailPage'</span>, &#123;</span><br><span class="line">                  product_id: remoteMessage.data.push_id,</span><br><span class="line">                  returnPage: <span class="string">'Tabs'</span>,</span><br><span class="line">                &#125;)</span><br><span class="line">              &#125;, <span class="number">500</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (remoteMessage.data.url === <span class="string">"StreetSnap"</span>) &#123;</span><br><span class="line">              <span class="keyword">this</span>.timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">this</span>.props.navigation.navigate(<span class="string">'PushlookbookStreetSnapPage'</span>, &#123;</span><br><span class="line">                  streetId: remoteMessage.data.push_id,</span><br><span class="line">                  returnPage: <span class="string">'Tabs'</span>,</span><br><span class="line">                &#125;)</span><br><span class="line">              &#125;, <span class="number">500</span>);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Create-Notification-Service-Extension"><a href="#Create-Notification-Service-Extension" class="headerlink" title="Create Notification Service Extension"></a>Create Notification Service Extension</h3><p>If I want to send an iOS Push Notification with picture to my iPhone, I have to add the iOS Push Notification with Notification Service Extension.</p>
+<ol>
+<li>In the Xcode menu, go to File &gt; New &gt; Target.</li>
+<li>Select the Notification Service Extension.</li>
+<li>Gives the name the Extension service and click the finish button.</li>
+</ol>
+<p>and enable Push Notification and App Group capabilities in iOS App target.</p>
+<p>NotificationService.h</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;UserNotifications/UserNotifications.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NotificationService</span> : <span class="title">UNNotificationServiceExtension</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>NotificationService.m<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"NotificationService.h"</span></span></span><br><span class="line"><span class="keyword">@import</span> Firebase;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NotificationService</span> ()</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="keyword">void</span> (^contentHandler)(UNNotificationContent *contentToDeliver);</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) UNMutableNotificationContent *bestAttemptContent;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NotificationService</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(<span class="keyword">void</span> (^)(UNNotificationContent * _Nonnull))contentHandler &#123;</span><br><span class="line">    <span class="keyword">self</span>.contentHandler = contentHandler;</span><br><span class="line">    <span class="keyword">self</span>.bestAttemptContent = [request.content mutableCopy];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Modify the notification content here...</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">self</span>.bestAttemptContent.title) &#123;</span><br><span class="line">    <span class="keyword">self</span>.bestAttemptContent.title = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@"</span>, <span class="keyword">self</span>.bestAttemptContent.title];</span><br><span class="line">  &#125;</span><br><span class="line">  [[FIRMessaging extensionHelper] populateNotificationContent:<span class="keyword">self</span>.bestAttemptContent</span><br><span class="line">  withContentHandler:contentHandler];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)serviceExtensionTimeWillExpire &#123;</span><br><span class="line">    <span class="comment">// Called just before the extension will be terminated by the system.</span></span><br><span class="line">    <span class="comment">// Use this as an opportunity to deliver your "best attempt" at modified content, otherwise the original push payload will be used.</span></span><br><span class="line">    <span class="keyword">self</span>.contentHandler(<span class="keyword">self</span>.bestAttemptContent);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="the-format-of-Push-Notification-Service-be-sent-by-Server"><a href="#the-format-of-Push-Notification-Service-be-sent-by-Server" class="headerlink" title="the format of Push Notification Service be sent by Server"></a>the format of Push Notification Service be sent by Server</h3><p>The content of data can be added or deleted with costume way. if your android device click the push notification bar, and then the app is not opened, the problem must be caused by the format of Push Notification Service. iOS as well.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;message&quot;: &#123;</span><br><span class="line">    &quot;notification&quot;: &#123;</span><br><span class="line">      &quot;title&quot;: &quot;title&quot;,</span><br><span class="line">      &quot;body&quot;: &quot;message content&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;token&quot;: &quot;fi7FrXMCFeQ:APA91bEZ3CCZEu6NJCzPNyOXq3QoGuCgZ_NZ6pSkuvAYM-VKTvfj1FbnBQKimHaOVqWv_4FD_eGZn1CcfNRf2Ve6X4_mYNwmgI99A1ngxcnY6oyjXTcNRsdIh7YD3SizhRHoTbIXcn-8&quot;,</span><br><span class="line">    &quot;data&quot;: &#123;</span><br><span class="line">      &quot;image_url&quot;: &quot;&quot;,</span><br><span class="line">      &quot;push_type&quot;: &quot;0&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;0&quot;,</span><br><span class="line">      &quot;url&quot;: &quot;MixMatch&quot;,</span><br><span class="line">      &quot;push_id&quot;: &quot;6587588&quot;,</span><br><span class="line">      &quot;send_user_history_id&quot;: &quot;&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;apns&quot;: &#123;</span><br><span class="line">      &quot;headers&quot;: &#123;</span><br><span class="line">        &quot;apns-priority&quot;: &quot;10&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;payload&quot;: &#123;</span><br><span class="line">        &quot;aps&quot;: &#123;</span><br><span class="line">          &quot;badge&quot;: 1,</span><br><span class="line">          &quot;mutable-content&quot;: 1</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;fcm_options&quot;: &#123;</span><br><span class="line">        &quot;image&quot;: &quot;&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/10/2020-01-10/" rel="next" title="React native - React-native-image-crop-picker">
+                <i class="fa fa-chevron-left"></i> React native - React-native-image-crop-picker
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.jpg" alt="Levi Duan">
+            
+              <p class="site-author-name" itemprop="name">Levi Duan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leviduan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.reddit.com/user/leviduan" target="_blank" title="Reddit">
+                      
+                        <i class="fa fa-fw fa-reddit"></i>Reddit</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://medium.com/@suiyun/responses" target="_blank" title="Medium">
+                      
+                        <i class="fa fa-fw fa-medium"></i>Medium</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                My Favorite
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/5a52075e6fb9a01c9d31b107/posts" title="iOS Week" target="_blank">iOS Week</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/ta/coding-interviews?page=1" title="Nowcoder" target="_blank">Nowcoder</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode.com/problemset/all/" title="Leetcode" target="_blank">Leetcode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dribbble.com/" title="Dribbble" target="_blank">Dribbble</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://courses.edx.org/dashboard" title="Edx" target="_blank">Edx</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-native-Push-Notification-Firebase"><span class="nav-number">1.</span> <span class="nav-text">React native - Push Notification (Firebase)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Installation"><span class="nav-number">1.0.1.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-Setup"><span class="nav-number">1.0.2.</span> <span class="nav-text">iOS Setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Setup"><span class="nav-number">1.0.3.</span> <span class="nav-text">Android Setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Native"><span class="nav-number">1.0.4.</span> <span class="nav-text">React Native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-Notification-Service-Extension"><span class="nav-number">1.0.5.</span> <span class="nav-text">Create Notification Service Extension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-format-of-Push-Notification-Service-be-sent-by-Server"><span class="nav-number">1.0.6.</span> <span class="nav-text">the format of Push Notification Service be sent by Server</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-apple" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Levi Duan</span>
+
+  
+</div>
+
+ <span class="with-love">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+   <span id="busuanzi_value_site_uv"></span> visitors | <span class="with-love">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+  <span id="busuanzi_value_site_pv"></span> times.
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://leviduan-com.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://leviduan.com/2020/06/04/2020-06-04/';
+          this.page.identifier = '2020/06/04/2020-06-04/';
+          this.page.title = 'UICollectionVIew的渐变背景';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://leviduan-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'leviduan',
+            repo: 'leviduan.github.io',
+            
+            oauth: {
+            
+            
+                client_secret: 'f9b37cbbc9ffc040beb6e6274f185dbd51538f53',
+            
+                client_id: 'dec2e19692d3d7784c49'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/libs/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/libs/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Twitter,Facebook,Reddit,Weibo";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

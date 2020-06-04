@@ -310,6 +310,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/06/04/2020-06-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/04/2020-06-04/" itemprop="url">UICollectionVIew的渐变背景</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-04T15:50:02+08:00">
+                2020-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/04/2020-06-04/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/04/2020-06-04/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="React-native-Push-Notification-Firebase"><a href="#React-native-Push-Notification-Firebase" class="headerlink" title="React native - Push Notification (Firebase)"></a>React native - Push Notification (Firebase)</h1><p>How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website “<a href="https://rnfirebase.io/&quot;" target="_blank" rel="noopener">https://rnfirebase.io/&quot;</a> , and click menu “Cloud Messaging”</p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Install &amp; setup the app module</span><br><span class="line">yarn add @react-native-firebase/app</span><br><span class="line"></span><br><span class="line"># Install the messaging module</span><br><span class="line">yarn add @react-native-firebase/messaging</span><br><span class="line"></span><br><span class="line"># If you&apos;re developing your app using iOS, run this command</span><br><span class="line">cd ios/ &amp;&amp; pod install</span><br></pre></td></tr></table></figure>
+<h3 id="iOS-Setup"><a href="#iOS-Setup" class="headerlink" title="iOS Setup"></a>iOS Setup</h3><p>AppDelegate.m</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@import</span> Firebase;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">AppDelegate</span> () &lt;<span class="title">FIRMessagingDelegate</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AppDelegate</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions</span><br><span class="line">&#123;</span><br><span class="line">    [FIRApp configure];</span><br><span class="line">    [application registerForRemoteNotifications];</span><br><span class="line">    [FIRMessaging messaging].delegate = <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>) messaging:(FIRMessaging *)messaging didReceiveRegistrationToken:(<span class="built_in">NSString</span> *)fcmToken &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"FCM registration token: %@"</span>, fcmToken);</span><br><span class="line">    <span class="comment">// Notify about received token.</span></span><br><span class="line">    <span class="built_in">NSDictionary</span> *dataDict = [<span class="built_in">NSDictionary</span> dictionaryWithObject:fcmToken forKey:<span class="string">@"token"</span>];</span><br><span class="line">    [[<span class="built_in">NSNotificationCenter</span> defaultCenter] postNotificationName:</span><br><span class="line">     <span class="string">@"FCMToken"</span> object:<span class="literal">nil</span> userInfo:dataDict];</span><br><span class="line">    <span class="comment">// <span class="doctag">TODO:</span> If necessary send token to application server.</span></span><br><span class="line">    <span class="comment">// Note: This callback is fired at each app startup and whenever a new token is generated.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *)application didFailToRegisterForRemoteNotificationsWithError:(<span class="built_in">NSError</span> *)error &#123;</span><br><span class="line">  <span class="built_in">NSLog</span>(<span class="string">@"error: %@"</span>, error);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Android-Setup"><a href="#Android-Setup" class="headerlink" title="Android Setup"></a>Android Setup</h3><p>/appName/android/app/src/main/AndroidManifest.xml</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;service android:name=<span class="string">".MyFirebaseMessagingService"</span> android:exported=<span class="string">"false"</span>&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=<span class="string">"com.google.firebase.MESSAGING_EVENT"</span> /&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">&lt;/service&gt;</span><br></pre></td></tr></table></figure>
+<p>/android/app/src/main/java/com/appName/MyFirebaseMessagingService.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.stylepedia;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.firebase.messaging.FirebaseMessagingService;</span><br><span class="line"><span class="keyword">import</span> com.google.firebase.messaging.RemoteMessage;</span><br><span class="line"><span class="keyword">import</span> android.util.Log;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyFirebaseMessagingService</span> <span class="keyword">extends</span> <span class="title">FirebaseMessagingService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String TAG = <span class="string">"FCMDemo"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMessageReceived</span><span class="params">(RemoteMessage remoteMessage)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// TODO(developer): Handle FCM messages here.</span></span><br><span class="line">        Log.d(TAG, <span class="string">"From: "</span> + remoteMessage.getFrom());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (remoteMessage.getData().size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            Log.d(TAG, <span class="string">"Message data payload: "</span> + remoteMessage.getData());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Check if message contains a notification payload.</span></span><br><span class="line">        <span class="keyword">if</span> (remoteMessage.getNotification() != <span class="keyword">null</span>) &#123;</span><br><span class="line">            Log.d(TAG, <span class="string">"Message Notification Body: "</span> + remoteMessage.getNotification().getBody());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Also if you intend on generating your own notifications as a result of a received FCM</span></span><br><span class="line">        <span class="comment">// message, here is where that should be initiated. See sendNotification method below.</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendRegistrationToServer</span><span class="params">(String token)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// <span class="doctag">TODO:</span> Implement this method to send token to your app server.</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNewToken</span><span class="params">(String token)</span> </span>&#123;</span><br><span class="line">        Log.d(TAG, <span class="string">"From: "</span> + token);</span><br><span class="line">        sendRegistrationToServer(token);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h3><p>You can get token by this function, if the device didn’t open Push Notification, you won’t get the token, so you make sure that the user have opened the notifications.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> messaging <span class="keyword">from</span> <span class="string">'@react-native-firebase/messaging'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!messaging().isDeviceRegisteredForRemoteMessages) &#123;</span><br><span class="line">    messaging().registerDeviceForRemoteMessages()</span><br><span class="line">&#125;</span><br><span class="line">messaging().getToken()</span><br><span class="line">.then(<span class="function"><span class="params">fcmToken</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (fcmToken) &#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(fcmToken)</span><br><span class="line">    <span class="keyword">if</span> (Platform.OS === <span class="string">'ios'</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.iosTokenNetWork(fcmToken)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.androidTokenNetWork(fcmToken)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(<span class="string">'user doesn t have a device token yet'</span>)</span><br><span class="line">    <span class="comment">// user doesn't have a device token yet</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>You can use this function to check if user open the push notification switch in user’s device.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">messaging().requestPermission().then(<span class="function">(<span class="params">response: any</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// if user click allow app push notification on pop-up，I can get token by function: </span></span><br><span class="line"></span><br><span class="line">messaging().requestPermission().then(<span class="function">(<span class="params">response: any</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!messaging().isDeviceRegisteredForRemoteMessages) &#123;</span><br><span class="line">        messaging().registerDeviceForRemoteMessages()</span><br><span class="line">      &#125;</span><br><span class="line">      messaging().getToken()</span><br><span class="line">        .then(<span class="function"><span class="params">fcmToken</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (fcmToken) &#123;</span><br><span class="line">            <span class="keyword">if</span> (Platform.OS === <span class="string">'ios'</span>) &#123;</span><br><span class="line">              <span class="keyword">this</span>.iosTokenNetWork(fcmToken)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="keyword">this</span>.androidTokenNetWork(fcmToken)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.warn(<span class="string">'user doesn t have a device token yet'</span>)</span><br><span class="line">            <span class="comment">// user doesn't have a device token yet</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>You can click Push notification and go to another page when the App is in the background.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">messaging().setBackgroundMessageHandler(<span class="keyword">async</span> remoteMessage =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (remoteMessage) &#123;</span><br><span class="line">          appsFlyer.trackEvent(<span class="string">"Open_notification"</span>)</span><br><span class="line">          analytics().logEvent(<span class="string">'Open_notification'</span>, &#123;</span><br><span class="line">            value: <span class="string">''</span>,</span><br><span class="line">          &#125;);</span><br><span class="line">          <span class="keyword">if</span> (remoteMessage.data.send_user_history_id) &#123;</span><br><span class="line">            <span class="keyword">this</span>.pushRequest(remoteMessage.data.send_user_history_id)</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (remoteMessage.data.url === <span class="string">"MixMatch"</span>) &#123;  </span><br><span class="line">              <span class="keyword">this</span>.props.navigation.push(<span class="string">'MyClosetDetailPage'</span>, &#123;</span><br><span class="line">                product_id: remoteMessage.data.push_id,</span><br><span class="line">                returnPage: <span class="string">'Tabs'</span>,</span><br><span class="line">              &#125;)</span><br><span class="line">  </span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (remoteMessage.data.url === <span class="string">"StreetSnap"</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">this</span>.props.navigation.navigate(<span class="string">'PushlookbookStreetSnapPage'</span>, &#123;</span><br><span class="line">                streetId: remoteMessage.data.push_id,</span><br><span class="line">                returnPage: <span class="string">'Tabs'</span>,</span><br><span class="line">              &#125;)</span><br><span class="line">            &#125;, <span class="number">500</span>);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>You can click Push notification and go to another page when the App is closed</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">messaging()</span><br><span class="line">      .getInitialNotification()</span><br><span class="line">      .then(<span class="function"><span class="params">remoteMessage</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (remoteMessage) &#123;</span><br><span class="line">          appsFlyer.trackEvent(<span class="string">"Open_notification"</span>)</span><br><span class="line">          analytics().logEvent(<span class="string">'Open_notification'</span>, &#123;</span><br><span class="line">            value: <span class="string">''</span>,</span><br><span class="line">          &#125;);</span><br><span class="line">          <span class="comment">// alert(JSON.stringify(remoteMessage) )</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (remoteMessage.data.url === <span class="string">"MixMatch"</span>) &#123;</span><br><span class="line"></span><br><span class="line">              <span class="keyword">this</span>.timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">this</span>.props.navigation.push(<span class="string">'MyClosetDetailPage'</span>, &#123;</span><br><span class="line">                  product_id: remoteMessage.data.push_id,</span><br><span class="line">                  returnPage: <span class="string">'Tabs'</span>,</span><br><span class="line">                &#125;)</span><br><span class="line">              &#125;, <span class="number">500</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (remoteMessage.data.url === <span class="string">"StreetSnap"</span>) &#123;</span><br><span class="line">              <span class="keyword">this</span>.timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">this</span>.props.navigation.navigate(<span class="string">'PushlookbookStreetSnapPage'</span>, &#123;</span><br><span class="line">                  streetId: remoteMessage.data.push_id,</span><br><span class="line">                  returnPage: <span class="string">'Tabs'</span>,</span><br><span class="line">                &#125;)</span><br><span class="line">              &#125;, <span class="number">500</span>);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Create-Notification-Service-Extension"><a href="#Create-Notification-Service-Extension" class="headerlink" title="Create Notification Service Extension"></a>Create Notification Service Extension</h3><p>If I want to send an iOS Push Notification with picture to my iPhone, I have to add the iOS Push Notification with Notification Service Extension.</p>
+<ol>
+<li>In the Xcode menu, go to File &gt; New &gt; Target.</li>
+<li>Select the Notification Service Extension.</li>
+<li>Gives the name the Extension service and click the finish button.</li>
+</ol>
+<p>and enable Push Notification and App Group capabilities in iOS App target.</p>
+<p>NotificationService.h</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;UserNotifications/UserNotifications.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NotificationService</span> : <span class="title">UNNotificationServiceExtension</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>NotificationService.m<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"NotificationService.h"</span></span></span><br><span class="line"><span class="keyword">@import</span> Firebase;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NotificationService</span> ()</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="keyword">void</span> (^contentHandler)(UNNotificationContent *contentToDeliver);</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) UNMutableNotificationContent *bestAttemptContent;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NotificationService</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(<span class="keyword">void</span> (^)(UNNotificationContent * _Nonnull))contentHandler &#123;</span><br><span class="line">    <span class="keyword">self</span>.contentHandler = contentHandler;</span><br><span class="line">    <span class="keyword">self</span>.bestAttemptContent = [request.content mutableCopy];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Modify the notification content here...</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">self</span>.bestAttemptContent.title) &#123;</span><br><span class="line">    <span class="keyword">self</span>.bestAttemptContent.title = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@"</span>, <span class="keyword">self</span>.bestAttemptContent.title];</span><br><span class="line">  &#125;</span><br><span class="line">  [[FIRMessaging extensionHelper] populateNotificationContent:<span class="keyword">self</span>.bestAttemptContent</span><br><span class="line">  withContentHandler:contentHandler];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)serviceExtensionTimeWillExpire &#123;</span><br><span class="line">    <span class="comment">// Called just before the extension will be terminated by the system.</span></span><br><span class="line">    <span class="comment">// Use this as an opportunity to deliver your "best attempt" at modified content, otherwise the original push payload will be used.</span></span><br><span class="line">    <span class="keyword">self</span>.contentHandler(<span class="keyword">self</span>.bestAttemptContent);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="the-format-of-Push-Notification-Service-be-sent-by-Server"><a href="#the-format-of-Push-Notification-Service-be-sent-by-Server" class="headerlink" title="the format of Push Notification Service be sent by Server"></a>the format of Push Notification Service be sent by Server</h3><p>The content of data can be added or deleted with costume way. if your android device click the push notification bar, and then the app is not opened, the problem must be caused by the format of Push Notification Service. iOS as well.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;message&quot;: &#123;</span><br><span class="line">    &quot;notification&quot;: &#123;</span><br><span class="line">      &quot;title&quot;: &quot;title&quot;,</span><br><span class="line">      &quot;body&quot;: &quot;message content&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;token&quot;: &quot;fi7FrXMCFeQ:APA91bEZ3CCZEu6NJCzPNyOXq3QoGuCgZ_NZ6pSkuvAYM-VKTvfj1FbnBQKimHaOVqWv_4FD_eGZn1CcfNRf2Ve6X4_mYNwmgI99A1ngxcnY6oyjXTcNRsdIh7YD3SizhRHoTbIXcn-8&quot;,</span><br><span class="line">    &quot;data&quot;: &#123;</span><br><span class="line">      &quot;image_url&quot;: &quot;&quot;,</span><br><span class="line">      &quot;push_type&quot;: &quot;0&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;0&quot;,</span><br><span class="line">      &quot;url&quot;: &quot;MixMatch&quot;,</span><br><span class="line">      &quot;push_id&quot;: &quot;6587588&quot;,</span><br><span class="line">      &quot;send_user_history_id&quot;: &quot;&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;apns&quot;: &#123;</span><br><span class="line">      &quot;headers&quot;: &#123;</span><br><span class="line">        &quot;apns-priority&quot;: &quot;10&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;payload&quot;: &#123;</span><br><span class="line">        &quot;aps&quot;: &#123;</span><br><span class="line">          &quot;badge&quot;: 1,</span><br><span class="line">          &quot;mutable-content&quot;: 1</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;fcm_options&quot;: &#123;</span><br><span class="line">        &quot;image&quot;: &quot;&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/01/10/2020-01-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1921,171 +2100,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/01/08/2020-01-08-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Levi Duan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Levi's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/08/2020-01-08-3/" itemprop="url">React native - Search bar</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-08T22:47:02+08:00">
-                2020-01-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/08/2020-01-08-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/08/2020-01-08-3/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>If you want to use SearchBar on React Native, the best choice is React Native Elements Library. you can use SearchBar module from React Native Elements.</p>
-<p>The website: <a href="https://react-native-elements.github.io/react-native-elements/docs/input.html" target="_blank" rel="noopener">https://react-native-elements.github.io/react-native-elements/docs/input.html</a></p>
-<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>Step 1: Install react-native-elements</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">yarn add react-native-elements</span><br><span class="line"># or with npm</span><br><span class="line">npm install react-native-elements</span><br></pre></td></tr></table></figure>
-<p>Step 2: Install react-native-vector-icons</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># yarn</span><br><span class="line">yarn add react-native-vector-icons</span><br><span class="line"># or with npm</span><br><span class="line">npm i --save react-native-vector-icons</span><br><span class="line"></span><br><span class="line"># link</span><br><span class="line">react-native link react-native-vector-icons</span><br></pre></td></tr></table></figure>
-<p>Ps: if Xcode run error - react-native-vector-icons iOS run error - ‘Multiple commands produce’ error when building with new Xcode build system</p>
-<p>The solution way : <strong>simply remove duplicate reference fonts in “Copy Bundle Resources” NOT in “[CP] Copy Pods Resources”</strong></p>
-<p>You can correct to run iOS app.</p>
-<h3 id="How-to-use-search-bar-on-RN"><a href="#How-to-use-search-bar-on-RN" class="headerlink" title="How to use search bar on RN"></a>How to use search bar on RN</h3><p>You can write the SearchBar Label to write a UI code like this: </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; SearchBar &#125; <span class="keyword">from</span> <span class="string">'react-native-elements'</span>;</span><br><span class="line"></span><br><span class="line">&lt;SearchBar</span><br><span class="line">    inputContainerStyle=&#123;&#123;<span class="attr">backgroundColor</span>: <span class="string">'#EFEFEF'</span>&#125;&#125;</span><br><span class="line">    inputStyle=&#123;&#123;<span class="attr">backgroundColor</span>: <span class="string">'#EFEFEF'</span>&#125;&#125;</span><br><span class="line">    ref=&#123;search =&gt; (<span class="keyword">this</span>.search = search)&#125;</span><br><span class="line">    platform=<span class="string">"ios"</span></span><br><span class="line">    containerStyle=&#123;&#123;<span class="attr">backgroundColor</span>: <span class="string">'white'</span>&#125;&#125;</span><br><span class="line">    placeholder=<span class="string">"Search"</span></span><br><span class="line">    showCancel=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">    searchIcon=&#123;<span class="literal">false</span>&#125;</span><br><span class="line">    onChangeText=&#123;searchText =&gt;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;searchText&#125;, () =&gt; &#123;</span><br><span class="line">        <span class="keyword">this</span>.searchTypeGetRequest();</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    value=&#123;<span class="keyword">this</span>.state.searchText&#125;</span><br><span class="line">    cancelButtonProps=&#123;&#123;<span class="attr">color</span>: <span class="string">'black'</span>&#125;&#125;</span><br><span class="line">    onCancel=&#123;() =&gt; &#123;</span><br><span class="line">      <span class="keyword">this</span>.props.navigation.goBack();</span><br><span class="line">    &#125;&#125;</span><br><span class="line">    returnKeyType=<span class="string">"search"</span></span><br><span class="line">    onFocus=&#123;() =&gt; &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> (&#123;</span><br><span class="line">        LookbookStreetSnapFlatList: <span class="literal">false</span>,</span><br><span class="line">      &#125;));</span><br><span class="line">    &#125;&#125;</span><br><span class="line">    onClear=&#123;() =&gt; &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> (&#123;</span><br><span class="line">        LookbookStreetSnapFlatList: <span class="literal">false</span>,</span><br><span class="line">      &#125;));</span><br><span class="line">      <span class="keyword">this</span>.search.focus();</span><br><span class="line">    &#125;&#125;</span><br><span class="line">    onSubmitEditing=&#123;() =&gt; &#123;</span><br><span class="line">       <span class="comment">// press the search button, something will be happened</span></span><br><span class="line">    &#125;&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
-<p>If you use  <code>this.search.focus()</code>, you can find a bug when you use iOS device. when you inter the search page, you click the cancel button, the keyboard always be there and didn’t dismiss anytime. So you can use setTimeout void to avoid that action.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;SearchBar</span><br><span class="line">  ref=&#123;search =&gt; <span class="keyword">this</span>.search = search&#125;</span><br><span class="line">  ...</span><br><span class="line">/&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (Platform.OS === <span class="string">'ios'</span>) &#123;</span><br><span class="line">  <span class="keyword">this</span>.timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.search.focus();</span><br><span class="line">  &#125;, <span class="number">200</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">this</span>.search.focus();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>About the other detail , you can check the API from RN element library website: </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2138,7 +2152,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
