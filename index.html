@@ -310,6 +310,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/06/04/2020-06-04-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/04/2020-06-04-1/" itemprop="url">React native -Loading Page</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-04T16:50:02+08:00">
+                2020-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/04/2020-06-04-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/04/2020-06-04-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Sometimes the page is loading, we will keep a loading page to give user more user experience, how it works? We can use “Modal” and “ActivityIndicator” do it very well.</p>
+<p>Let us start:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    ActivityIndicator,</span><br><span class="line">    Modal</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;Fragment&gt;</span><br><span class="line">                &lt;StatusBar barStyle=<span class="string">"dark-content"</span> /&gt;</span><br><span class="line">                &lt;SafeAreaView style=&#123;styles.container&#125;&gt;</span><br><span class="line">                     &lt;Modal</span><br><span class="line">                        transparent=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">                        animationType=&#123;<span class="string">'none'</span>&#125;</span><br><span class="line">                        visible=&#123;<span class="keyword">this</span>.state.isLoading&#125;</span><br><span class="line">                        onRequestClose=&#123;() =&gt; &#123;<span class="built_in">console</span>.log(<span class="string">'close modal'</span>)&#125;&#125;&gt;</span><br><span class="line">                        &lt;View style=&#123;styles.modalBackground&#125;&gt;</span><br><span class="line">                            &lt;View style=&#123;styles.activityIndicatorWrapper&#125;&gt;</span><br><span class="line">                            &lt;ActivityIndicator style=&#123;&#123; <span class="attr">position</span>: <span class="string">'absolute'</span>, <span class="attr">left</span>: <span class="number">0</span>, <span class="attr">right</span>: <span class="number">0</span>, <span class="attr">top</span>: <span class="number">0</span>, <span class="attr">bottom</span>: <span class="number">0</span>, <span class="attr">margin</span>: <span class="string">"auto"</span>&#125;&#125;/&gt;</span><br><span class="line">                            &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">                        &lt;/</span>View&gt;</span><br><span class="line">                    &lt;<span class="regexp">/Modal&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>SafeAreaView&gt;</span><br><span class="line">            &lt;<span class="regexp">/Fragment&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const styles = StyleSheet.create(&#123;</span></span><br><span class="line"><span class="regexp">    container: &#123;</span></span><br><span class="line"><span class="regexp">        flex: 1,</span></span><br><span class="line"><span class="regexp">        flexDirection: 'column',</span></span><br><span class="line"><span class="regexp">        height: '100%',</span></span><br><span class="line"><span class="regexp">        width: '100%',</span></span><br><span class="line"><span class="regexp">        backgroundColor: '#F3F3F3',</span></span><br><span class="line"><span class="regexp">        alignItems: 'center',</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">      activityIndicatorWrapper: &#123;</span></span><br><span class="line"><span class="regexp">        backgroundColor: '#FFFFFF',</span></span><br><span class="line"><span class="regexp">        height: 70,</span></span><br><span class="line"><span class="regexp">        width: 70,</span></span><br><span class="line"><span class="regexp">        borderRadius: 10,</span></span><br><span class="line"><span class="regexp">        display: 'flex',</span></span><br><span class="line"><span class="regexp">        alignItems: 'center',</span></span><br><span class="line"><span class="regexp">        justifyContent: 'space-around'</span></span><br><span class="line"><span class="regexp">      &#125;,</span></span><br><span class="line"><span class="regexp">      modalBackground: &#123;</span></span><br><span class="line"><span class="regexp">        flex: 1,</span></span><br><span class="line"><span class="regexp">        alignItems: 'center',</span></span><br><span class="line"><span class="regexp">        flexDirection: 'column',</span></span><br><span class="line"><span class="regexp">        justifyContent: 'space-around',</span></span><br><span class="line"><span class="regexp">        backgroundColor: '#00000040'</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/06/04/2020-06-04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1936,172 +2090,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2020/01/08/2020-01-08-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Levi Duan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Levi's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/08/2020-01-08-4/" itemprop="url">React native network library - Axios</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-08T22:47:04+08:00">
-                2020-01-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/08/2020-01-08-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/08/2020-01-08-4/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>How to use axios in React Native</p>
-<h3 id="Axios-Interceptors"><a href="#Axios-Interceptors" class="headerlink" title="Axios Interceptors"></a>Axios Interceptors</h3><p>Axios interceptors allow us to run code or modify the request and response before the request and response is started.</p>
-<p>In simple words, it allows you write or execute a piece of your code before the request gets sent.</p>
-<h3 id="Write-into-a-file-to-package-Axios"><a href="#Write-into-a-file-to-package-Axios" class="headerlink" title="Write into a file to package Axios"></a>Write into a file to package Axios</h3><p>The simple example: </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"></span><br><span class="line">axios.defaults.retry = <span class="number">4</span>;</span><br><span class="line">axios.defaults.timeout = <span class="number">10000</span>;</span><br><span class="line">axios.defaults.headers.common[<span class="string">'x-dejafashion-ua'</span>] = <span class="string">' '</span></span><br><span class="line">axios.defaults.headers.common[<span class="string">'uid'</span>] = <span class="string">'0'</span></span><br><span class="line">axios.defaults.headers.common[<span class="string">'User-Agent'</span>] = <span class="string">'iphone ... CFNetwork/1098.7 Darwin/19.0.0'</span></span><br><span class="line"></span><br><span class="line">axios.defaults.headers.post[<span class="string">'Content-Type'</span>] = <span class="string">'application/json;charset=UTF-8'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> stylepedia_DT = <span class="string">'https://cloud-dt.co/'</span></span><br><span class="line"><span class="keyword">const</span> stylepedia_DP = <span class="string">'http://cloud-dp.co/'</span></span><br><span class="line"><span class="keyword">const</span> stylepedia_PR = <span class="string">'https://cloud.co/'</span></span><br><span class="line"></span><br><span class="line">axios.interceptors.response.use(<span class="literal">undefined</span>, <span class="function"><span class="keyword">function</span> <span class="title">axiosRetryInterceptor</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> config = err.config;</span><br><span class="line">  <span class="comment">// If config does not exist or the retry option is not set, reject</span></span><br><span class="line">  <span class="keyword">if</span>(!config || !config.retry) <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Set the variable for keeping track of the retry count</span></span><br><span class="line">  config.__retryCount = config.__retryCount || <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Check if we've maxed out the total number of retries</span></span><br><span class="line">  <span class="keyword">if</span>(config.__retryCount &gt;= config.retry) &#123;</span><br><span class="line">      <span class="comment">// Reject with the error</span></span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Increase the retry count</span></span><br><span class="line">  config.__retryCount += <span class="number">1</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Create new promise to handle exponential backoff</span></span><br><span class="line">  <span class="keyword">var</span> backoff = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          resolve();</span><br><span class="line">      &#125;, config.retryDelay || <span class="number">1</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Return the promise in which recalls axios to retry the request</span></span><br><span class="line">  <span class="keyword">return</span> backoff.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> axios(config);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> axios.create(&#123;</span><br><span class="line">  baseURL: stylepedia_DP</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="You-can-use-this-file-to-send-a-Get-request"><a href="#You-can-use-this-file-to-send-a-Get-request" class="headerlink" title="You can use this file to send a Get request"></a>You can use this file to send a Get request</h3><p>if you want bring params, don’t forget to use <code>params</code> dictionary to add params</p>
-<p>For example:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> API <span class="keyword">from</span> <span class="string">'../../Network/api'</span></span><br><span class="line"></span><br><span class="line">    searchInfluencersRequest() &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            influencerLoading: <span class="literal">true</span>,</span><br><span class="line">        &#125;);</span><br><span class="line">        API.get(<span class="string">'search/influencers'</span>, &#123;</span><br><span class="line">            params: &#123;</span><br><span class="line">                key: <span class="keyword">this</span>.state.searchText,</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        </span><br><span class="line">            <span class="keyword">if</span> (res.data.ret === <span class="number">0</span> &amp;&amp; res.data.data !== <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                    influencerArray: res.data.data.infuencer_item_list,</span><br><span class="line">                    influencerLoading: <span class="literal">false</span>,</span><br><span class="line">                &#125;)             </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">this</span>.setState(&#123; </span><br><span class="line">                    influencerArray: [],</span><br><span class="line">                    influencerLoading: <span class="literal">false</span>,</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                influencerArray: [],</span><br><span class="line">                influencerLoading: <span class="literal">false</span>,</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="You-can-use-this-file-to-send-a-Post-request"><a href="#You-can-use-this-file-to-send-a-Post-request" class="headerlink" title="You can use this file to send a Post request"></a>You can use this file to send a Post request</h3><p>Send a Post request, the way is really similar to Get request</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">likeStatusRequest(likeStatus, street_id) &#123;</span><br><span class="line">    API.post(<span class="string">'favourite/favourite_status'</span>, &#123;</span><br><span class="line">      street_id: street_id,</span><br><span class="line">      like: likeStatus ? <span class="number">1</span> : <span class="number">0</span>,</span><br><span class="line">    &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        likeStatus</span><br><span class="line">          ? Toast.show(<span class="string">'Added to Favourites'</span>, &#123;</span><br><span class="line">              position: Toast.positions.CENTER,</span><br><span class="line">            &#125;)</span><br><span class="line">          : Toast.show(<span class="string">'Removed from Favourites'</span>, &#123;</span><br><span class="line">              position: Toast.positions.CENTER,</span><br><span class="line">            &#125;);</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Sometimes-you-want-change-defaults-header"><a href="#Sometimes-you-want-change-defaults-header" class="headerlink" title="Sometimes you want change defaults header"></a>Sometimes you want change defaults header</h3><p>You can do it like this:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">API.defaults.headers.common[<span class="string">'uid'</span>] = global.uid;</span><br><span class="line">API.defaults.headers.common[<span class="string">'sig'</span>] = global.sig;</span><br></pre></td></tr></table></figure>
-<h3 id="How-to-send-an-image-to-server？"><a href="#How-to-send-an-image-to-server？" class="headerlink" title="How to send an image to server？"></a>How to send an image to server？</h3><p>You need to new a FormData to add your image path 、image type and image rename.</p>
-<p>don’t forget to change your ‘Content-Type’ headers.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">uploadImageRequest() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> formData = <span class="keyword">new</span> FormData();</span><br><span class="line">    <span class="keyword">let</span> file = &#123;<span class="attr">uri</span>: ../.../levi.png, <span class="attr">type</span>: <span class="string">'multipart/form-data'</span>, <span class="attr">name</span>: <span class="string">'image.png'</span>&#125;;   </span><br><span class="line">    formData.append(<span class="string">"file"</span>,file);  </span><br><span class="line">    <span class="keyword">let</span> config = &#123;</span><br><span class="line">        headers:&#123;<span class="string">'Content-Type'</span>:<span class="string">'multipart/form-data'</span>&#125;</span><br><span class="line">    &#125;; </span><br><span class="line">    API.post(<span class="string">'customer/upload'</span>,formData,config)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            imageResponseUrl: res.data.url,</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error);</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            isLookLoading: <span class="literal">false</span>,</span><br><span class="line">            noRequest: <span class="literal">false</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2154,7 +2142,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

@@ -310,6 +310,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2019/03/11/2019-03-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Levi Duan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Levi's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/11/2019-03-11/" itemprop="url">《剑指offer》 二叉搜索树与双向链表</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-11T00:55:00+08:00">
+                2019-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/11/2019-03-11/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/11/2019-03-11/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="OJ-address"><a href="#OJ-address" class="headerlink" title="OJ address"></a>OJ address</h3><p>website : <a href="https://www.nowcoder.com/ta/coding-interviews?page=2" target="_blank" rel="noopener">《剑指offer》二叉搜索树与双向链表</a></p>
+<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。</p>
+<h3 id="Solution-in-C"><a href="#Solution-in-C" class="headerlink" title="Solution in C++"></a>Solution in C++</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">Convert</span><span class="params">(TreeNode* pRootOfTree)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        TreeNode *pRootOfDuLInk = pRootOfTree;</span><br><span class="line">        <span class="keyword">if</span> (!pRootOfTree) <span class="keyword">return</span> pRootOfTree;</span><br><span class="line">        <span class="keyword">while</span>(pRootOfDuLInk-&gt;left) pRootOfDuLInk = pRootOfDuLInk-&gt;left;</span><br><span class="line">        TreeNode* pre = <span class="number">0</span>;</span><br><span class="line">        traverse(pRootOfTree, pre);</span><br><span class="line">        <span class="keyword">return</span> pRootOfDuLInk;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(TreeNode* node, TreeNode* &amp;pre)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node-&gt;left)  &#123;</span><br><span class="line">            traverse(node-&gt;left, pre);</span><br><span class="line">        &#125;</span><br><span class="line">        node-&gt;left = pre;</span><br><span class="line">        <span class="keyword">if</span> (pre) &#123;</span><br><span class="line">            pre-&gt;right = node;</span><br><span class="line">        &#125;</span><br><span class="line">        pre = node;</span><br><span class="line">        <span class="keyword">if</span> (node-&gt;right) &#123;</span><br><span class="line">            traverse(node-&gt;right, pre);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="My-Idea"><a href="#My-Idea" class="headerlink" title="My Idea"></a>My Idea</h3><p>解题思路就是，二叉搜索树的中序遍历就是从小到大的一次排序, 需要记录一个pre指针：</p>
+<ol>
+<li>通过中序排序，每个节点的next为中序排序的下一个节点。</li>
+<li>记录一个pre指针，主要是记录中序排序的前一个节点，这样节点可以通僧哦left指针指向pre指针，就可以完成双链表的操作了。 </li>
+<li>pre-&gt;right=current; current-&gt;left=pre。</li>
+<li>需要保存指向上个节点,需要对指针的引用 TreeNode<em>&amp; ,了解下 </em>&amp; 的连接用法</li>
+</ol>
+<p>extension:</p>
+<p>That is taking the parameter by reference. So in the first case you are taking a pointer parameter by reference so whatever modification you do to the value of the pointer is reflected outside the function. Second is the simlilar to first one with the only difference being that it is a double pointer. See this example:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pass_by_value</span><span class="params">(<span class="keyword">int</span>* p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//Allocate memory for int and store the address in p</span></span><br><span class="line">    p = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pass_by_reference</span><span class="params">(<span class="keyword">int</span>*&amp; p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    p = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>* p1 = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">int</span>* p2 = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    pass_by_value(p1); <span class="comment">//p1 will still be NULL after this call</span></span><br><span class="line">    pass_by_reference(p2); <span class="comment">//p2 's value is changed to point to the newly allocate memory</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leviduan.com/2019/03/10/2019-03-10-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1836,171 +2000,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leviduan.com/2019/01/30/2019-01-30-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Levi Duan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Levi's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/30/2019-01-30-1/" itemprop="url">2019/1/30 思考感悟</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-30T22:50:00+08:00">
-                2019-01-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Idea/" itemprop="url" rel="index">
-                    <span itemprop="name">Idea</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/30/2019-01-30-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/30/2019-01-30-1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>之前听过一句话，如果你对创业成功的可能性有正确认识的话，你根本不会创业。创业者往往是无知无畏、过度自信的人。这些人是认准一个方向先干起来再说，大自然对此表示很愉快，因为总有探索者出去干，才能把那个正确的方向找出来。</p>
-</li>
-<li><p>成功的反义词一直都不是失败，而是平庸。失败者跟成功者同样光荣，他们都是尝试者。就好比马斯克，今天弄火箭明天弄什么高速交通工具，他一直都在赌博而已。不赌当然永远不会输，但是也永远都不会赢。</p>
-</li>
-<li><p>以前小布什当总统的时候，打伊拉克，很多记者反对，有一次小布什当局一个什么官员出来开记者会，跟记者说了几句话，非常有意思，大意是说，我们是历史舞台的参与者，我们的一举一动都在左右历史进程，而你们这帮记者只不过是历史的记录者，你们下了很多功夫，记录的很正确，当然有权批评我们，但是你千万别忘了这个事实：你们永远只能旁观议论，真正参与历史的是我们。</p>
-</li>
-<li><p>慎独，不是说什么自己一个人的时候谨慎小心不做坏事，而是常常担心有什么东西，自己不知道，要主动寻求知识。</p>
-</li>
-<li><p>Synthesize 意思是你主动去调研所有相关知识然后自己做一个综合判断。</p>
-</li>
-<li><p>普通人做事总是把”不伤害自己的感情“放在首位，一天到晚，担心这个害怕那个，特别脆弱。如果一个人能克服这些弱点，明确知道自己是谁，自己想要什么，应该怎么做，他就会非常坚定，对生活就有掌控感。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2053,7 +2052,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
