@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="Levi Duan ">
 <meta name="description" content="Algorithm OJ address website :OJ
 Description Make Array Palindrome For a given array, we need to make array palindrome. Only allowed operation on array is merge. To merge two adjacent elements just simply replace them with their sum. Task is to find minimum number of merge operations to make given array palindrome. Input The first line contains single integer N The second line contains N space separated integers Output Minimum number of merge operations to make given array palindrome." />
 <meta name="keywords" content=", blog" />
@@ -15,7 +15,7 @@ Description Make Array Palindrome For a given array, we need to make array palin
 
     <title>
         
-            ARTS16-20200920 :: Hello Friend NG  — A simple theme for Hugo
+            ARTS16-20200920 :: Levi&#39;s Blog  — A simple theme for Hugo
         
     </title>
 
@@ -26,7 +26,7 @@ Description Make Array Palindrome For a given array, we need to make array palin
 
 
 
-<link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+<link rel="stylesheet" href="/main.e8f32d5ab5e8a83fef65906978943be0a96982b029d1207e98d7e8f8930bfb3d.css">
 
 
 
@@ -61,7 +61,7 @@ Description Make Array Palindrome For a given array, we need to make array palin
 <meta property="og:url" content="https://leviduan.com/posts/helloworld/" />
 <meta property="og:image" content="https://leviduan.com/"/>
 <meta property="article:published_time" content="2020-09-21T02:37:21+08:00" />
-<meta property="article:modified_time" content="2020-09-21T02:37:21+08:00" /><meta property="og:site_name" content="Hello Friend NG" />
+<meta property="article:modified_time" content="2020-09-21T02:37:21+08:00" /><meta property="og:site_name" content="Levi&#39;s Blog" />
 
 
 
@@ -87,7 +87,7 @@ Description Make Array Palindrome For a given array, we need to make array palin
     <div class="logo">
         
             <span class="logo__mark">></span>
-            <span class="logo__text">hello friend ng</span>
+            <span class="logo__text">cd /home/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -101,7 +101,7 @@ Description Make Array Palindrome For a given array, we need to make array palin
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://leviduan.com/posts">Blog</a></li>
+    <ul class="menu__inner"><li><a href="https://leviduan.com/about/">About</a></li><li><a href="https://leviduan.com/Works/">Works</a></li><li><a href="https://leviduan.com/posts/">Posts</a></li>
     </ul>
 </nav>
 
@@ -292,130 +292,130 @@ The view styles of the bottom part, I set the flex:0, marginTop: &lsquo;auto&rsq
 <li>Remember to use PropTypes, it&rsquo;s so convenient to check props format.</li>
 </ol>
 <p>Show my code:</p>
-<pre><code>import React from 'react'
-import { TouchableOpacity, Text, View, Modal, Image, StyleSheet } from 'react-native'
-import PropTypes from 'prop-types'
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">TouchableOpacity</span>, <span style="color:#a6e22e">Text</span>, <span style="color:#a6e22e">View</span>, <span style="color:#a6e22e">Modal</span>, <span style="color:#a6e22e">Image</span>, <span style="color:#a6e22e">StyleSheet</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PropTypes</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;prop-types&#39;</span>
 
-const PopupWindow = props =&gt; (
-    &lt;Modal
-        transparent={true}
-        animationType={'none'}
-        visible={props.visible}
-    &gt;
-        &lt;View style={styles.mainview}&gt;
-            &lt;View style={styles.imageBackground}
-            &gt;
-                &lt;Text style={styles.mainTitle}&gt;{props.title}&lt;/Text&gt;
-                &lt;Text style={styles.subTitle}&gt;{props.content}&lt;/Text&gt;
-                &lt;Image
-                    source={{ uri: props.imageURL }}
-                    style={styles.image}
-                &gt;
-                &lt;/Image&gt;
-                &lt;TouchableOpacity
-                    activeOpacity={1.0}
-                    style={{ marginTop: 20 }}
-                    onPress={props.clickOpenButton}&gt;
-                    &lt;View style={styles.subView}&gt;
-                        &lt;Text style={styles.buttonText}&gt;Let's start&lt;/Text&gt;
-                    &lt;/View&gt;
-                &lt;/TouchableOpacity&gt;
-                &lt;Text style={styles.noteText}&gt;Powered by Google Forms&lt;/Text&gt;
-                &lt;TouchableOpacity
-                    activeOpacity={1.0}
-                    style={styles.buttonTouch}
-                    onPress={props.clickCloseButton}&gt;
-                    &lt;Image source={require('../../../ImageSets/closex.png')} style={styles.closeButton} /&gt;
-                &lt;/TouchableOpacity&gt;
-            &lt;/View&gt;
-        &lt;/View&gt;
-    &lt;/Modal&gt;
-)
-
-PopupWindow.propTypes = {
-    imageURL: PropTypes.string,
-    title: PropTypes.string,
-    content: PropTypes.string,
-    visible: PropTypes.bool,
-}
-
-const styles = StyleSheet.create({
-    mainview: {
-        flex: 1,
-        alignItems: 'center',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        backgroundColor: '#ffffff80'
-    },
-    imageBackground: {
-        flexDirection: 'column',
-        width: 280,
-        alignItems: 'center',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        borderRadius: 13,
-        overflow: 'hidden',
-        backgroundColor: '#B9D7E7'
-    },
-    mainTitle: {
-        fontSize: 16,
-        width: 280,
-        color: '#262729',
-        textAlign: 'center',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        fontFamily: 'HelveticaNeue-Bold',
-        marginTop: 40,
-    },
-    subTitle: {
-        fontSize: 14,
-        width: 280,
-        color: '#262729',
-        textAlign: 'center',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        fontFamily: 'HelveticaNeue',
-        marginTop: 10,
-    },
-    image: {
-        width: 115,
-        height: 115,
-        marginTop: 13,
-        alignSelf: 'center'
-    },
-    subView: {
-        flexDirection: 'column', width: 200, height: 45, backgroundColor: '#262729', borderRadius: 22, alignItems: 'center', justifyContent: 'center'
-    },
-    buttonText: {
-        fontSize: 16,
-        color: '#FFFFFF',
-        textAlign: 'center',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        fontFamily: 'HelveticaNeue-Bold',
-    },
-    noteText: {
-        fontSize: 10,
-        width: 280,
-        color: '#262729',
-        textAlign: 'center',
-        justifyContent: 'center',
-        fontFamily: 'HelveticaNeue',
-        marginTop: 7,
-        marginBottom: 9,
-    },
-    buttonTouch: {
-        position: 'absolute', top: 0, right: 0, flexDirection: 'column', width: 44, height: 44, justifyContent: 'center', alignItems: 'center'
-    },
-    closeButton: {
-        height: 15,
-        width: 15,
-        alignSelf: 'center',
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PopupWindow</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span> =&gt; (
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Modal</span>
+        <span style="color:#a6e22e">transparent</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">true</span>}
+        <span style="color:#a6e22e">animationType</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;none&#39;</span>}
+        <span style="color:#a6e22e">visible</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">visible</span>}
+    <span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">mainview</span>}<span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">imageBackground</span>}
+            <span style="color:#f92672">&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Text</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">mainTitle</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">title</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Text&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Text</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">subTitle</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">content</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Text&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Image</span>
+                    <span style="color:#a6e22e">source</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">uri</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">imageURL</span> }}
+                    <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">image</span>}
+                <span style="color:#f92672">&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Image&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">TouchableOpacity</span>
+                    <span style="color:#a6e22e">activeOpacity</span><span style="color:#f92672">=</span>{<span style="color:#ae81ff">1.0</span>}
+                    <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">marginTop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span> }}
+                    <span style="color:#a6e22e">onPress</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">clickOpenButton</span>}<span style="color:#f92672">&gt;</span>
+                    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">subView</span>}<span style="color:#f92672">&gt;</span>
+                        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Text</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">buttonText</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Let</span><span style="color:#e6db74">&#39;s start&lt;/Text&gt;
+</span><span style="color:#e6db74">                    &lt;/View&gt;
+</span><span style="color:#e6db74">                &lt;/TouchableOpacity&gt;
+</span><span style="color:#e6db74">                &lt;Text style={styles.noteText}&gt;Powered by Google Forms&lt;/Text&gt;
+</span><span style="color:#e6db74">                &lt;TouchableOpacity
+</span><span style="color:#e6db74">                    activeOpacity={1.0}
+</span><span style="color:#e6db74">                    style={styles.buttonTouch}
+</span><span style="color:#e6db74">                    onPress={props.clickCloseButton}&gt;
+</span><span style="color:#e6db74">                    &lt;Image source={require(&#39;</span>..<span style="color:#f92672">/</span>..<span style="color:#f92672">/</span>..<span style="color:#f92672">/</span><span style="color:#a6e22e">ImageSets</span><span style="color:#f92672">/</span><span style="color:#a6e22e">closex</span>.<span style="color:#a6e22e">png</span><span style="color:#e6db74">&#39;)} style={styles.closeButton} /&gt;
+</span><span style="color:#e6db74">                &lt;/TouchableOpacity&gt;
+</span><span style="color:#e6db74">            &lt;/View&gt;
+</span><span style="color:#e6db74">        &lt;/View&gt;
+</span><span style="color:#e6db74">    &lt;/Modal&gt;
+</span><span style="color:#e6db74">)
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">PopupWindow.propTypes = {
+</span><span style="color:#e6db74">    imageURL: PropTypes.string,
+</span><span style="color:#e6db74">    title: PropTypes.string,
+</span><span style="color:#e6db74">    content: PropTypes.string,
+</span><span style="color:#e6db74">    visible: PropTypes.bool,
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">const styles = StyleSheet.create({
+</span><span style="color:#e6db74">    mainview: {
+</span><span style="color:#e6db74">        flex: 1,
+</span><span style="color:#e6db74">        alignItems: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        flexDirection: &#39;</span><span style="color:#a6e22e">column</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        backgroundColor: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">ffffff80</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    imageBackground: {
+</span><span style="color:#e6db74">        flexDirection: &#39;</span><span style="color:#a6e22e">column</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        width: 280,
+</span><span style="color:#e6db74">        alignItems: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        borderRadius: 13,
+</span><span style="color:#e6db74">        overflow: &#39;</span><span style="color:#a6e22e">hidden</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        backgroundColor: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">B9D7E7</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    mainTitle: {
+</span><span style="color:#e6db74">        fontSize: 16,
+</span><span style="color:#e6db74">        width: 280,
+</span><span style="color:#e6db74">        color: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">262729</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        textAlign: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        fontFamily: &#39;</span><span style="color:#a6e22e">HelveticaNeue</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Bold</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        marginTop: 40,
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    subTitle: {
+</span><span style="color:#e6db74">        fontSize: 14,
+</span><span style="color:#e6db74">        width: 280,
+</span><span style="color:#e6db74">        color: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">262729</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        textAlign: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        fontFamily: &#39;</span><span style="color:#a6e22e">HelveticaNeue</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        marginTop: 10,
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    image: {
+</span><span style="color:#e6db74">        width: 115,
+</span><span style="color:#e6db74">        height: 115,
+</span><span style="color:#e6db74">        marginTop: 13,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    subView: {
+</span><span style="color:#e6db74">        flexDirection: &#39;</span><span style="color:#a6e22e">column</span><span style="color:#e6db74">&#39;, width: 200, height: 45, backgroundColor: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">262729</span><span style="color:#e6db74">&#39;, borderRadius: 22, alignItems: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;, justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    buttonText: {
+</span><span style="color:#e6db74">        fontSize: 16,
+</span><span style="color:#e6db74">        color: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">FFFFFF</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        textAlign: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        fontFamily: &#39;</span><span style="color:#a6e22e">HelveticaNeue</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Bold</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    noteText: {
+</span><span style="color:#e6db74">        fontSize: 10,
+</span><span style="color:#e6db74">        width: 280,
+</span><span style="color:#e6db74">        color: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">262729</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        textAlign: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        fontFamily: &#39;</span><span style="color:#a6e22e">HelveticaNeue</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        marginTop: 7,
+</span><span style="color:#e6db74">        marginBottom: 9,
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    buttonTouch: {
+</span><span style="color:#e6db74">        position: &#39;</span><span style="color:#a6e22e">absolute</span><span style="color:#e6db74">&#39;, top: 0, right: 0, flexDirection: &#39;</span><span style="color:#a6e22e">column</span><span style="color:#e6db74">&#39;, width: 44, height: 44, justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;, alignItems: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    closeButton: {
+</span><span style="color:#e6db74">        height: 15,
+</span><span style="color:#e6db74">        width: 15,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#960050;background-color:#1e0010">&#39;</span>,
     }
 })
 
-export default PopupWindow
-</code></pre><p>How to use it?</p>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">PopupWindow</span>
+</code></pre></div><p>How to use it?</p>
 <p>You can write it in your render void or wherever you like it.</p>
 <pre><code>import PopupWindow from '../View/PopupWindow';
 
@@ -572,7 +572,7 @@ render (
     
       <div class="pagination">
         <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
+          <span class="pagination__title-h"></span>
           <hr />
         </div>
 
@@ -593,6 +593,31 @@ render (
 
 
     
+      
+        <div id="comments">
+          <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "leviduan-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      
+    
 
   </main>
 
@@ -604,16 +629,16 @@ render (
         <div class="footer__content">
             <span>&copy; 2020</span>
             
+                <span><a href="https://leviduan.com/">Levi Duan</a></span>
             
-                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
             
             <span> <a href="https://leviduan.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
         <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+            <span> </span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Levi duan</a></span>
           </div>
     </div>
 </footer>

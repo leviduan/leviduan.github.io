@@ -1,11 +1,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Hello Friend NG</title>
+        <title>Posts on Levi&#39;s Blog</title>
         <link>https://leviduan.com/posts/</link>
-        <description>Recent content in Posts on Hello Friend NG</description>
+        <description>Recent content in Posts on Levi&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
         <lastBuildDate>Mon, 21 Sep 2020 02:44:23 +0800</lastBuildDate>
         <atom:link href="https://leviduan.com/posts/index.xml" rel="self" type="application/rss+xml" />
         
@@ -171,130 +170,130 @@ The view styles of the bottom part, I set the flex:0, marginTop: &lsquo;auto&rsq
 <li>Remember to use PropTypes, it&rsquo;s so convenient to check props format.</li>
 </ol>
 <p>Show my code:</p>
-<pre><code>import React from 'react'
-import { TouchableOpacity, Text, View, Modal, Image, StyleSheet } from 'react-native'
-import PropTypes from 'prop-types'
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">TouchableOpacity</span>, <span style="color:#a6e22e">Text</span>, <span style="color:#a6e22e">View</span>, <span style="color:#a6e22e">Modal</span>, <span style="color:#a6e22e">Image</span>, <span style="color:#a6e22e">StyleSheet</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PropTypes</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;prop-types&#39;</span>
 
-const PopupWindow = props =&gt; (
-    &lt;Modal
-        transparent={true}
-        animationType={'none'}
-        visible={props.visible}
-    &gt;
-        &lt;View style={styles.mainview}&gt;
-            &lt;View style={styles.imageBackground}
-            &gt;
-                &lt;Text style={styles.mainTitle}&gt;{props.title}&lt;/Text&gt;
-                &lt;Text style={styles.subTitle}&gt;{props.content}&lt;/Text&gt;
-                &lt;Image
-                    source={{ uri: props.imageURL }}
-                    style={styles.image}
-                &gt;
-                &lt;/Image&gt;
-                &lt;TouchableOpacity
-                    activeOpacity={1.0}
-                    style={{ marginTop: 20 }}
-                    onPress={props.clickOpenButton}&gt;
-                    &lt;View style={styles.subView}&gt;
-                        &lt;Text style={styles.buttonText}&gt;Let's start&lt;/Text&gt;
-                    &lt;/View&gt;
-                &lt;/TouchableOpacity&gt;
-                &lt;Text style={styles.noteText}&gt;Powered by Google Forms&lt;/Text&gt;
-                &lt;TouchableOpacity
-                    activeOpacity={1.0}
-                    style={styles.buttonTouch}
-                    onPress={props.clickCloseButton}&gt;
-                    &lt;Image source={require('../../../ImageSets/closex.png')} style={styles.closeButton} /&gt;
-                &lt;/TouchableOpacity&gt;
-            &lt;/View&gt;
-        &lt;/View&gt;
-    &lt;/Modal&gt;
-)
-
-PopupWindow.propTypes = {
-    imageURL: PropTypes.string,
-    title: PropTypes.string,
-    content: PropTypes.string,
-    visible: PropTypes.bool,
-}
-
-const styles = StyleSheet.create({
-    mainview: {
-        flex: 1,
-        alignItems: 'center',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        backgroundColor: '#ffffff80'
-    },
-    imageBackground: {
-        flexDirection: 'column',
-        width: 280,
-        alignItems: 'center',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        borderRadius: 13,
-        overflow: 'hidden',
-        backgroundColor: '#B9D7E7'
-    },
-    mainTitle: {
-        fontSize: 16,
-        width: 280,
-        color: '#262729',
-        textAlign: 'center',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        fontFamily: 'HelveticaNeue-Bold',
-        marginTop: 40,
-    },
-    subTitle: {
-        fontSize: 14,
-        width: 280,
-        color: '#262729',
-        textAlign: 'center',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        fontFamily: 'HelveticaNeue',
-        marginTop: 10,
-    },
-    image: {
-        width: 115,
-        height: 115,
-        marginTop: 13,
-        alignSelf: 'center'
-    },
-    subView: {
-        flexDirection: 'column', width: 200, height: 45, backgroundColor: '#262729', borderRadius: 22, alignItems: 'center', justifyContent: 'center'
-    },
-    buttonText: {
-        fontSize: 16,
-        color: '#FFFFFF',
-        textAlign: 'center',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        fontFamily: 'HelveticaNeue-Bold',
-    },
-    noteText: {
-        fontSize: 10,
-        width: 280,
-        color: '#262729',
-        textAlign: 'center',
-        justifyContent: 'center',
-        fontFamily: 'HelveticaNeue',
-        marginTop: 7,
-        marginBottom: 9,
-    },
-    buttonTouch: {
-        position: 'absolute', top: 0, right: 0, flexDirection: 'column', width: 44, height: 44, justifyContent: 'center', alignItems: 'center'
-    },
-    closeButton: {
-        height: 15,
-        width: 15,
-        alignSelf: 'center',
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PopupWindow</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span> =&gt; (
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Modal</span>
+        <span style="color:#a6e22e">transparent</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">true</span>}
+        <span style="color:#a6e22e">animationType</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;none&#39;</span>}
+        <span style="color:#a6e22e">visible</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">visible</span>}
+    <span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">mainview</span>}<span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">imageBackground</span>}
+            <span style="color:#f92672">&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Text</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">mainTitle</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">title</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Text&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Text</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">subTitle</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">content</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Text&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Image</span>
+                    <span style="color:#a6e22e">source</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">uri</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">imageURL</span> }}
+                    <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">image</span>}
+                <span style="color:#f92672">&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Image&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">TouchableOpacity</span>
+                    <span style="color:#a6e22e">activeOpacity</span><span style="color:#f92672">=</span>{<span style="color:#ae81ff">1.0</span>}
+                    <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">marginTop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span> }}
+                    <span style="color:#a6e22e">onPress</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">clickOpenButton</span>}<span style="color:#f92672">&gt;</span>
+                    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">subView</span>}<span style="color:#f92672">&gt;</span>
+                        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Text</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">buttonText</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Let</span><span style="color:#e6db74">&#39;s start&lt;/Text&gt;
+</span><span style="color:#e6db74">                    &lt;/View&gt;
+</span><span style="color:#e6db74">                &lt;/TouchableOpacity&gt;
+</span><span style="color:#e6db74">                &lt;Text style={styles.noteText}&gt;Powered by Google Forms&lt;/Text&gt;
+</span><span style="color:#e6db74">                &lt;TouchableOpacity
+</span><span style="color:#e6db74">                    activeOpacity={1.0}
+</span><span style="color:#e6db74">                    style={styles.buttonTouch}
+</span><span style="color:#e6db74">                    onPress={props.clickCloseButton}&gt;
+</span><span style="color:#e6db74">                    &lt;Image source={require(&#39;</span>..<span style="color:#f92672">/</span>..<span style="color:#f92672">/</span>..<span style="color:#f92672">/</span><span style="color:#a6e22e">ImageSets</span><span style="color:#f92672">/</span><span style="color:#a6e22e">closex</span>.<span style="color:#a6e22e">png</span><span style="color:#e6db74">&#39;)} style={styles.closeButton} /&gt;
+</span><span style="color:#e6db74">                &lt;/TouchableOpacity&gt;
+</span><span style="color:#e6db74">            &lt;/View&gt;
+</span><span style="color:#e6db74">        &lt;/View&gt;
+</span><span style="color:#e6db74">    &lt;/Modal&gt;
+</span><span style="color:#e6db74">)
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">PopupWindow.propTypes = {
+</span><span style="color:#e6db74">    imageURL: PropTypes.string,
+</span><span style="color:#e6db74">    title: PropTypes.string,
+</span><span style="color:#e6db74">    content: PropTypes.string,
+</span><span style="color:#e6db74">    visible: PropTypes.bool,
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">const styles = StyleSheet.create({
+</span><span style="color:#e6db74">    mainview: {
+</span><span style="color:#e6db74">        flex: 1,
+</span><span style="color:#e6db74">        alignItems: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        flexDirection: &#39;</span><span style="color:#a6e22e">column</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        backgroundColor: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">ffffff80</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    imageBackground: {
+</span><span style="color:#e6db74">        flexDirection: &#39;</span><span style="color:#a6e22e">column</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        width: 280,
+</span><span style="color:#e6db74">        alignItems: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        borderRadius: 13,
+</span><span style="color:#e6db74">        overflow: &#39;</span><span style="color:#a6e22e">hidden</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        backgroundColor: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">B9D7E7</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    mainTitle: {
+</span><span style="color:#e6db74">        fontSize: 16,
+</span><span style="color:#e6db74">        width: 280,
+</span><span style="color:#e6db74">        color: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">262729</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        textAlign: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        fontFamily: &#39;</span><span style="color:#a6e22e">HelveticaNeue</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Bold</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        marginTop: 40,
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    subTitle: {
+</span><span style="color:#e6db74">        fontSize: 14,
+</span><span style="color:#e6db74">        width: 280,
+</span><span style="color:#e6db74">        color: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">262729</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        textAlign: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        fontFamily: &#39;</span><span style="color:#a6e22e">HelveticaNeue</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        marginTop: 10,
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    image: {
+</span><span style="color:#e6db74">        width: 115,
+</span><span style="color:#e6db74">        height: 115,
+</span><span style="color:#e6db74">        marginTop: 13,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    subView: {
+</span><span style="color:#e6db74">        flexDirection: &#39;</span><span style="color:#a6e22e">column</span><span style="color:#e6db74">&#39;, width: 200, height: 45, backgroundColor: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">262729</span><span style="color:#e6db74">&#39;, borderRadius: 22, alignItems: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;, justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    buttonText: {
+</span><span style="color:#e6db74">        fontSize: 16,
+</span><span style="color:#e6db74">        color: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">FFFFFF</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        textAlign: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        fontFamily: &#39;</span><span style="color:#a6e22e">HelveticaNeue</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Bold</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    noteText: {
+</span><span style="color:#e6db74">        fontSize: 10,
+</span><span style="color:#e6db74">        width: 280,
+</span><span style="color:#e6db74">        color: &#39;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">262729</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        textAlign: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        fontFamily: &#39;</span><span style="color:#a6e22e">HelveticaNeue</span><span style="color:#e6db74">&#39;,
+</span><span style="color:#e6db74">        marginTop: 7,
+</span><span style="color:#e6db74">        marginBottom: 9,
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    buttonTouch: {
+</span><span style="color:#e6db74">        position: &#39;</span><span style="color:#a6e22e">absolute</span><span style="color:#e6db74">&#39;, top: 0, right: 0, flexDirection: &#39;</span><span style="color:#a6e22e">column</span><span style="color:#e6db74">&#39;, width: 44, height: 44, justifyContent: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;, alignItems: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    },
+</span><span style="color:#e6db74">    closeButton: {
+</span><span style="color:#e6db74">        height: 15,
+</span><span style="color:#e6db74">        width: 15,
+</span><span style="color:#e6db74">        alignSelf: &#39;</span><span style="color:#a6e22e">center</span><span style="color:#960050;background-color:#1e0010">&#39;</span>,
     }
 })
 
-export default PopupWindow
-</code></pre><p>How to use it?</p>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">PopupWindow</span>
+</code></pre></div><p>How to use it?</p>
 <p>You can write it in your render void or wherever you like it.</p>
 <pre><code>import PopupWindow from '../View/PopupWindow';
 
