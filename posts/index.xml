@@ -1,0 +1,317 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Hello Friend NG</title>
+        <link>https://leviduan.com/posts/</link>
+        <description>Recent content in Posts on Hello Friend NG</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Mon, 21 Sep 2020 02:44:23 +0800</lastBuildDate>
+        <atom:link href="https://leviduan.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>My First Post</title>
+            <link>https://leviduan.com/posts/my-first-post/</link>
+            <pubDate>Mon, 21 Sep 2020 02:44:23 +0800</pubDate>
+            
+            <guid>https://leviduan.com/posts/my-first-post/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
+        
+        <item>
+            <title>ARTS16-20200920</title>
+            <link>https://leviduan.com/posts/helloworld/</link>
+            <pubDate>Mon, 21 Sep 2020 02:37:21 +0800</pubDate>
+            
+            <guid>https://leviduan.com/posts/helloworld/</guid>
+            <description>Algorithm OJ address website :OJ
+Description Make Array Palindrome For a given array, we need to make array palindrome. Only allowed operation on array is merge. To merge two adjacent elements just simply replace them with their sum. Task is to find minimum number of merge operations to make given array palindrome. Input The first line contains single integer N The second line contains N space separated integers Output Minimum number of merge operations to make given array palindrome.</description>
+            <content type="html"><![CDATA[<h2 id="algorithm">Algorithm</h2>
+<h3 id="oj-address">OJ address</h3>
+<p>website :<a href="https://app.glider.ai/practice/problem/basic-programming/make-array-palindrome/problem">OJ</a></p>
+<h3 id="description">Description</h3>
+<pre><code>Make Array Palindrome
+
+For a given array, we need to make array palindrome. Only allowed operation on array is merge. To merge two adjacent elements just simply replace them with their sum. Task is to find minimum number of merge operations to make given array palindrome.
+
+Input
+The first line contains single integer N
+The second line contains N space separated integers
+
+Output
+Minimum number of merge operations to make given array palindrome.
+
+Constraints
+(1 &lt;= N &lt;= 10000)
+
+Example#1
+Input
+3
+20 999 20
+Output
+0
+Explanation: Array is already palindrome
+
+Example#2
+Input
+4
+10 99 44 10
+Output
+1
+Explanation: Merge 99 and 44, result array will be 10 143 10
+</code></pre><h3 id="solution-in-c">Solution in C</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(<span style="color:#66d9ef">int</span> arr[], <span style="color:#66d9ef">int</span> n){  
+    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">&lt;</span>j) {
+        <span style="color:#66d9ef">if</span> (arr[i] <span style="color:#f92672">==</span> arr[j]) {
+            <span style="color:#f92672">++</span>i;
+            <span style="color:#f92672">--</span>j;
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (arr[i] <span style="color:#f92672">&lt;</span> arr[j]) {
+            <span style="color:#f92672">++</span>i;
+            <span style="color:#f92672">++</span>result;
+            arr[i]<span style="color:#f92672">+=</span>arr[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+        }
+        <span style="color:#66d9ef">else</span> {
+            <span style="color:#f92672">--</span>j;
+            <span style="color:#f92672">++</span>result;
+            arr[j]<span style="color:#f92672">+=</span>arr[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>];
+        }
+    }
+    <span style="color:#66d9ef">return</span> result;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">int</span> n;
+    scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">int</span> arr[n];
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) 
+        scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>arr[i]);
+    
+    printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, solution(arr, n));
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="my-idea">My Idea</h3>
+<p>It&rsquo;s a so easy question, the solution is merging two adjacent elements to compare the value.</p>
+<h2 id="review">Review</h2>
+<p><a href="https://www.freecodecamp.org/news/get-pro-with-react-setstate-in-10-minutes-d38251d1c781/">How to become a pro with React setState() in 10 minutes</a></p>
+<p>The article is about SetState how to work like a charm and how to use it correctly. the application UIs are dynamic and change over time, that&rsquo;s why &ldquo;state&rdquo; was created.</p>
+<p>By the article ,I can understand more rules about using setState()</p>
+<h4 id="three-rules">Three Rules</h4>
+<h5 id="1-do-not-modify-state-directly">1. Do not modify state directly.</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">fullName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;levi&#39;</span> <span style="color:#75715e">//wrong
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({<span style="color:#a6e22e">fullName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;levi&#39;</span>}); <span style="color:#75715e">//correct
+</span></code></pre></div><h5 id="2-state-updates-maybe-asynchronous">2. State updates maybe asynchronous</h5>
+<p>React batch multiple setState() calls into a single update for performance, because this.props and this.state maybe updated asynchronously.So don&rsquo;t rely on their values for calculating the next state.</p>
+<p>Just like :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Js" data-lang="Js"><span style="color:#75715e">// Wrong
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+    <span style="color:#a6e22e">counter</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">counter</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">increment</span>
+})
+
+<span style="color:#75715e">//Correct
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>((<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">props</span>) =&gt;({
+    <span style="color:#a6e22e">counter</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">counter</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">increment</span>
+}))
+</code></pre></div><h5 id="3-state-updates-are-merged">3. State Updates are merged</h5>
+<p>When you call setState(), React merges the object you provide into the current state.</p>
+<h5 id="4-respect-the-data-flow-and-avoid-state-the-max">4. Respect the data flow and avoid state the max</h5>
+<p>State is often called local or encapsulated. it is not accessible to any component other than the one that owns and sets it. When you setState a prop and use it in your component, you are breaking the flow of the rendering props.</p>
+<p>Last but not least:</p>
+<ol>
+<li>Don&rsquo;t forget to avoid the max using state and props</li>
+<li>Don&rsquo;t forget setState is async</li>
+<li>Don&rsquo;t forget setState can take an object or a function</li>
+<li>Don&rsquo;t forget that you should pass a function in when your next state depends on your previous state.</li>
+</ol>
+<h2 id="tips">Tips</h2>
+<p>RN’s Question: If I fix the height of the bottom part, maybe 200 (area B) and then the height of top part (area A) is flexible, no matter what height about device screen, the height of bottom part always are 200.</p>
+<p><img src="https://imgur.com/xCpd5G0.png" alt="1.png"></p>
+<p>When I design the UI, I use a tricky way to resolve this question:</p>
+<p>The view styles of the top part:  I set the flex: 1, marginTop: 0, marginBottom: 0
+The view styles of the bottom part, I set the flex:0, marginTop: &lsquo;auto&rsquo;, marginBottom:0</p>
+<p>It&rsquo;s a really tricky way to resolve this question, and then it works like a charm.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">topVIewContainer</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">flex</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ScreenUtil</span>.<span style="color:#a6e22e">screenW</span>,
+        <span style="color:#a6e22e">flexDirection</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;column&#39;</span>,
+        <span style="color:#a6e22e">backgroundColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;black&#39;</span>,
+        <span style="color:#a6e22e">overflow</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hidden&#39;</span>,
+        <span style="color:#a6e22e">marginTop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+        <span style="color:#a6e22e">marginBottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+},
+<span style="color:#a6e22e">bottomViewContainer</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">flex</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>,
+        <span style="color:#a6e22e">flexDirection</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;column&#39;</span>,
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ScreenUtil</span>.<span style="color:#a6e22e">screenW</span>,
+        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
+        <span style="color:#a6e22e">marginBottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+        <span style="color:#a6e22e">marginTop</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;auto&#39;</span>,
+        <span style="color:#a6e22e">backgroundColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;white&#39;</span>,
+},
+
+</code></pre></div><h2 id="shares">Shares</h2>
+<h3 id="make-a-pop-ups-windows-by-module-class">Make a Pop-ups windows by Module class</h3>
+<p>Look at this picture, I will make a pop-ups windows just like this. It&rsquo;s a simple example.</p>
+<p><img src="https://thumbsnap.com/i/erxyKNGw.png?0920" alt="pic"></p>
+<p>How to do it?</p>
+<p>At first, You will create a new file, don&rsquo;t do it in your class file, you always remember to separate components, it&rsquo;s OOP‘s core.</p>
+<p>The pop-ups windows will show at the front of the page, so you will use &ldquo;Modal&rdquo; class to make the window.</p>
+<p>I will use &ldquo;const&rdquo; to define &ldquo;PopupWindow&rdquo; components.I pass the value by props.</p>
+<p>Remember two things:</p>
+<ol>
+<li>don&rsquo;t write css in your JSX, write it in StyleSheet, keeping your code cleaning.</li>
+<li>Remember to use PropTypes, it&rsquo;s so convenient to check props format.</li>
+</ol>
+<p>Show my code:</p>
+<pre><code>import React from 'react'
+import { TouchableOpacity, Text, View, Modal, Image, StyleSheet } from 'react-native'
+import PropTypes from 'prop-types'
+
+const PopupWindow = props =&gt; (
+    &lt;Modal
+        transparent={true}
+        animationType={'none'}
+        visible={props.visible}
+    &gt;
+        &lt;View style={styles.mainview}&gt;
+            &lt;View style={styles.imageBackground}
+            &gt;
+                &lt;Text style={styles.mainTitle}&gt;{props.title}&lt;/Text&gt;
+                &lt;Text style={styles.subTitle}&gt;{props.content}&lt;/Text&gt;
+                &lt;Image
+                    source={{ uri: props.imageURL }}
+                    style={styles.image}
+                &gt;
+                &lt;/Image&gt;
+                &lt;TouchableOpacity
+                    activeOpacity={1.0}
+                    style={{ marginTop: 20 }}
+                    onPress={props.clickOpenButton}&gt;
+                    &lt;View style={styles.subView}&gt;
+                        &lt;Text style={styles.buttonText}&gt;Let's start&lt;/Text&gt;
+                    &lt;/View&gt;
+                &lt;/TouchableOpacity&gt;
+                &lt;Text style={styles.noteText}&gt;Powered by Google Forms&lt;/Text&gt;
+                &lt;TouchableOpacity
+                    activeOpacity={1.0}
+                    style={styles.buttonTouch}
+                    onPress={props.clickCloseButton}&gt;
+                    &lt;Image source={require('../../../ImageSets/closex.png')} style={styles.closeButton} /&gt;
+                &lt;/TouchableOpacity&gt;
+            &lt;/View&gt;
+        &lt;/View&gt;
+    &lt;/Modal&gt;
+)
+
+PopupWindow.propTypes = {
+    imageURL: PropTypes.string,
+    title: PropTypes.string,
+    content: PropTypes.string,
+    visible: PropTypes.bool,
+}
+
+const styles = StyleSheet.create({
+    mainview: {
+        flex: 1,
+        alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        backgroundColor: '#ffffff80'
+    },
+    imageBackground: {
+        flexDirection: 'column',
+        width: 280,
+        alignItems: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        borderRadius: 13,
+        overflow: 'hidden',
+        backgroundColor: '#B9D7E7'
+    },
+    mainTitle: {
+        fontSize: 16,
+        width: 280,
+        color: '#262729',
+        textAlign: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        fontFamily: 'HelveticaNeue-Bold',
+        marginTop: 40,
+    },
+    subTitle: {
+        fontSize: 14,
+        width: 280,
+        color: '#262729',
+        textAlign: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        fontFamily: 'HelveticaNeue',
+        marginTop: 10,
+    },
+    image: {
+        width: 115,
+        height: 115,
+        marginTop: 13,
+        alignSelf: 'center'
+    },
+    subView: {
+        flexDirection: 'column', width: 200, height: 45, backgroundColor: '#262729', borderRadius: 22, alignItems: 'center', justifyContent: 'center'
+    },
+    buttonText: {
+        fontSize: 16,
+        color: '#FFFFFF',
+        textAlign: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        fontFamily: 'HelveticaNeue-Bold',
+    },
+    noteText: {
+        fontSize: 10,
+        width: 280,
+        color: '#262729',
+        textAlign: 'center',
+        justifyContent: 'center',
+        fontFamily: 'HelveticaNeue',
+        marginTop: 7,
+        marginBottom: 9,
+    },
+    buttonTouch: {
+        position: 'absolute', top: 0, right: 0, flexDirection: 'column', width: 44, height: 44, justifyContent: 'center', alignItems: 'center'
+    },
+    closeButton: {
+        height: 15,
+        width: 15,
+        alignSelf: 'center',
+    }
+})
+
+export default PopupWindow
+</code></pre><p>How to use it?</p>
+<p>You can write it in your render void or wherever you like it.</p>
+<pre><code>import PopupWindow from '../View/PopupWindow';
+
+render (
+    return(
+    &lt;PopupWindow 
+      imageURL={this.state.popup.image_url} 
+      title={this.state.popup.title} 
+      content={this.state.popup.content} 
+      visible={this.state.showModalWindow}
+      clickOpenButton={this.clickSurveyButton}
+      clickCloseButton={this.clickSurveyClosedButton}
+    /&gt;
+    )
+)
+</code></pre>]]></content>
+        </item>
+        
+    </channel>
+</rss>
