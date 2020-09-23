@@ -1,29 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Levi&#39;s Blog</title>
-        <link>https://leviduan.com/posts/</link>
+        <link>https://leviduan.github.io/posts/</link>
         <description>Recent content in Posts on Levi&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 21 Sep 2020 02:44:23 +0800</lastBuildDate>
-        <atom:link href="https://leviduan.com/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>My First Post</title>
-            <link>https://leviduan.com/posts/my-first-post/</link>
-            <pubDate>Mon, 21 Sep 2020 02:44:23 +0800</pubDate>
-            
-            <guid>https://leviduan.com/posts/my-first-post/</guid>
-            <description></description>
-            <content type="html"><![CDATA[]]></content>
-        </item>
+        <copyright>All rights reserved - 2020</copyright>
+        <lastBuildDate>Mon, 21 Sep 2020 06:00:00 +0800</lastBuildDate>
+        <atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>ARTS16-20200920</title>
-            <link>https://leviduan.com/posts/helloworld/</link>
-            <pubDate>Mon, 21 Sep 2020 02:37:21 +0800</pubDate>
+            <link>https://leviduan.github.io/posts/arts16-20200920/</link>
+            <pubDate>Mon, 21 Sep 2020 06:00:00 +0800</pubDate>
             
-            <guid>https://leviduan.com/posts/helloworld/</guid>
+            <guid>https://leviduan.github.io/posts/arts16-20200920/</guid>
             <description>Algorithm OJ address website :OJ
 Description Make Array Palindrome For a given array, we need to make array palindrome. Only allowed operation on array is merge. To merge two adjacent elements just simply replace them with their sum. Task is to find minimum number of merge operations to make given array palindrome. Input The first line contains single integer N The second line contains N space separated integers Output Minimum number of merge operations to make given array palindrome.</description>
             <content type="html"><![CDATA[<h2 id="algorithm">Algorithm</h2>
@@ -102,12 +93,12 @@ Explanation: Merge 99 and 44, result array will be 10 143 10
 <p><a href="https://www.freecodecamp.org/news/get-pro-with-react-setstate-in-10-minutes-d38251d1c781/">How to become a pro with React setState() in 10 minutes</a></p>
 <p>The article is about SetState how to work like a charm and how to use it correctly. the application UIs are dynamic and change over time, that&rsquo;s why &ldquo;state&rdquo; was created.</p>
 <p>By the article ,I can understand more rules about using setState()</p>
-<h4 id="three-rules">Three Rules</h4>
-<h5 id="1-do-not-modify-state-directly">1. Do not modify state directly.</h5>
+<h3 id="three-rules">Three Rules</h3>
+<h4 id="1-do-not-modify-state-directly">1. Do not modify state directly.</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">fullName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;levi&#39;</span> <span style="color:#75715e">//wrong
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({<span style="color:#a6e22e">fullName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;levi&#39;</span>}); <span style="color:#75715e">//correct
-</span></code></pre></div><h5 id="2-state-updates-maybe-asynchronous">2. State updates maybe asynchronous</h5>
+</span></code></pre></div><h4 id="2-state-updates-maybe-asynchronous">2. State updates maybe asynchronous</h4>
 <p>React batch multiple setState() calls into a single update for performance, because this.props and this.state maybe updated asynchronously.So don&rsquo;t rely on their values for calculating the next state.</p>
 <p>Just like :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Js" data-lang="Js"><span style="color:#75715e">// Wrong
@@ -119,9 +110,9 @@ Explanation: Merge 99 and 44, result array will be 10 143 10
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>((<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">props</span>) =&gt;({
     <span style="color:#a6e22e">counter</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">counter</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">increment</span>
 }))
-</code></pre></div><h5 id="3-state-updates-are-merged">3. State Updates are merged</h5>
+</code></pre></div><h4 id="3-state-updates-are-merged">3. State Updates are merged</h4>
 <p>When you call setState(), React merges the object you provide into the current state.</p>
-<h5 id="4-respect-the-data-flow-and-avoid-state-the-max">4. Respect the data flow and avoid state the max</h5>
+<h4 id="4-respect-the-data-flow-and-avoid-state-the-max">4. Respect the data flow and avoid state the max</h4>
 <p>State is often called local or encapsulated. it is not accessible to any component other than the one that owns and sets it. When you setState a prop and use it in your component, you are breaking the flow of the rendering props.</p>
 <p>Last but not least:</p>
 <ol>
@@ -310,6 +301,1558 @@ render (
     )
 )
 </code></pre>]]></content>
+        </item>
+        
+        <item>
+            <title>React native network library - Axios</title>
+            <link>https://leviduan.github.io/posts/2020-01-07_02/</link>
+            <pubDate>Thu, 04 Jun 2020 07:00:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-01-07_02/</guid>
+            <description>How to use axios in React Native
+Axios Interceptors Axios interceptors allow us to run code or modify the request and response before the request and response is started.
+In simple words, it allows you write or execute a piece of your code before the request gets sent.
+Write into a file to package Axios The simple example:
+import axios from &amp;#39;axios&amp;#39;; axios.defaults.retry = 4; axios.defaults.timeout = 10000; axios.defaults.headers.common[&amp;#39;x-dejafashion-ua&amp;#39;] = &amp;#39; &amp;#39; axios.</description>
+            <content type="html"><![CDATA[<p>How to use axios in React Native</p>
+<h3 id="axios-interceptors">Axios Interceptors</h3>
+<p>Axios interceptors allow us to run code or modify the request and response before the request and response is started.</p>
+<p>In simple words, it allows you write or execute a piece of your code before the request gets sent.</p>
+<h3 id="write-into-a-file-to-package-axios">Write into a file to package Axios</h3>
+<p>The simple example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+
+<span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">retry</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+<span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">timeout</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10000</span>;
+<span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">common</span>[<span style="color:#e6db74">&#39;x-dejafashion-ua&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>
+<span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">common</span>[<span style="color:#e6db74">&#39;uid&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span>
+<span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">common</span>[<span style="color:#e6db74">&#39;User-Agent&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;iphone ... CFNetwork/1098.7 Darwin/19.0.0&#39;</span>
+
+<span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">post</span>[<span style="color:#e6db74">&#39;Content-Type&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;application/json;charset=UTF-8&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stylepedia_DT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://cloud-dt.co/&#39;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stylepedia_DP</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://cloud-dp.co/&#39;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stylepedia_PR</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://cloud.co/&#39;</span>
+
+<span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">interceptors</span>.<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">use</span>(<span style="color:#66d9ef">undefined</span>, <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">axiosRetryInterceptor</span>(<span style="color:#a6e22e">err</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">config</span>;
+  <span style="color:#75715e">// If config does not exist or the retry option is not set, reject
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">config</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">retry</span>) <span style="color:#66d9ef">return</span> Promise.<span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">err</span>);
+  
+  <span style="color:#75715e">// Set the variable for keeping track of the retry count
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">__retryCount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">__retryCount</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span>;
+  
+  <span style="color:#75715e">// Check if we&#39;ve maxed out the total number of retries
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">__retryCount</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">retry</span>) {
+      <span style="color:#75715e">// Reject with the error
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> Promise.<span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">err</span>);
+  }
+  
+  <span style="color:#75715e">// Increase the retry count
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">__retryCount</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+  
+  <span style="color:#75715e">// Create new promise to handle exponential backoff
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">backoff</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">resolve</span>) {
+      <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>() {
+          <span style="color:#a6e22e">resolve</span>();
+      }, <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">retryDelay</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">1</span>);
+  });
+  
+  <span style="color:#75715e">// Return the promise in which recalls axios to retry the request
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">backoff</span>.<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>() {
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">axios</span>(<span style="color:#a6e22e">config</span>);
+  });
+
+});
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">create</span>({
+  <span style="color:#a6e22e">baseURL</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">stylepedia_DP</span>
+});
+</code></pre></div><h3 id="you-can-use-this-file-to-send-a-get-request">You can use this file to send a Get request</h3>
+<p>if you want bring params, don&rsquo;t forget to use <code>params</code> dictionary to add params</p>
+<p>For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">API</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../../Network/api&#39;</span>
+
+    <span style="color:#a6e22e">searchInfluencersRequest</span>() {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+            <span style="color:#a6e22e">influencerLoading</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+        });
+        <span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;search/influencers&#39;</span>, {
+            <span style="color:#a6e22e">params</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">searchText</span>,
+            }
+        }).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+        
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">ret</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+                    <span style="color:#a6e22e">influencerArray</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">infuencer_item_list</span>,
+                    <span style="color:#a6e22e">influencerLoading</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+                })             
+            }
+            <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ 
+                    <span style="color:#a6e22e">influencerArray</span><span style="color:#f92672">:</span> [],
+                    <span style="color:#a6e22e">influencerLoading</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+                })
+            }
+        }).<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span> =&gt; {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+                <span style="color:#a6e22e">influencerArray</span><span style="color:#f92672">:</span> [],
+                <span style="color:#a6e22e">influencerLoading</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+            })
+        })
+    }
+</code></pre></div><h3 id="you-can-use-this-file-to-send-a-post-request">You can use this file to send a Post request</h3>
+<p>Send a Post request, the way is really similar to Get request</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">likeStatusRequest</span>(<span style="color:#a6e22e">likeStatus</span>, <span style="color:#a6e22e">street_id</span>) {
+    <span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;favourite/favourite_status&#39;</span>, {
+      <span style="color:#a6e22e">street_id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">street_id</span>,
+      <span style="color:#a6e22e">like</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">likeStatus</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+    })
+      .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+        <span style="color:#a6e22e">likeStatus</span>
+          <span style="color:#f92672">?</span> <span style="color:#a6e22e">Toast</span>.<span style="color:#a6e22e">show</span>(<span style="color:#e6db74">&#39;Added to Favourites&#39;</span>, {
+              <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Toast</span>.<span style="color:#a6e22e">positions</span>.<span style="color:#a6e22e">CENTER</span>,
+            })
+          <span style="color:#f92672">:</span> <span style="color:#a6e22e">Toast</span>.<span style="color:#a6e22e">show</span>(<span style="color:#e6db74">&#39;Removed from Favourites&#39;</span>, {
+              <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Toast</span>.<span style="color:#a6e22e">positions</span>.<span style="color:#a6e22e">CENTER</span>,
+            });
+      })
+      .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span> =&gt; {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
+      });
+  }
+</code></pre></div><h3 id="sometimes-you-want-change-defaults-header">Sometimes you want change defaults header</h3>
+<p>You can do it like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">common</span>[<span style="color:#e6db74">&#39;uid&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">uid</span>;
+<span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">common</span>[<span style="color:#e6db74">&#39;sig&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">sig</span>;
+</code></pre></div><h3 id="how-to-send-an-image-to-server">How to send an image to server？</h3>
+<p>You need to new a FormData to add your image path 、image type and image rename.</p>
+<p>don&rsquo;t forget to change your &lsquo;Content-Type&rsquo; headers.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">uploadImageRequest</span>() {
+
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">uri</span><span style="color:#f92672">:</span> ..<span style="color:#f92672">/</span>...<span style="color:#f92672">/</span><span style="color:#a6e22e">levi</span>.<span style="color:#a6e22e">png</span>, <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;multipart/form-data&#39;</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;image.png&#39;</span>};   
+    <span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;file&#34;</span>,<span style="color:#a6e22e">file</span>);  
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span>{<span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;multipart/form-data&#39;</span>}
+    }; 
+    <span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;customer/upload&#39;</span>,<span style="color:#a6e22e">formData</span>,<span style="color:#a6e22e">config</span>)
+      .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+            <span style="color:#a6e22e">imageResponseUrl</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">url</span>,
+        })
+      })
+      .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span> =&gt; {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+            <span style="color:#a6e22e">isLookLoading</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+            <span style="color:#a6e22e">noRequest</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+        })
+    });
+  }
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>React native - Loading Page</title>
+            <link>https://leviduan.github.io/posts/2020-06-04_01/</link>
+            <pubDate>Thu, 04 Jun 2020 06:00:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-06-04_01/</guid>
+            <description>Sometimes the page is loading, we will keep a loading page to give user more user experience, how it works? We can use &amp;ldquo;Modal&amp;rdquo; and &amp;ldquo;ActivityIndicator&amp;rdquo; do it very well.
+Let us start:
+import { ActivityIndicator, Modal } from &amp;#39;react-native&amp;#39;; export default class Test extends React.Component { render() { return ( &amp;lt;Fragment&amp;gt; &amp;lt;StatusBar barStyle=&amp;#34;dark-content&amp;#34; /&amp;gt; &amp;lt;SafeAreaView style={styles.container}&amp;gt; &amp;lt;Modal transparent={true} animationType={&amp;#39;fade&amp;#39;} visible={this.state.isLoading} onRequestClose={() =&amp;gt; {console.log(&amp;#39;close modal&amp;#39;)}}&amp;gt; &amp;lt;View style={styles.modalBackground}&amp;gt; &amp;lt;View style={styles.activityIndicatorWrapper}&amp;gt; &amp;lt;ActivityIndicator style={styles.</description>
+            <content type="html"><![CDATA[<p>Sometimes the page is loading, we will keep a loading page to give user more user experience, how it works? We can use &ldquo;Modal&rdquo; and &ldquo;ActivityIndicator&rdquo; do it very well.</p>
+<p>Let us start:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> {
+    <span style="color:#a6e22e">ActivityIndicator</span>,
+    <span style="color:#a6e22e">Modal</span>
+} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+
+    <span style="color:#a6e22e">render</span>() {
+        <span style="color:#66d9ef">return</span> (
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Fragment</span><span style="color:#f92672">&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">StatusBar</span> <span style="color:#a6e22e">barStyle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark-content&#34;</span> <span style="color:#f92672">/&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">SafeAreaView</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">container</span>}<span style="color:#f92672">&gt;</span>
+                     <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Modal</span>
+                        <span style="color:#a6e22e">transparent</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">true</span>}
+                        <span style="color:#a6e22e">animationType</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;fade&#39;</span>}
+                        <span style="color:#a6e22e">visible</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">isLoading</span>}
+                        <span style="color:#a6e22e">onRequestClose</span><span style="color:#f92672">=</span>{() =&gt; {<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;close modal&#39;</span>)}}<span style="color:#f92672">&gt;</span>
+                        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">modalBackground</span>}<span style="color:#f92672">&gt;</span>
+                            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">activityIndicatorWrapper</span>}<span style="color:#f92672">&gt;</span>
+                            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ActivityIndicator</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">ActivityIndicatorStyle</span>} <span style="color:#f92672">/&gt;</span>
+                            <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/View&gt;</span>
+                        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/View&gt;</span>
+                    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Modal&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/SafeAreaView&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Fragment&gt;</span>
+        )
+    }
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">styles</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">StyleSheet</span>.<span style="color:#a6e22e">create</span>({
+    <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">flex</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+        <span style="color:#a6e22e">flexDirection</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;column&#39;</span>,
+        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;100%&#39;</span>,
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;100%&#39;</span>,
+        <span style="color:#a6e22e">backgroundColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#F3F3F3&#39;</span>,
+        <span style="color:#a6e22e">alignItems</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;center&#39;</span>,
+    },
+      <span style="color:#a6e22e">activityIndicatorWrapper</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">backgroundColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#FFFFFF&#39;</span>,
+        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">70</span>,
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">70</span>,
+        <span style="color:#a6e22e">borderRadius</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+        <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;flex&#39;</span>,
+        <span style="color:#a6e22e">alignItems</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;center&#39;</span>,
+        <span style="color:#a6e22e">justifyContent</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;space-around&#39;</span>
+      },
+      <span style="color:#a6e22e">modalBackground</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">flex</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+        <span style="color:#a6e22e">alignItems</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;center&#39;</span>,
+        <span style="color:#a6e22e">flexDirection</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;column&#39;</span>,
+        <span style="color:#a6e22e">justifyContent</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;space-around&#39;</span>,
+        <span style="color:#a6e22e">backgroundColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#00000040&#39;</span>
+      },
+      <span style="color:#a6e22e">ActivityIndicatorStyle</span><span style="color:#f92672">:</span> {
+      	<span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;absolute&#39;</span>, 
+      	<span style="color:#a6e22e">left</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, 
+      	<span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, 
+      	<span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, 
+      	<span style="color:#a6e22e">bottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, 
+      	<span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;auto&#34;</span>
+      }
+});
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>React native - AsyncStorage</title>
+            <link>https://leviduan.github.io/posts/2020-01-08_01/</link>
+            <pubDate>Wed, 08 Jan 2020 16:48:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-01-08_01/</guid>
+            <description>Sometimes we have to use some ways to save data to the disk. Just like login status, React Native Async Storage is an asynchronous, unencrypted, persistent, key-value storage system for React Native, It’s used for a variety of scenarios but mainly to store data when your app is not using any cloud services, or when you want to implement features in your app that require data storage.
+As a React Native developer, you have to know what these limitations are.</description>
+            <content type="html"><![CDATA[<p>Sometimes we have to use some ways to save data to the disk. Just like login status, React Native Async Storage is an asynchronous, unencrypted, persistent, key-value storage system for React Native, It’s used for a variety of scenarios but mainly to store data when your app is not using any cloud services, or when you want to implement features in your app that require data storage.</p>
+<p>As a React Native developer, you have to know what these limitations are. One limitation of an AsyncStorage API is that on Android the size of the database is set to a default of 6MB limit. Also, AsyncStorage storage is based on SQLite.</p>
+<p>On iOS, AsyncStorage is backed by native code that stores small values in a Serialized dictionary and larger values in separate files. On Android, AsyncStorage will use either RocksDB or SQLite based on what is available.</p>
+<p>Thus, it’s important to keep SQLite limitations in mind, too. Also, it’s hard to store complex and nested data structures in the form of key-value pairs. Knowing about these limitations will help you to opt for the best solution when developing a mobile app.</p>
+<p>I write some simple example for using AsyncStorage Library.</p>
+<p>Github website: <a href="https://github.com/react-native-community/async-storage">https://github.com/react-native-community/async-storage</a></p>
+<h3 id="installation">Installation</h3>
+<pre><code>yarn add @react-native-community/async-storage
+react-native link @react-native-community/async-storage
+
+cd ios/ &amp;&amp; pod install
+</code></pre><h3 id="usage">Usage</h3>
+<h4 id="store-data">Store data</h4>
+<p>The function is going to save the data. In the below snippet, you’ll find that it uses a parameter name, which, on success, is the value that’s stored. An alert message will be shown when the input data is saved.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">storeData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> () =&gt; {
+  <span style="color:#66d9ef">try</span> {
+    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;@storage_Key&#39;</span>, <span style="color:#e6db74">&#39;stored value&#39;</span>)
+  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+    <span style="color:#75715e">// saving error
+</span><span style="color:#75715e"></span>  }
+}
+
+<span style="color:#a6e22e">save</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">name</span> =&gt; {
+    <span style="color:#66d9ef">try</span> {
+      <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#a6e22e">STORAGE_KEY</span>, <span style="color:#a6e22e">name</span>)
+      <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Data successfully saved!&#39;</span>)
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">name</span> })
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+      <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Failed to save name.&#39;</span>)
+    }
+  }
+</code></pre></div><h4 id="read-data">Read data</h4>
+<p>There are three asynchronous methods that will help to store the data, retrieve the data, and clear the app data that are stored. Each of these methods is going to utilize the appropriate API method from the AsyncStorage API. Every method in the AsyncStorage API is promise-based; hence, let’s use async/await syntax to follow best practices.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">getData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> () =&gt; {
+  <span style="color:#66d9ef">try</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;@storage_Key&#39;</span>)
+    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">value</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+      <span style="color:#75715e">// value previously stored
+</span><span style="color:#75715e"></span>    }
+  } <span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span>) {
+    <span style="color:#75715e">// error reading value
+</span><span style="color:#75715e"></span>  }
+}
+
+<span style="color:#a6e22e">retrieveData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> () =&gt; {
+    <span style="color:#66d9ef">try</span> {
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#a6e22e">STORAGE_KEY</span>)
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">name</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">name</span> })
+      }
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+      <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Failed to load name.&#39;</span>)
+    }
+  }
+</code></pre></div><h4 id="remove-everything">Remove Everything</h4>
+<p>you are going to utilize from the AsyncStorage API is called clear(). This deletes everything that is previously saved. It is not recommended to use this method directly if you want to delete only a specific item from the storage.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">removeEverything</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> () =&gt; {
+    <span style="color:#66d9ef">try</span> {
+      <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">clear</span>()
+      <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Storage successfully cleared!&#39;</span>)
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+      <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Failed to clear the async storage.&#39;</span>)
+    }
+  }
+</code></pre></div><p>Mostly I use it store global object , for example:</p>
+<p>the global object file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">js</span>
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">global</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">authorization</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+    <span style="color:#a6e22e">token</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>,
+    <span style="color:#a6e22e">uid</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+    <span style="color:#a6e22e">sig</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+    <span style="color:#a6e22e">avatar</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+    <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+    <span style="color:#a6e22e">loginStatus</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+    <span style="color:#a6e22e">emailFillText</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+    <span style="color:#a6e22e">cacheArray</span><span style="color:#f92672">:</span> [],
+    <span style="color:#a6e22e">historyArray</span><span style="color:#f92672">:</span> [],
+};
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">global</span>;
+</code></pre></div><p>I read global data by this way:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">AsyncStorage</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@react-native-community/async-storage&#39;</span>;
+
+<span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;@global&#39;</span>, (<span style="color:#a6e22e">errs</span>, <span style="color:#a6e22e">result</span>) =&gt; {
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">errs</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">result</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">jsonValue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">result</span>);
+          <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">global</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../../../global&#39;</span>);
+          <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">uid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonValue</span>.<span style="color:#a6e22e">uid</span>;
+          <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">sig</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonValue</span>.<span style="color:#a6e22e">sig</span>;
+          <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonValue</span>.<span style="color:#a6e22e">name</span>;
+          <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">avatar</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonValue</span>.<span style="color:#a6e22e">avatar</span>;
+          <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonValue</span>.<span style="color:#a6e22e">email</span>;
+          <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">loginStatus</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonValue</span>.<span style="color:#a6e22e">loginStatus</span>;
+          <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">cacheArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonValue</span>.<span style="color:#a6e22e">cacheArray</span>;
+          <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">emailFillText</span> <span style="color:#f92672">=</span>  <span style="color:#a6e22e">jsonValue</span>.<span style="color:#a6e22e">emailFillText</span>
+          <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">historyArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonValue</span>.<span style="color:#a6e22e">historyArray</span>
+        } <span style="color:#66d9ef">else</span> {
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">requestGuestNetwork</span>();
+        }
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">requestGuestNetwork</span>();
+      }
+    });
+</code></pre></div><p>I store data by this way:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">global</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../../../global&#39;</span>);
+  <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">uid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">uid</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">uid</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">sig</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+  <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+  <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+  <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">avatar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+  <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">loginStatus</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+  <span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">common</span>[<span style="color:#e6db74">&#39;uid&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">uid</span>;
+  <span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">common</span>[<span style="color:#e6db74">&#39;sig&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">sig</span>;
+
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">jsonStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">global</span>);
+
+  <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;@global&#39;</span>, <span style="color:#a6e22e">jsonStr</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">error</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
+    }
+  });
+</code></pre></div><p>That&rsquo;s all</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>React native - DeviceEventEmitter API</title>
+            <link>https://leviduan.github.io/posts/2020-01-08_03/</link>
+            <pubDate>Wed, 08 Jan 2020 16:48:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-01-08_03/</guid>
+            <description>We usually use Notification in iOS just like this:
+NotificationCenter.default.addObserver(self, selector: #selector(forYouRecommendUpdate), name: Notification.Name(rawValue: kDJForYouVCReloadAll), object: nil) NotificationCenter.default.post(name: Notification.Name(rawValue: kDJForYouVCReloadAll), object: nil) However, how to use a Notification in React native? The best way that we achieve it by DeviceEventEmitter
+Usage Page A to register a Notification
+import {DeviceEventEmitter} from &amp;#39;react-native&amp;#39;; DeviceEventEmitter.emit(&amp;#39;xxxName’,param); Page B to post a Notification
+componentDidMount(){ this.listener =DeviceEventEmitter.addListener(&amp;#39;xxxName&amp;#39;,function(param){ // use param do something  }); } componentWillUnmount(){ this.</description>
+            <content type="html"><![CDATA[<p>We usually use Notification in iOS just like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">NotificationCenter.<span style="color:#66d9ef">default</span>.addObserver(<span style="color:#66d9ef">self</span>, selector: <span style="color:#66d9ef">#selector</span>(forYouRecommendUpdate), name: Notification.Name(rawValue: kDJForYouVCReloadAll), object: <span style="color:#66d9ef">nil</span>)
+
+NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: Notification.Name(rawValue: kDJForYouVCReloadAll), object: <span style="color:#66d9ef">nil</span>)
+</code></pre></div><p>However, how to use a Notification in React native? The best way that we achieve it by <code>DeviceEventEmitter</code></p>
+<h3 id="usage">Usage</h3>
+<p>Page A to register a Notification</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span>  {<span style="color:#a6e22e">DeviceEventEmitter</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native&#39;</span>;
+
+<span style="color:#a6e22e">DeviceEventEmitter</span>.<span style="color:#a6e22e">emit</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">xxxName</span><span style="color:#960050;background-color:#1e0010">’</span>,<span style="color:#a6e22e">param</span>);
+</code></pre></div><p>Page B to post a Notification</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">componentDidMount</span>(){
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">listener</span> <span style="color:#f92672">=</span><span style="color:#a6e22e">DeviceEventEmitter</span>.<span style="color:#a6e22e">addListener</span>(<span style="color:#e6db74">&#39;xxxName&#39;</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">param</span>){
+    <span style="color:#75715e">//  use param do something
+</span><span style="color:#75715e"></span>    });
+}
+
+<span style="color:#a6e22e">componentWillUnmount</span>(){
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">listener</span>.<span style="color:#a6e22e">remove</span>();
+}
+<span style="color:#75715e">// we need to remove the listener by componentWillUnmount 
+</span></code></pre></div><p>This simple version</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 注册事件通知
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">param</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;test&#39;</span>
+<span style="color:#a6e22e">DeviceEventEmitter</span>.<span style="color:#a6e22e">emit</span>(<span style="color:#e6db74">&#39;testName&#39;</span>,<span style="color:#a6e22e">param</span>);
+<span style="color:#a6e22e">DeviceEventEmitter</span>.<span style="color:#a6e22e">emit</span>(<span style="color:#e6db74">&#39;event.test&#39;</span>, {});
+<span style="color:#75715e">//testName:通知的名称 param：发送的消息（传参）
+</span></code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>React native - ScreenUtil Library</title>
+            <link>https://leviduan.github.io/posts/2020-01-08_02/</link>
+            <pubDate>Wed, 08 Jan 2020 16:48:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-01-08_02/</guid>
+            <description>ScreenUtil.js is my tool JS file, you can use it simple. just like:
+import * as ScreenUtil from &amp;#39;../../ScreenUtil&amp;#39;; style={{ width: ScreenUtil.screenW, height: ((ScreenUtil.screenW - 42) / 2.0 / 3.0) * 4.0, borderRadius: 5, overflow: &amp;#39;hidden&amp;#39;, }}&amp;gt; You can use this file by copying this code.
+/** * 屏幕工具类 以及一些常用的工具类封装 * ui设计基准,iphone 6 2倍图 * width:750px * height:1334px * @2x */ import { PixelRatio, Dimensions, Platform, AsyncStorage } from &amp;#39;react-native&amp;#39;; export let screenW = Dimensions.</description>
+            <content type="html"><![CDATA[<p><code>ScreenUtil.js</code> is my tool JS file, you can use it simple. just like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">ScreenUtil</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../../ScreenUtil&#39;</span>;
+
+<span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{
+  <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ScreenUtil</span>.<span style="color:#a6e22e">screenW</span>,
+  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> ((<span style="color:#a6e22e">ScreenUtil</span>.<span style="color:#a6e22e">screenW</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">42</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">3.0</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">4.0</span>,
+  <span style="color:#a6e22e">borderRadius</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
+  <span style="color:#a6e22e">overflow</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hidden&#39;</span>,
+}}<span style="color:#f92672">&gt;</span>
+</code></pre></div><p>You can use this file by copying this code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 屏幕工具类 以及一些常用的工具类封装
+</span><span style="color:#75715e"> * ui设计基准,iphone 6 2倍图
+</span><span style="color:#75715e"> * width:750px
+</span><span style="color:#75715e"> * height:1334px
+</span><span style="color:#75715e"> * @2x
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">import</span> {
+  <span style="color:#a6e22e">PixelRatio</span>,
+  <span style="color:#a6e22e">Dimensions</span>,
+  <span style="color:#a6e22e">Platform</span>,
+  <span style="color:#a6e22e">AsyncStorage</span>
+} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">screenW</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Dimensions</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;window&#39;</span>).<span style="color:#a6e22e">width</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">screenH</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Dimensions</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;window&#39;</span>).<span style="color:#a6e22e">height</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fontScale</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">PixelRatio</span>.<span style="color:#a6e22e">getFontScale</span>();
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pixelRatio</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">PixelRatio</span>.<span style="color:#a6e22e">get</span>();
+<span style="color:#75715e">//像素密度
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">DEFAULT_DENSITY</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+<span style="color:#75715e">//px转换成dp
+</span><span style="color:#75715e">//以iphone6为基准,如果以其他尺寸为基准的话,请修改下面的defaultWidth和defaultHeight为对应尺寸即可. 以下为1倍图时
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">defaultWidth</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">375</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">defaultHeight</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">667</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">w2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defaultWidth</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">DEFAULT_DENSITY</span>;
+<span style="color:#75715e">//px转换成dp
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">h2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defaultHeight</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">DEFAULT_DENSITY</span>;
+
+<span style="color:#75715e">//缩放比例
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_scaleWidth</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">screenW</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">defaultWidth</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_scaleHeight</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">screenH</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">defaultHeight</span>;
+
+<span style="color:#75715e">// iPhoneX
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">X_WIDTH</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">375</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">X_HEIGHT</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">812</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">web_DT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://dt.xx.co/&#39;</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">web_DP</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://dp.xx.co&#39;</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">web_PR</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://xx.co&#39;</span>
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">webUrl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">web_PR</span>
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e">* 屏幕适配,缩放size , 默认根据宽度适配，纵向也可以使用此方法
+</span><span style="color:#75715e">* 横向的尺寸直接使用此方法
+</span><span style="color:#75715e">* 如：width ,paddingHorizontal ,paddingLeft ,paddingRight ,marginHorizontal ,marginLeft ,marginRight
+</span><span style="color:#75715e">* @param size 设计图的尺寸
+</span><span style="color:#75715e">* @returns {number}
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scaleSize</span>(<span style="color:#a6e22e">size</span><span style="color:#f92672">:</span> Number) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">_scaleWidth</span>;
+}
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e">* 屏幕适配 , 纵向的尺寸使用此方法应该会更趋近于设计稿
+</span><span style="color:#75715e">* 如：height ,paddingVertical ,paddingTop ,paddingBottom ,marginVertical ,marginTop ,marginBottom
+</span><span style="color:#75715e">* @param size 设计图的尺寸
+</span><span style="color:#75715e">* @returns {number}
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scaleHeight</span>(<span style="color:#a6e22e">size</span><span style="color:#f92672">:</span> Number) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">_scaleHeight</span>;
+}
+
+<span style="color:#75715e">/* 最初版本尺寸适配方案 也许你会更喜欢这个
+</span><span style="color:#75715e">export function scaleSize(size: Number) {
+</span><span style="color:#75715e">  let scaleWidth = screenW / w2;
+</span><span style="color:#75715e">  let scaleHeight = screenH / h2;
+</span><span style="color:#75715e">  let scale = Math.min(scaleWidth, scaleHeight);
+</span><span style="color:#75715e">  size = Math.round((size * scale + 0.5));
+</span><span style="color:#75715e">  return size / DEFAULT_DENSITY;
+</span><span style="color:#75715e">}*/</span>
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e">* 设置字体的size（单位px）
+</span><span style="color:#75715e">* @param size 传入设计稿上的px , allowFontScaling 是否根据设备文字缩放比例调整，默认不会
+</span><span style="color:#75715e">* @returns {Number} 返回实际sp
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setSpText</span>(<span style="color:#a6e22e">size</span><span style="color:#f92672">:</span> Number, <span style="color:#a6e22e">allowFontScaling</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>) {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scale</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">_scaleWidth</span>, <span style="color:#a6e22e">_scaleHeight</span>);
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fontSize</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">allowFontScaling</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">fontScale</span>;
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">scale</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">fontSize</span>;
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setSpText2</span>(<span style="color:#a6e22e">size</span><span style="color:#f92672">:</span> Number) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scaleWidth</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">screenW</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">w2</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scaleHeight</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">screenH</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">h2</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scale</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">scaleWidth</span>, <span style="color:#a6e22e">scaleHeight</span>);
+  <span style="color:#a6e22e">size</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>((<span style="color:#a6e22e">size</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">scale</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.5</span>));
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">DEFAULT_DENSITY</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">fontScale</span>;
+}
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e">* 判断是否为iphoneX
+</span><span style="color:#75715e">* @returns {boolean}
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isIphoneX</span>() {
+  <span style="color:#66d9ef">return</span> (
+      <span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">OS</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;ios&#39;</span> <span style="color:#f92672">&amp;&amp;</span>
+      ((<span style="color:#a6e22e">screenH</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">X_HEIGHT</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">screenW</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">X_WIDTH</span>) <span style="color:#f92672">||</span>
+          (<span style="color:#a6e22e">screenH</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">X_WIDTH</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">screenW</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">X_HEIGHT</span>))
+  )
+}
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e">* 根据是否是iPhoneX返回不同的样式
+</span><span style="color:#75715e">* @param iphoneXStyle
+</span><span style="color:#75715e">* @param iosStyle
+</span><span style="color:#75715e">* @param androidStyle
+</span><span style="color:#75715e">* @returns {*}
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ifIphoneX</span>(<span style="color:#a6e22e">iphoneXStyle</span>, <span style="color:#a6e22e">iosStyle</span> <span style="color:#f92672">=</span> {}, <span style="color:#a6e22e">androidStyle</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isIphoneX</span>()) {
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">iphoneXStyle</span>;
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">OS</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;ios&#39;</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">iosStyle</span>
+  } <span style="color:#66d9ef">else</span> {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">androidStyle</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">androidStyle</span>;
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">iosStyle</span>
+  }
+}
+
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e">* 判断对象，数组，字符串是否为空
+</span><span style="color:#75715e">* @param str  (null|undefined|&#39;&#39;|&#39;   &#39;|[]|{}) 均判断为空，返回true
+</span><span style="color:#75715e">* @returns {boolean}
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isEmpty</span>(<span style="color:#a6e22e">str</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">str</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;object&#39;</span> <span style="color:#f92672">&amp;&amp;</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">str</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/(^\s*)|(\s*$)/g</span>, <span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+}
+
+<span style="color:#75715e">//时间处理
+</span><span style="color:#75715e"></span>Date.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">format</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">format</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> {
+      <span style="color:#e6db74">&#34;M+&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
+      <span style="color:#e6db74">&#34;d+&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getDate</span>(),
+      <span style="color:#e6db74">&#34;h+&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getHours</span>(),
+      <span style="color:#e6db74">&#34;m+&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getMinutes</span>(),
+      <span style="color:#e6db74">&#34;s+&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getSeconds</span>(),
+      <span style="color:#e6db74">&#34;q+&#34;</span><span style="color:#f92672">:</span> Math.<span style="color:#a6e22e">floor</span>((<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">3</span>),
+      <span style="color:#e6db74">&#34;S+&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getMilliseconds</span>()
+  };
+  <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">/(y+)/i</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">format</span>)) {
+      <span style="color:#a6e22e">format</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>.<span style="color:#a6e22e">replace</span>(RegExp.<span style="color:#a6e22e">$1</span>, (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getFullYear</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">4</span> <span style="color:#f92672">-</span> RegExp.<span style="color:#a6e22e">$1</span>.<span style="color:#a6e22e">length</span>));
+  }
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">date</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">new</span> RegExp(<span style="color:#e6db74">&#34;(&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;)&#34;</span>).<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">format</span>)) {
+          <span style="color:#a6e22e">format</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>.<span style="color:#a6e22e">replace</span>(RegExp.<span style="color:#a6e22e">$1</span>, RegExp.<span style="color:#a6e22e">$1</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>
+              <span style="color:#f92672">?</span> <span style="color:#a6e22e">date</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">:</span> (<span style="color:#e6db74">&#34;00&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>[<span style="color:#a6e22e">k</span>]).<span style="color:#a6e22e">substr</span>((<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>[<span style="color:#a6e22e">k</span>]).<span style="color:#a6e22e">length</span>));
+      }
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">format</span>;
+};
+
+<span style="color:#75715e">//获取时间差 current:1497235409744 当前时间  start:1497235419744 开始时间
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getRemainingime</span>(<span style="color:#a6e22e">current</span><span style="color:#f92672">:</span> Number, <span style="color:#a6e22e">start</span><span style="color:#f92672">:</span> Number) {
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">start</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">current</span>;
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">time</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+      <span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>];
+  }
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">year</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">time</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">365</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">30</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));<span style="color:#75715e">//年
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">month</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">time</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">30</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));<span style="color:#75715e">//月
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">days</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">time</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));<span style="color:#75715e">//日
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">temp1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">%</span> (<span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">temp2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp1</span> <span style="color:#f92672">%</span> (<span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">temp2</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));<span style="color:#75715e">//分
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">temp1</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));<span style="color:#75715e">//时
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">temp3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp2</span> <span style="color:#f92672">%</span> (<span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">seconds</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">temp3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000</span>);<span style="color:#75715e">//秒
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strs</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">year</span>, <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">month</span>), <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">days</span>), <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">hours</span>), <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">minutes</span>), <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">seconds</span>)];
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strs</span>;<span style="color:#75715e">//[&#34;0&#34;, &#34;0&#34;, &#34;2&#34;, &#34;7&#34;, &#34;33&#34;, &#34;30&#34;]0年0月2日 7时33分30秒
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#75715e">//1497235419
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getRemainingimeDistance</span>(<span style="color:#a6e22e">distance</span><span style="color:#f92672">:</span> Number) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">distance</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>;
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">time</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+      <span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>];
+  }
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">year</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">time</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">365</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">30</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));<span style="color:#75715e">//年
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">month</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">time</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">30</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));<span style="color:#75715e">//月
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">days</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">time</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));<span style="color:#75715e">//日
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">temp1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">%</span> (<span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">temp1</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));<span style="color:#75715e">//时
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">temp2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp1</span> <span style="color:#f92672">%</span> (<span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">temp2</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));<span style="color:#75715e">//分
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">temp3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp2</span> <span style="color:#f92672">%</span> (<span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">seconds</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">temp3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000</span>);<span style="color:#75715e">//秒
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strs</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">year</span>, <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">month</span>), <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">days</span>), <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">hours</span>), <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">minutes</span>), <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">seconds</span>)];
+  <span style="color:#75715e">// strs.splice(0, 1, String(Number(strs[0]) - 1970));//年
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// strs.splice(1, 1, String(Number(strs[1]) - 1));
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// strs.splice(2, 1, (Number(strs[2]) - 1) &lt; 10 ? &#39;0&#39; + (Number(strs[2]) - 1) : String(Number(strs[2]) - 1));
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// strs.splice(3, 1, (Number(strs[3]) - 8) &lt; 10 ? &#39;0&#39; + (Number(strs[3]) - 8) : String(Number(strs[3]) - 8));
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// strs.splice(4, 1, Number(strs[4]) &lt; 10 ? &#39;0&#39; + Number(strs[4]) : String(Number(strs[4])));
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// strs.splice(5, 1, Number(strs[5]) &lt; 10 ? &#39;0&#39; + Number(strs[5]) : String(Number(strs[5])));
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strs</span>;<span style="color:#75715e">//[&#34;0&#34;, &#34;0&#34;, &#34;2&#34;, &#34;7&#34;, &#34;33&#34;, &#34;30&#34;]0年0月2日 7时33分30秒
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toNormal</span>(<span style="color:#a6e22e">time</span><span style="color:#f92672">:</span> Number) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">time</span>;
+}
+
+<span style="color:#75715e">//转换成日期
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toDate</span>(<span style="color:#a6e22e">timestamp</span><span style="color:#f92672">:</span> Number, <span style="color:#a6e22e">format1</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;yyyy-MM-dd hh:mm:ss&#39;</span>) {
+  <span style="color:#66d9ef">try</span> {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">timestamp</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10000</span>) {
+          <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+          <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">setTime</span>(<span style="color:#a6e22e">timestamp</span>);
+          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">format1</span>);<span style="color:#75715e">//2014-07-10 10:21:12
+</span><span style="color:#75715e"></span>      } <span style="color:#66d9ef">else</span> {
+          <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span>;
+      }
+  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">erro</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span>;
+}
+
+<span style="color:#75715e">//转换成时间搓
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toTimestamp</span>(<span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> String) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">timestamp</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">date</span>);
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">timestamp</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000</span>;  <span style="color:#75715e">// 1497233827569/1000
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#75715e">//CST时间=&gt;转换成日期yyyy-MM-dd hh:mm:ss
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getTaskTime</span>(<span style="color:#a6e22e">strDate</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">null</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">strDate</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">strDate</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>;
+  }
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dateStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strDate</span>.<span style="color:#a6e22e">trim</span>().<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34; &#34;</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strGMT</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dateStr</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dateStr</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dateStr</span>[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dateStr</span>[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dateStr</span>[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; GMT+0800&#34;</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(Date.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">strGMT</span>));
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>();
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+  <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">?</span> (<span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">m</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">m</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>();
+  <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">?</span> (<span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">d</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">d</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>();
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">minute</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>();
+  <span style="color:#a6e22e">minute</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">minute</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">?</span> (<span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">minute</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">minute</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">second</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>();
+  <span style="color:#a6e22e">second</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">second</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">?</span> (<span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">second</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">second</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">minute</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">second</span>;
+};
+
+<span style="color:#75715e">//1497235419
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getRemainingimeDistance2</span>(<span style="color:#a6e22e">distance</span><span style="color:#f92672">:</span> Number) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">distance</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">days</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">time</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">temp1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">%</span> (<span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">temp1</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">temp2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp1</span> <span style="color:#f92672">%</span> (<span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">temp2</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">time</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>) {
+      <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  }
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">temp3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp2</span> <span style="color:#f92672">%</span> (<span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">seconds</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">temp3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000</span>);
+  <span style="color:#66d9ef">return</span> [<span style="color:#a6e22e">hours</span>, <span style="color:#a6e22e">minutes</span>];<span style="color:#75715e">//[&#34;0&#34;, &#34;0&#34;, &#34;2&#34;, &#34;7&#34;, &#34;33&#34;, &#34;30&#34;]0年0月2日 7时33分30秒
+</span><span style="color:#75715e"></span>}
+
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e">* 存储
+</span><span style="color:#75715e">* @param key
+</span><span style="color:#75715e">* @param value
+</span><span style="color:#75715e">* @param successCallback
+</span><span style="color:#75715e">* @param errorCallback
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">saveAsyncStorage</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">successCallback</span>, <span style="color:#a6e22e">errorCallback</span>) {
+  <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">error</span> =&gt; {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
+          <span style="color:#a6e22e">errorCallback</span>(<span style="color:#a6e22e">error</span>);
+      }
+      <span style="color:#66d9ef">else</span> {
+          <span style="color:#a6e22e">successCallback</span>();
+      }
+  })
+}
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e">* 取值
+</span><span style="color:#75715e">* @param key
+</span><span style="color:#75715e">* @param successCallback
+</span><span style="color:#75715e">* @param errorCallback
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getAsyncStorage</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">successCallback</span>, <span style="color:#a6e22e">errorCallback</span>) {
+  <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#a6e22e">key</span>, (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">result</span>) =&gt; {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
+          <span style="color:#a6e22e">errorCallback</span>(<span style="color:#a6e22e">error</span>);
+      }
+      <span style="color:#66d9ef">else</span> {
+          <span style="color:#a6e22e">successCallback</span>(<span style="color:#a6e22e">result</span>);
+      }
+  })
+}
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e">* 删除对应key的
+</span><span style="color:#75715e">* @param key
+</span><span style="color:#75715e">* @param successCallback
+</span><span style="color:#75715e">* @param errorCallback
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">removeAsyncStorage</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">successCallback</span>, <span style="color:#a6e22e">errorCallback</span>) {
+  <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">error</span> =&gt; {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
+          <span style="color:#a6e22e">errorCallback</span>(<span style="color:#a6e22e">error</span>);
+      }
+      <span style="color:#66d9ef">else</span> {
+          <span style="color:#a6e22e">successCallback</span>();
+      }
+  })
+}
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>React native - react-native-share</title>
+            <link>https://leviduan.github.io/posts/2020-01-08_04/</link>
+            <pubDate>Wed, 08 Jan 2020 13:48:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-01-08_04/</guid>
+            <description>When we use share function, the best library is react-native-share. React Native Share, a simple tool for share message and file to other apps.
+Git website: https://github.com/react-native-community/react-native-share/
+Installation npm install react-native-share --save react-native link react-native-share cd ios &amp;amp;&amp;amp; pod install &amp;amp;&amp;amp; cd ../ Usage import Share from &amp;#39;react-native-share&amp;#39;; Share.open(options) .then((res) =&amp;gt; { console.log(res) }) .catch((err) =&amp;gt; { err &amp;amp;&amp;amp; console.log(err); }); Share.open({url : ScreenUtil.webUrl + &amp;#39;/streetsnapShareToPhoto?id=&amp;#39; + this.state.data.id, message: &amp;#34;Deja&amp;#34;}) .</description>
+            <content type="html"><![CDATA[<p>When we use share function, the best library is react-native-share. React Native Share, a simple tool for share message and file to other apps.</p>
+<p>Git website: <a href="https://github.com/react-native-community/react-native-share/">https://github.com/react-native-community/react-native-share/</a></p>
+<h3 id="installation">Installation</h3>
+<pre><code>npm install react-native-share --save
+
+react-native link react-native-share
+
+cd ios &amp;&amp; pod install &amp;&amp; cd ../
+</code></pre><h3 id="usage">Usage</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Share</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native-share&#39;</span>;
+
+<span style="color:#a6e22e">Share</span>.<span style="color:#a6e22e">open</span>(<span style="color:#a6e22e">options</span>)
+.<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">res</span>) =&gt; { <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>) })
+.<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">err</span>) =&gt; { <span style="color:#a6e22e">err</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>); });
+
+<span style="color:#a6e22e">Share</span>.<span style="color:#a6e22e">open</span>({<span style="color:#a6e22e">url</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">ScreenUtil</span>.<span style="color:#a6e22e">webUrl</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/streetsnapShareToPhoto?id=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Deja&#34;</span>})
+.<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">res</span>) =&gt; { <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#a6e22e">res</span>) })
+.<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">err</span>) =&gt; { <span style="color:#a6e22e">err</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#a6e22e">err</span>); });
+</code></pre></div><p>Supported options:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">url</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">URL you want to share (only support base64 string in iOS &amp; Android).</td>
+</tr>
+<tr>
+<td style="text-align:left">urls</td>
+<td style="text-align:center">Array[string]</td>
+<td style="text-align:left">array of base64 string you want to share (only support iOS &amp; Android).</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">File mime type (optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">message</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">(optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">subject</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">(optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">email</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">Email of addressee (optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">excludedActivityTypes</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">(optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">failOnCancel</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:left">(defaults to true) Specifies whether promise should reject if user cancels share dialog (optional)</td>
+</tr>
+<tr>
+<td style="text-align:left">showAppsToView</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:left">(optional) only android</td>
+</tr>
+<tr>
+<td style="text-align:left">filename</td>
+<td style="text-align:center">string</td>
+<td style="text-align:left">only support base64 string in Android</td>
+</tr>
+</tbody>
+</table>
+<p>These can be assessed using Share.Social property For eg.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Share</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native-share&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">shareOptions</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Share via&#39;</span>,
+    <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;some message&#39;</span>,
+    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;some share url&#39;</span>,
+    <span style="color:#a6e22e">social</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Share</span>.<span style="color:#a6e22e">Social</span>.<span style="color:#a6e22e">WHATSAPP</span>,
+    <span style="color:#a6e22e">whatsAppNumber</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;9199999999&#34;</span>  <span style="color:#75715e">// country code + phone number(currently only works on Android)
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;test&#39;</span> , <span style="color:#75715e">// only for base64 file in Android 
+</span><span style="color:#75715e"></span>};
+<span style="color:#a6e22e">Share</span>.<span style="color:#a6e22e">shareSingle</span>(<span style="color:#a6e22e">shareOptions</span>);
+</code></pre></div><table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:center">Android</th>
+<th style="text-align:left">iOS</th>
+<th style="text-align:left">Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>FACEBOOK</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PAGESMANAGER</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>WHATSAPP</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>INSTAGRAM</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>GOOGLEPLUS</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>EMAIL</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PINTEREST</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>SMS</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>SNAPCHAT</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>MESSENGER</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LINKEDIN</strong></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">no</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bug">Bug</h3>
+<h4 id="react-native-share-library-question---currently-on-ios-13-the-app-will-crash">React native share library question - Currently on iOS 13 the app will crash</h4>
+<p>Currently on iOS 13 the app will crash if you:</p>
+<ul>
+<li>Open the share sheet</li>
+<li>Tap something like messages or photos</li>
+<li>Cancel the dialog</li>
+<li>Perform any other action</li>
+</ul>
+<p>This is because shareController.completionWithItemsHandler is called when the dialog box is canceled and currently failureCallback or successCallback will always be called. In the situation above, activityError is nil so successCallback will be called even though completed is false. This leaves us in a state where the callback has been invoked but the ShareSheet is still active, meaning the success or error callback will be invoked again, leading to the crash.</p>
+<p>This PR adds a check to make sure completed is true before calling successCallback. This way successCallback will only be called when the user has successfully completed an action and the ShareSheet is closed.</p>
+<p>Only call successCallback when completed is true (iOS 13 crash)</p>
+<p><a href="https://github.com/facebook/react-native/pull/26429/files">https://github.com/facebook/react-native/pull/26429/files</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">    shareController.completionWithItemsHandler <span style="color:#f92672">=</span> <span style="color:#f92672">^</span>(NSString <span style="color:#f92672">*</span>activityType, <span style="color:#66d9ef">BOOL</span> completed, __unused NSArray <span style="color:#f92672">*</span>returnedItems, NSError <span style="color:#f92672">*</span>activityError) {
+        <span style="color:#66d9ef">if</span> (activityError) {
+            failureCallback(activityError);
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (completed) {
+            successCallback(<span style="color:#ae81ff">@[@(</span>completed<span style="color:#ae81ff">)</span>, RCTNullIfNil(activityType)<span style="color:#ae81ff">]</span>);
+        }
+    };
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>React native - Push Notification (Firebase)</title>
+            <link>https://leviduan.github.io/posts/2020-01-07_01/</link>
+            <pubDate>Tue, 07 Jan 2020 16:48:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-01-07_01/</guid>
+            <description>How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website &amp;ldquo;https://rnfirebase.io/&amp;quot; , and click menu &amp;ldquo;Cloud Messaging&amp;rdquo;
+Installation # Install &amp;amp; setup the app module yarn add @react-native-firebase/app # Install the messaging module yarn add @react-native-firebase/messaging # If you&#39;re developing your app using iOS, run this command cd ios/ &amp;amp;&amp;amp; pod install iOS Setup AppDelegate.m</description>
+            <content type="html"><![CDATA[<p>How to add Push Notification in your project? I use firebase to send cloud message by Push Notification. First of all you click the website &ldquo;<a href="https://rnfirebase.io/%22">https://rnfirebase.io/&quot;</a> , and click menu &ldquo;Cloud Messaging&rdquo;</p>
+<h3 id="installation">Installation</h3>
+<pre><code># Install &amp; setup the app module
+yarn add @react-native-firebase/app
+
+# Install the messaging module
+yarn add @react-native-firebase/messaging
+
+# If you're developing your app using iOS, run this command
+cd ios/ &amp;&amp; pod install
+</code></pre><h3 id="ios-setup">iOS Setup</h3>
+<p>AppDelegate.m</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">@import Firebase;
+
+<span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">AppDelegate</span> () <span style="color:#f92672">&lt;</span>FIRMessagingDelegate<span style="color:#f92672">&gt;</span>
+
+<span style="color:#66d9ef">@end</span>
+
+<span style="color:#66d9ef">@implementation</span> <span style="color:#a6e22e">AppDelegate</span>
+
+- (<span style="color:#66d9ef">BOOL</span>)<span style="color:#a6e22e">application:</span>(UIApplication <span style="color:#f92672">*</span>)application <span style="color:#a6e22e">didFinishLaunchingWithOptions:</span>(NSDictionary <span style="color:#f92672">*</span>)launchOptions
+{
+    [FIRApp configure];
+    [application registerForRemoteNotifications];
+    [FIRMessaging messaging].delegate <span style="color:#f92672">=</span> self;
+}
+
+- (<span style="color:#66d9ef">void</span>) <span style="color:#a6e22e">messaging:</span>(FIRMessaging <span style="color:#f92672">*</span>)messaging <span style="color:#a6e22e">didReceiveRegistrationToken:</span>(NSString <span style="color:#f92672">*</span>)fcmToken {
+    NSLog(<span style="color:#e6db74">@&#34;FCM registration token: %@&#34;</span>, fcmToken);
+    <span style="color:#75715e">// Notify about received token.
+</span><span style="color:#75715e"></span>    NSDictionary <span style="color:#f92672">*</span>dataDict <span style="color:#f92672">=</span> [NSDictionary dictionaryWithObject:fcmToken forKey:<span style="color:#e6db74">@&#34;token&#34;</span>];
+    [[NSNotificationCenter defaultCenter] postNotificationName:
+     <span style="color:#e6db74">@&#34;FCMToken&#34;</span> object:nil userInfo:dataDict];
+    <span style="color:#75715e">// TODO: If necessary send token to application server.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Note: This callback is fired at each app startup and whenever a new token is generated.
+</span><span style="color:#75715e"></span>}
+
+
+- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">application:</span>(UIApplication <span style="color:#f92672">*</span>)application <span style="color:#a6e22e">didFailToRegisterForRemoteNotificationsWithError:</span>(NSError <span style="color:#f92672">*</span>)error {
+  NSLog(<span style="color:#e6db74">@&#34;error: %@&#34;</span>, error);
+}
+
+</code></pre></div><h3 id="android-setup">Android Setup</h3>
+<p>/appName/android/app/src/main/AndroidManifest.xml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;</span>service android<span style="color:#f92672">:</span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.MyFirebaseMessagingService&#34;</span> android<span style="color:#f92672">:</span>exported<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span>intent<span style="color:#f92672">-</span>filter<span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span>action android<span style="color:#f92672">:</span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;com.google.firebase.MESSAGING_EVENT&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/</span>intent<span style="color:#f92672">-</span>filter<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span>service<span style="color:#f92672">&gt;</span>
+</code></pre></div><p>/android/app/src/main/java/com/appName/MyFirebaseMessagingService.java</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.stylepedia<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> com.google.firebase.messaging.FirebaseMessagingService<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.google.firebase.messaging.RemoteMessage<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.util.Log<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyFirebaseMessagingService</span> <span style="color:#66d9ef">extends</span> FirebaseMessagingService <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String TAG <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;FCMDemo&#34;</span><span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onMessageReceived</span><span style="color:#f92672">(</span>RemoteMessage remoteMessage<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        <span style="color:#75715e">// TODO(developer): Handle FCM messages here.
+</span><span style="color:#75715e"></span>        Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;From: &#34;</span> <span style="color:#f92672">+</span> remoteMessage<span style="color:#f92672">.</span><span style="color:#a6e22e">getFrom</span><span style="color:#f92672">());</span>
+
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>remoteMessage<span style="color:#f92672">.</span><span style="color:#a6e22e">getData</span><span style="color:#f92672">().</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Message data payload: &#34;</span> <span style="color:#f92672">+</span> remoteMessage<span style="color:#f92672">.</span><span style="color:#a6e22e">getData</span><span style="color:#f92672">());</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#75715e">// Check if message contains a notification payload.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>remoteMessage<span style="color:#f92672">.</span><span style="color:#a6e22e">getNotification</span><span style="color:#f92672">()</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Message Notification Body: &#34;</span> <span style="color:#f92672">+</span> remoteMessage<span style="color:#f92672">.</span><span style="color:#a6e22e">getNotification</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getBody</span><span style="color:#f92672">());</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#75715e">// Also if you intend on generating your own notifications as a result of a received FCM
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// message, here is where that should be initiated. See sendNotification method below.
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendRegistrationToServer</span><span style="color:#f92672">(</span>String token<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// TODO: Implement this method to send token to your app server.
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onNewToken</span><span style="color:#f92672">(</span>String token<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;From: &#34;</span> <span style="color:#f92672">+</span> token<span style="color:#f92672">);</span>
+        sendRegistrationToServer<span style="color:#f92672">(</span>token<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="react-native">React Native</h3>
+<p>You can get token by this function, if the device didn&rsquo;t open Push Notification, you won&rsquo;t get the token, so you make sure that the user have opened the notifications.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">messaging</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@react-native-firebase/messaging&#39;</span>
+
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">isDeviceRegisteredForRemoteMessages</span>) {
+    <span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">registerDeviceForRemoteMessages</span>()
+}
+<span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">getToken</span>()
+.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">fcmToken</span> =&gt; {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fcmToken</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#a6e22e">fcmToken</span>)
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">OS</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;ios&#39;</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">iosTokenNetWork</span>(<span style="color:#a6e22e">fcmToken</span>)
+    }
+    <span style="color:#66d9ef">else</span> {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">androidTokenNetWork</span>(<span style="color:#a6e22e">fcmToken</span>)
+    }
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#e6db74">&#39;user doesn t have a device token yet&#39;</span>)
+    <span style="color:#75715e">// user doesn&#39;t have a device token yet
+</span><span style="color:#75715e"></span>  }
+})
+</code></pre></div><p>You can use this function to check if user open the push notification switch in user&rsquo;s device.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">requestPermission</span>().<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) =&gt; {
+  <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#75715e">// if user click allow app push notification on pop-up，I can get token by function: 
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">requestPermission</span>().<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">isDeviceRegisteredForRemoteMessages</span>) {
+        <span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">registerDeviceForRemoteMessages</span>()
+      }
+      <span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">getToken</span>()
+        .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">fcmToken</span> =&gt; {
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fcmToken</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">OS</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;ios&#39;</span>) {
+              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">iosTokenNetWork</span>(<span style="color:#a6e22e">fcmToken</span>)
+            }
+            <span style="color:#66d9ef">else</span> {
+              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">androidTokenNetWork</span>(<span style="color:#a6e22e">fcmToken</span>)
+            }
+          } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#e6db74">&#39;user doesn t have a device token yet&#39;</span>)
+            <span style="color:#75715e">// user doesn&#39;t have a device token yet
+</span><span style="color:#75715e"></span>          }
+        })
+})
+
+</code></pre></div><p>You can click Push notification and go to another page when the App is in the background.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">setBackgroundMessageHandler</span>(<span style="color:#a6e22e">async</span> <span style="color:#a6e22e">remoteMessage</span> =&gt; {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remoteMessage</span>) {
+          <span style="color:#a6e22e">appsFlyer</span>.<span style="color:#a6e22e">trackEvent</span>(<span style="color:#e6db74">&#34;Open_notification&#34;</span>)
+          <span style="color:#a6e22e">analytics</span>().<span style="color:#a6e22e">logEvent</span>(<span style="color:#e6db74">&#39;Open_notification&#39;</span>, {
+            <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+          });
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remoteMessage</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">send_user_history_id</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pushRequest</span>(<span style="color:#a6e22e">remoteMessage</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">send_user_history_id</span>)
+          }
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remoteMessage</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;MixMatch&#34;</span>) {  
+              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;MyClosetDetailPage&#39;</span>, {
+                <span style="color:#a6e22e">product_id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">remoteMessage</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">push_id</span>,
+                <span style="color:#a6e22e">returnPage</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Tabs&#39;</span>,
+              })
+  
+          }
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remoteMessage</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;StreetSnap&#34;</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#39;PushlookbookStreetSnapPage&#39;</span>, {
+                <span style="color:#a6e22e">streetId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">remoteMessage</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">push_id</span>,
+                <span style="color:#a6e22e">returnPage</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Tabs&#39;</span>,
+              })
+            }, <span style="color:#ae81ff">500</span>);
+          }
+      }
+});
+</code></pre></div><p>You can click Push notification and go to another page when the App is closed</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">messaging</span>()
+      .<span style="color:#a6e22e">getInitialNotification</span>()
+      .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">remoteMessage</span> =&gt; {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remoteMessage</span>) {
+          <span style="color:#a6e22e">appsFlyer</span>.<span style="color:#a6e22e">trackEvent</span>(<span style="color:#e6db74">&#34;Open_notification&#34;</span>)
+          <span style="color:#a6e22e">analytics</span>().<span style="color:#a6e22e">logEvent</span>(<span style="color:#e6db74">&#39;Open_notification&#39;</span>, {
+            <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+          });
+          <span style="color:#75715e">// alert(JSON.stringify(remoteMessage) )
+</span><span style="color:#75715e"></span>
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remoteMessage</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;MixMatch&#34;</span>) {
+
+              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;MyClosetDetailPage&#39;</span>, {
+                  <span style="color:#a6e22e">product_id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">remoteMessage</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">push_id</span>,
+                  <span style="color:#a6e22e">returnPage</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Tabs&#39;</span>,
+                })
+              }, <span style="color:#ae81ff">500</span>);
+            }
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remoteMessage</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;StreetSnap&#34;</span>) {
+              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#39;PushlookbookStreetSnapPage&#39;</span>, {
+                  <span style="color:#a6e22e">streetId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">remoteMessage</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">push_id</span>,
+                  <span style="color:#a6e22e">returnPage</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Tabs&#39;</span>,
+                })
+              }, <span style="color:#ae81ff">500</span>);
+            }
+          }
+})
+</code></pre></div><h3 id="create-notification-service-extension">Create Notification Service Extension</h3>
+<p>If I want to send an iOS Push Notification with picture to my iPhone, I have to add the iOS Push Notification with Notification Service Extension.</p>
+<ol>
+<li>In the Xcode menu, go to File &gt; New &gt; Target.</li>
+<li>Select the Notification Service Extension.</li>
+<li>Gives the name the Extension service and click the finish button.</li>
+</ol>
+<p>and enable Push Notification and App Group capabilities in iOS App target.</p>
+<p>NotificationService.h</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#75715e">#import &lt;UserNotifications/UserNotifications.h&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">NotificationService</span> : <span style="color:#a6e22e">UNNotificationServiceExtension</span>
+
+<span style="color:#66d9ef">@end</span>
+</code></pre></div><p>NotificationService.m</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#75715e">#import &#34;NotificationService.h&#34;
+</span><span style="color:#75715e"></span>@import Firebase;
+
+<span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">NotificationService</span> ()
+
+<span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">strong</span>) <span style="color:#66d9ef">void</span> (<span style="color:#f92672">^</span>contentHandler)(UNNotificationContent <span style="color:#f92672">*</span>contentToDeliver);
+<span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">strong</span>) UNMutableNotificationContent <span style="color:#f92672">*</span>bestAttemptContent;
+
+<span style="color:#66d9ef">@end</span>
+
+<span style="color:#66d9ef">@implementation</span> <span style="color:#a6e22e">NotificationService</span>
+
+- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">didReceiveNotificationRequest:</span>(UNNotificationRequest <span style="color:#f92672">*</span>)request <span style="color:#a6e22e">withContentHandler:</span>(<span style="color:#66d9ef">void</span> (<span style="color:#f92672">^</span>)(UNNotificationContent <span style="color:#f92672">*</span> _Nonnull))contentHandler {
+    self.contentHandler <span style="color:#f92672">=</span> contentHandler;
+    self.bestAttemptContent <span style="color:#f92672">=</span> [request.content mutableCopy];
+    
+    <span style="color:#75715e">// Modify the notification content here...
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (self.bestAttemptContent.title) {
+    self.bestAttemptContent.title <span style="color:#f92672">=</span> [NSString stringWithFormat:<span style="color:#e6db74">@&#34;%@&#34;</span>, self.bestAttemptContent.title];
+  }
+  [[FIRMessaging extensionHelper] populateNotificationContent:self.bestAttemptContent
+  withContentHandler:contentHandler];
+}
+
+- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">serviceExtensionTimeWillExpire</span> {
+    <span style="color:#75715e">// Called just before the extension will be terminated by the system.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Use this as an opportunity to deliver your &#34;best attempt&#34; at modified content, otherwise the original push payload will be used.
+</span><span style="color:#75715e"></span>    self.contentHandler(self.bestAttemptContent);
+}
+
+<span style="color:#66d9ef">@end</span>
+</code></pre></div><h3 id="the-format-of-push-notification-service-be-sent-by-server">The format of Push Notification Service be sent by Server</h3>
+<p>The content of data can be added or deleted with costume way. if your android device click the push notification bar, and then the app is not opened, the problem must be caused by the format of Push Notification Service. iOS as well.</p>
+<pre><code>{
+  &quot;message&quot;: {
+    &quot;notification&quot;: {
+      &quot;title&quot;: &quot;title&quot;,
+      &quot;body&quot;: &quot;message content&quot;
+    },
+    &quot;token&quot;: &quot;fi7FrXMCFeQ:APA91bEZ3CCZEu6NJCzPNyOXq3QoGuCgZ_NZ6pSkuvAYM-VKTvfj1FbnBQKimHaOVqWv_4FD_eGZn1CcfNRf2Ve6X4_mYNwmgI99A1ngxcnY6oyjXTcNRsdIh7YD3SizhRHoTbIXcn-8&quot;,
+    &quot;data&quot;: {
+      &quot;image_url&quot;: &quot;&quot;,
+      &quot;push_type&quot;: &quot;0&quot;,
+      &quot;type&quot;: &quot;0&quot;,
+      &quot;url&quot;: &quot;MixMatch&quot;,
+      &quot;push_id&quot;: &quot;6587588&quot;,
+      &quot;send_user_history_id&quot;: &quot;&quot;
+    },
+    &quot;apns&quot;: {
+      &quot;headers&quot;: {
+        &quot;apns-priority&quot;: &quot;10&quot;
+      },
+      &quot;payload&quot;: {
+        &quot;aps&quot;: {
+          &quot;badge&quot;: 1,
+          &quot;mutable-content&quot;: 1
+        }
+      },
+      &quot;fcm_options&quot;: {
+        &quot;image&quot;: &quot;&quot;
+      }
+    }
+  }
+}
+</code></pre><h3 id="detecting-that-notification-is-open-or-closed-when-app-is-in-foreground-or-background">Detecting that notification is open or closed when app is in foreground or background.</h3>
+<p>if we need to detect when our app is coming to the foreground or when it comes to background, the AppState will help me to do it so easy:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NotificationManager</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native-check-notification-enable&#39;</span>
+
+<span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">loginShow</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+        <span style="color:#a6e22e">loginStatus</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+        <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+    }
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+}
+
+<span style="color:#a6e22e">componentDidMount</span>() {
+    <span style="color:#a6e22e">AppState</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;change&#39;</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handleAppStateChange</span>)
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_navListener</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">addListener</span>(<span style="color:#e6db74">&#39;didFocus&#39;</span>, () =&gt; {
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">OS</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;ios&#39;</span>) {
+        <span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">requestPermission</span>().<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) =&gt; {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                    <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+                }))
+            }
+            <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                    <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+                }))
+            }
+        })
+      }
+      <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">NotificationManager</span>.<span style="color:#a6e22e">areNotificationsEnabled</span>().<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">e</span>)=&gt;{
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span>) {
+                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                    <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+                }))
+            }
+            <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                    <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+                }))
+            }
+          }).<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">e</span>)=&gt;{
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+            }))
+          })
+      }
+
+    })
+}
+
+<span style="color:#a6e22e">_handleAppStateChange</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">nextAppState</span>) =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nextAppState</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">nextAppState</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;active&#39;</span>) {
+        <span style="color:#75715e">//如果是true ，表示从后台进入了前台 ，请求数据，刷新页面。或者做其他的逻辑
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flage</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">OS</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;ios&#39;</span>) {
+                <span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">requestPermission</span>().<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) =&gt; {
+                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                            <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+                        }))
+                    }
+                    <span style="color:#66d9ef">else</span> {
+                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                            <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+                        }))
+                    }
+                })
+            }
+            <span style="color:#66d9ef">else</span> {
+                <span style="color:#a6e22e">NotificationManager</span>.<span style="color:#a6e22e">areNotificationsEnabled</span>().<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">e</span>) =&gt; {
+                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span>) {
+                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                            <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+                        }))
+                    }
+                    <span style="color:#66d9ef">else</span> {
+                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                            <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+                        }))
+                    }
+                }).<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">e</span>) =&gt; {
+                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                        <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+                    }))
+                })
+            }
+        }
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nextAppState</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">nextAppState</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;background&#39;</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    }
+}
+
+
+<span style="color:#a6e22e">_handleAppStateChange</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">nextAppState</span>) =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nextAppState</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">nextAppState</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;active&#39;</span>) {
+        <span style="color:#75715e">//如果是true ，表示从后台进入了前台 ，请求数据，刷新页面。或者做其他的逻辑
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flage</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">OS</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;ios&#39;</span>) {
+                <span style="color:#a6e22e">messaging</span>().<span style="color:#a6e22e">requestPermission</span>().<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) =&gt; {
+                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                            <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+                        }))
+                    }
+                    <span style="color:#66d9ef">else</span> {
+                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                            <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+                        }))
+                    }
+                })
+            }
+            <span style="color:#66d9ef">else</span> {
+                <span style="color:#a6e22e">NotificationManager</span>.<span style="color:#a6e22e">areNotificationsEnabled</span>().<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">e</span>) =&gt; {
+                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span>) {
+                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                            <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+                        }))
+                    }
+                    <span style="color:#66d9ef">else</span> {
+                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                            <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+                        }))
+                    }
+                }).<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">e</span>) =&gt; {
+                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+                        <span style="color:#a6e22e">isEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+                    }))
+                })
+            }
+        }
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nextAppState</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">nextAppState</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;background&#39;</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    }
+}
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>React native - Search bar</title>
+            <link>https://leviduan.github.io/posts/2020-01-07_03/</link>
+            <pubDate>Tue, 07 Jan 2020 06:00:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-01-07_03/</guid>
+            <description>If you want to use SearchBar on React Native, the best choice is React Native Elements Library. you can use SearchBar module from React Native Elements.
+The website: https://react-native-elements.github.io/react-native-elements/docs/input.html
+Installation Step 1: Install react-native-elements
+yarn add react-native-elements # or with npm npm install react-native-elements Step 2: Install react-native-vector-icons
+# yarn yarn add react-native-vector-icons # or with npm npm i --save react-native-vector-icons # link react-native link react-native-vector-icons Ps: if Xcode run error - react-native-vector-icons iOS run error - &amp;lsquo;Multiple commands produce&amp;rsquo; error when building with new Xcode build system</description>
+            <content type="html"><![CDATA[<p>If you want to use SearchBar on React Native, the best choice is React Native Elements Library. you can use SearchBar module from React Native Elements.</p>
+<p>The website: <a href="https://react-native-elements.github.io/react-native-elements/docs/input.html">https://react-native-elements.github.io/react-native-elements/docs/input.html</a></p>
+<h3 id="installation">Installation</h3>
+<p>Step 1: Install react-native-elements</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">yarn</span> <span style="color:#a6e22e">add</span> <span style="color:#a6e22e">react</span><span style="color:#f92672">-</span><span style="color:#66d9ef">native</span><span style="color:#f92672">-</span><span style="color:#a6e22e">elements</span>
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">or</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">npm</span>
+<span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">react</span><span style="color:#f92672">-</span><span style="color:#66d9ef">native</span><span style="color:#f92672">-</span><span style="color:#a6e22e">elements</span>
+</code></pre></div><p>Step 2: Install react-native-vector-icons</p>
+<pre><code class="language-javascripte" data-lang="javascripte"># yarn
+yarn add react-native-vector-icons
+# or with npm
+npm i --save react-native-vector-icons
+
+# link
+react-native link react-native-vector-icons
+</code></pre><p>Ps: if Xcode run error - react-native-vector-icons iOS run error - &lsquo;Multiple commands produce&rsquo; error when building with new Xcode build system</p>
+<p>The solution way : <strong>simply remove duplicate reference fonts in &ldquo;Copy Bundle Resources&rdquo; NOT in &ldquo;[CP] Copy Pods Resources&rdquo;</strong></p>
+<p>You can correct to run iOS app.</p>
+<h3 id="how-to-use-search-bar-on-rn">How to use search bar on RN</h3>
+<p>You can write the SearchBar Label to write a UI code like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">SearchBar</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native-elements&#39;</span>;
+
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">SearchBar</span>
+    <span style="color:#a6e22e">inputContainerStyle</span><span style="color:#f92672">=</span>{{<span style="color:#a6e22e">backgroundColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#EFEFEF&#39;</span>}}
+    <span style="color:#a6e22e">inputStyle</span><span style="color:#f92672">=</span>{{<span style="color:#a6e22e">backgroundColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#EFEFEF&#39;</span>}}
+    <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">search</span> =&gt; (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">search</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">search</span>)}
+    <span style="color:#a6e22e">platform</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ios&#34;</span>
+    <span style="color:#a6e22e">containerStyle</span><span style="color:#f92672">=</span>{{<span style="color:#a6e22e">backgroundColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;white&#39;</span>}}
+    <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Search&#34;</span>
+    <span style="color:#a6e22e">showCancel</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">true</span>}
+    <span style="color:#a6e22e">searchIcon</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">false</span>}
+    <span style="color:#a6e22e">onChangeText</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">searchText</span> =&gt;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({<span style="color:#a6e22e">searchText</span>}, () =&gt; {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">searchTypeGetRequest</span>();
+      })
+    }
+    <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">searchText</span>}
+    <span style="color:#a6e22e">cancelButtonProps</span><span style="color:#f92672">=</span>{{<span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;black&#39;</span>}}
+    <span style="color:#a6e22e">onCancel</span><span style="color:#f92672">=</span>{() =&gt; {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">goBack</span>();
+    }}
+    <span style="color:#a6e22e">returnKeyType</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;search&#34;</span>
+    <span style="color:#a6e22e">onFocus</span><span style="color:#f92672">=</span>{() =&gt; {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+        <span style="color:#a6e22e">LookbookStreetSnapFlatList</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+      }));
+    }}
+    <span style="color:#a6e22e">onClear</span><span style="color:#f92672">=</span>{() =&gt; {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+        <span style="color:#a6e22e">LookbookStreetSnapFlatList</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+      }));
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">search</span>.<span style="color:#a6e22e">focus</span>();
+    }}
+    <span style="color:#a6e22e">onSubmitEditing</span><span style="color:#f92672">=</span>{() =&gt; {
+       <span style="color:#75715e">// press the search button, something will be happened
+</span><span style="color:#75715e"></span>    }}
+<span style="color:#960050;background-color:#1e0010">/&gt;</span>
+</code></pre></div><p>If you use  <code>this.search.focus()</code>, you can find a bug when you use iOS device. when you inter the search page, you click the cancel button, the keyboard always be there and didn&rsquo;t dismiss anytime. So you can use setTimeout void to avoid that action.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">SearchBar</span>
+  <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">search</span> =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">search</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">search</span>}
+  ...
+<span style="color:#960050;background-color:#1e0010">/&gt;</span>
+
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">OS</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;ios&#39;</span>) {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">search</span>.<span style="color:#a6e22e">focus</span>();
+  }, <span style="color:#ae81ff">200</span>);
+} <span style="color:#66d9ef">else</span> {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">search</span>.<span style="color:#a6e22e">focus</span>();
+}
+</code></pre></div><p>About the other detail , you can check the API from RN element library website:</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>React native - ActionSheetIOS</title>
+            <link>https://leviduan.github.io/posts/2019-12-30_01/</link>
+            <pubDate>Mon, 30 Dec 2019 06:00:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2019-12-30_01/</guid>
+            <description>Sometime, We need to make a actionsheet on Rect native，so the best way to do it by ActionSheetIOS API from react-native, however, ActionSheetIOS can not be used in Android mobile. so we need an unofficial library from github to achieve an Android ActionSheet UI.
+choosing the github library from beefe/react-native-actionsheet
+website: https://github.com/beefe/react-native-actionsheet/
+Cross platform ActionSheet, This component implements a custom ActionSheet and provides the same way to drawing it on the different platforms (iOS and Android).</description>
+            <content type="html"><![CDATA[<p>Sometime, We need to make a actionsheet on Rect native，so the best way to do it by ActionSheetIOS API from react-native, however, ActionSheetIOS can not be used in Android mobile. so we need an unofficial library from github to achieve an Android ActionSheet UI.</p>
+<p>choosing the github library from <code>beefe/react-native-actionsheet</code></p>
+<p>website: <a href="https://github.com/beefe/react-native-actionsheet/">https://github.com/beefe/react-native-actionsheet/</a></p>
+<p>Cross platform ActionSheet, This component implements a custom ActionSheet and provides the same way to drawing it on the different platforms (iOS and Android). Actually, In order to keep the best effect, it still uses the ActionSheetIOS on iOS.</p>
+<p><img src="https://raw.githubusercontent.com/beefe/react-native-actionsheet/master/docs/ios-native.png" alt="iOS png"></p>
+<h3 id="installation">Installation</h3>
+<p>npm install react-native-actionsheet &ndash;save</p>
+<h3 id="usage">Usage</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ActionSheet</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native-actionsheet&#39;</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Demo</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">showActionSheet</span> <span style="color:#f92672">=</span> () =&gt; {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ActionSheet</span>.<span style="color:#a6e22e">show</span>()
+  }
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Text</span> <span style="color:#a6e22e">onPress</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">showActionSheet</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Open</span> <span style="color:#a6e22e">ActionSheet</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Text&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ActionSheet</span>
+          <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">o</span> =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ActionSheet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>}
+          <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;Which one do you like ?&#39;</span>}
+          <span style="color:#a6e22e">options</span><span style="color:#f92672">=</span>{[<span style="color:#e6db74">&#39;Apple&#39;</span>, <span style="color:#e6db74">&#39;Banana&#39;</span>, <span style="color:#e6db74">&#39;cancel&#39;</span>]}
+          <span style="color:#a6e22e">cancelButtonIndex</span><span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>}
+          <span style="color:#a6e22e">destructiveButtonIndex</span><span style="color:#f92672">=</span>{<span style="color:#ae81ff">1</span>}
+          <span style="color:#a6e22e">onPress</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">index</span>) =&gt; { <span style="color:#75715e">/* do something */</span> }}
+        <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/View&gt;</span>
+    )
+  }
+}
+</code></pre></div><h3 id="my-example">My Example</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ActionSheet</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native-actionsheet&#39;</span>
+
+<span style="color:#a6e22e">showActionSheet</span> <span style="color:#f92672">=</span> () =&gt; {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ActionSheet</span>.<span style="color:#a6e22e">show</span>()
+}
+
+<span style="color:#a6e22e">componentDidMount</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">setParams</span>({ <span style="color:#a6e22e">increaseCount</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">showActionSheet</span> });
+}
+
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ActionSheet</span>
+      <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">o</span> =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ActionSheet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>}
+      <span style="color:#a6e22e">options</span><span style="color:#f92672">=</span>{[<span style="color:#e6db74">&#39;Similar items&#39;</span>, <span style="color:#e6db74">&#39;Similar looks&#39;</span>, <span style="color:#e6db74">&#39;Cancel&#39;</span>]}
+      <span style="color:#a6e22e">cancelButtonIndex</span><span style="color:#f92672">=</span>{<span style="color:#ae81ff">2</span>}
+      <span style="color:#a6e22e">destructiveButtonIndex</span><span style="color:#f92672">=</span>{<span style="color:#ae81ff">5</span>}
+      <span style="color:#a6e22e">onPress</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">index</span>) =&gt; {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">setParams</span>({ <span style="color:#a6e22e">otherParam</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Similar items&#39;</span> })
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">setParams</span>({ <span style="color:#a6e22e">otherParam</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Similar looks&#39;</span> })
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+                <span style="color:#a6e22e">similarLooks</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+            },
+            () =&gt; {
+                <span style="color:#75715e">// do something in here
+</span><span style="color:#75715e"></span>            });
+        }
+      }}
+<span style="color:#960050;background-color:#1e0010">/&gt;</span>
+</code></pre></div><h3 id="ps">PS</h3>
+<p>If you don&rsquo;t need the destructive ( red font ), you should write code <code>destructiveButtonIndex={value}</code> the value that you didn&rsquo;t write in the options.</p>
+]]></content>
         </item>
         
     </channel>

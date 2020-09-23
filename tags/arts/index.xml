@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arts on Levi&#39;s Blog</title>
+    <link>https://leviduan.github.io/tags/arts/</link>
+    <description>Recent content in Arts on Levi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - 2020</copyright>
+    <lastBuildDate>Mon, 21 Sep 2020 06:00:00 +0800</lastBuildDate><atom:link href="https://leviduan.github.io/tags/arts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ARTS16-20200920</title>
+      <link>https://leviduan.github.io/posts/arts16-20200920/</link>
+      <pubDate>Mon, 21 Sep 2020 06:00:00 +0800</pubDate>
+      
+      <guid>https://leviduan.github.io/posts/arts16-20200920/</guid>
+      <description>Algorithm OJ address website :OJ
+Description Make Array Palindrome For a given array, we need to make array palindrome. Only allowed operation on array is merge. To merge two adjacent elements just simply replace them with their sum. Task is to find minimum number of merge operations to make given array palindrome. Input The first line contains single integer N The second line contains N space separated integers Output Minimum number of merge operations to make given array palindrome.</description>
+    </item>
+    
+    <item>
+      <title>About arts</title>
+      <link>https://leviduan.github.io/2019-01-01_01/</link>
+      <pubDate>Tue, 01 Jan 2019 13:48:00 +0800</pubDate>
+      
+      <guid>https://leviduan.github.io/2019-01-01_01/</guid>
+      <description>What is arts ARTS is a activity for those who join chenHao&amp;rsquo;s reader club.Here you are expected to do these weekly:
+  A &amp;ndash; Algorithm an Algorithm Problem
+  R &amp;ndash; Review read a technical article and review it.
+  T &amp;ndash; Tip the skill you&amp;rsquo;ve learned this week
+  S &amp;ndash; Share your experience in work,learning or sth else.
+  Once you are in the club, you&amp;rsquo;ve got the promise of keeping doing this at least a year.</description>
+    </item>
+    
+  </channel>
+</rss>
