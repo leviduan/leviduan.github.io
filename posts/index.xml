@@ -6,8 +6,366 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>All rights reserved - 2020</copyright>
-        <lastBuildDate>Mon, 21 Sep 2020 06:00:00 +0800</lastBuildDate>
+        <lastBuildDate>Mon, 28 Sep 2020 01:41:00 +0800</lastBuildDate>
         <atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>ARTS17-20200927</title>
+            <link>https://leviduan.github.io/posts/2020-09-28/</link>
+            <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-09-28/</guid>
+            <description>Algorithm Leetcode website : 1. Two Sum
+Description Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.
+Example 1:
+Input: nums = [2,7,11,15], target = 9 Output: [0,1] Output: Because nums[0] + nums[1] == 9, we return [0, 1].</description>
+            <content type="html"><![CDATA[<h2 id="algorithm">Algorithm</h2>
+<h3 id="leetcode-website-">Leetcode website :</h3>
+<p><a href="https://leetcode.com/problems/two-sum/">1. Two Sum</a></p>
+<h3 id="description">Description</h3>
+<p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p>You can return the answer in any order.</p>
+<p>Example 1:</p>
+<p>Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Output: Because nums[0] + nums[1] == 9, we return [0, 1].
+Example 2:</p>
+<p>Input: nums = [3,2,4], target = 6
+Output: [1,2]
+Example 3:</p>
+<p>Input: nums = [3,3], target = 6
+Output: [0,1]</p>
+<h3 id="idea">Idea</h3>
+<p>At first I sort the array, and then find these two values by comparison method.</p>
+<p>Key point:</p>
+<ol>
+<li>Quicksort</li>
+<li>loops</li>
+<li>Array</li>
+</ol>
+<h3 id="solution---javascript">Solution - Javascript</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">twoSum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">nums</span>, <span style="color:#a6e22e">target</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">storeDic</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">index</span>) =&gt; {
+        <span style="color:#66d9ef">return</span> {
+            <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">val</span>,
+            <span style="color:#a6e22e">index</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">index</span>, 
+        }
+    })
+    <span style="color:#a6e22e">storeDic</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">min</span>, <span style="color:#a6e22e">max</span>) =&gt; {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">max</span>.<span style="color:#a6e22e">val</span>
+    })
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">j</span><span style="color:#f92672">=</span><span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">j</span>) {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">diff</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">storeDic</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">val</span>
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">diff</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">storeDic</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">val</span>) <span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">diff</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">storeDic</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">val</span>) <span style="color:#f92672">--</span><span style="color:#a6e22e">j</span>
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">diff</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">storeDic</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">val</span>) <span style="color:#66d9ef">return</span> [<span style="color:#a6e22e">storeDic</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">index</span>, <span style="color:#a6e22e">storeDic</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">index</span>].<span style="color:#a6e22e">sort</span>()
+    }
+    <span style="color:#66d9ef">return</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]
+};
+</code></pre></div><h3 id="solution---c">Solution - C</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> object {
+    <span style="color:#66d9ef">int</span> val;
+    <span style="color:#66d9ef">int</span> index;
+};
+
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>b)
+{
+    <span style="color:#66d9ef">return</span> ((<span style="color:#66d9ef">struct</span> object <span style="color:#f92672">*</span>) a)<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">-</span> ((<span style="color:#66d9ef">struct</span> object <span style="color:#f92672">*</span>) b)<span style="color:#f92672">-&gt;</span>val;
+}
+
+<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">twoSum</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> numsSize, <span style="color:#66d9ef">int</span> target, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> returnSize){
+	<span style="color:#66d9ef">int</span> i, j;
+    <span style="color:#f92672">*</span>returnSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+    <span style="color:#66d9ef">struct</span> object <span style="color:#f92672">*</span>objs <span style="color:#f92672">=</span> malloc(numsSize <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#f92672">*</span>objs));
+    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> numsSize; i<span style="color:#f92672">++</span>) {
+        objs[i].val <span style="color:#f92672">=</span> nums[i];
+        objs[i].index <span style="color:#f92672">=</span> i;
+    }
+    qsort(objs, numsSize, <span style="color:#66d9ef">sizeof</span>(<span style="color:#f92672">*</span>objs), compare);
+    
+    <span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>results <span style="color:#f92672">=</span> malloc(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+    i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    j <span style="color:#f92672">=</span> numsSize <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">while</span> (i <span style="color:#f92672">&lt;</span> j) {
+        <span style="color:#66d9ef">int</span> diff <span style="color:#f92672">=</span> target <span style="color:#f92672">-</span> objs[i].val;
+        <span style="color:#66d9ef">if</span> (diff <span style="color:#f92672">&gt;</span> objs[j].val) {
+            <span style="color:#66d9ef">while</span> (<span style="color:#f92672">++</span>i <span style="color:#f92672">&lt;</span> j <span style="color:#f92672">&amp;&amp;</span> objs[i].val <span style="color:#f92672">==</span> objs[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].val) {}
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (diff <span style="color:#f92672">&lt;</span> objs[j].val) {
+            <span style="color:#66d9ef">while</span> (<span style="color:#f92672">--</span>j <span style="color:#f92672">&gt;</span> i <span style="color:#f92672">&amp;&amp;</span> objs[j].val <span style="color:#f92672">==</span> objs[j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>].val) {}
+        } <span style="color:#66d9ef">else</span> {
+            results[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> objs[i].index;
+            results[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> objs[j].index;
+            <span style="color:#66d9ef">return</span> results;
+        }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h2 id="review">Review</h2>
+<p>Medium Article:  <a href="https://medium.com/javascript-in-plain-english/24-quick-fire-javascript-interview-questions-a71f78d03f08">24 quick-fire JavaScript interview questions</a></p>
+<p>Reading the article, we can review some knowledge, for example:</p>
+<p>1.Explain the difference between “==” and “===”</p>
+<p>“==” is used to compare two values irrespective of the datatype of variable.
+“===” is used to compare two values but will be a strict check so will check the value and the datatype match.</p>
+<p>2.How do you check if a value is a number?</p>
+<p>If you use isNaN() you will have to do additional checks as you can see from the below examples.</p>
+<pre><code>isNaN(48) //false
+isNaN(-1.23) //false
+isNaN(5-2) //false
+isNaN('123') //false
+isNaN('Hello Im a real string') //true
+isNaN('2005/12/12') //true
+isNaN('') //false
+isNaN(undefined) //true
+</code></pre><p>3.How do you convert a string to an int?</p>
+<p>Number() converts a string to a number. This can be a whole number or point number. These can often be less safe than using parseInt or parseFloat</p>
+<p>4.Name the different loops in JavaScript</p>
+<p>for/forin/forof/while/dowhile/foreach</p>
+<p>5.What is the difference between var , let and const?</p>
+<p>var can be redeclared and updated.
+let can be updated but not declared
+const cannot be updated or redeclared.</p>
+<p>Scoping rules</p>
+<p>Main difference is scoping rules. Variables declared by var keyword are scoped to the immediate function body (hence the function scope) while let variables are scoped to the immediate enclosing block denoted by { } (hence the block scope).</p>
+<p>let can also be used to avoid problems with closures. It binds fresh value rather than keeping an old reference.</p>
+<p>6.What is the difference between NULL and undefined ?</p>
+<p>NULL is an assignment value. It can be assigned to a variable as a representation of no value.
+undefined means a variable has been declared but has not yet been assigned a value</p>
+<p>7.What is the typeof operator used for?</p>
+<p>typeof the operator returns a string indicating the type of the unevaluated operand.</p>
+<p>8.What is the difference between local storage &amp; session storage?</p>
+<p>local persists until explicitly deleted. Changes made are saved and available for all current and future visits to the site.</p>
+<p>session changes are only available per tab. Changes made are saved and available for the current page in that tab until it is closed. Once it is closed, the stored data is deleted.</p>
+<p>9.What is a callback?</p>
+<p>A callback function, also known as a higher-order function, is a function that is passed to another function as a parameter.</p>
+<h2 id="tip">Tip</h2>
+<p>Q: Multiple modals not working in react native</p>
+<p>When tapping on first modal window. I implemented the same but the second modal not opening.</p>
+<p>So, I check the github, and found a good way to do it. The only way I can have two modals at the same time is by nesting the second inside the first.</p>
+<p>In my case, the second modal is a loading page based on something being done in the first modal.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Modal_1
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Modal</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#75715e">// Modal_2
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Modal</span><span style="color:#f92672">&gt;</span>               
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Modal&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Modal&gt;</span>
+</code></pre></div><h2 id="share--react-native---react-native-camera">Share | React native - react-native-camera</h2>
+<p>When I developed this page, I needed a camera library, so I searched the keyword on google and then founded a great library, it called <code>react-native-camera</code></p>
+<p><img src="https://thumbsnap.com/s/yFzjqAgK.png?0927" alt="Page"></p>
+<h3 id="installation">Installation</h3>
+<pre><code>npm install --save react-native-camera@git+https://git@github.com/react-native-community/react-native-camera.git
+
+or
+
+yarn add react-native-camera@git+https://git@github.com/react-native-community/react-native-camera.git
+</code></pre><h3 id="use">Use</h3>
+<p>At first, we write the RNCamera class and get the view&rsquo;s height and width from the onLayout void, onLayout void is used to output the same size picture.</p>
+<p>Secondly, we check the device&rsquo;s authority, if it doesn&rsquo;t include the authority to visit the camera, jumping to the Setting page.</p>
+<p>Thirdly, we write void about taking Picture, we can get the output picture by the void.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">RNCamera</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native-camera&#39;</span>;
+
+<span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">cameraType</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">RNCamera</span>.<span style="color:#a6e22e">Constants</span>.<span style="color:#a6e22e">Type</span>.<span style="color:#a6e22e">back</span>,
+        <span style="color:#a6e22e">takePhotoImageUrlString</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+        <span style="color:#a6e22e">imagePicRealRect</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>}
+    }
+}
+
+<span style="color:#a6e22e">cameraView</span> <span style="color:#f92672">=</span> () =&gt; {
+    <span style="color:#66d9ef">return</span> (
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">cameraContainer</span>} <span style="color:#a6e22e">onLayout</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">event</span>) =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">onLayout</span>(<span style="color:#a6e22e">event</span>)}<span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">RNCamera</span>
+                <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">ref</span> =&gt; {
+                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">camera</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ref</span>;
+                }}
+                <span style="color:#a6e22e">captureAudio</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">false</span>}
+                <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">preview</span>}
+                <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cameraType</span>}
+                <span style="color:#a6e22e">flashMode</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">RNCamera</span>.<span style="color:#a6e22e">Constants</span>.<span style="color:#a6e22e">FlashMode</span>.<span style="color:#a6e22e">off</span>}
+                <span style="color:#f92672">&gt;</span>
+                 {({ <span style="color:#a6e22e">camera</span>, <span style="color:#a6e22e">status</span> }) =&gt; {
+                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;NOT_AUTHORIZED&#39;</span>) {
+                        <span style="color:#a6e22e">Alert</span>.<span style="color:#a6e22e">alert</span>(
+                            <span style="color:#e6db74">&#39;We need your permission to use your camera&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>,
+                            [
+                                {
+                                    <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Cancel&#39;</span>,
+                                    <span style="color:#a6e22e">onPress</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#39;MyClosetPage&#39;</span>),
+                                    <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;cancel&#39;</span>,
+                                },
+                                { <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Ok&#39;</span>, <span style="color:#a6e22e">onPress</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#a6e22e">Linking</span>.<span style="color:#a6e22e">openURL</span>(<span style="color:#e6db74">&#39;app-settings:&#39;</span>)},
+                            ],
+                            { <span style="color:#a6e22e">cancelable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> },
+                        );
+                    }
+                }}
+            <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/RNCamera&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/View&gt;</span>
+    )
+}
+
+<span style="color:#a6e22e">onLayout</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">event</span>)=&gt;{
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+        <span style="color:#a6e22e">imagePicRealRect</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">nativeEvent</span>.<span style="color:#a6e22e">layout</span>.<span style="color:#a6e22e">width</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">nativeEvent</span>.<span style="color:#a6e22e">layout</span>.<span style="color:#a6e22e">height</span>}
+    })
+}
+
+<span style="color:#a6e22e">takePictureVoid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> () =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">camera</span>) {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">quality</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.5</span>, <span style="color:#a6e22e">base64</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">imagePicRealRect</span>.<span style="color:#a6e22e">width</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">imagePicRealRect</span>.<span style="color:#a6e22e">height</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">fixOrientation</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">orientation</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>};
+
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">camera</span>.<span style="color:#a6e22e">takePictureAsync</span>(<span style="color:#a6e22e">options</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span>=&gt; {
+
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+                <span style="color:#a6e22e">takePhotoImageUrlString</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">uri</span>,
+            },()=&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">uploadImageRequest</span>())
+        }).<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span>=&gt; {
+            <span style="color:#a6e22e">Alert</span>.<span style="color:#a6e22e">alert</span>(
+                <span style="color:#e6db74">&#39;We need your permission to use your camera&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>,
+                [
+                    {
+                        <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Cancel&#39;</span>,
+                        <span style="color:#a6e22e">onPress</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#39;MyClosetPage&#39;</span>),
+                        <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;cancel&#39;</span>,
+                    },
+                    { <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Ok&#39;</span>, <span style="color:#a6e22e">onPress</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#a6e22e">Linking</span>.<span style="color:#a6e22e">openURL</span>(<span style="color:#e6db74">&#39;app-settings:&#39;</span>)},
+                ],
+                { <span style="color:#a6e22e">cancelable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> },
+            );
+        })
+        
+    }
+};
+
+<span style="color:#a6e22e">cameraContainer</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">flex</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+    <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ScreenWidth</span>,
+    <span style="color:#a6e22e">flexDirection</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;column&#39;</span>,
+    <span style="color:#a6e22e">overflow</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hidden&#39;</span>,
+    <span style="color:#a6e22e">marginTop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+    <span style="color:#a6e22e">marginBottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+},
+</code></pre></div><h3 id="ps">PS</h3>
+<p>if you have some question, you can write the question on the discuss by English or Chinese. thank you very much.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>React native - react-native-camera</title>
+            <link>https://leviduan.github.io/posts/2020-09-28_01/</link>
+            <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-09-28_01/</guid>
+            <description>When I developed this page, I needed a camera library, so I searched the keyword on google and then founded a great library, it called react-native-camera
+Installation npm install --save react-native-camera@git+https://git@github.com/react-native-community/react-native-camera.git or yarn add react-native-camera@git+https://git@github.com/react-native-community/react-native-camera.git Use At first, we write the RNCamera class and get the view&amp;rsquo;s height and width from the onLayout void, onLayout void is used to output the same size picture.
+Secondly, we check the device&amp;rsquo;s authority, if it doesn&amp;rsquo;t include the authority to visit the camera, jumping to the Setting page.</description>
+            <content type="html"><![CDATA[<p>When I developed this page, I needed a camera library, so I searched the keyword on google and then founded a great library, it called <code>react-native-camera</code></p>
+<p><img src="https://thumbsnap.com/s/yFzjqAgK.png?0927" alt="Page"></p>
+<h3 id="installation">Installation</h3>
+<pre><code>npm install --save react-native-camera@git+https://git@github.com/react-native-community/react-native-camera.git
+
+or
+
+yarn add react-native-camera@git+https://git@github.com/react-native-community/react-native-camera.git
+</code></pre><h3 id="use">Use</h3>
+<p>At first, we write the RNCamera class and get the view&rsquo;s height and width from the onLayout void, onLayout void is used to output the same size picture.</p>
+<p>Secondly, we check the device&rsquo;s authority, if it doesn&rsquo;t include the authority to visit the camera, jumping to the Setting page.</p>
+<p>Thirdly, we write void about taking Picture, we can get the output picture by the void.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">RNCamera</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native-camera&#39;</span>;
+
+<span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">cameraType</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">RNCamera</span>.<span style="color:#a6e22e">Constants</span>.<span style="color:#a6e22e">Type</span>.<span style="color:#a6e22e">back</span>,
+        <span style="color:#a6e22e">takePhotoImageUrlString</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+        <span style="color:#a6e22e">imagePicRealRect</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>}
+    }
+}
+
+<span style="color:#a6e22e">cameraView</span> <span style="color:#f92672">=</span> () =&gt; {
+    <span style="color:#66d9ef">return</span> (
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">View</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">cameraContainer</span>} <span style="color:#a6e22e">onLayout</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">event</span>) =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">onLayout</span>(<span style="color:#a6e22e">event</span>)}<span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">RNCamera</span>
+                <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">ref</span> =&gt; {
+                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">camera</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ref</span>;
+                }}
+                <span style="color:#a6e22e">captureAudio</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">false</span>}
+                <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">preview</span>}
+                <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">cameraType</span>}
+                <span style="color:#a6e22e">flashMode</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">RNCamera</span>.<span style="color:#a6e22e">Constants</span>.<span style="color:#a6e22e">FlashMode</span>.<span style="color:#a6e22e">off</span>}
+                <span style="color:#f92672">&gt;</span>
+                 {({ <span style="color:#a6e22e">camera</span>, <span style="color:#a6e22e">status</span> }) =&gt; {
+                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;NOT_AUTHORIZED&#39;</span>) {
+                        <span style="color:#a6e22e">Alert</span>.<span style="color:#a6e22e">alert</span>(
+                            <span style="color:#e6db74">&#39;We need your permission to use your camera&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>,
+                            [
+                                {
+                                    <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Cancel&#39;</span>,
+                                    <span style="color:#a6e22e">onPress</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#39;MyClosetPage&#39;</span>),
+                                    <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;cancel&#39;</span>,
+                                },
+                                { <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Ok&#39;</span>, <span style="color:#a6e22e">onPress</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#a6e22e">Linking</span>.<span style="color:#a6e22e">openURL</span>(<span style="color:#e6db74">&#39;app-settings:&#39;</span>)},
+                            ],
+                            { <span style="color:#a6e22e">cancelable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> },
+                        );
+                    }
+                }}
+            <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/RNCamera&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/View&gt;</span>
+    )
+}
+
+<span style="color:#a6e22e">onLayout</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">event</span>)=&gt;{
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+        <span style="color:#a6e22e">imagePicRealRect</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">nativeEvent</span>.<span style="color:#a6e22e">layout</span>.<span style="color:#a6e22e">width</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">nativeEvent</span>.<span style="color:#a6e22e">layout</span>.<span style="color:#a6e22e">height</span>}
+    })
+}
+
+<span style="color:#a6e22e">takePictureVoid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> () =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">camera</span>) {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">quality</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.5</span>, <span style="color:#a6e22e">base64</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">imagePicRealRect</span>.<span style="color:#a6e22e">width</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">imagePicRealRect</span>.<span style="color:#a6e22e">height</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">fixOrientation</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">orientation</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>};
+
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">camera</span>.<span style="color:#a6e22e">takePictureAsync</span>(<span style="color:#a6e22e">options</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span>=&gt; {
+
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+                <span style="color:#a6e22e">takePhotoImageUrlString</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">uri</span>,
+            },()=&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">uploadImageRequest</span>())
+        }).<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span>=&gt; {
+            <span style="color:#a6e22e">Alert</span>.<span style="color:#a6e22e">alert</span>(
+                <span style="color:#e6db74">&#39;We need your permission to use your camera&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>,
+                [
+                    {
+                        <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Cancel&#39;</span>,
+                        <span style="color:#a6e22e">onPress</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">navigation</span>.<span style="color:#a6e22e">navigate</span>(<span style="color:#e6db74">&#39;MyClosetPage&#39;</span>),
+                        <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;cancel&#39;</span>,
+                    },
+                    { <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Ok&#39;</span>, <span style="color:#a6e22e">onPress</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#a6e22e">Linking</span>.<span style="color:#a6e22e">openURL</span>(<span style="color:#e6db74">&#39;app-settings:&#39;</span>)},
+                ],
+                { <span style="color:#a6e22e">cancelable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> },
+            );
+        })
+        
+    }
+};
+
+<span style="color:#a6e22e">cameraContainer</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">flex</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+    <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ScreenWidth</span>,
+    <span style="color:#a6e22e">flexDirection</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;column&#39;</span>,
+    <span style="color:#a6e22e">overflow</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hidden&#39;</span>,
+    <span style="color:#a6e22e">marginTop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+    <span style="color:#a6e22e">marginBottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+},
+</code></pre></div><h3 id="ps">PS</h3>
+<p>if you have some question, you can write the question on the discuss by English or Chinese. thank you very much.</p>
+]]></content>
+        </item>
         
         <item>
             <title>ARTS16-20200920</title>
@@ -1852,6 +2210,45 @@ Cross platform ActionSheet, This component implements a custom ActionSheet and p
 <span style="color:#960050;background-color:#1e0010">/&gt;</span>
 </code></pre></div><h3 id="ps">PS</h3>
 <p>If you don&rsquo;t need the destructive ( red font ), you should write code <code>destructiveButtonIndex={value}</code> the value that you didn&rsquo;t write in the options.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>About arts</title>
+            <link>https://leviduan.github.io/posts/2019-01-01_01/</link>
+            <pubDate>Tue, 01 Jan 2019 13:48:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2019-01-01_01/</guid>
+            <description>What is arts ARTS is a activity for those who join chenHao&amp;rsquo;s reader club.Here you are expected to do these weekly:
+  A &amp;ndash; Algorithm an Algorithm Problem
+  R &amp;ndash; Review read a technical article and review it.
+  T &amp;ndash; Tip the skill you&amp;rsquo;ve learned this week
+  S &amp;ndash; Share your experience in work,learning or sth else.
+  Once you are in the club, you&amp;rsquo;ve got the promise of keeping doing this at least a year.</description>
+            <content type="html"><![CDATA[<h2 id="what-is-arts">What is arts</h2>
+<p>ARTS is a activity for those who join chenHao&rsquo;s reader club.Here you are expected to do these weekly:</p>
+<ul>
+<li>
+<p>A &ndash; Algorithm an Algorithm Problem</p>
+</li>
+<li>
+<p>R &ndash; Review read a technical article and review it.</p>
+</li>
+<li>
+<p>T &ndash; Tip  the skill you&rsquo;ve learned this week</p>
+</li>
+<li>
+<p>S &ndash; Share  your experience in work,learning or sth else.</p>
+</li>
+</ul>
+<p>Once you are in the club, you&rsquo;ve got the promise of keeping doing this at least a year.</p>
+<h2 id="the-purpose-of-arts">The purpose of arts</h2>
+<ul>
+<li>Algorithm  - Learning Algorithm</li>
+<li>Review  - Learning English</li>
+<li>Tip - Learning Techniques</li>
+<li>Share - Learning Influence</li>
+</ul>
 ]]></content>
         </item>
         

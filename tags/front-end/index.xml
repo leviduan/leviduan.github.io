@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2020</copyright>
-    <lastBuildDate>Thu, 04 Jun 2020 07:00:00 +0800</lastBuildDate><atom:link href="https://leviduan.github.io/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Sep 2020 01:41:00 +0800</lastBuildDate><atom:link href="https://leviduan.github.io/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React native - react-native-camera</title>
+      <link>https://leviduan.github.io/posts/2020-09-28_01/</link>
+      <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
+      
+      <guid>https://leviduan.github.io/posts/2020-09-28_01/</guid>
+      <description>When I developed this page, I needed a camera library, so I searched the keyword on google and then founded a great library, it called react-native-camera
+Installation npm install --save react-native-camera@git+https://git@github.com/react-native-community/react-native-camera.git or yarn add react-native-camera@git+https://git@github.com/react-native-community/react-native-camera.git Use At first, we write the RNCamera class and get the view&amp;rsquo;s height and width from the onLayout void, onLayout void is used to output the same size picture.
+Secondly, we check the device&amp;rsquo;s authority, if it doesn&amp;rsquo;t include the authority to visit the camera, jumping to the Setting page.</description>
+    </item>
+    
     <item>
       <title>React native network library - Axios</title>
       <link>https://leviduan.github.io/posts/2020-01-07_02/</link>
