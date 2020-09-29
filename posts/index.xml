@@ -10,6 +10,37 @@
         <atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>20200929 Tue</title>
+            <link>https://leviduan.github.io/posts/2020-09-30/</link>
+            <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-09-30/</guid>
+            <description>Today, I don&amp;rsquo;t have some thing want to share, I just want to share my life. It is, first and foremost, anxiety. My English and my programming skills are not in normal level. So I have made a plan to improve my English and my programming skills. The most vital things are basics.
+How to improve my basic English?
+ Vocabulary. I bought a used IELTS English word book from Carousell.</description>
+            <content type="html"><![CDATA[<p>Today, I don&rsquo;t have some thing want to share, I just want to share my life. It is, first and foremost, anxiety. My English and my programming skills are not in normal level. So I have made a plan to improve my English and my programming skills. The most vital things are basics.</p>
+<p>How to improve my basic English?</p>
+<ol>
+<li>Vocabulary. I bought a used IELTS English word book from Carousell. I do one list every day by Associative Memory, just like when I see the new  word &ldquo;fetch&rdquo;, first of all, I would use the new word to create a sentence. Secondly, I would associate closet meaning word, just like &ldquo;bring, get, transport, carry, extract&rdquo;. This way can help me to remember word better. And last but not least, repeat to review the new word after 3 days.</li>
+<li>Speaking. I usually to talk with teacher on Cambly, it&rsquo;s a really good platform to practice my English speaking. However if you don&rsquo;t have some topic, maybe the small talk have a little bit awkward situation. So prepare your topic and to communicate with teacher.</li>
+<li>Listening. I listen the All Ear English podcast in the morning. The two hosts talk with native topic. It&rsquo;s really native language. It can help us to understand English native conversation.</li>
+<li>Writing. Try to write my technology blog in English, yes, it&rsquo;s really hard to do it. sometimes I want to write my blog in Chinese, if I would use it, I will miss a chance to improve my English Writing.</li>
+<li>Reading. I use Mint Reading to practice my Reading skill, by the way, I scan the article from Medium every day. It&rsquo;s a good way to improve my English Reading.</li>
+<li>Grammar. I look the video of New concept English One, maybe someone says the book is too simple, the basic knowledge can not improve English grammar so quickly. However I want to say, learning the basics is only way to build your knowledge tree linking the pieces all together that&rsquo;s the most important and the fastest way to import your skills.</li>
+</ol>
+<p>Another things will be done:</p>
+<ol>
+<li>Arithmetic. I do a Leetcode test everyday.</li>
+<li>React Native. Watch CS50 Video, react native books and create a project by myself.</li>
+<li>iOS. Watch books and build a new project by myself</li>
+<li>Network. Look the books and try to sum up the main point.</li>
+<li>Go Language. try to study it by myself and build a server on cloud.</li>
+<li>Studying about designing an UI.</li>
+</ol>
+]]></content>
+        </item>
+        
+        <item>
             <title>ARTS17-20200927</title>
             <link>https://leviduan.github.io/posts/2020-09-28/</link>
             <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
@@ -253,6 +284,155 @@ yarn add react-native-camera@git+https://git@github.com/react-native-community/r
 },
 </code></pre></div><h3 id="ps">PS</h3>
 <p>if you have some question, you can write the question on the discuss by English or Chinese. thank you very much.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>ARTS18-20200928</title>
+            <link>https://leviduan.github.io/posts/2020-09-30-1/</link>
+            <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-09-30-1/</guid>
+            <description>Algorithm Leetcode website : 70. Climbing Stairs
+Description You are climbing a stair case. It takes n steps to reach to the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Example 1:
+Input: 2 Output: 2 Explanation: There are two ways to climb to the top.
+ 1 step + 1 step 2 steps Example 2:  Input: 3 Output: 3 Explanation: There are three ways to climb to the top.</description>
+            <content type="html"><![CDATA[<h2 id="algorithm">Algorithm</h2>
+<h3 id="leetcode-website-">Leetcode website :</h3>
+<p><a href="https://leetcode.com/problems/climbing-stairs/">70. Climbing Stairs</a></p>
+<h3 id="description">Description</h3>
+<p>You are climbing a stair case. It takes n steps to reach to the top.</p>
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+<p>Example 1:</p>
+<p>Input: 2
+Output: 2
+Explanation: There are two ways to climb to the top.</p>
+<ol>
+<li>1 step + 1 step</li>
+<li>2 steps
+Example 2:</li>
+</ol>
+<p>Input: 3
+Output: 3
+Explanation: There are three ways to climb to the top.</p>
+<ol>
+<li>1 step + 1 step + 1 step</li>
+<li>1 step + 2 steps</li>
+<li>2 steps + 1 step</li>
+</ol>
+<p>Constraints:</p>
+<p>1 &lt;= n &lt;= 45</p>
+<h3 id="idea">Idea</h3>
+<p>We can come up with a formula: a(n) = a(n-1) + a(n-2). At first we apply a new array a[n] to store a(n), and then we calculate this formula to extract a(n) value and store into a[n]. As a result, we get a(n) value by array a[n]. it save a lot of time to calculate this formula.</p>
+<p>Key point:</p>
+<ol>
+<li>dynamic-programming</li>
+</ol>
+<h3 id="solution---javascript">Solution - Javascript</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>];
+
+<span style="color:#75715e">// First method by recursive function
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">climbStairs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">n</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>) {
+        <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">climbStairs</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">climbStairs</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>]
+};
+
+<span style="color:#75715e">// Second method by loop function
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">climbStairs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">n</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;=</span><span style="color:#a6e22e">n</span>;<span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
+        <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>]
+};
+</code></pre></div><h3 id="solution---c">Solution - C</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> nArray[<span style="color:#ae81ff">50</span>];
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">climbStairs</span>(<span style="color:#66d9ef">int</span> n){
+    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">if</span> (nArray[n] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> nArray[n];
+    <span style="color:#66d9ef">if</span> (n<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">2</span>) result <span style="color:#f92672">=</span> n;
+    <span style="color:#66d9ef">else</span> result <span style="color:#f92672">=</span> climbStairs(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> climbStairs(n<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>);
+    nArray[n] <span style="color:#f92672">=</span> result;
+    <span style="color:#66d9ef">return</span> result;
+}
+</code></pre></div><h2 id="review">Review</h2>
+<p>Medium Article:  <a href="https://levelup.gitconnected.com/how-to-make-money-with-code-e6bd6c698fe4">How To Make Money With Code</a></p>
+<p>Thanks for sharing, sometime I found that it&rsquo;s a not easy thing to earn money by avocation, we choose this job because we think it&rsquo;s a good way to earn a high salary in company. No doubt the best way to get extra money is build your own project.</p>
+<p>Coding Your Own Project</p>
+<p>This has the great advantage that you could work on something that you really like — which is always a good idea. The downside is that you could be developing an application that nobody blinks an eye at.</p>
+<p>However, the goal of this is to build an app or website that provides some sort of product or service for people. This could generate revenue over time either by selling the product or service or by doing stuff.</p>
+<h2 id="tips">Tips</h2>
+<h3 id="using-dimensions">Using Dimensions</h3>
+<p>React native provides a Dimensions API that can be used to get width and the height of the phone screen. However it include the size of the Toolbar and the TabMenu.</p>
+<pre><code>import { Dimensions } from 'react-native'
+
+export let screenW = Dimensions.get('window').width;
+export let screenH = Dimensions.get('window').height;
+</code></pre><p>You can use it by importing this file.</p>
+<h3 id="using-onlayout">Using onLayout</h3>
+<p>Each View has an onLayout(event) callback function receiving an event that includes the View&rsquo;s x,y,width and height properties. however the problem is that this function is only called after the first render call.</p>
+<p>So we can render a dummy View, wait for onLayout to get called, extract the height and width, and then set the state to trigger a re-render.</p>
+<pre><code>import React, { Component, PropTypes } from 'react'
+import { View } from 'react-native'
+
+export default class LineChart extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {dimensions: undefined}
+  }
+
+  render () {
+    // If dimensions is defined, render the real view otherwise the dummy view
+    if (this.state.dimensions) {
+      var { dimensions } = this.state
+      var { width, height } = dimensions
+      // do stuff
+      ...
+    }
+    return (
+      &lt;View style={{flex: 1, alignSelf: 'stretch'}} onLayout={this.onLayout}&gt;
+        {
+          this.state.dimensions
+           ? &lt;VIew width={width} height={height}&gt;
+              ...
+             &lt;/View&gt;
+           : undefined}
+      &lt;/View&gt;
+    )
+  }
+
+  onLayout = event =&gt; {
+    if (this.state.dimensions) return // layout was already called
+    let {width, height} = event.nativeEvent.layout
+    this.setState({dimensions: {width, height}})
+  }
+}
+</code></pre><h2 id="share">Share</h2>
+<h2 id="20200929-tue">20200929 Tue</h2>
+<p>Today, I don&rsquo;t have some thing want to share, I just want to share my life. It is, first and foremost, anxiety. My English and my programming skills are not in normal level. So I have made a plan to improve my English and my programming skills. The most vital things are basics.</p>
+<p>How to improve my basic English?</p>
+<ol>
+<li>Vocabulary. I bought a used IELTS English word book from Carousell. I do one list every day by Associative Memory, just like when I see the new  word &ldquo;fetch&rdquo;, first of all, I would use the new word to create a sentence. Secondly, I would associate closet meaning word, just like &ldquo;bring, get, transport, carry, extract&rdquo;. This way can help me to remember word better. And last but not least, repeat to review the new word after 3 days.</li>
+<li>Speaking. I usually to talk with teacher on Cambly, it&rsquo;s a really good platform to practice my English speaking. However if you don&rsquo;t have some topic, maybe the small talk have a little bit awkward situation. So prepare your topic and to communicate with teacher.</li>
+<li>Listening. I listen the All Ear English podcast in the morning. The two hosts talk with native topic. It&rsquo;s really native language. It can help us to understand English native conversation.</li>
+<li>Writing. Try to write my technology blog in English, yes, it&rsquo;s really hard to do it. sometimes I want to write my blog in Chinese, if I would use it, I will miss a chance to improve my English Writing.</li>
+<li>Reading. I use Mint Reading to practice my Reading skill, by the way, I scan the article from Medium every day. It&rsquo;s a good way to improve my English Reading.</li>
+<li>Grammar. I look the video of New concept English One, maybe someone says the book is too simple, the basic knowledge can not improve English grammar so quickly. However I want to say, learning the basics is only way to build your knowledge tree linking the pieces all together that&rsquo;s the most important and the fastest way to import your skills.</li>
+</ol>
+<p>Another things will be done:</p>
+<ol>
+<li>Arithmetic. I do a Leetcode test everyday.</li>
+<li>React Native. Watch CS50 Video, react native books and create a project by myself.</li>
+<li>iOS. Watch books and build a new project by myself</li>
+<li>Network. Look the books and try to sum up the main point.</li>
+<li>Go Language. try to study it by myself and build a server on cloud.</li>
+<li>Studying about designing an UI.</li>
+</ol>
 ]]></content>
         </item>
         

@@ -9,6 +9,17 @@
     <copyright>All rights reserved - 2020</copyright>
     <lastBuildDate>Mon, 28 Sep 2020 01:41:00 +0800</lastBuildDate><atom:link href="https://leviduan.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>20200929 Tue</title>
+      <link>https://leviduan.github.io/posts/2020-09-30/</link>
+      <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
+      
+      <guid>https://leviduan.github.io/posts/2020-09-30/</guid>
+      <description>Today, I don&amp;rsquo;t have some thing want to share, I just want to share my life. It is, first and foremost, anxiety. My English and my programming skills are not in normal level. So I have made a plan to improve my English and my programming skills. The most vital things are basics.
+How to improve my basic English?
+ Vocabulary. I bought a used IELTS English word book from Carousell.</description>
+    </item>
+    
+    <item>
       <title>ARTS17-20200927</title>
       <link>https://leviduan.github.io/posts/2020-09-28/</link>
       <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
@@ -20,6 +31,20 @@ You may assume that each input would have exactly one solution, and you may not 
 You can return the answer in any order.
 Example 1:
 Input: nums = [2,7,11,15], target = 9 Output: [0,1] Output: Because nums[0] + nums[1] == 9, we return [0, 1].</description>
+    </item>
+    
+    <item>
+      <title>ARTS18-20200928</title>
+      <link>https://leviduan.github.io/posts/2020-09-30-1/</link>
+      <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
+      
+      <guid>https://leviduan.github.io/posts/2020-09-30-1/</guid>
+      <description>Algorithm Leetcode website : 70. Climbing Stairs
+Description You are climbing a stair case. It takes n steps to reach to the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Example 1:
+Input: 2 Output: 2 Explanation: There are two ways to climb to the top.
+ 1 step + 1 step 2 steps Example 2:  Input: 3 Output: 3 Explanation: There are three ways to climb to the top.</description>
     </item>
     
     <item>
