@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Levi Duan ">
+<meta name="description" content="Computer Network is vital knowledge, I just review the Http part to reinforce my understanding about HTTP
+Compared HTTP 0.9 and HTTP 1.0 HTTP 0.9 is a simple protocol, it include Get function, no header, it used to get HTML file.
+HTTP 1.0 protocol have a lot of content: header, response code, redirect, conditional request, content coding etc.
+How does it work in http 1.0:
+The client would send a request to DNS to check IP address, and build an TCP connection (three-way handshake), server will give a response, four-way handshake to disconnect." />
+<meta name="keywords" content="react native, iOS, front-end, Go, python, Java, C, C&#43;&#43;, leetcode, arithmetic, Back-end" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://leviduan.github.io/posts/2020-09-30-3/" />
+
+
+    <title>
+        
+            Review Computer Network (Part one) :: Levi&#39;s Blog  — Spread happiness wherever you go
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.5dd6410601e978282653647efa3ef7e523631d5298754b2721279439e81847af.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Review Computer Network (Part one)">
+<meta itemprop="description" content="Computer Network is vital knowledge, I just review the Http part to reinforce my understanding about HTTP
+Compared HTTP 0.9 and HTTP 1.0 HTTP 0.9 is a simple protocol, it include Get function, no header, it used to get HTML file.
+HTTP 1.0 protocol have a lot of content: header, response code, redirect, conditional request, content coding etc.
+How does it work in http 1.0:
+The client would send a request to DNS to check IP address, and build an TCP connection (three-way handshake), server will give a response, four-way handshake to disconnect.">
+<meta itemprop="datePublished" content="2020-09-30T19:43:00+08:00" />
+<meta itemprop="dateModified" content="2020-09-30T19:43:00+08:00" />
+<meta itemprop="wordCount" content="1010">
+<meta itemprop="image" content="https://leviduan.github.io/"/>
+
+
+
+<meta itemprop="keywords" content="Back-end," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://leviduan.github.io/"/>
+
+<meta name="twitter:title" content="Review Computer Network (Part one)"/>
+<meta name="twitter:description" content="Computer Network is vital knowledge, I just review the Http part to reinforce my understanding about HTTP
+Compared HTTP 0.9 and HTTP 1.0 HTTP 0.9 is a simple protocol, it include Get function, no header, it used to get HTML file.
+HTTP 1.0 protocol have a lot of content: header, response code, redirect, conditional request, content coding etc.
+How does it work in http 1.0:
+The client would send a request to DNS to check IP address, and build an TCP connection (three-way handshake), server will give a response, four-way handshake to disconnect."/>
+
+
+
+    <meta property="og:title" content="Review Computer Network (Part one)" />
+<meta property="og:description" content="Computer Network is vital knowledge, I just review the Http part to reinforce my understanding about HTTP
+Compared HTTP 0.9 and HTTP 1.0 HTTP 0.9 is a simple protocol, it include Get function, no header, it used to get HTML file.
+HTTP 1.0 protocol have a lot of content: header, response code, redirect, conditional request, content coding etc.
+How does it work in http 1.0:
+The client would send a request to DNS to check IP address, and build an TCP connection (three-way handshake), server will give a response, four-way handshake to disconnect." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leviduan.github.io/posts/2020-09-30-3/" />
+<meta property="og:image" content="https://leviduan.github.io/"/>
+<meta property="article:published_time" content="2020-09-30T19:43:00+08:00" />
+<meta property="article:modified_time" content="2020-09-30T19:43:00+08:00" /><meta property="og:site_name" content="Levi&#39;s Blog" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-09-30 19:43:00 &#43;0800 &#43;08" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://leviduan.github.io/about/">About</a></li><li><a href="https://leviduan.github.io/tags/">Tags</a></li><li><a href="https://leviduan.github.io/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        5 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://leviduan.github.io/posts/2020-09-30-3/">Review Computer Network (Part one)</a>
+      </h1>
+
+      
+
+      <div class="post-content">
+        <p>Computer Network is vital knowledge, I just review the Http part to reinforce my understanding about HTTP</p>
+<h3 id="compared-http-09-and-http-10">Compared HTTP 0.9 and HTTP 1.0</h3>
+<p>HTTP 0.9 is a simple protocol, it include Get function, no header, it used to get HTML file.</p>
+<p>HTTP 1.0 protocol have a lot of content: header, response code, redirect, conditional request, content coding etc.</p>
+<p>How does it work in http 1.0:</p>
+<p>The client would send a request to DNS to check IP address, and build an TCP connection (three-way handshake), server will give a response,  four-way handshake to disconnect.</p>
+<h3 id="about-http-11-and-http-2">About HTTP 1.1 and HTTP 2</h3>
+<p>By HTTP 1.1, the internet browser doesn&rsquo;t to build a TCP connection to all request. it include new features: cache the header extend, Option function, Upgrade header, Range request, compress, transfer coding, channelization. but it doesn&rsquo;t satisfy web coming request, so HTTP2 is launched.</p>
+<p>HTTP2 solve an important question that client send all request parallel only by one connection. It include new features: Binary Format、MultiPlexing、header compress、server push etc.</p>
+<h3 id="you-are-typing-an-uri-how-doesnt-it-work-on-browser">You are typing an URI, how doesn&rsquo;t it work on browser?</h3>
+<h4 id="you-type-leviduancom-into-the-address-bar-of-your-browser">You type leviduan.com into the address bar of your browser.</h4>
+<h4 id="the-browser-checks-the-cache-for-a-dns-record-to-find-the-corresponding-ip-address-of-leviduancom">The browser checks the cache for a DNS record to find the corresponding IP address of leviduan.com.</h4>
+<p>DNS is a database that maintains the name of the website and the particular IP address it links to. it&rsquo;s easier to remember the name of the website using a URL and let DNS do the work for us by mapping it to the correct IP.</p>
+<p>To find the DNS record, the browser checks four caches.</p>
+<p>First, it checks the browser cache. The browser maintains a repository of DNS records for a fixed duration for websites you have previously visited. So, it is the first place to run a DNS query.</p>
+<p>Second, the browser checks the OS cache. If it is not in the browser cache, the browser will make a system call to your underlying computer OS to fetch the record since the OS also maintains a cache of DNS records.</p>
+<p>Third, it checks the router cache. if it&rsquo;s not on your computer, the browser will communicate with the router that maintains its own cache of DNS records.</p>
+<p>Fourth, it checks the ISP cache. If all step fail, the browser will move on to the ISP. Your ISP maintains its own DNS server, which includes a cache of DNS records.</p>
+<h4 id="if-the-requested-url-is-not-in-the-cache-isps-dns-server-initiates-a-dns-query-to-find-the-ip-address-of-the-server-that-hosts-leviduancom">If the requested URL is not in the cache, ISP&rsquo;s DNS server initiates a DNS query to find the IP address of the server that hosts leviduan.com</h4>
+<p>For my computer to connect with the server that hosts leviduan.com, I need the IP address of leviduan.com. The purpose of a DNS query is to search multiple DNS servers on the internet until it finds the correct IP address for the website. This type of search is called a recursive search since the search will repeatedly continue from a DNS server to a DNS server until it either finds the IP address we need or returns an error response saying it was unable to find it.</p>
+<h4 id="the-browser-initiates-a-tcp-connection-with-the-server">The browser initiates a TCP connection with the server</h4>
+<p>Once the browser receives the correct IP address, it will build a connection with the server that matches the IP address to transfer information. Browsers use internet protocols to build such connections. There are several different internet protocols that can be used, but TCP is the most common protocol used for many types of HTTP requests.</p>
+<p>To transfer data packets between your computer to the server, it is important to have a TCP connection established. This connection is established using a process called the TCP/IP three-way handshake. this is a three-step process where the client and the server exchange SYN and ACK messages to establish a connection.</p>
+<p>1.The client machine sends a SYN packet to the server over the internet, asking if it is open for new connection.</p>
+<p>2.IF the server has open ports that can accept and initiate new connections, it will respond with an ACKnowledgment of the SYN packet using a SYN/ACK packet.</p>
+<p>3.The client will receive the SYN/ACK packet from the server and will acknowledge it by sending an ACK packet.</p>
+<p>Then a TCP connection is established for data transmission!</p>
+<h4 id="the-browser-sends-an-http-request-to-the-webserver">The browser sends an HTTP request to the webserver.</h4>
+<p>Once the TCP connection is established, it is time to start transferring data. The browser will send a GET request asking for leviduan.com web page. If you are entering credentials or submitting a form, this could be a POST request. This request will also contain additional information such as browser identification: User-Agent header, Accept header and connection headers asking it to keep the TCP connection alive for additional requests. It will also pass information taken from cookies the browser has in store for this domain.</p>
+<h4 id="the-server-handles-the-request-and-sends-back-a-response">The server handles the request and sends back a response</h4>
+<p>The server contains a web&rsquo;s server that receives the request form the browser and passes it to a request handler to read and generate a response. The request handler is a program that reads the request, then it will assemble a response in a JSON/HTML/XML format.</p>
+<h4 id="the-server-sends-out-an-http-response">The server sends out an HTTP response</h4>
+<p>The server response contains the web page you requested as well as the status code, compression type, how to cache the page, any cookies to set, privacy information, etc.</p>
+<p>something about status code:</p>
+<p>1xx indicates an informational message only
+2xx indicates success of some kind
+3xx redirects the client to another URL
+4xx indicates an error on the client&rsquo;s part
+5xx indicates an error on the server&rsquo;s part</p>
+<h4 id="the-browser-displays-the-html-content">The browser displays the HTML content</h4>
+<p>The browser displays the HTML content in phases. First, it will render the bare bone HTML skeleton. Then it will check the HTML tags and send out GET requests for additional elements on the web page, such as images, CSS stylesheets, JavaScript files, etc. These static files are cached by the browser, so it doesn&rsquo;t have to fetch them again the next time you visit the page. In the end, you&rsquo;ll see leviduan.com appearing on your browser.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://leviduan.github.io/tags/back-end/">Back-end</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1010 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2020-09-30 19:43
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fleviduan.github.io%2fposts%2f2020-09-30-3%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fleviduan.github.io%2fposts%2f2020-09-30-3%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Review%20Computer%20Network%20%28Part%20one%29&amp;caption=Review%20Computer%20Network%20%28Part%20one%29&amp;canonicalUrl=https%3a%2f%2fleviduan.github.io%2fposts%2f2020-09-30-3%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Review%20Computer%20Network%20%28Part%20one%29&amp;body=https%3a%2f%2fleviduan.github.io%2fposts%2f2020-09-30-3%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fleviduan.github.io%2fposts%2f2020-09-30-3%2f&amp;resubmit=true&amp;title=Review%20Computer%20Network%20%28Part%20one%29" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+          <hr />
+        </div>
+
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="https://leviduan.github.io/posts/2020-09-30-2/">
+                <span class="button__icon">←</span>
+                <span class="button__text">ARTS19-20200930</span>
+              </a>
+            </span>
+          
+
+          
+            <span class="button next">
+              <a href="https://leviduan.github.io/posts/2020-09-30-1/">
+                <span class="button__text">ARTS18-2020929</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+
+    
+      
+        <div id="comments">
+          <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "leviduan-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Love iOS &#9728
+            React native </span>
+          </div>
+          
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

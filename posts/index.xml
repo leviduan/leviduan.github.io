@@ -6,37 +6,501 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>All rights reserved - 2020</copyright>
-        <lastBuildDate>Mon, 28 Sep 2020 01:41:00 +0800</lastBuildDate>
+        <lastBuildDate>Wed, 30 Sep 2020 19:43:00 +0800</lastBuildDate>
         <atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>ARTS19-20200930</title>
+            <link>https://leviduan.github.io/posts/2020-09-30-2/</link>
+            <pubDate>Wed, 30 Sep 2020 19:43:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-09-30-2/</guid>
+            <description>Algorithm Leetcode website : 15. 3Sum
+Description Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+Notice that the solution set must not contain duplicate triplets.
+Example 1:
+Input: nums = [-1,0,1,2,-1,-4] Output: [[-1,-1,2],[-1,0,1]] Example 2:
+Input: nums = [] Output: [] Example 3:</description>
+            <content type="html"><![CDATA[<h2 id="algorithm">Algorithm</h2>
+<h3 id="leetcode-website-">Leetcode website :</h3>
+<p><a href="https://leetcode.com/problems/3sum/">15. 3Sum</a></p>
+<h3 id="description">Description</h3>
+<p>Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</p>
+<p>Notice that the solution set must not contain duplicate triplets.</p>
+<p>Example 1:</p>
+<p>Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+Example 2:</p>
+<p>Input: nums = []
+Output: []
+Example 3:</p>
+<p>Input: nums = [0]
+Output: []</p>
+<h3 id="idea">Idea</h3>
+<p>the formula: a + b + c = 0. so b+c=-a. At first we should sort the array, and then we compare b+c and -a, if b+c &gt; -a, &ldquo;b&rdquo; will take one step forward or b+C &lt; -a, C will take one step back.</p>
+<p>Pruning means if a &gt; 0, you can not continue the loops, because a + b + c = 0, a is smallest element, if a &gt; 0 as a result a + b + c also greater than 0.</p>
+<p>Key point:</p>
+<ol>
+<li>Loop</li>
+<li>pruning</li>
+<li>Sort</li>
+</ol>
+<h3 id="solution---javascript">Solution - Javascript</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">threeSum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">nums</span>) {
+    <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">min</span>, <span style="color:#a6e22e">max</span>) =&gt; {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">max</span>
+    })
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>; <span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> )  <span style="color:#66d9ef">break</span>
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">continue</span>
+        <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">j</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">k</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">++</span><span style="color:#a6e22e">j</span>
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">--</span><span style="color:#a6e22e">k</span>
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {    
+                <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tmp</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">k</span>]]
+                <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">tmp</span>)
+                <span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">j</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">k</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">++</span><span style="color:#a6e22e">j</span>
+                <span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">j</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">k</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">--</span><span style="color:#a6e22e">k</span>
+                <span style="color:#f92672">++</span><span style="color:#a6e22e">j</span>
+                <span style="color:#f92672">--</span><span style="color:#a6e22e">k</span>
+            }
+        }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>
+};
+</code></pre></div><h3 id="solution---c">Solution - C</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">comp</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>b) {
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)b;
+}
+
+<span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> <span style="color:#a6e22e">threeSum</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> numsSize, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> returnSize, <span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> returnColumnSizes){
+    <span style="color:#66d9ef">int</span> capacity <span style="color:#f92672">=</span> (numsSize<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>;
+    <span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>results <span style="color:#f92672">=</span> malloc(capacity <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>));
+    <span style="color:#66d9ef">int</span> index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#f92672">*</span>returnColumnSizes <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span> capacity);
+    qsort(nums, numsSize, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>), comp);
+    <span style="color:#66d9ef">int</span> equalValue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span> numsSize<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>; <span style="color:#f92672">++</span>i) {
+        <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> numsSize<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+        equalValue <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>nums[i];
+        <span style="color:#66d9ef">if</span> (nums[i] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">break</span>;
+        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> nums[i] <span style="color:#f92672">==</span> nums[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">continue</span>;
+        <span style="color:#66d9ef">while</span> (j<span style="color:#f92672">&lt;</span>k) {
+            <span style="color:#66d9ef">if</span> (nums[j] <span style="color:#f92672">+</span> nums[k] <span style="color:#f92672">&gt;</span> equalValue) <span style="color:#f92672">--</span>k;
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (nums[k] <span style="color:#f92672">+</span> nums[j] <span style="color:#f92672">&lt;</span> equalValue) <span style="color:#f92672">++</span>j;
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (nums[j] <span style="color:#f92672">+</span> nums[k] <span style="color:#f92672">==</span> equalValue) {
+                results[index] <span style="color:#f92672">=</span> malloc(<span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+                results[index][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> nums[i];
+                results[index][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> nums[j];
+                results[index][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> nums[k];
+                (<span style="color:#f92672">*</span>returnColumnSizes)[index] <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+                <span style="color:#f92672">++</span>index;
+                <span style="color:#66d9ef">while</span>(j<span style="color:#f92672">&lt;</span>k <span style="color:#f92672">&amp;&amp;</span>nums[j] <span style="color:#f92672">==</span> nums[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">++</span>j;
+                <span style="color:#66d9ef">while</span>(j<span style="color:#f92672">&lt;</span>k <span style="color:#f92672">&amp;&amp;</span>nums[k] <span style="color:#f92672">==</span> nums[k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">--</span>k;
+                <span style="color:#f92672">++</span>j; <span style="color:#f92672">--</span>k;
+            }
+        }
+    }
+    <span style="color:#f92672">*</span>returnSize <span style="color:#f92672">=</span> index;
+    <span style="color:#66d9ef">return</span> results;
+}
+</code></pre></div><h2 id="review">Review</h2>
+<p>Medium Article:  <a href="https://medium.com/javascript-in-plain-english/10-javascript-interview-questions-for-2020-697b40de9480">10 JavaScript interview questions for 2020</a></p>
+<h3 id="what-is-the-difference-between-var-and-let">What is the difference between var and let?</h3>
+<p>The difference is in the level of scope. var is function-scoped, but let (and const) are block-scoped. To understand the difference, check out this example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doStuff</span>() {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">+</span><span style="color:#a6e22e">b</span>); <span style="color:#75715e">// 10
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#a6e22e">doStuff</span>() <span style="color:#75715e">// 10
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// a is not defined
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>) <span style="color:#75715e">// b is not defined
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doMoreStuff</span>() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span>) {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+    }
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 5
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>) <span style="color:#75715e">// b is not defined
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#a6e22e">doMoreStuff</span>()
+
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">5</span>; <span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
+    <span style="color:#a6e22e">setTimeout</span>(() =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>), <span style="color:#ae81ff">100</span>);
+}
+
+<span style="color:#75715e">// Output:  0 1 2 3 4
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">5</span>; <span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
+    <span style="color:#a6e22e">setTimeout</span>(() =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>), <span style="color:#ae81ff">100</span>);
+}
+
+<span style="color:#75715e">// Output:  5 5 5 5 5
+</span></code></pre></div><h3 id="whats-the-difference-between--and-">What&rsquo;s the difference between == and ===?</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>; <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">0</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// Number(&#39;true&#39;) = NaN (Not a Number), but Number(true) = 1
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>; <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span>; <span style="color:#75715e">// false
+</span></code></pre></div><h3 id="what-does-this-keyword-mean">What does ‘this’ keyword mean?</h3>
+<p>this keyword is available in any function and points to the object that contains this function</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myObject</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;b&#39;</span>,
+    <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;c&#39;</span>,
+    <span style="color:#a6e22e">doStuff</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">b</span>)
+    }
+}
+
+<span style="color:#a6e22e">myObject</span>.<span style="color:#a6e22e">doStuff</span>(); <span style="color:#75715e">// bc
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">anotherObject</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;abacaba&#39;</span>,
+    <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;!&#39;</span>
+};
+
+<span style="color:#a6e22e">anotherObject</span>.<span style="color:#a6e22e">doStuff</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">myObject</span>.<span style="color:#a6e22e">doStuff</span>
+<span style="color:#a6e22e">anotherObject</span>.<span style="color:#a6e22e">doStuff</span>(); <span style="color:#75715e">// abacaba!
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arrowObject</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;b&#39;</span>,
+    <span style="color:#75715e">// this refers to the root function (file itself)
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">doMoreStuff</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span>)
+};
+
+<span style="color:#a6e22e">arrowObject</span>.<span style="color:#a6e22e">doMoreStuff</span>(); <span style="color:#75715e">// undefined
+</span></code></pre></div><h3 id="convert-this-callback-based-call-to-a-promise-based-one">Convert this callback-based call to a Promise-based one</h3>
+<p>Convert the getData callback function into a Promise:</p>
+<pre><code>
+// the function itself
+function getData(callback, errorCallback) {
+    try {
+        callback(result)
+    } catch (e) {
+        errorCallback(e)
+    }
+}
+
+// Here is how you would use it:
+getData(result =&gt; console.log(result), error =&gt; console.error(error))
+
+// Here is how to create a Promise-based function from it:
+function getDataAsync() {
+    return new Promise((resolve, reject) =&gt; {
+        getData(resolve, reject);
+    })
+}
+
+getDataAsync().then(result=&gt; console.log(result)).catch(error =&gt; console.error(error));
+
+Or
+
+async function main() {
+    const result = await getDataAsync();
+    console.log(result)
+}
+</code></pre><h3 id="what-are-the-primitive-data-types-in-js">What are the primitive data types in JS?</h3>
+<p>Boolean， Null, undefined, Number, BigInt, String, Symbol</p>
+<h3 id="01--02--03">0.1 + 0.2 === 0.3?</h3>
+<p>False, this trick does not apply only to JS，0.1 + 0.2 will be something like 0.300000001。
+So we can use Math.abs(0.3 - (0.2 + 0.1)) &lt;= EPS to calculate.</p>
+<h2 id="tips">Tips</h2>
+<p>What&rsquo;s <code>returnSize</code> and <code>returnColumnSizes</code> in Leetcode C template.</p>
+<pre><code>int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes){
+    ```
+    ```
+}
+</code></pre><p>returnSize means size of int *a</p>
+<p>For example:</p>
+<p>int a[10][20];
+*returnSize = 10;</p>
+<p>returnColumnSizes is made of a one-dimensional array, it stores two-dimensional array&rsquo;s length.</p>
+<p>For instance:</p>
+<p>*returnSize[0] = 5
+*returnSize[1] = 7</p>
+<p>the a[0] includes five values : a[0][0] - a[0][4] total 5.
+the a[1] includes seven values: a[1][0] - a[1][6] total 7.</p>
+<p>So returnSize means a one-dimensional array to stores the two-dimensional array&rsquo;s length.</p>
+<p>That&rsquo;s all</p>
+<h2 id="share---review-http-part-one">Share - Review HTTP (Part one)</h2>
+<p>Computer Network is vital knowledge, I just review the Http part to reinforce my understanding about HTTP</p>
+<h3 id="compared-http-09-and-http-10">Compared HTTP 0.9 and HTTP 1.0</h3>
+<p>HTTP 0.9 is a simple protocol, it include Get function, no header, it used to get HTML file.</p>
+<p>HTTP 1.0 protocol have a lot of content: header, response code, redirect, conditional request, content coding etc.</p>
+<p>How does it work in http 1.0:</p>
+<p>The client would send a request to DNS to check IP address, and build an TCP connection (three-way handshake), server will give a response,  four-way handshake to disconnect.</p>
+<h3 id="about-http-11-and-http-2">About HTTP 1.1 and HTTP 2</h3>
+<p>By HTTP 1.1, the internet browser doesn&rsquo;t to build a TCP connection to all request. it include new features: cache the header extend, Option function, Upgrade header, Range request, compress, transfer coding, channelization. but it doesn&rsquo;t satisfy web coming request, so HTTP2 is launched.</p>
+<p>HTTP2 solve an important question that client send all request parallel only by one connection. It include new features: Binary Format、MultiPlexing、header compress、server push etc.</p>
+<h3 id="you-are-typing-an-uri-how-doesnt-it-work-on-browser">You are typing an URI, how doesn&rsquo;t it work on browser?</h3>
+<h4 id="you-type-leviduancom-into-the-address-bar-of-your-browser">You type leviduan.com into the address bar of your browser.</h4>
+<h4 id="the-browser-checks-the-cache-for-a-dns-record-to-find-the-corresponding-ip-address-of-leviduancom">The browser checks the cache for a DNS record to find the corresponding IP address of leviduan.com.</h4>
+<p>DNS is a database that maintains the name of the website and the particular IP address it links to. it&rsquo;s easier to remember the name of the website using a URL and let DNS do the work for us by mapping it to the correct IP.</p>
+<p>To find the DNS record, the browser checks four caches.</p>
+<p>First, it checks the browser cache. The browser maintains a repository of DNS records for a fixed duration for websites you have previously visited. So, it is the first place to run a DNS query.</p>
+<p>Second, the browser checks the OS cache. If it is not in the browser cache, the browser will make a system call to your underlying computer OS to fetch the record since the OS also maintains a cache of DNS records.</p>
+<p>Third, it checks the router cache. if it&rsquo;s not on your computer, the browser will communicate with the router that maintains its own cache of DNS records.</p>
+<p>Fourth, it checks the ISP cache. If all step fail, the browser will move on to the ISP. Your ISP maintains its own DNS server, which includes a cache of DNS records.</p>
+<h4 id="if-the-requested-url-is-not-in-the-cache-isps-dns-server-initiates-a-dns-query-to-find-the-ip-address-of-the-server-that-hosts-leviduancom">If the requested URL is not in the cache, ISP&rsquo;s DNS server initiates a DNS query to find the IP address of the server that hosts leviduan.com</h4>
+<p>For my computer to connect with the server that hosts leviduan.com, I need the IP address of leviduan.com. The purpose of a DNS query is to search multiple DNS servers on the internet until it finds the correct IP address for the website. This type of search is called a recursive search since the search will repeatedly continue from a DNS server to a DNS server until it either finds the IP address we need or returns an error response saying it was unable to find it.</p>
+<h4 id="the-browser-initiates-a-tcp-connection-with-the-server">The browser initiates a TCP connection with the server</h4>
+<p>Once the browser receives the correct IP address, it will build a connection with the server that matches the IP address to transfer information. Browsers use internet protocols to build such connections. There are several different internet protocols that can be used, but TCP is the most common protocol used for many types of HTTP requests.</p>
+<p>To transfer data packets between your computer to the server, it is important to have a TCP connection established. This connection is established using a process called the TCP/IP three-way handshake. this is a three-step process where the client and the server exchange SYN and ACK messages to establish a connection.</p>
+<p>1.The client machine sends a SYN packet to the server over the internet, asking if it is open for new connection.</p>
+<p>2.IF the server has open ports that can accept and initiate new connections, it will respond with an ACKnowledgment of the SYN packet using a SYN/ACK packet.</p>
+<p>3.The client will receive the SYN/ACK packet from the server and will acknowledge it by sending an ACK packet.</p>
+<p>Then a TCP connection is established for data transmission!</p>
+<h4 id="the-browser-sends-an-http-request-to-the-webserver">The browser sends an HTTP request to the webserver.</h4>
+<p>Once the TCP connection is established, it is time to start transferring data. The browser will send a GET request asking for leviduan.com web page. If you are entering credentials or submitting a form, this could be a POST request. This request will also contain additional information such as browser identification: User-Agent header, Accept header and connection headers asking it to keep the TCP connection alive for additional requests. It will also pass information taken from cookies the browser has in store for this domain.</p>
+<h4 id="the-server-handles-the-request-and-sends-back-a-response">The server handles the request and sends back a response</h4>
+<p>The server contains a web&rsquo;s server that receives the request form the browser and passes it to a request handler to read and generate a response. The request handler is a program that reads the request, then it will assemble a response in a JSON/HTML/XML format.</p>
+<h4 id="the-server-sends-out-an-http-response">The server sends out an HTTP response</h4>
+<p>The server response contains the web page you requested as well as the status code, compression type, how to cache the page, any cookies to set, privacy information, etc.</p>
+<p>something about status code:</p>
+<p>1xx indicates an informational message only
+2xx indicates success of some kind
+3xx redirects the client to another URL
+4xx indicates an error on the client&rsquo;s part
+5xx indicates an error on the server&rsquo;s part</p>
+<h4 id="the-browser-displays-the-html-content">The browser displays the HTML content</h4>
+<p>The browser displays the HTML content in phases. First, it will render the bare bone HTML skeleton. Then it will check the HTML tags and send out GET requests for additional elements on the web page, such as images, CSS stylesheets, JavaScript files, etc. These static files are cached by the browser, so it doesn&rsquo;t have to fetch them again the next time you visit the page. In the end, you&rsquo;ll see leviduan.com appearing on your browser.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Review Computer Network (Part one)</title>
+            <link>https://leviduan.github.io/posts/2020-09-30-3/</link>
+            <pubDate>Wed, 30 Sep 2020 19:43:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-09-30-3/</guid>
+            <description>Computer Network is vital knowledge, I just review the Http part to reinforce my understanding about HTTP
+Compared HTTP 0.9 and HTTP 1.0 HTTP 0.9 is a simple protocol, it include Get function, no header, it used to get HTML file.
+HTTP 1.0 protocol have a lot of content: header, response code, redirect, conditional request, content coding etc.
+How does it work in http 1.0:
+The client would send a request to DNS to check IP address, and build an TCP connection (three-way handshake), server will give a response, four-way handshake to disconnect.</description>
+            <content type="html"><![CDATA[<p>Computer Network is vital knowledge, I just review the Http part to reinforce my understanding about HTTP</p>
+<h3 id="compared-http-09-and-http-10">Compared HTTP 0.9 and HTTP 1.0</h3>
+<p>HTTP 0.9 is a simple protocol, it include Get function, no header, it used to get HTML file.</p>
+<p>HTTP 1.0 protocol have a lot of content: header, response code, redirect, conditional request, content coding etc.</p>
+<p>How does it work in http 1.0:</p>
+<p>The client would send a request to DNS to check IP address, and build an TCP connection (three-way handshake), server will give a response,  four-way handshake to disconnect.</p>
+<h3 id="about-http-11-and-http-2">About HTTP 1.1 and HTTP 2</h3>
+<p>By HTTP 1.1, the internet browser doesn&rsquo;t to build a TCP connection to all request. it include new features: cache the header extend, Option function, Upgrade header, Range request, compress, transfer coding, channelization. but it doesn&rsquo;t satisfy web coming request, so HTTP2 is launched.</p>
+<p>HTTP2 solve an important question that client send all request parallel only by one connection. It include new features: Binary Format、MultiPlexing、header compress、server push etc.</p>
+<h3 id="you-are-typing-an-uri-how-doesnt-it-work-on-browser">You are typing an URI, how doesn&rsquo;t it work on browser?</h3>
+<h4 id="you-type-leviduancom-into-the-address-bar-of-your-browser">You type leviduan.com into the address bar of your browser.</h4>
+<h4 id="the-browser-checks-the-cache-for-a-dns-record-to-find-the-corresponding-ip-address-of-leviduancom">The browser checks the cache for a DNS record to find the corresponding IP address of leviduan.com.</h4>
+<p>DNS is a database that maintains the name of the website and the particular IP address it links to. it&rsquo;s easier to remember the name of the website using a URL and let DNS do the work for us by mapping it to the correct IP.</p>
+<p>To find the DNS record, the browser checks four caches.</p>
+<p>First, it checks the browser cache. The browser maintains a repository of DNS records for a fixed duration for websites you have previously visited. So, it is the first place to run a DNS query.</p>
+<p>Second, the browser checks the OS cache. If it is not in the browser cache, the browser will make a system call to your underlying computer OS to fetch the record since the OS also maintains a cache of DNS records.</p>
+<p>Third, it checks the router cache. if it&rsquo;s not on your computer, the browser will communicate with the router that maintains its own cache of DNS records.</p>
+<p>Fourth, it checks the ISP cache. If all step fail, the browser will move on to the ISP. Your ISP maintains its own DNS server, which includes a cache of DNS records.</p>
+<h4 id="if-the-requested-url-is-not-in-the-cache-isps-dns-server-initiates-a-dns-query-to-find-the-ip-address-of-the-server-that-hosts-leviduancom">If the requested URL is not in the cache, ISP&rsquo;s DNS server initiates a DNS query to find the IP address of the server that hosts leviduan.com</h4>
+<p>For my computer to connect with the server that hosts leviduan.com, I need the IP address of leviduan.com. The purpose of a DNS query is to search multiple DNS servers on the internet until it finds the correct IP address for the website. This type of search is called a recursive search since the search will repeatedly continue from a DNS server to a DNS server until it either finds the IP address we need or returns an error response saying it was unable to find it.</p>
+<h4 id="the-browser-initiates-a-tcp-connection-with-the-server">The browser initiates a TCP connection with the server</h4>
+<p>Once the browser receives the correct IP address, it will build a connection with the server that matches the IP address to transfer information. Browsers use internet protocols to build such connections. There are several different internet protocols that can be used, but TCP is the most common protocol used for many types of HTTP requests.</p>
+<p>To transfer data packets between your computer to the server, it is important to have a TCP connection established. This connection is established using a process called the TCP/IP three-way handshake. this is a three-step process where the client and the server exchange SYN and ACK messages to establish a connection.</p>
+<p>1.The client machine sends a SYN packet to the server over the internet, asking if it is open for new connection.</p>
+<p>2.IF the server has open ports that can accept and initiate new connections, it will respond with an ACKnowledgment of the SYN packet using a SYN/ACK packet.</p>
+<p>3.The client will receive the SYN/ACK packet from the server and will acknowledge it by sending an ACK packet.</p>
+<p>Then a TCP connection is established for data transmission!</p>
+<h4 id="the-browser-sends-an-http-request-to-the-webserver">The browser sends an HTTP request to the webserver.</h4>
+<p>Once the TCP connection is established, it is time to start transferring data. The browser will send a GET request asking for leviduan.com web page. If you are entering credentials or submitting a form, this could be a POST request. This request will also contain additional information such as browser identification: User-Agent header, Accept header and connection headers asking it to keep the TCP connection alive for additional requests. It will also pass information taken from cookies the browser has in store for this domain.</p>
+<h4 id="the-server-handles-the-request-and-sends-back-a-response">The server handles the request and sends back a response</h4>
+<p>The server contains a web&rsquo;s server that receives the request form the browser and passes it to a request handler to read and generate a response. The request handler is a program that reads the request, then it will assemble a response in a JSON/HTML/XML format.</p>
+<h4 id="the-server-sends-out-an-http-response">The server sends out an HTTP response</h4>
+<p>The server response contains the web page you requested as well as the status code, compression type, how to cache the page, any cookies to set, privacy information, etc.</p>
+<p>something about status code:</p>
+<p>1xx indicates an informational message only
+2xx indicates success of some kind
+3xx redirects the client to another URL
+4xx indicates an error on the client&rsquo;s part
+5xx indicates an error on the server&rsquo;s part</p>
+<h4 id="the-browser-displays-the-html-content">The browser displays the HTML content</h4>
+<p>The browser displays the HTML content in phases. First, it will render the bare bone HTML skeleton. Then it will check the HTML tags and send out GET requests for additional elements on the web page, such as images, CSS stylesheets, JavaScript files, etc. These static files are cached by the browser, so it doesn&rsquo;t have to fetch them again the next time you visit the page. In the end, you&rsquo;ll see leviduan.com appearing on your browser.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>ARTS18-2020929</title>
+            <link>https://leviduan.github.io/posts/2020-09-30-1/</link>
+            <pubDate>Tue, 29 Sep 2020 23:41:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-09-30-1/</guid>
+            <description>Algorithm Leetcode website : 70. Climbing Stairs
+Description You are climbing a stair case. It takes n steps to reach to the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Example 1:
+Input: 2 Output: 2 Explanation: There are two ways to climb to the top.
+ 1 step + 1 step 2 steps Example 2:  Input: 3 Output: 3 Explanation: There are three ways to climb to the top.</description>
+            <content type="html"><![CDATA[<h2 id="algorithm">Algorithm</h2>
+<h3 id="leetcode-website-">Leetcode website :</h3>
+<p><a href="https://leetcode.com/problems/climbing-stairs/">70. Climbing Stairs</a></p>
+<h3 id="description">Description</h3>
+<p>You are climbing a stair case. It takes n steps to reach to the top.</p>
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+<p>Example 1:</p>
+<p>Input: 2
+Output: 2
+Explanation: There are two ways to climb to the top.</p>
+<ol>
+<li>1 step + 1 step</li>
+<li>2 steps
+Example 2:</li>
+</ol>
+<p>Input: 3
+Output: 3
+Explanation: There are three ways to climb to the top.</p>
+<ol>
+<li>1 step + 1 step + 1 step</li>
+<li>1 step + 2 steps</li>
+<li>2 steps + 1 step</li>
+</ol>
+<p>Constraints:</p>
+<p>1 &lt;= n &lt;= 45</p>
+<h3 id="idea">Idea</h3>
+<p>We can come up with a formula: a(n) = a(n-1) + a(n-2). At first we apply a new array a[n] to store a(n), and then we calculate this formula to extract a(n) value and store into a[n]. As a result, we get a(n) value by array a[n]. it save a lot of time to calculate this formula.</p>
+<p>Key point:</p>
+<ol>
+<li>dynamic-programming</li>
+</ol>
+<h3 id="solution---javascript">Solution - Javascript</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>];
+
+<span style="color:#75715e">// First method by recursive function
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">climbStairs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">n</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>) {
+        <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">climbStairs</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">climbStairs</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>]
+};
+
+<span style="color:#75715e">// Second method by loop function
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">climbStairs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">n</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;=</span><span style="color:#a6e22e">n</span>;<span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
+        <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>]
+};
+</code></pre></div><h3 id="solution---c">Solution - C</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> nArray[<span style="color:#ae81ff">50</span>];
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">climbStairs</span>(<span style="color:#66d9ef">int</span> n){
+    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">if</span> (nArray[n] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> nArray[n];
+    <span style="color:#66d9ef">if</span> (n<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">2</span>) result <span style="color:#f92672">=</span> n;
+    <span style="color:#66d9ef">else</span> result <span style="color:#f92672">=</span> climbStairs(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> climbStairs(n<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>);
+    nArray[n] <span style="color:#f92672">=</span> result;
+    <span style="color:#66d9ef">return</span> result;
+}
+</code></pre></div><h2 id="review">Review</h2>
+<p>Medium Article:  <a href="https://levelup.gitconnected.com/how-to-make-money-with-code-e6bd6c698fe4">How To Make Money With Code</a></p>
+<p>Thanks for sharing, sometime I found that it&rsquo;s a not easy thing to earn money by avocation, we choose this job because we think it&rsquo;s a good way to earn a high salary in company. No doubt the best way to get extra money is build your own project.</p>
+<p>Coding Your Own Project</p>
+<p>This has the great advantage that you could work on something that you really like — which is always a good idea. The downside is that you could be developing an application that nobody blinks an eye at.</p>
+<p>However, the goal of this is to build an app or website that provides some sort of product or service for people. This could generate revenue over time either by selling the product or service or by doing stuff.</p>
+<h2 id="tips">Tips</h2>
+<h3 id="using-dimensions">Using Dimensions</h3>
+<p>React native provides a Dimensions API that can be used to get width and the height of the phone screen. However it include the size of the Toolbar and the TabMenu.</p>
+<pre><code>import { Dimensions } from 'react-native'
+
+export let screenW = Dimensions.get('window').width;
+export let screenH = Dimensions.get('window').height;
+</code></pre><p>You can use it by importing this file.</p>
+<h3 id="using-onlayout">Using onLayout</h3>
+<p>Each View has an onLayout(event) callback function receiving an event that includes the View&rsquo;s x,y,width and height properties. however the problem is that this function is only called after the first render call.</p>
+<p>So we can render a dummy View, wait for onLayout to get called, extract the height and width, and then set the state to trigger a re-render.</p>
+<pre><code>import React, { Component, PropTypes } from 'react'
+import { View } from 'react-native'
+
+export default class LineChart extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {dimensions: undefined}
+  }
+
+  render () {
+    // If dimensions is defined, render the real view otherwise the dummy view
+    if (this.state.dimensions) {
+      var { dimensions } = this.state
+      var { width, height } = dimensions
+      // do stuff
+      ...
+    }
+    return (
+      &lt;View style={{flex: 1, alignSelf: 'stretch'}} onLayout={this.onLayout}&gt;
+        {
+          this.state.dimensions
+           ? &lt;VIew width={width} height={height}&gt;
+              ...
+             &lt;/View&gt;
+           : undefined}
+      &lt;/View&gt;
+    )
+  }
+
+  onLayout = event =&gt; {
+    if (this.state.dimensions) return // layout was already called
+    let {width, height} = event.nativeEvent.layout
+    this.setState({dimensions: {width, height}})
+  }
+}
+</code></pre><h2 id="share">Share</h2>
+<h2 id="20200929-tue">20200929 Tue</h2>
+<p>Today, I don&rsquo;t have some thing want to share, I just want to share my life. It is, first and foremost, anxiety. My English and my programming skills are not in normal level. So I have made a plan to improve my English and my programming skills. The most vital things are basics.</p>
+<p>How to improve my basic English?</p>
+<p>1.Vocabulary. I bought a used IELTS English word book from Carousell. I do one list every day by Associative Memory, just like when I see the new  word &ldquo;fetch&rdquo;, first of all, I would use the new word to create a sentence. Secondly, I would associate closet meaning word, just like &ldquo;bring, get, transport, carry, extract&rdquo;. This way can help me to remember word better. And last but not least, repeat to review the new word after 3 days.</p>
+<p>2.Speaking. I usually to talk with teacher on Cambly, it&rsquo;s a really good platform to practice my English speaking. However if you don&rsquo;t have some topic, maybe the small talk have a little bit awkward situation. So prepare your topic and to communicate with teacher.</p>
+<p>3.Listening. I listen the All Ear English podcast in the morning. The two hosts talk with native topic. It&rsquo;s really native language. It can help us to understand English native conversation.</p>
+<p>4.Writing. Try to write my technology blog in English, yes, it&rsquo;s really hard to do it. sometimes I want to write my blog in Chinese, if I would use it, I will miss a chance to improve my English Writing.</p>
+<p>5.Reading. I use Mint Reading to practice my Reading skill, by the way, I scan the article from Medium every day. It&rsquo;s a good way to improve my English Reading.</p>
+<p>6.Grammar. I look the video of New concept English One, maybe someone says the book is too simple, the basic knowledge can not improve English grammar so quickly. However I want to say, learning the basics is only way to build your knowledge tree linking the pieces all together that&rsquo;s the most important and the fastest way to import your skills.</p>
+<p>Another things will be done:</p>
+<p>1.Arithmetic. I do a Leetcode test everyday.
+2.React Native. Watch CS50 Video, react native books and create a project by myself.
+3.iOS. Watch books and build a new project by myself
+4.Network. Look the books and try to sum up the main point.
+5.Go Language. try to study it by myself and build a server on cloud.
+6.Studying about designing an UI.</p>
+]]></content>
+        </item>
         
         <item>
             <title>20200929 Tue</title>
             <link>https://leviduan.github.io/posts/2020-09-30/</link>
-            <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
+            <pubDate>Tue, 29 Sep 2020 01:41:00 +0800</pubDate>
             
             <guid>https://leviduan.github.io/posts/2020-09-30/</guid>
             <description>Today, I don&amp;rsquo;t have some thing want to share, I just want to share my life. It is, first and foremost, anxiety. My English and my programming skills are not in normal level. So I have made a plan to improve my English and my programming skills. The most vital things are basics.
 How to improve my basic English?
- Vocabulary. I bought a used IELTS English word book from Carousell.</description>
+1.Vocabulary. I bought a used IELTS English word book from Carousell. I do one list every day by Associative Memory, just like when I see the new word &amp;ldquo;fetch&amp;rdquo;, first of all, I would use the new word to create a sentence.</description>
             <content type="html"><![CDATA[<p>Today, I don&rsquo;t have some thing want to share, I just want to share my life. It is, first and foremost, anxiety. My English and my programming skills are not in normal level. So I have made a plan to improve my English and my programming skills. The most vital things are basics.</p>
 <p>How to improve my basic English?</p>
-<ol>
-<li>Vocabulary. I bought a used IELTS English word book from Carousell. I do one list every day by Associative Memory, just like when I see the new  word &ldquo;fetch&rdquo;, first of all, I would use the new word to create a sentence. Secondly, I would associate closet meaning word, just like &ldquo;bring, get, transport, carry, extract&rdquo;. This way can help me to remember word better. And last but not least, repeat to review the new word after 3 days.</li>
-<li>Speaking. I usually to talk with teacher on Cambly, it&rsquo;s a really good platform to practice my English speaking. However if you don&rsquo;t have some topic, maybe the small talk have a little bit awkward situation. So prepare your topic and to communicate with teacher.</li>
-<li>Listening. I listen the All Ear English podcast in the morning. The two hosts talk with native topic. It&rsquo;s really native language. It can help us to understand English native conversation.</li>
-<li>Writing. Try to write my technology blog in English, yes, it&rsquo;s really hard to do it. sometimes I want to write my blog in Chinese, if I would use it, I will miss a chance to improve my English Writing.</li>
-<li>Reading. I use Mint Reading to practice my Reading skill, by the way, I scan the article from Medium every day. It&rsquo;s a good way to improve my English Reading.</li>
-<li>Grammar. I look the video of New concept English One, maybe someone says the book is too simple, the basic knowledge can not improve English grammar so quickly. However I want to say, learning the basics is only way to build your knowledge tree linking the pieces all together that&rsquo;s the most important and the fastest way to import your skills.</li>
-</ol>
+<p>1.Vocabulary. I bought a used IELTS English word book from Carousell. I do one list every day by Associative Memory, just like when I see the new  word &ldquo;fetch&rdquo;, first of all, I would use the new word to create a sentence. Secondly, I would associate closet meaning word, just like &ldquo;bring, get, transport, carry, extract&rdquo;. This way can help me to remember word better. And last but not least, repeat to review the new word after 3 days.
+2.Speaking. I usually to talk with teacher on Cambly, it&rsquo;s a really good platform to practice my English speaking. However if you don&rsquo;t have some topic, maybe the small talk have a little bit awkward situation. So prepare your topic and to communicate with teacher.
+3.Listening. I listen the All Ear English podcast in the morning. The two hosts talk with native topic. It&rsquo;s really native language. It can help us to understand English native conversation.
+4.Writing. Try to write my technology blog in English, yes, it&rsquo;s really hard to do it. sometimes I want to write my blog in Chinese, if I would use it, I will miss a chance to improve my English Writing.
+5.Reading. I use Mint Reading to practice my Reading skill, by the way, I scan the article from Medium every day. It&rsquo;s a good way to improve my English Reading.
+6.Grammar. I look the video of New concept English One, maybe someone says the book is too simple, the basic knowledge can not improve English grammar so quickly. However I want to say, learning the basics is only way to build your knowledge tree linking the pieces all together that&rsquo;s the most important and the fastest way to import your skills.</p>
 <p>Another things will be done:</p>
-<ol>
-<li>Arithmetic. I do a Leetcode test everyday.</li>
-<li>React Native. Watch CS50 Video, react native books and create a project by myself.</li>
-<li>iOS. Watch books and build a new project by myself</li>
-<li>Network. Look the books and try to sum up the main point.</li>
-<li>Go Language. try to study it by myself and build a server on cloud.</li>
-<li>Studying about designing an UI.</li>
-</ol>
+<p>1.Arithmetic. I do a Leetcode test everyday.
+2.React Native. Watch CS50 Video, react native books and create a project by myself.
+3.iOS. Watch books and build a new project by myself
+4.Network. Look the books and try to sum up the main point.
+5.Go Language. try to study it by myself and build a server on cloud.
+6.Studying about designing an UI.</p>
 ]]></content>
         </item>
         
@@ -284,155 +748,6 @@ yarn add react-native-camera@git+https://git@github.com/react-native-community/r
 },
 </code></pre></div><h3 id="ps">PS</h3>
 <p>if you have some question, you can write the question on the discuss by English or Chinese. thank you very much.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>ARTS18-20200928</title>
-            <link>https://leviduan.github.io/posts/2020-09-30-1/</link>
-            <pubDate>Mon, 28 Sep 2020 01:41:00 +0800</pubDate>
-            
-            <guid>https://leviduan.github.io/posts/2020-09-30-1/</guid>
-            <description>Algorithm Leetcode website : 70. Climbing Stairs
-Description You are climbing a stair case. It takes n steps to reach to the top.
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
-Example 1:
-Input: 2 Output: 2 Explanation: There are two ways to climb to the top.
- 1 step + 1 step 2 steps Example 2:  Input: 3 Output: 3 Explanation: There are three ways to climb to the top.</description>
-            <content type="html"><![CDATA[<h2 id="algorithm">Algorithm</h2>
-<h3 id="leetcode-website-">Leetcode website :</h3>
-<p><a href="https://leetcode.com/problems/climbing-stairs/">70. Climbing Stairs</a></p>
-<h3 id="description">Description</h3>
-<p>You are climbing a stair case. It takes n steps to reach to the top.</p>
-<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
-<p>Example 1:</p>
-<p>Input: 2
-Output: 2
-Explanation: There are two ways to climb to the top.</p>
-<ol>
-<li>1 step + 1 step</li>
-<li>2 steps
-Example 2:</li>
-</ol>
-<p>Input: 3
-Output: 3
-Explanation: There are three ways to climb to the top.</p>
-<ol>
-<li>1 step + 1 step + 1 step</li>
-<li>1 step + 2 steps</li>
-<li>2 steps + 1 step</li>
-</ol>
-<p>Constraints:</p>
-<p>1 &lt;= n &lt;= 45</p>
-<h3 id="idea">Idea</h3>
-<p>We can come up with a formula: a(n) = a(n-1) + a(n-2). At first we apply a new array a[n] to store a(n), and then we calculate this formula to extract a(n) value and store into a[n]. As a result, we get a(n) value by array a[n]. it save a lot of time to calculate this formula.</p>
-<p>Key point:</p>
-<ol>
-<li>dynamic-programming</li>
-</ol>
-<h3 id="solution---javascript">Solution - Javascript</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>];
-
-<span style="color:#75715e">// First method by recursive function
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">climbStairs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">n</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>];
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>) {
-        <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">climbStairs</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">climbStairs</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>]
-};
-
-<span style="color:#75715e">// Second method by loop function
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">climbStairs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">n</span>) {
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;=</span><span style="color:#a6e22e">n</span>;<span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
-        <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">n</span>]
-};
-</code></pre></div><h3 id="solution---c">Solution - C</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> nArray[<span style="color:#ae81ff">50</span>];
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">climbStairs</span>(<span style="color:#66d9ef">int</span> n){
-    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">if</span> (nArray[n] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> nArray[n];
-    <span style="color:#66d9ef">if</span> (n<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">2</span>) result <span style="color:#f92672">=</span> n;
-    <span style="color:#66d9ef">else</span> result <span style="color:#f92672">=</span> climbStairs(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> climbStairs(n<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>);
-    nArray[n] <span style="color:#f92672">=</span> result;
-    <span style="color:#66d9ef">return</span> result;
-}
-</code></pre></div><h2 id="review">Review</h2>
-<p>Medium Article:  <a href="https://levelup.gitconnected.com/how-to-make-money-with-code-e6bd6c698fe4">How To Make Money With Code</a></p>
-<p>Thanks for sharing, sometime I found that it&rsquo;s a not easy thing to earn money by avocation, we choose this job because we think it&rsquo;s a good way to earn a high salary in company. No doubt the best way to get extra money is build your own project.</p>
-<p>Coding Your Own Project</p>
-<p>This has the great advantage that you could work on something that you really like — which is always a good idea. The downside is that you could be developing an application that nobody blinks an eye at.</p>
-<p>However, the goal of this is to build an app or website that provides some sort of product or service for people. This could generate revenue over time either by selling the product or service or by doing stuff.</p>
-<h2 id="tips">Tips</h2>
-<h3 id="using-dimensions">Using Dimensions</h3>
-<p>React native provides a Dimensions API that can be used to get width and the height of the phone screen. However it include the size of the Toolbar and the TabMenu.</p>
-<pre><code>import { Dimensions } from 'react-native'
-
-export let screenW = Dimensions.get('window').width;
-export let screenH = Dimensions.get('window').height;
-</code></pre><p>You can use it by importing this file.</p>
-<h3 id="using-onlayout">Using onLayout</h3>
-<p>Each View has an onLayout(event) callback function receiving an event that includes the View&rsquo;s x,y,width and height properties. however the problem is that this function is only called after the first render call.</p>
-<p>So we can render a dummy View, wait for onLayout to get called, extract the height and width, and then set the state to trigger a re-render.</p>
-<pre><code>import React, { Component, PropTypes } from 'react'
-import { View } from 'react-native'
-
-export default class LineChart extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {dimensions: undefined}
-  }
-
-  render () {
-    // If dimensions is defined, render the real view otherwise the dummy view
-    if (this.state.dimensions) {
-      var { dimensions } = this.state
-      var { width, height } = dimensions
-      // do stuff
-      ...
-    }
-    return (
-      &lt;View style={{flex: 1, alignSelf: 'stretch'}} onLayout={this.onLayout}&gt;
-        {
-          this.state.dimensions
-           ? &lt;VIew width={width} height={height}&gt;
-              ...
-             &lt;/View&gt;
-           : undefined}
-      &lt;/View&gt;
-    )
-  }
-
-  onLayout = event =&gt; {
-    if (this.state.dimensions) return // layout was already called
-    let {width, height} = event.nativeEvent.layout
-    this.setState({dimensions: {width, height}})
-  }
-}
-</code></pre><h2 id="share">Share</h2>
-<h2 id="20200929-tue">20200929 Tue</h2>
-<p>Today, I don&rsquo;t have some thing want to share, I just want to share my life. It is, first and foremost, anxiety. My English and my programming skills are not in normal level. So I have made a plan to improve my English and my programming skills. The most vital things are basics.</p>
-<p>How to improve my basic English?</p>
-<ol>
-<li>Vocabulary. I bought a used IELTS English word book from Carousell. I do one list every day by Associative Memory, just like when I see the new  word &ldquo;fetch&rdquo;, first of all, I would use the new word to create a sentence. Secondly, I would associate closet meaning word, just like &ldquo;bring, get, transport, carry, extract&rdquo;. This way can help me to remember word better. And last but not least, repeat to review the new word after 3 days.</li>
-<li>Speaking. I usually to talk with teacher on Cambly, it&rsquo;s a really good platform to practice my English speaking. However if you don&rsquo;t have some topic, maybe the small talk have a little bit awkward situation. So prepare your topic and to communicate with teacher.</li>
-<li>Listening. I listen the All Ear English podcast in the morning. The two hosts talk with native topic. It&rsquo;s really native language. It can help us to understand English native conversation.</li>
-<li>Writing. Try to write my technology blog in English, yes, it&rsquo;s really hard to do it. sometimes I want to write my blog in Chinese, if I would use it, I will miss a chance to improve my English Writing.</li>
-<li>Reading. I use Mint Reading to practice my Reading skill, by the way, I scan the article from Medium every day. It&rsquo;s a good way to improve my English Reading.</li>
-<li>Grammar. I look the video of New concept English One, maybe someone says the book is too simple, the basic knowledge can not improve English grammar so quickly. However I want to say, learning the basics is only way to build your knowledge tree linking the pieces all together that&rsquo;s the most important and the fastest way to import your skills.</li>
-</ol>
-<p>Another things will be done:</p>
-<ol>
-<li>Arithmetic. I do a Leetcode test everyday.</li>
-<li>React Native. Watch CS50 Video, react native books and create a project by myself.</li>
-<li>iOS. Watch books and build a new project by myself</li>
-<li>Network. Look the books and try to sum up the main point.</li>
-<li>Go Language. try to study it by myself and build a server on cloud.</li>
-<li>Studying about designing an UI.</li>
-</ol>
 ]]></content>
         </item>
         
