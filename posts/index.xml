@@ -6,8 +6,418 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>All rights reserved - 2020</copyright>
-        <lastBuildDate>Wed, 30 Sep 2020 19:43:00 +0800</lastBuildDate>
+        <lastBuildDate>Tue, 06 Oct 2020 16:14:00 +0800</lastBuildDate>
         <atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>ARTS20-20201006</title>
+            <link>https://leviduan.github.io/posts/2020-10-06/</link>
+            <pubDate>Tue, 06 Oct 2020 16:14:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-10-06/</guid>
+            <description>Algorithm Leetcode website : 206 Reverse Linked List
+Description Reverse a singly linked list.
+Example:
+Input: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL Output: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL
+Idea 1.There are three pointers prev as NULL, curr as head and next as NULL. 2.Iterate through the linked list. In loop, do following.
+// before changing next of current, store next node next = curr-&amp;gt;next // Now change next of current, this is where actual reversing happens curr-&amp;gt;next = prev // Move prev and curr one step forward prev = curr curr = next Solution - Javascript var reverseList = function(head) { if (head == null || head.</description>
+            <content type="html"><![CDATA[<h2 id="algorithm">Algorithm</h2>
+<h3 id="leetcode-website-">Leetcode website :</h3>
+<p><a href="https://leetcode.com/problems/reverse-linked-list/">206 Reverse Linked List</a></p>
+<h3 id="description">Description</h3>
+<p>Reverse a singly linked list.</p>
+<p>Example:</p>
+<p>Input: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+Output: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</p>
+<h3 id="idea">Idea</h3>
+<p>1.There are three pointers prev as NULL, curr as head and next as NULL.
+2.Iterate through the linked list. In loop, do following.</p>
+<pre><code>// before changing next of current, store next node
+next = curr-&gt;next
+// Now change next of current, this is where actual reversing happens
+curr-&gt;next = prev
+// Move prev and curr one step forward
+prev = curr
+curr = next
+</code></pre><h3 id="solution---javascript">Solution - Javascript</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">reverseList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">head</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">head</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tmp</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newHead</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>
+    <span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+        <span style="color:#a6e22e">tmp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">head</span>
+        <span style="color:#a6e22e">head</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span>
+        <span style="color:#a6e22e">tmp</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newHead</span>
+        <span style="color:#a6e22e">newHead</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tmp</span>
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newHead</span>
+}
+</code></pre></div><h3 id="solution---c">Solution - C</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Definition for singly-linked list.
+</span><span style="color:#75715e"> * struct ListNode {
+</span><span style="color:#75715e"> *     int val;
+</span><span style="color:#75715e"> *     struct ListNode *next;
+</span><span style="color:#75715e"> * };
+</span><span style="color:#75715e"> */</span>
+ 
+<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">reverseList</span>(<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> head){
+    <span style="color:#66d9ef">if</span> (head <span style="color:#f92672">==</span> NULL <span style="color:#f92672">||</span> head<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> NULL) <span style="color:#66d9ef">return</span> head;
+    <span style="color:#66d9ef">struct</span> ListNode <span style="color:#f92672">*</span>list <span style="color:#f92672">=</span> NULL;
+    <span style="color:#66d9ef">struct</span> ListNode <span style="color:#f92672">*</span>tmp <span style="color:#f92672">=</span> NULL;
+    <span style="color:#66d9ef">while</span> (head) {
+        tmp <span style="color:#f92672">=</span> head;
+        head <span style="color:#f92672">=</span> head<span style="color:#f92672">-&gt;</span>next;
+        tmp<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> list;
+        list <span style="color:#f92672">=</span> tmp;
+    }
+    <span style="color:#66d9ef">return</span> list;
+}
+</code></pre></div><h2 id="review">Review</h2>
+<p>Medium Article:  <a href="https://blog.bitsrc.io/data-structures-you-should-know-as-a-javascript-developer-9a35eb3b319c">Data Structures You Should Know as a JavaScript Developer</a></p>
+<p>understanding Data Structures is helpful in all aspects of programming, you don&rsquo;t need to have a particular use case where you&rsquo;ll use a Tree or a Graph to have to consider learning about them. But it is most basics from coding.</p>
+<h3 id="queues">Queues</h3>
+<p>You can insert elements into and take them out following the FIFO approach: First in first out.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Queue</span> {
+    <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> []
+    <span style="color:#a6e22e">maxSize</span>
+
+    <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">initialData</span>, <span style="color:#a6e22e">maxSize</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)  {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">initialData</span>) <span style="color:#f92672">?</span> <span style="color:#a6e22e">initialData</span> <span style="color:#f92672">:</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">initialData</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;undefined&#34;</span> <span style="color:#f92672">?</span> [] <span style="color:#f92672">:</span> [<span style="color:#a6e22e">initialData</span>])
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">maxSize</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">maxSize</span>
+    }
+
+    <span style="color:#a6e22e">isFull</span> () {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">maxSize</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">maxSize</span>) <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+    }
+
+    <span style="color:#a6e22e">isEmpty</span>() {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>
+    }
+
+    <span style="color:#a6e22e">enqueue</span>(<span style="color:#a6e22e">item</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isFull</span>()) {
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+        }
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">item</span>)
+    }
+
+    <span style="color:#f92672">*</span><span style="color:#a6e22e">gennerator</span>() {
+        <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isEmpty</span>) {
+            <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">shift</span>()
+        }
+    }
+
+    <span style="color:#a6e22e">dequeue</span>() {
+        <span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">done</span>} <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">gennerator</span>().<span style="color:#a6e22e">next</span>()
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">done</span>) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">value</span>
+    }
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Quene</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./quenes&#39;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">q</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Quene</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>)
+
+<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">enqueue</span>(<span style="color:#ae81ff">1</span>)
+<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">enqueue</span>(<span style="color:#ae81ff">2</span>)
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">dequeue</span>()) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>)
+}
+</code></pre></div><p>Other than the simple queue I&rsquo;m showing you here, you can also find:</p>
+<p>Priority queues, which have their elements internally sorted by a priority value.</p>
+<p>Circular queues, which have their last element pointing to the first one.</p>
+<p>Double ended queue, which allows you to add and remove elements both from the front and the back.</p>
+<h3 id="stack">Stack</h3>
+<p>You can think of the data structure as a stack of books if you start putting one on top of the other, once you want to get one, you will have to remove all the books on top of it. This way of handing data is known as FILO, or First In Last out.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">*</span><span style="color:#a6e22e">generator</span>() {
+    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isEmpty</span>()) {
+        <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">pop</span>()
+    }
+}
+</code></pre></div><p>generator function is the only difference with Queen function.</p>
+<p><code>pop</code> method removes the last added item on the array and returns it.</p>
+<p><code>shift</code> method removes the first added item on the array and returns it.</p>
+<h3 id="trees">Trees</h3>
+<p>Tree is basically a recursively defined structure formed by a parent node and a number of child nodes connected to one parent.</p>
+<p>Sibling nodes (i.e. nodes with the same parent) don&rsquo;t connect with each other.</p>
+<p>The tree is normally represented growing downwards (as opposed to a normal tree growing up)</p>
+<p>Nodes can&rsquo;t be connected to themselves(I know, it sounds weird but wait until we get to graphs)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BinaryTreeNode</span> {
+    <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">value</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">left_child</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">right_child</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>
+    }
+
+    <span style="color:#a6e22e">compare</span>(<span style="color:#a6e22e">v</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">v</span>) <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">v</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">v</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    }
+}
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BST</span> {
+    <span style="color:#a6e22e">constructor</span>() {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">root_node</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>
+    }
+
+    <span style="color:#a6e22e">add</span> (<span style="color:#a6e22e">elem</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">root_node</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">root_node</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">BinaryTreeNode</span>(<span style="color:#a6e22e">elem</span>)
+            <span style="color:#66d9ef">return</span>
+        }
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">inserted</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">currentNode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">root_node</span>
+        <span style="color:#66d9ef">do</span> {
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">comp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentNode</span>.<span style="color:#a6e22e">compare</span>(<span style="color:#a6e22e">elem</span>)
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">comp</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+                <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">currentNode</span>.<span style="color:#a6e22e">left_child</span>) {
+                    <span style="color:#a6e22e">currentNode</span>.<span style="color:#a6e22e">left_child</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">BinaryTreeNode</span>(<span style="color:#a6e22e">elem</span>)
+                    <span style="color:#a6e22e">inserted</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+                }
+                <span style="color:#66d9ef">else</span> {
+                    <span style="color:#a6e22e">currentNode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentNode</span>.<span style="color:#a6e22e">left_child</span>
+                }
+            }
+            <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">currentNode</span>.<span style="color:#a6e22e">right_child</span>) {
+                    <span style="color:#a6e22e">currentNode</span>.<span style="color:#a6e22e">right_child</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">BinaryTreeNode</span>(<span style="color:#a6e22e">elem</span>)
+                    <span style="color:#a6e22e">inserted</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> 
+                }
+                <span style="color:#66d9ef">else</span> {
+                    <span style="color:#a6e22e">currentNode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentNode</span>.<span style="color:#a6e22e">right_child</span> 
+                }
+            }
+        } <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">inserted</span>)
+    }
+
+    <span style="color:#a6e22e">inorder</span>(<span style="color:#a6e22e">parent</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">parent</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inorder</span>(<span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">left_child</span>)
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">value</span>)
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inorder</span>(<span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">right_child</span>)
+        }
+    }
+
+    <span style="color:#a6e22e">print</span>() {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inorder</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">root_node</span>)
+    }
+}
+</code></pre></div><h3 id="graphs">Graphs</h3>
+<p>A graph is a less restricted version of a tree in the sense that there aren&rsquo;t parents and children, rather any node can be related to any other (including themselves).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span> {
+    <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">value</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">links</span> <span style="color:#f92672">=</span> []
+    }
+
+    <span style="color:#a6e22e">linkTo</span>(<span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">weight</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">links</span>.<span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">link</span>(<span style="color:#66d9ef">this</span>, <span style="color:#a6e22e">weight</span>, <span style="color:#a6e22e">node</span>))
+    }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">link</span>{
+    <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">weight</span>, <span style="color:#a6e22e">b</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>;
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">weight</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">weight</span>;
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
+    }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span> {
+    <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">root_node</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">root_node</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">root_node</span>
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">dfs_visited</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>();
+    }
+
+    <span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">starting_node</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">starting_node</span>) <span style="color:#a6e22e">starting_node</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">root_node</span>
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">starting_node</span>
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">value</span>)
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">dfs_visited</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">node</span>)
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">links</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">element</span> =&gt; {
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">dfs_visited</span>.<span style="color:#a6e22e">has</span>(<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">right</span>)) {
+                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">dfs</span>(<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">right</span>)
+            }
+        });
+    }
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>(<span style="color:#e6db74">&#34;A&#34;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>(<span style="color:#e6db74">&#34;B&#34;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>(<span style="color:#e6db74">&#34;C&#34;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">D</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>(<span style="color:#e6db74">&#34;D&#34;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">E</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>(<span style="color:#e6db74">&#34;E&#34;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">F</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>(<span style="color:#e6db74">&#34;F&#34;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">G</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Node</span>(<span style="color:#e6db74">&#34;G&#34;</span>)
+
+<span style="color:#75715e">//Define how each node is related to others
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">linkTo</span>(<span style="color:#a6e22e">B</span>, <span style="color:#ae81ff">1</span>)
+<span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">linkTo</span>(<span style="color:#a6e22e">C</span>, <span style="color:#ae81ff">2</span>)
+<span style="color:#a6e22e">B</span>.<span style="color:#a6e22e">linkTo</span>(<span style="color:#a6e22e">D</span>, <span style="color:#ae81ff">1</span>)
+<span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">linkTo</span>(<span style="color:#a6e22e">E</span>, <span style="color:#ae81ff">10</span>)
+<span style="color:#a6e22e">D</span>.<span style="color:#a6e22e">linkTo</span>(<span style="color:#a6e22e">E</span>, <span style="color:#ae81ff">10</span>)
+<span style="color:#a6e22e">D</span>.<span style="color:#a6e22e">linkTo</span>(<span style="color:#a6e22e">F</span>, <span style="color:#ae81ff">1</span>)
+<span style="color:#a6e22e">D</span>.<span style="color:#a6e22e">linkTo</span>(<span style="color:#a6e22e">G</span>, <span style="color:#ae81ff">1</span>)
+<span style="color:#a6e22e">G</span>.<span style="color:#a6e22e">linkTo</span>(<span style="color:#a6e22e">G</span>, <span style="color:#ae81ff">1</span>)
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Graph</span>(<span style="color:#a6e22e">A</span>)
+<span style="color:#75715e">//Traverse the graph
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">dfs</span>()
+</code></pre></div><h3 id="hash-map">Hash Map</h3>
+<p>It allows you to store key-value pairs and retrieve them fairly quickly</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HashMap</span> {
+    <span style="color:#a6e22e">constructor</span>() {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> {}
+    }
+
+    <span style="color:#a6e22e">hash</span>(<span style="color:#a6e22e">k</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">k</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>
+    }
+
+    <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">value</span>) {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">hash</span>(<span style="color:#a6e22e">key</span>)
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">k</span>]) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">=</span> []
+        }
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">k</span>].<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">value</span>)
+    }
+
+    <span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">key</span>) {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">hash</span>(<span style="color:#a6e22e">key</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">k</span>]
+    }
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HashMap</span>()
+
+<span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;hello&#34;</span>)
+<span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">100001</span>, <span style="color:#e6db74">&#34;world&#34;</span>)
+<span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;this is a tring&#34;</span>)
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">h</span>)
+</code></pre></div><p>The output from the above script is:</p>
+<pre><code>HashMap {
+  map: { '0': [ 'hello' ], '1': [ 'world', 'this is a string' ] }
+}
+</code></pre><p>Notice how both &ldquo;world&rdquo; and &ldquo;this is a string&rdquo; are associated to the same key, this is what is known as collision. My has method is simply doing a mod 10, to make sure we are keeping up to 10 keys at any given time, no matter what the original key is. This is helpful if you have a limited amount of memory or for some reason need to keep a tight control over the keys. The way you implement your hashing method will determine how effective your hash map ends up being.</p>
+<h2 id="tips">Tips</h2>
+<h3 id="function-declarations-vs-function-expressions">Function Declarations vs. Function Expressions</h3>
+<p>var foo = function() {} is quite different than function foo() {};</p>
+<p>For all reasons note else where, plus one.</p>
+<p>The second example will be hoisted, it will be available anywhere within the current closure (usually the current function). Even before it is declared within said closure.</p>
+<p>Something like this would work:</p>
+<pre><code>function foo() {
+    bar()
+    function bar() {
+        alert('baz')
+    }
+}
+</code></pre><p>Whereas something like this would most definitely not:</p>
+<pre><code>function foo() {
+    bar()
+    var bar = function bar() {
+        alert('baz')
+    }
+}
+</code></pre><p>You get an error in this second example. because bar has not  been defined yet. If you swap the two lines in the function foo, that example will work.</p>
+<p>So I advocate using this second method, because it doesn&rsquo;t contain a hidden behavior like hoisting, your code does exactly what it says it will do, no tricks involved.</p>
+<h2 id="share---asyncstorage">Share - AsyncStorage</h2>
+<p>AcyncStorage is a key/value-based storage system. It can be easily implemented and is globally available to the app. This persistence system is simple and asynchronous, and also a recommended way to store data. To create an AsyncStorage example application, execute the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">StyleSheet</span>, <span style="color:#a6e22e">Text</span>, <span style="color:#a6e22e">View</span>, <span style="color:#a6e22e">TextInput</span>, <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">AsyncStorage</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native&#39;</span>;
+
+<span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">storedText</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">inputBoxText</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>}
+}
+
+<span style="color:#a6e22e">In</span> <span style="color:#a6e22e">constructor</span> <span style="color:#a6e22e">we</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">specified</span> <span style="color:#a6e22e">blank</span> <span style="color:#a6e22e">values</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">stredText</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">inputBoxText</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">we</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">keep</span> <span style="color:#a6e22e">updating</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">when</span> <span style="color:#a6e22e">their</span> <span style="color:#a6e22e">state</span> <span style="color:#a6e22e">changes</span>.
+
+<span style="color:#a6e22e">async</span> <span style="color:#a6e22e">componentDidMount</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({<span style="color:#a6e22e">storedText</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">retrieveData</span>()})
+}
+
+<span style="color:#a6e22e">componentDidMount</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">invoked</span> <span style="color:#a6e22e">only</span> <span style="color:#a6e22e">at</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">time</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">initial</span> <span style="color:#a6e22e">rendering</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">responsible</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">showing</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">text</span> <span style="color:#a6e22e">below</span> <span style="color:#e6db74">&#34;This text is from local storage,&#34;</span> <span style="color:#a6e22e">once</span> <span style="color:#a6e22e">we</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">updated</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">refreshed</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">app</span> <span style="color:#a6e22e">again</span>. <span style="color:#a6e22e">We</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">used</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">calling</span> <span style="color:#a6e22e">retrieveData</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">means</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">execution</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">wait</span> <span style="color:#a6e22e">until</span> <span style="color:#a6e22e">the</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">completely</span> <span style="color:#a6e22e">executed</span>.
+
+<span style="color:#a6e22e">retrieveData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span>() =&gt; {
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;@AsyncStorageExample: someKey&#39;</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">value</span>;
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Error in Fetching Data&#34;</span>)
+    }
+}
+
+<span style="color:#a6e22e">The</span> <span style="color:#a6e22e">method</span> <span style="color:#a6e22e">retrieveData</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">used</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">retrieve</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">value</span> <span style="color:#a6e22e">stored</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">local</span> <span style="color:#a6e22e">storage</span>. <span style="color:#a6e22e">Calling</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">getItem</span> <span style="color:#a6e22e">retrieves</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">value</span> <span style="color:#a6e22e">stored</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">local</span> <span style="color:#a6e22e">storage</span>.
+
+<span style="color:#a6e22e">onPressSave</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span>() =&gt; {
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;@AsyncStorageExample:someKey&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">inputBoxText</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+            <span style="color:#a6e22e">storedText</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">inputBoxText</span>
+        })
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Error is saving data&#34;</span>)
+    }
+}
+
+<span style="color:#a6e22e">Updating</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">updates</span> <span style="color:#a6e22e">AsyncStorage</span> <span style="color:#a6e22e">values</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">persisted</span> <span style="color:#a6e22e">permanently</span>.
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>React Native - AsyncStorage</title>
+            <link>https://leviduan.github.io/posts/2020-10-06-1/</link>
+            <pubDate>Tue, 06 Oct 2020 16:14:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-10-06-1/</guid>
+            <description>AcyncStorage is a key/value-based storage system. It can be easily implemented and is globally available to the app. This persistence system is simple and asynchronous, and also a recommended way to store data. To create an AsyncStorage example application, execute the following command:
+import { StyleSheet, Text, View, TextInput, Button, AsyncStorage } from &amp;#39;react-native&amp;#39;; constructor(props) { super(props); this.state = { storedText: &amp;#39;&amp;#39;, inputBoxText: &amp;#39;&amp;#39;} } In constructor we have specified blank values for stredText and inputBoxText, which we will keep updating as and when their state changes.</description>
+            <content type="html"><![CDATA[<p>AcyncStorage is a key/value-based storage system. It can be easily implemented and is globally available to the app. This persistence system is simple and asynchronous, and also a recommended way to store data. To create an AsyncStorage example application, execute the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">StyleSheet</span>, <span style="color:#a6e22e">Text</span>, <span style="color:#a6e22e">View</span>, <span style="color:#a6e22e">TextInput</span>, <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">AsyncStorage</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-native&#39;</span>;
+
+<span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">storedText</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">inputBoxText</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>}
+}
+
+<span style="color:#a6e22e">In</span> <span style="color:#a6e22e">constructor</span> <span style="color:#a6e22e">we</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">specified</span> <span style="color:#a6e22e">blank</span> <span style="color:#a6e22e">values</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">stredText</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">inputBoxText</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">we</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">keep</span> <span style="color:#a6e22e">updating</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">when</span> <span style="color:#a6e22e">their</span> <span style="color:#a6e22e">state</span> <span style="color:#a6e22e">changes</span>.
+
+<span style="color:#a6e22e">async</span> <span style="color:#a6e22e">componentDidMount</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({<span style="color:#a6e22e">storedText</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">retrieveData</span>()})
+}
+
+<span style="color:#a6e22e">componentDidMount</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">invoked</span> <span style="color:#a6e22e">only</span> <span style="color:#a6e22e">at</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">time</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">initial</span> <span style="color:#a6e22e">rendering</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">responsible</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">showing</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">text</span> <span style="color:#a6e22e">below</span> <span style="color:#e6db74">&#34;This text is from local storage,&#34;</span> <span style="color:#a6e22e">once</span> <span style="color:#a6e22e">we</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">updated</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">refreshed</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">app</span> <span style="color:#a6e22e">again</span>. <span style="color:#a6e22e">We</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">used</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">calling</span> <span style="color:#a6e22e">retrieveData</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">means</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">execution</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">wait</span> <span style="color:#a6e22e">until</span> <span style="color:#a6e22e">the</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">completely</span> <span style="color:#a6e22e">executed</span>.
+
+<span style="color:#a6e22e">retrieveData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span>() =&gt; {
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;@AsyncStorageExample: someKey&#39;</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">value</span>;
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Error in Fetching Data&#34;</span>)
+    }
+}
+
+<span style="color:#a6e22e">The</span> <span style="color:#a6e22e">method</span> <span style="color:#a6e22e">retrieveData</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">used</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">retrieve</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">value</span> <span style="color:#a6e22e">stored</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">local</span> <span style="color:#a6e22e">storage</span>. <span style="color:#a6e22e">Calling</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">getItem</span> <span style="color:#a6e22e">retrieves</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">value</span> <span style="color:#a6e22e">stored</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">local</span> <span style="color:#a6e22e">storage</span>.
+
+<span style="color:#a6e22e">onPressSave</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span>() =&gt; {
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">AsyncStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;@AsyncStorageExample:someKey&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">inputBoxText</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+            <span style="color:#a6e22e">storedText</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">inputBoxText</span>
+        })
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Error is saving data&#34;</span>)
+    }
+}
+
+<span style="color:#a6e22e">Updating</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">updates</span> <span style="color:#a6e22e">AsyncStorage</span> <span style="color:#a6e22e">values</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">persisted</span> <span style="color:#a6e22e">permanently</span>.
+
+
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>ARTS19-20200930</title>
@@ -322,11 +732,11 @@ The client would send a request to DNS to check IP address, and build an TCP con
 <h4 id="the-server-sends-out-an-http-response">The server sends out an HTTP response</h4>
 <p>The server response contains the web page you requested as well as the status code, compression type, how to cache the page, any cookies to set, privacy information, etc.</p>
 <p>something about status code:</p>
-<p>1xx indicates an informational message only
-2xx indicates success of some kind
-3xx redirects the client to another URL
-4xx indicates an error on the client&rsquo;s part
-5xx indicates an error on the server&rsquo;s part</p>
+<p>1xx indicates an informational message only</p>
+<p>2xx indicates success of some kind</p>
+<p>3xx redirects the client to another URL</p>
+<p>4xx indicates an error on the client&rsquo;s part</p>
+<p>5xx indicates an error on the server&rsquo;s part</p>
 <h4 id="the-browser-displays-the-html-content">The browser displays the HTML content</h4>
 <p>The browser displays the HTML content in phases. First, it will render the bare bone HTML skeleton. Then it will check the HTML tags and send out GET requests for additional elements on the web page, such as images, CSS stylesheets, JavaScript files, etc. These static files are cached by the browser, so it doesn&rsquo;t have to fetch them again the next time you visit the page. In the end, you&rsquo;ll see leviduan.com appearing on your browser.</p>
 ]]></content>
@@ -468,12 +878,12 @@ export default class LineChart extends Component {
 <p>5.Reading. I use Mint Reading to practice my Reading skill, by the way, I scan the article from Medium every day. It&rsquo;s a good way to improve my English Reading.</p>
 <p>6.Grammar. I look the video of New concept English One, maybe someone says the book is too simple, the basic knowledge can not improve English grammar so quickly. However I want to say, learning the basics is only way to build your knowledge tree linking the pieces all together that&rsquo;s the most important and the fastest way to import your skills.</p>
 <p>Another things will be done:</p>
-<p>1.Arithmetic. I do a Leetcode test everyday.
-2.React Native. Watch CS50 Video, react native books and create a project by myself.
-3.iOS. Watch books and build a new project by myself
-4.Network. Look the books and try to sum up the main point.
-5.Go Language. try to study it by myself and build a server on cloud.
-6.Studying about designing an UI.</p>
+<p>1.Arithmetic. I do a Leetcode test everyday.</p>
+<p>2.React Native. Watch CS50 Video, react native books and create a project by myself.</p>
+<p>3.iOS. Watch books and build a new project by myself</p>
+<p>4.Network. Look the books and try to sum up the main point.</p>
+<p>5.Go Language. try to study it by myself and build a server on cloud.</p>
+<p>6.Studying about designing an UI.</p>
 ]]></content>
         </item>
         
@@ -488,19 +898,19 @@ How to improve my basic English?
 1.Vocabulary. I bought a used IELTS English word book from Carousell. I do one list every day by Associative Memory, just like when I see the new word &amp;ldquo;fetch&amp;rdquo;, first of all, I would use the new word to create a sentence.</description>
             <content type="html"><![CDATA[<p>Today, I don&rsquo;t have some thing want to share, I just want to share my life. It is, first and foremost, anxiety. My English and my programming skills are not in normal level. So I have made a plan to improve my English and my programming skills. The most vital things are basics.</p>
 <p>How to improve my basic English?</p>
-<p>1.Vocabulary. I bought a used IELTS English word book from Carousell. I do one list every day by Associative Memory, just like when I see the new  word &ldquo;fetch&rdquo;, first of all, I would use the new word to create a sentence. Secondly, I would associate closet meaning word, just like &ldquo;bring, get, transport, carry, extract&rdquo;. This way can help me to remember word better. And last but not least, repeat to review the new word after 3 days.
-2.Speaking. I usually to talk with teacher on Cambly, it&rsquo;s a really good platform to practice my English speaking. However if you don&rsquo;t have some topic, maybe the small talk have a little bit awkward situation. So prepare your topic and to communicate with teacher.
-3.Listening. I listen the All Ear English podcast in the morning. The two hosts talk with native topic. It&rsquo;s really native language. It can help us to understand English native conversation.
-4.Writing. Try to write my technology blog in English, yes, it&rsquo;s really hard to do it. sometimes I want to write my blog in Chinese, if I would use it, I will miss a chance to improve my English Writing.
-5.Reading. I use Mint Reading to practice my Reading skill, by the way, I scan the article from Medium every day. It&rsquo;s a good way to improve my English Reading.
-6.Grammar. I look the video of New concept English One, maybe someone says the book is too simple, the basic knowledge can not improve English grammar so quickly. However I want to say, learning the basics is only way to build your knowledge tree linking the pieces all together that&rsquo;s the most important and the fastest way to import your skills.</p>
+<p>1.Vocabulary. I bought a used IELTS English word book from Carousell. I do one list every day by Associative Memory, just like when I see the new  word &ldquo;fetch&rdquo;, first of all, I would use the new word to create a sentence. Secondly, I would associate closet meaning word, just like &ldquo;bring, get, transport, carry, extract&rdquo;. This way can help me to remember word better. And last but not least, repeat to review the new word after 3 days.</p>
+<p>2.Speaking. I usually to talk with teacher on Cambly, it&rsquo;s a really good platform to practice my English speaking. However if you don&rsquo;t have some topic, maybe the small talk have a little bit awkward situation. So prepare your topic and to communicate with teacher.</p>
+<p>3.Listening. I listen the All Ear English podcast in the morning. The two hosts talk with native topic. It&rsquo;s really native language. It can help us to understand English native conversation.</p>
+<p>4.Writing. Try to write my technology blog in English, yes, it&rsquo;s really hard to do it. sometimes I want to write my blog in Chinese, if I would use it, I will miss a chance to improve my English Writing.</p>
+<p>5.Reading. I use Mint Reading to practice my Reading skill, by the way, I scan the article from Medium every day. It&rsquo;s a good way to improve my English Reading.</p>
+<p>6.Grammar. I look the video of New concept English One, maybe someone says the book is too simple, the basic knowledge can not improve English grammar so quickly. However I want to say, learning the basics is only way to build your knowledge tree linking the pieces all together that&rsquo;s the most important and the fastest way to import your skills.</p>
 <p>Another things will be done:</p>
-<p>1.Arithmetic. I do a Leetcode test everyday.
-2.React Native. Watch CS50 Video, react native books and create a project by myself.
-3.iOS. Watch books and build a new project by myself
-4.Network. Look the books and try to sum up the main point.
-5.Go Language. try to study it by myself and build a server on cloud.
-6.Studying about designing an UI.</p>
+<p>1.Arithmetic. I do a Leetcode test everyday.</p>
+<p>2.React Native. Watch CS50 Video, react native books and create a project by myself.</p>
+<p>3.iOS. Watch books and build a new project by myself</p>
+<p>4.Network. Look the books and try to sum up the main point.</p>
+<p>5.Go Language. try to study it by myself and build a server on cloud.</p>
+<p>6.Studying about designing an UI.</p>
 ]]></content>
         </item>
         

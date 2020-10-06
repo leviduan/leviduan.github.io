@@ -7,7 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2020</copyright>
-    <lastBuildDate>Wed, 30 Sep 2020 19:43:00 +0800</lastBuildDate><atom:link href="https://leviduan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 16:14:00 +0800</lastBuildDate><atom:link href="https://leviduan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ARTS20-20201006</title>
+      <link>https://leviduan.github.io/posts/2020-10-06/</link>
+      <pubDate>Tue, 06 Oct 2020 16:14:00 +0800</pubDate>
+      
+      <guid>https://leviduan.github.io/posts/2020-10-06/</guid>
+      <description>Algorithm Leetcode website : 206 Reverse Linked List
+Description Reverse a singly linked list.
+Example:
+Input: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL Output: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL
+Idea 1.There are three pointers prev as NULL, curr as head and next as NULL. 2.Iterate through the linked list. In loop, do following.
+// before changing next of current, store next node next = curr-&amp;gt;next // Now change next of current, this is where actual reversing happens curr-&amp;gt;next = prev // Move prev and curr one step forward prev = curr curr = next Solution - Javascript var reverseList = function(head) { if (head == null || head.</description>
+    </item>
+    
+    <item>
+      <title>React Native - AsyncStorage</title>
+      <link>https://leviduan.github.io/posts/2020-10-06-1/</link>
+      <pubDate>Tue, 06 Oct 2020 16:14:00 +0800</pubDate>
+      
+      <guid>https://leviduan.github.io/posts/2020-10-06-1/</guid>
+      <description>AcyncStorage is a key/value-based storage system. It can be easily implemented and is globally available to the app. This persistence system is simple and asynchronous, and also a recommended way to store data. To create an AsyncStorage example application, execute the following command:
+import { StyleSheet, Text, View, TextInput, Button, AsyncStorage } from &amp;#39;react-native&amp;#39;; constructor(props) { super(props); this.state = { storedText: &amp;#39;&amp;#39;, inputBoxText: &amp;#39;&amp;#39;} } In constructor we have specified blank values for stredText and inputBoxText, which we will keep updating as and when their state changes.</description>
+    </item>
+    
     <item>
       <title>ARTS19-20200930</title>
       <link>https://leviduan.github.io/posts/2020-09-30-2/</link>

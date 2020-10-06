@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2020</copyright>
-    <lastBuildDate>Mon, 28 Sep 2020 01:41:00 +0800</lastBuildDate><atom:link href="https://leviduan.github.io/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 16:14:00 +0800</lastBuildDate><atom:link href="https://leviduan.github.io/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React Native - AsyncStorage</title>
+      <link>https://leviduan.github.io/posts/2020-10-06-1/</link>
+      <pubDate>Tue, 06 Oct 2020 16:14:00 +0800</pubDate>
+      
+      <guid>https://leviduan.github.io/posts/2020-10-06-1/</guid>
+      <description>AcyncStorage is a key/value-based storage system. It can be easily implemented and is globally available to the app. This persistence system is simple and asynchronous, and also a recommended way to store data. To create an AsyncStorage example application, execute the following command:
+import { StyleSheet, Text, View, TextInput, Button, AsyncStorage } from &amp;#39;react-native&amp;#39;; constructor(props) { super(props); this.state = { storedText: &amp;#39;&amp;#39;, inputBoxText: &amp;#39;&amp;#39;} } In constructor we have specified blank values for stredText and inputBoxText, which we will keep updating as and when their state changes.</description>
+    </item>
+    
     <item>
       <title>React native - react-native-camera</title>
       <link>https://leviduan.github.io/posts/2020-09-28_01/</link>
