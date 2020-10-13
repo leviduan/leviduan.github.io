@@ -6,8 +6,70 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>All rights reserved - 2020</copyright>
-        <lastBuildDate>Tue, 06 Oct 2020 16:14:00 +0800</lastBuildDate>
+        <lastBuildDate>Tue, 13 Oct 2020 16:14:00 +0800</lastBuildDate>
         <atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>React native 项目中常用第三方库</title>
+            <link>https://leviduan.github.io/posts/2020-10-13/</link>
+            <pubDate>Tue, 13 Oct 2020 16:14:00 +0800</pubDate>
+            
+            <guid>https://leviduan.github.io/posts/2020-10-13/</guid>
+            <description>常用的第三方库每次更新，可能会带来一些问题，所以更新记得慎重，多看看第三方的Github网站上的评论，如果稳定了，就可以进行更新。
+react-native-actionsheet 由于iOS和安卓actionsheet在React Native没有共同的控件，所以需要这个库来做一套控件。
+react-native-appsflyer 接入AppsFlyer数据平台进行数据监控
+react-native-firebase/analytics | react-native-firebase/messaging 介入Firebase的数据平台进行数据监控和管理Push数据发送，想对AppsFlyer数据平台，最大好处的免费，所以大部分埋点看详细打点数据也会通过这个平台来实现。
+react-native-community/async-storage 持久化存储数据，例如将用户行为数据保存在本地。
+react-native-camera 主要用于拍照功能，可以自定制拍照界面。
+react-native-check-notification-enable 用于检测Android and iOS 通知是否开启，如果没有开启，我们会做一些动作。
+react-native-elements SearchBar 安卓和iOS样式统一的库不多，而react-native-elements里的SearchBar UI库做的是最好的。
+react-native-fast-image 至今为止最好用的 Image 库，为什么不用RN的Image？因为RN的Image并不带缓存功能，而且这个库加载图片的时候会有更好的过渡效果
+react-native-gesture-handler 用到手势的时候，会需要这个强大的手势库
+react-native-image-crop-picker 这个控件主要应用于相册以及拍照功能，这个控件最好的一点是自带照片的裁剪功能，应用的场景是我们上传头像的功能。
+react-native-root-toast 主要用于提示功能，是一个很好用的透明提示工具
+react-native-share 用于RN的分享功能，支持大部分平台的分享。iOS有一个BUG需要修改代码进行修复，不然会出现Crash情况
+react-native-swipe-list-view 由于React native没有自带的类似iOS CollectionView/UITableView这种滑动删除的功能，所以需要这个控件支持滑动删除的功能。
+react-native-vector-icons 常用的图标会在这个资源库中直接取
+react-native-video 用 React Native播放一个视频，需要这个三方库，大部分功能支持的很好，循环播放不显示进度bar这种小功能都是附带的。而且可以定制化一些功能，很强大的一个库，但是还不是很完善，安卓经常需要修改库代码。
+react-native-webview 当你用WebView，或者和原生网站进行通信，就需要这个WebView控件。用起来非常方便，进度条等等小功能都支持。
+react-navigation React navigation bar 必备的路由跳转，但是每次升级都是大改，向下兼容性不好。</description>
+            <content type="html"><![CDATA[<p>常用的第三方库每次更新，可能会带来一些问题，所以更新记得慎重，多看看第三方的Github网站上的评论，如果稳定了，就可以进行更新。</p>
+<h3 id="react-native-actionsheet">react-native-actionsheet</h3>
+<p>由于iOS和安卓actionsheet在React Native没有共同的控件，所以需要这个库来做一套控件。</p>
+<h3 id="react-native-appsflyer">react-native-appsflyer</h3>
+<p>接入AppsFlyer数据平台进行数据监控</p>
+<h3 id="react-native-firebaseanalytics--react-native-firebasemessaging">react-native-firebase/analytics | react-native-firebase/messaging</h3>
+<p>介入Firebase的数据平台进行数据监控和管理Push数据发送，想对AppsFlyer数据平台，最大好处的免费，所以大部分埋点看详细打点数据也会通过这个平台来实现。</p>
+<h3 id="react-native-communityasync-storage">react-native-community/async-storage</h3>
+<p>持久化存储数据，例如将用户行为数据保存在本地。</p>
+<h3 id="react-native-camera">react-native-camera</h3>
+<p>主要用于拍照功能，可以自定制拍照界面。</p>
+<h3 id="react-native-check-notification-enable">react-native-check-notification-enable</h3>
+<p>用于检测Android and iOS 通知是否开启，如果没有开启，我们会做一些动作。</p>
+<h3 id="react-native-elements">react-native-elements</h3>
+<p>SearchBar 安卓和iOS样式统一的库不多，而react-native-elements里的SearchBar UI库做的是最好的。</p>
+<h3 id="react-native-fast-image">react-native-fast-image</h3>
+<p>至今为止最好用的 Image 库，为什么不用RN的Image？因为RN的Image并不带缓存功能，而且这个库加载图片的时候会有更好的过渡效果</p>
+<h3 id="react-native-gesture-handler">react-native-gesture-handler</h3>
+<p>用到手势的时候，会需要这个强大的手势库</p>
+<h3 id="react-native-image-crop-picker">react-native-image-crop-picker</h3>
+<p>这个控件主要应用于相册以及拍照功能，这个控件最好的一点是自带照片的裁剪功能，应用的场景是我们上传头像的功能。</p>
+<h3 id="react-native-root-toast">react-native-root-toast</h3>
+<p>主要用于提示功能，是一个很好用的透明提示工具</p>
+<h3 id="react-native-share">react-native-share</h3>
+<p>用于RN的分享功能，支持大部分平台的分享。iOS有一个BUG需要修改代码进行修复，不然会出现Crash情况</p>
+<h3 id="react-native-swipe-list-view">react-native-swipe-list-view</h3>
+<p>由于React native没有自带的类似iOS CollectionView/UITableView这种滑动删除的功能，所以需要这个控件支持滑动删除的功能。</p>
+<h3 id="react-native-vector-icons">react-native-vector-icons</h3>
+<p>常用的图标会在这个资源库中直接取</p>
+<h3 id="react-native-video">react-native-video</h3>
+<p>用 React Native播放一个视频，需要这个三方库，大部分功能支持的很好，循环播放不显示进度bar这种小功能都是附带的。而且可以定制化一些功能，很强大的一个库，但是还不是很完善，安卓经常需要修改库代码。</p>
+<h3 id="react-native-webview">react-native-webview</h3>
+<p>当你用WebView，或者和原生网站进行通信，就需要这个WebView控件。用起来非常方便，进度条等等小功能都支持。</p>
+<h3 id="react-navigation">react-navigation</h3>
+<p>React navigation bar 必备的路由跳转，但是每次升级都是大改，向下兼容性不好。</p>
+]]></content>
+        </item>
         
         <item>
             <title>ARTS20-20201006</title>
