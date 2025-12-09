@@ -1,0 +1,88 @@
+baseURL = 'https://leviduan.github.io/'
+languageCode = 'en-us'
+title = "Levi's Blog"
+theme = 'hello-friend-ng'
+
+[params]
+  # 日期格式
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+
+  # 首页副标题
+  homeSubtitle = "Connection Not Perfection"
+
+  # 页面描述
+  description = "My new homepage or blog"
+  keywords = "react native, iOS, front-end, Go, python, Java, C, C++, leetcode, arithmetic"
+
+  # 开启主题切换（黑暗/光亮模式）
+  enableThemeToggle = true
+
+  # 开启分享按钮
+  enableSharingButtons = true
+
+  # 自定义 CSS
+  customCSS = ["/css/custom.css"]
+
+  # 作者配置
+  [params.author]
+    name = "Levi Duan"
+
+  # Logo 配置
+  [params.logo]
+    logoMark = ">"
+    logoText = "cd /home/"
+    logoHomeLink = "/"
+
+  # Footer 配置
+  [params.footer]
+    rss = false
+    copyright = false
+    author = false
+    topText = []
+    bottomText = [
+      "Love iOS ☀ Mac ☀ React native"
+    ]
+
+  # 社交图标配置
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/suiyun"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:suiyun@me.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/leviduan"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/levi-duan-071409109/"
+
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+  series   = "series"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "/about/"
+    weight     = 1
+
+  [[menu.main]]
+    identifier = "tags"
+    name       = "Tags"
+    url        = "/tags/"
+    weight     = 2
+
+  [[menu.main]]
+    identifier = "posts"
+    name       = "Posts"
+    url        = "/posts/"
+    weight     = 3
