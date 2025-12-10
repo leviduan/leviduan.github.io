@@ -1,11 +1,9 @@
 ---
-title: "FlipFocus"
+title: "FlipFocus - Product Documentation"
 date: 2025-12-10
 draft: false
-tags: ["productivity", "focus", "app"]
+tags: ["iOS"]
 ---
-
-# FlipFocus - Product Documentation
 
 ## Product Overview
 
