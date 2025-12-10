@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
-  line-height: 1.6;
-  letter-spacing: 0.06em;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   scroll-behavior: smooth;
 }
 
@@ -16,10 +16,7 @@ body {
   padding: 0;
   font-family: HelveticaNeue, "trebuchet ms", Verdana, "verdana ref", "segoe ui", Candara, "lucida grande", "lucida sans unicode", "lucida sans", Tahoma, sans-serif;
   font-display: auto;
-  font-size: 1rem;
   line-height: 1.8;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
   font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
@@ -238,8 +235,14 @@ em, i, strong {
 }
 
 pre {
-  // 参考旧网站：固定深色背景 #212020
-  background: #212020;
+  [data-theme=dark] & {
+    background-color: $dark-background-secondary;
+  }
+
+  [data-theme=light] & {
+    background-color: $light-background-secondary;
+  }
+
   padding: 10px 10px 10px 20px;
   border-radius: 8px;
   font-size: 0.95rem;
@@ -438,46 +441,4 @@ hr {
 // Prism JS Additionals
 .highlight {
   margin: 10px auto;
-}
-
-// ========================================
-// Custom Styles - 自定义样式 (参考 leviduan.github.io)
-// ========================================
-
-// Homepage Title Font
-.content-center h1 {
-  font-family: Zapfino, "trebuchet ms", sans-serif;
-  font-size: 26px;
-  color: #e8eef2;
-
-  @media (prefers-color-scheme: light) {
-    color: #555;
-  }
-
-  [data-theme=light] & {
-    color: #555;
-  }
-
-  [data-theme=dark] & {
-    color: #e8eef2;
-  }
-}
-
-// Homepage Subtitle Font
-.content-center main p {
-  font-family: HelveticaNeue, "trebuchet ms", Verdana, "verdana ref", "segoe ui", Candara, "lucida grande", "lucida sans unicode", "lucida sans", Tahoma, sans-serif;
-  font-size: 1rem;
-  color: #e8eef2;
-
-  @media (prefers-color-scheme: light) {
-    color: #555;
-  }
-
-  [data-theme=light] & {
-    color: #555;
-  }
-
-  [data-theme=dark] & {
-    color: #e8eef2;
-  }
 }

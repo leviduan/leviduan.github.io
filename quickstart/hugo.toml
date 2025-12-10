@@ -87,3 +87,7 @@ disqusShortname = "https-leviduan-github-io"
     name       = "Posts"
     url        = "/posts/"
     weight     = 3
+
+[markup]
+  [markup.highlight]
+    codeFences = false
