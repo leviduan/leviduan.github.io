@@ -91,3 +91,4 @@ disqusShortname = "https-leviduan-github-io"
 [markup]
   [markup.highlight]
     codeFences = false
+
