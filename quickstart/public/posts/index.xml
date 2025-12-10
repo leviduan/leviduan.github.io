@@ -1,19 +1,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Levi&#39;s Blog</title>
-        <link>http://localhost:57610/posts/</link>
+        <link>http://localhost:1313/posts/</link>
         <description>Recent content in Posts on Levi&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
-        <atom:link href="http://localhost:57610/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>FlipFocus - Product Documentation</title>
-            <link>http://localhost:57610/posts/flipfocus/</link>
+            <link>http://localhost:1313/posts/flipfocus/</link>
             <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
             
-            <guid>http://localhost:57610/posts/flipfocus/</guid>
+            <guid>http://localhost:1313/posts/flipfocus/</guid>
             <description>&lt;h2 id=&#34;product-overview&#34;&gt;Product Overview&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;FlipFocus&lt;/strong&gt; is a minimalist flip clock application with an integrated Pomodoro timer, designed to help users stay focused and productive. The app features a beautiful flip clock display, customizable themes, and seamless integration with iOS system features like Live Activity and Dynamic Island.&lt;/p&gt;
 &lt;hr&gt;
@@ -601,10 +601,10 @@ Round 4: Focus (25m) → Long Break (15m)
         
         <item>
             <title>Privacy Policy - FlipFocus</title>
-            <link>http://localhost:57610/posts/flipfocuspp/</link>
+            <link>http://localhost:1313/posts/flipfocuspp/</link>
             <pubDate>Tue, 09 Dec 2025 14:32:42 +0800</pubDate>
             
-            <guid>http://localhost:57610/posts/flipfocuspp/</guid>
+            <guid>http://localhost:1313/posts/flipfocuspp/</guid>
             <description>&lt;h1 id=&#34;privacy-policy&#34;&gt;Privacy Policy&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Last Updated: December 10, 2025&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
