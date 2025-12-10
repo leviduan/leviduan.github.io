@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Levi&#39;s Blog</title>
-    <link>http://localhost:50486/</link>
+    <link>http://localhost:57610/</link>
     <description>Recent content on Levi&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50486/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:57610/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>http://localhost:50486/about/</link>
+      <link>http://localhost:57610/about/</link>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50486/about/</guid>
+      <guid>http://localhost:57610/about/</guid>
       <description>&lt;p&gt;Hi, I&amp;rsquo;m &lt;strong&gt;Levi Duan&lt;/strong&gt;! 👋&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a software developer passionate about:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;iOS Development&lt;/li&gt;&#xA;&lt;li&gt;React Native&lt;/li&gt;&#xA;&lt;li&gt;Mac Development&lt;/li&gt;&#xA;&lt;li&gt;Front-end Technologies&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;Connection Not Perfection&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>FlipFocus - Product Documentation</title>
-      <link>http://localhost:50486/posts/flipfocus/</link>
+      <link>http://localhost:57610/posts/flipfocus/</link>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50486/posts/flipfocus/</guid>
+      <guid>http://localhost:57610/posts/flipfocus/</guid>
       <description>&lt;h2 id=&#34;product-overview&#34;&gt;Product Overview&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;FlipFocus&lt;/strong&gt; is a minimalist flip clock application with an integrated Pomodoro timer, designed to help users stay focused and productive. The app features a beautiful flip clock display, customizable themes, and seamless integration with iOS system features like Live Activity and Dynamic Island.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;target-users&#34;&gt;Target Users&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;User Type&lt;/th&gt;&#xA;          &lt;th&gt;Use Case&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Students&lt;/td&gt;&#xA;          &lt;td&gt;Study timer, exam preparation, focus sessions&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Remote Workers&lt;/td&gt;&#xA;          &lt;td&gt;Work sprints, meeting countdowns, desk clock&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Creatives&lt;/td&gt;&#xA;          &lt;td&gt;Deep work sessions, distraction-free environment&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;General Users&lt;/td&gt;&#xA;          &lt;td&gt;Bedside clock, aesthetic desk display&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;core-features&#34;&gt;Core Features&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-flip-clock-display&#34;&gt;1. Flip Clock Display&lt;/h3&gt;&#xA;&lt;p&gt;A classic flip clock with smooth page-turning animations.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Privacy Policy - FlipFocus</title>
-      <link>http://localhost:50486/posts/flipfocuspp/</link>
+      <link>http://localhost:57610/posts/flipfocuspp/</link>
       <pubDate>Tue, 09 Dec 2025 14:32:42 +0800</pubDate>
-      <guid>http://localhost:50486/posts/flipfocuspp/</guid>
+      <guid>http://localhost:57610/posts/flipfocuspp/</guid>
       <description>&lt;h1 id=&#34;privacy-policy&#34;&gt;Privacy Policy&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Last Updated: December 10, 2025&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Welcome to FlipFocus (&amp;ldquo;we,&amp;rdquo; &amp;ldquo;our,&amp;rdquo; or &amp;ldquo;us&amp;rdquo;). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application FlipFocus (the &amp;ldquo;App&amp;rdquo;).&lt;/p&gt;&#xA;&lt;p&gt;By using the App, you agree to the collection and use of information in accordance with this Privacy Policy.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;information-we-collect&#34;&gt;Information We Collect&lt;/h2&gt;&#xA;&lt;h3 id=&#34;data-collected-by-flipfocus&#34;&gt;Data Collected by FlipFocus&lt;/h3&gt;&#xA;&lt;p&gt;FlipFocus does not collect any personal data directly. We do not collect, store, or transmit:&lt;/p&gt;</description>
     </item>
   </channel>

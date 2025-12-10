@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Levi&#39;s Blog</title>
-    <link>http://localhost:50486/tags/</link>
+    <link>http://localhost:57610/tags/</link>
     <description>Recent content in Tags on Levi&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50486/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:57610/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IOS</title>
-      <link>http://localhost:50486/tags/ios/</link>
+      <link>http://localhost:57610/tags/ios/</link>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:50486/tags/ios/</guid>
+      <guid>http://localhost:57610/tags/ios/</guid>
       <description></description>
     </item>
     <item>
       <title>Demo</title>
-      <link>http://localhost:50486/tags/demo/</link>
+      <link>http://localhost:57610/tags/demo/</link>
       <pubDate>Tue, 09 Dec 2025 14:32:42 +0800</pubDate>
-      <guid>http://localhost:50486/tags/demo/</guid>
+      <guid>http://localhost:57610/tags/demo/</guid>
       <description></description>
     </item>
   </channel>
