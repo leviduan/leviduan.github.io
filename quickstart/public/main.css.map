@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/Users/levi/Code/blog/2025BlogServer/quickstart",
+	"sourceRoot": "/Users/levi/Code/2025BlogServer/quickstart",
 	"sources": [
 		"themes/hello-friend-ng/assets/scss/main.scss",
 		"themes/hello-friend-ng/assets/scss/_normalize.scss",

@@ -2,6 +2,7 @@ baseURL = 'https://leviduan.github.io/'
 languageCode = 'en-us'
 title = "Levi's Blog"
 theme = 'hello-friend-ng'
+disqusShortname = "https-leviduan-github-io"
 
 [params]
   # 日期格式
