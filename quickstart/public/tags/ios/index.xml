@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IOS on Levi&#39;s Blog</title>
-    <link>http://localhost:1313/tags/ios/</link>
+    <link>http://localhost:62328/tags/ios/</link>
     <description>Recent content in IOS on Levi&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:62328/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FlipFocus - Product Documentation</title>
-      <link>http://localhost:1313/posts/flipfocus/</link>
+      <link>http://localhost:62328/posts/flipfocus/</link>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/flipfocus/</guid>
+      <guid>http://localhost:62328/posts/flipfocus/</guid>
       <description>&lt;h2 id=&#34;product-overview&#34;&gt;Product Overview&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;FlipFocus&lt;/strong&gt; is a minimalist flip clock application with an integrated Pomodoro timer, designed to help users stay focused and productive. The app features a beautiful flip clock display, customizable themes, and seamless integration with iOS system features like Live Activity and Dynamic Island.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;target-users&#34;&gt;Target Users&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;User Type&lt;/th&gt;&#xA;          &lt;th&gt;Use Case&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Students&lt;/td&gt;&#xA;          &lt;td&gt;Study timer, exam preparation, focus sessions&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Remote Workers&lt;/td&gt;&#xA;          &lt;td&gt;Work sprints, meeting countdowns, desk clock&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Creatives&lt;/td&gt;&#xA;          &lt;td&gt;Deep work sessions, distraction-free environment&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;General Users&lt;/td&gt;&#xA;          &lt;td&gt;Bedside clock, aesthetic desk display&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;core-features&#34;&gt;Core Features&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-flip-clock-display&#34;&gt;1. Flip Clock Display&lt;/h3&gt;&#xA;&lt;p&gt;A classic flip clock with smooth page-turning animations.&lt;/p&gt;</description>
     </item>
   </channel>
