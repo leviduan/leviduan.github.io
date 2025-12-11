@@ -1,836 +1,190 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>FlipFocus - Product Documentation</title><link>https://leviduan.github.io/posts/flipfocus/</link><pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/flipfocus/</guid><description>&lt;h2 id="product-overview"&gt;Product Overview&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;FlipFocus&lt;/strong&gt; is a minimalist flip clock application with an integrated Pomodoro timer, designed to help users stay focused and productive. The app features a beautiful flip clock display, customizable themes, and seamless integration with iOS system features like Live Activity and Dynamic Island.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="target-users"&gt;Target Users&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;User Type&lt;/th&gt;
-&lt;th&gt;Use Case&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Students&lt;/td&gt;
-&lt;td&gt;Study timer, exam preparation, focus sessions&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Remote Workers&lt;/td&gt;
-&lt;td&gt;Work sprints, meeting countdowns, desk clock&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Creatives&lt;/td&gt;
-&lt;td&gt;Deep work sessions, distraction-free environment&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;General Users&lt;/td&gt;
-&lt;td&gt;Bedside clock, aesthetic desk display&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h2 id="core-features"&gt;Core Features&lt;/h2&gt;
-&lt;h3 id="1-flip-clock-display"&gt;1. Flip Clock Display&lt;/h3&gt;
-&lt;p&gt;A classic flip clock with smooth page-turning animations.&lt;/p&gt;</description><content type="html"><![CDATA[<h2 id="product-overview">Product Overview</h2>
-<p><strong>FlipFocus</strong> is a minimalist flip clock application with an integrated Pomodoro timer, designed to help users stay focused and productive. The app features a beautiful flip clock display, customizable themes, and seamless integration with iOS system features like Live Activity and Dynamic Island.</p>
-<hr>
-<h2 id="target-users">Target Users</h2>
-<table>
-  <thead>
-      <tr>
-          <th>User Type</th>
-          <th>Use Case</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Students</td>
-          <td>Study timer, exam preparation, focus sessions</td>
-      </tr>
-      <tr>
-          <td>Remote Workers</td>
-          <td>Work sprints, meeting countdowns, desk clock</td>
-      </tr>
-      <tr>
-          <td>Creatives</td>
-          <td>Deep work sessions, distraction-free environment</td>
-      </tr>
-      <tr>
-          <td>General Users</td>
-          <td>Bedside clock, aesthetic desk display</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="core-features">Core Features</h2>
-<h3 id="1-flip-clock-display">1. Flip Clock Display</h3>
-<p>A classic flip clock with smooth page-turning animations.</p>
-<p><strong>Specifications:</strong></p>
-<ul>
-<li>Real-time clock display with hours and minutes</li>
-<li>Smooth flip animation for digit transitions (1.5s duration)</li>
-<li>Breathing colon animation (optional)</li>
-<li>Auto-hide UI controls after 5 seconds of inactivity</li>
-<li>Tap to reveal controls</li>
-</ul>
-<p><strong>Technical Details:</strong></p>
-<ul>
-<li>Animation: Custom SwiftUI flip animation using 3D rotation</li>
-<li>Update frequency: 1 second interval</li>
-<li>Font: System font with customizable weight and size</li>
-</ul>
-<hr>
-<h3 id="2-pomodoro-timer">2. Pomodoro Timer</h3>
-<p>A productivity timer based on the Pomodoro Technique.</p>
-<p><strong>Timer Configuration:</strong></p>
-<table>
-  <thead>
-      <tr>
-          <th>Session Type</th>
-          <th>Duration</th>
-          <th>Color</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Focus</td>
-          <td>25 minutes</td>
-          <td>Red</td>
-      </tr>
-      <tr>
-          <td>Short Break</td>
-          <td>5 minutes</td>
-          <td>Green</td>
-      </tr>
-      <tr>
-          <td>Long Break</td>
-          <td>15 minutes</td>
-          <td>Green</td>
-      </tr>
-      <tr>
-          <td>Paused</td>
-          <td>-</td>
-          <td>Yellow</td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Cycle Structure:</strong></p>
-<pre><code>Round 1: Focus (25m) → Short Break (5m)
-Round 2: Focus (25m) → Short Break (5m)
-Round 3: Focus (25m) → Short Break (5m)
-Round 4: Focus (25m) → Long Break (15m)
-→ Cycle repeats
-</code></pre>
-<p><strong>Controls:</strong></p>
-<ul>
-<li>Play/Pause: Start or pause the current session</li>
-<li>Reset: Return to initial state (Focus, 25:00)</li>
-<li>Skip: Jump to the next session</li>
-</ul>
-<p><strong>Visual Indicators:</strong></p>
-<ul>
-<li>Circular progress ring showing remaining time</li>
-<li>Round indicator dots (4 dots showing completed rounds)</li>
-<li>State icon (flame for focus, leaf for break, pause for paused)</li>
-</ul>
-<hr>
-<h3 id="3-live-activity--dynamic-island">3. Live Activity &amp; Dynamic Island</h3>
-<p>Real-time timer display on Lock Screen and Dynamic Island.</p>
-<p><strong>Supported Devices:</strong></p>
-<ul>
-<li>Live Activity: iPhone with iOS 16.1+</li>
-<li>Dynamic Island: iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 series</li>
-</ul>
-<p><strong>Display Modes:</strong></p>
-<table>
-  <thead>
-      <tr>
-          <th>Mode</th>
-          <th>Left Side</th>
-          <th>Right Side</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Compact</td>
-          <td>State icon</td>
-          <td>Progress ring</td>
-      </tr>
-      <tr>
-          <td>Expanded</td>
-          <td>Icon + State text</td>
-          <td>Round indicators</td>
-      </tr>
-      <tr>
-          <td>Minimal</td>
-          <td>Progress ring</td>
-          <td>-</td>
-      </tr>
-      <tr>
-          <td>Lock Screen</td>
-          <td>Timer in ring</td>
-          <td>State + Rounds</td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Data Sync:</strong></p>
-<ul>
-<li>Updates every second during active timer</li>
-<li>Displays paused time when timer is paused</li>
-<li>Ends automatically when timer is reset</li>
-</ul>
-<hr>
-<h3 id="4-home-screen-widgets">4. Home Screen Widgets</h3>
-<p>Quick glance widgets for the Home Screen.</p>
-<p><strong>Widget Sizes:</strong></p>
-<table>
-  <thead>
-      <tr>
-          <th>Size</th>
-          <th>Content</th>
-          <th>Dimensions</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Small</td>
-          <td>Time display</td>
-          <td>155 x 155 pt</td>
-      </tr>
-      <tr>
-          <td>Medium</td>
-          <td>Date + Time</td>
-          <td>329 x 155 pt</td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Features:</strong></p>
-<ul>
-<li>Light and dark mode support</li>
-<li>Rounded font design</li>
-<li>Monospaced digits for consistent layout</li>
-<li>Updates every minute</li>
-</ul>
-<hr>
-<h3 id="5-customization-options">5. Customization Options</h3>
-<p><strong>Background Colors (16 options):</strong></p>
-<table>
-  <thead>
-      <tr>
-          <th>Category</th>
-          <th>Colors</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Blacks</td>
-          <td>Pure Black, Charcoal, Dark Gray, Graphite</td>
-      </tr>
-      <tr>
-          <td>Blues</td>
-          <td>Navy, Midnight, Ocean, Slate</td>
-      </tr>
-      <tr>
-          <td>Greens</td>
-          <td>Dark Green, Forest</td>
-      </tr>
-      <tr>
-          <td>Browns</td>
-          <td>Dark Brown, Espresso</td>
-      </tr>
-      <tr>
-          <td>Reds</td>
-          <td>Dark Red, Wine</td>
-      </tr>
-      <tr>
-          <td>Purples</td>
-          <td>Dark Purple, Plum</td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Adjustable Settings:</strong></p>
-<ul>
-<li>Clock font size (0.8x - 1.2x)</li>
-<li>Clock digit opacity (50% - 100%)</li>
-<li>Colon opacity (30% - 80%)</li>
-<li>Colon breathing animation (on/off)</li>
-<li>Pomodoro font size (0.8x - 1.2x)</li>
-<li>Pomodoro opacity (50% - 100%)</li>
-</ul>
-<hr>
-<h3 id="6-localization">6. Localization</h3>
-<p><strong>Supported Languages (30):</strong></p>
-<table>
-  <thead>
-      <tr>
-          <th>Region</th>
-          <th>Languages</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>East Asia</td>
-          <td>Chinese (Simplified), Chinese (Traditional), Japanese, Korean</td>
-      </tr>
-      <tr>
-          <td>South Asia</td>
-          <td>Hindi</td>
-      </tr>
-      <tr>
-          <td>Southeast Asia</td>
-          <td>Indonesian, Malay, Thai, Vietnamese</td>
-      </tr>
-      <tr>
-          <td>Middle East</td>
-          <td>Arabic, Hebrew, Turkish</td>
-      </tr>
-      <tr>
-          <td>Europe</td>
-          <td>English, German, French, Spanish, Portuguese, Italian, Dutch, Polish, Russian, Ukrainian, Czech, Romanian, Hungarian, Greek, Swedish, Danish, Norwegian, Finnish</td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Localized Content:</strong></p>
-<ul>
-<li>All UI text</li>
-<li>Settings labels</li>
-<li>Background color names</li>
-<li>App name on Home Screen (via InfoPlist.strings)</li>
-</ul>
-<hr>
-<h2 id="user-flows">User Flows</h2>
-<h3 id="flow-1-basic-clock-usage">Flow 1: Basic Clock Usage</h3>
-<pre><code>1. Open App → Flip Clock displayed
-2. Wait 5s → Controls auto-hide
-3. Tap screen → Controls appear
-4. Tap Settings → Customize appearance
-5. Swipe left → Switch to Pomodoro
-</code></pre>
-<h3 id="flow-2-pomodoro-session">Flow 2: Pomodoro Session</h3>
-<pre><code>1. Swipe to Pomodoro view
-2. Tap Play → Timer starts (25:00)
-3. Live Activity appears on Lock Screen
-4. Timer counts down
-5. At 0:00 → Haptic feedback → Auto-switch to Break
-6. Complete 4 rounds → Long Break
-7. Tap Reset → Return to initial state
-</code></pre>
-<h3 id="flow-3-widget-setup">Flow 3: Widget Setup</h3>
-<pre><code>1. Long press Home Screen → Edit mode
-2. Tap + → Search &quot;FlipFocus&quot;
-3. Select widget size (Small/Medium)
-4. Place widget → Done
-</code></pre>
-<hr>
-<h2 id="technical-architecture">Technical Architecture</h2>
-<h3 id="project-structure">Project Structure</h3>
-<pre><code>FashionClock/
-├── FashionClock/
-│   ├── FashionClockApp.swift      # App entry point
-│   ├── ContentView.swift           # Main container view
-│   ├── Views/
-│   │   ├── FlipClockView.swift     # Flip clock display
-│   │   ├── FlipDigitView.swift     # Single digit with animation
-│   │   └── PomodoroView.swift      # Pomodoro timer
-│   ├── Models/
-│   │   ├── Settings.swift          # App settings (ObservableObject)
-│   │   ├── PomodoroTimer.swift     # Timer logic
-│   │   └── LiveActivityManager.swift # Live Activity control
-│   ├── Ads/
-│   │   └── AdManager.swift         # Google AdMob integration
-│   └── Resources/
-│       └── [30 language].lproj/    # Localization files
-│
-└── FlipFocusWidget/
-    ├── FlipFocusWidget.swift       # Home Screen widget
-    ├── FlipFocusWidgetLiveActivity.swift # Live Activity UI
-    └── FlipFocusWidgetBundle.swift # Widget bundle
-</code></pre>
-<h3 id="key-technologies">Key Technologies</h3>
-<table>
-  <thead>
-      <tr>
-          <th>Technology</th>
-          <th>Usage</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>SwiftUI</td>
-          <td>All UI components</td>
-      </tr>
-      <tr>
-          <td>ActivityKit</td>
-          <td>Live Activity &amp; Dynamic Island</td>
-      </tr>
-      <tr>
-          <td>WidgetKit</td>
-          <td>Home Screen widgets</td>
-      </tr>
-      <tr>
-          <td>Combine</td>
-          <td>Reactive data binding</td>
-      </tr>
-      <tr>
-          <td>UserDefaults</td>
-          <td>Settings persistence</td>
-      </tr>
-      <tr>
-          <td>Google AdMob</td>
-          <td>Monetization</td>
-      </tr>
-      <tr>
-          <td>UMP SDK</td>
-          <td>GDPR consent management</td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="minimum-requirements">Minimum Requirements</h3>
-<table>
-  <thead>
-      <tr>
-          <th>Requirement</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>iOS Version</td>
-          <td>16.0+</td>
-      </tr>
-      <tr>
-          <td>Widget Extension</td>
-          <td>iOS 17.0+</td>
-      </tr>
-      <tr>
-          <td>Live Activity</td>
-          <td>iOS 16.2+</td>
-      </tr>
-      <tr>
-          <td>Dynamic Island</td>
-          <td>iPhone 14 Pro+</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="monetization">Monetization</h2>
-<h3 id="ad-strategy">Ad Strategy</h3>
-<table>
-  <thead>
-      <tr>
-          <th>Ad Type</th>
-          <th>Placement</th>
-          <th>First Day</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Banner</td>
-          <td>Settings page bottom</td>
-          <td>Shown</td>
-      </tr>
-      <tr>
-          <td>Interstitial</td>
-          <td>After closing Settings</td>
-          <td>Hidden</td>
-      </tr>
-      <tr>
-          <td>Rewarded</td>
-          <td>Future feature</td>
-          <td>Hidden</td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>First Day Policy:</strong></p>
-<ul>
-<li>Banner ads: Always shown</li>
-<li>Interstitial ads: Hidden for first 24 hours after install</li>
-<li>Improves user experience and retention</li>
-</ul>
-<h3 id="ad-networks">Ad Networks</h3>
-<ul>
-<li>Google AdMob (primary)</li>
-<li>SKAdNetwork integration for attribution</li>
-</ul>
-<hr>
-<h2 id="privacy--compliance">Privacy &amp; Compliance</h2>
-<h3 id="data-collection">Data Collection</h3>
-<table>
-  <thead>
-      <tr>
-          <th>Data Type</th>
-          <th>Collected</th>
-          <th>Purpose</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Device ID</td>
-          <td>Yes (AdMob)</td>
-          <td>Advertising</td>
-      </tr>
-      <tr>
-          <td>Usage Data</td>
-          <td>Yes (AdMob)</td>
-          <td>Analytics</td>
-      </tr>
-      <tr>
-          <td>Personal Data</td>
-          <td>No</td>
-          <td>-</td>
-      </tr>
-      <tr>
-          <td>Location</td>
-          <td>No</td>
-          <td>-</td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="compliance">Compliance</h3>
-<ul>
-<li>GDPR: UMP SDK for consent management</li>
-<li>CCPA: Supported via UMP SDK</li>
-<li>ATT: App Tracking Transparency implemented</li>
-<li>COPPA: Not targeted at children (4+ rating)</li>
-</ul>
-<hr>
-<h2 id="version-history">Version History</h2>
-<h3 id="version-100-initial-release">Version 1.0.0 (Initial Release)</h3>
-<p><strong>Features:</strong></p>
-<ul>
-<li>Flip clock with smooth animations</li>
-<li>Pomodoro timer (25/5/15 min)</li>
-<li>Live Activity &amp; Dynamic Island support</li>
-<li>Home Screen widgets (Small, Medium)</li>
-<li>16 background color options</li>
-<li>30 language support</li>
-<li>Google AdMob integration</li>
-<li>Accessibility support (VoiceOver)</li>
-</ul>
-<hr>
-<h2 id="future-roadmap">Future Roadmap</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Version</th>
-          <th>Planned Features</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1.1</td>
-          <td>Custom timer durations, Sound notifications</td>
-      </tr>
-      <tr>
-          <td>1.2</td>
-          <td>Apple Watch app</td>
-      </tr>
-      <tr>
-          <td>1.3</td>
-          <td>Statistics &amp; history tracking</td>
-      </tr>
-      <tr>
-          <td>1.4</td>
-          <td>iCloud sync, Multiple timer presets</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="support-information">Support Information</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Resource</th>
-          <th>Link</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Email</td>
-          <td><a href="mailto:levi.duan.arts@gmail.com">levi.duan.arts@gmail.com</a></td>
-      </tr>
-      <tr>
-          <td>App Store</td>
-          <td><a href="https://apps.apple.com/app/id6756367564">https://apps.apple.com/app/id6756367564</a></td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="document-info">Document Info</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Field</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Version</td>
-          <td>1.0</td>
-      </tr>
-      <tr>
-          <td>Last Updated</td>
-          <td>December 2025</td>
-      </tr>
-      <tr>
-          <td>Author</td>
-          <td>Levi</td>
-      </tr>
-  </tbody>
-</table>
-]]></content></item><item><title>Terms of Service - SG Bus Lah!</title><link>https://leviduan.github.io/posts/sgbuslahtermsofservice/</link><pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/sgbuslahtermsofservice/</guid><description>&lt;h2 id="product-overview"&gt;Product Overview&lt;/h2&gt;
-&lt;h1 id="terms-of-service--服务条款"&gt;Terms of Service / 服务条款&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Last Updated: December 2024&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;最后更新：2024年12月&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="english-version"&gt;English Version&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;This Terms of Service should be read together with our Privacy Policy.&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id="1-acceptance-of-terms"&gt;1. Acceptance of Terms&lt;/h3&gt;
-&lt;p&gt;By downloading, installing, or using SG Bus Lah! (&amp;ldquo;the App&amp;rdquo;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.&lt;/p&gt;
-&lt;h3 id="2-description-of-service"&gt;2. Description of Service&lt;/h3&gt;
-&lt;p&gt;SG Bus Lah! is a public transport companion app for Singapore that provides:&lt;/p&gt;</description><content type="html"><![CDATA[<h2 id="product-overview">Product Overview</h2>
-<h1 id="terms-of-service--服务条款">Terms of Service / 服务条款</h1>
-<p><strong>Last Updated: December 2024</strong></p>
-<p><strong>最后更新：2024年12月</strong></p>
-<hr>
-<h2 id="english-version">English Version</h2>
-<p><strong>This Terms of Service should be read together with our Privacy Policy.</strong></p>
-<h3 id="1-acceptance-of-terms">1. Acceptance of Terms</h3>
-<p>By downloading, installing, or using SG Bus Lah! (&ldquo;the App&rdquo;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.</p>
-<h3 id="2-description-of-service">2. Description of Service</h3>
-<p>SG Bus Lah! is a public transport companion app for Singapore that provides:</p>
-<ul>
-<li>Real-time bus arrival information</li>
-<li>MRT/LRT route planning</li>
-<li>Nearby stops discovery</li>
-<li>Trip tracking and navigation</li>
-<li>Arrival alerts and notifications</li>
-</ul>
-<h3 id="3-data-sources">3. Data Sources</h3>
-<p>The App uses data from:</p>
-<ul>
-<li><strong>LTA DataMall</strong>: Real-time bus arrival and route information</li>
-<li><strong>OneMap</strong>: Map and route planning services</li>
-</ul>
-<p>All transport data is owned and provided by their respective providers. We do not create or modify transport data.</p>
-<p>We do not guarantee the accuracy, completeness, or timeliness of this data. The actual bus arrival times may differ from the information displayed.</p>
-<h3 id="4-use-of-the-app">4. Use of the App</h3>
-<p>You agree to:</p>
-<ul>
-<li>Use the App only for personal, non-commercial purposes</li>
-<li>Not attempt to reverse engineer, modify, or distribute the App</li>
-<li>Not use the App in any way that violates applicable laws</li>
-<li>Not interfere with or disrupt the App&rsquo;s functionality</li>
-</ul>
-<h3 id="5-location-permission-use">5. Location Permission Use</h3>
-<p>The App may request access to your device location in order to show nearby bus stops and plan routes. Location data is processed only on-device and is not stored on our servers. You can control location permissions through your device settings at any time.</p>
-<h3 id="6-advertisements">6. Advertisements</h3>
-<p>The App displays advertisements provided by Google AdMob. By using the App, you acknowledge that:</p>
-<ul>
-<li>Ads may be personalized based on your device information</li>
-<li>You can opt-out of personalized ads via App Tracking Transparency</li>
-<li>Ad content is provided by third parties and we are not responsible for it</li>
-</ul>
-<h3 id="7-in-app-purchases">7. In-App Purchases</h3>
-<p>The App offers an optional &ldquo;Remove Ads&rdquo; purchase. All purchases are:</p>
-<ul>
-<li>Final and non-refundable (except as required by law)</li>
-<li>Processed through Apple&rsquo;s App Store</li>
-<li>Subject to Apple&rsquo;s terms and conditions</li>
-</ul>
-<h3 id="8-disclaimer-of-warranties">8. Disclaimer of Warranties</h3>
-<p>THE APP IS PROVIDED &ldquo;AS IS&rdquo; WITHOUT WARRANTY OF ANY KIND. WE DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO:</p>
-<ul>
-<li>Accuracy of bus arrival times</li>
-<li>Availability of the service</li>
-<li>Fitness for a particular purpose</li>
-<li>Non-infringement</li>
-</ul>
-<h3 id="9-limitation-of-liability">9. Limitation of Liability</h3>
-<p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR:</p>
-<ul>
-<li>Any indirect, incidental, or consequential damages</li>
-<li>Loss arising from reliance on information provided by the App</li>
-<li>Missed buses or transportation delays</li>
-<li>Any damages exceeding the amount you paid for the App (if any)</li>
-</ul>
-<h3 id="10-changes-to-terms">10. Changes to Terms</h3>
-<p>We reserve the right to modify these terms at any time. Continued use of the App after changes constitutes acceptance of the new terms.</p>
-<h3 id="11-severability">11. Severability</h3>
-<p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect.</p>
-<h3 id="12-entire-agreement">12. Entire Agreement</h3>
-<p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding the use of the App and supersede all prior agreements and understandings.</p>
-<h3 id="13-governing-law">13. Governing Law</h3>
-<p>These terms shall be governed by and construed in accordance with the laws of Singapore.</p>
-<h3 id="14-contact">14. Contact</h3>
-<p>For questions about these Terms, contact us at: <a href="mailto:levi.duan.arts@gmail.com">levi.duan.arts@gmail.com</a></p>
-<hr>
-<h2 id="中文版本">中文版本</h2>
-<p><strong>本服务条款应与我们的隐私政策一并阅读。</strong></p>
-<h3 id="1-条款接受">1. 条款接受</h3>
-<p>下载、安装或使用 SG Bus Lah!（以下简称&quot;本应用&quot;），即表示您同意受本服务条款的约束。如果您不同意这些条款，请不要使用本应用。</p>
-<h3 id="2-服务描述">2. 服务描述</h3>
-<p>SG Bus Lah! 是新加坡公共交通伴侣应用，提供：</p>
-<ul>
-<li>实时公交到站信息</li>
-<li>地铁/轻轨路线规划</li>
-<li>附近站点发现</li>
-<li>行程追踪和导航</li>
-<li>到站提醒和通知</li>
-</ul>
-<h3 id="3-数据来源">3. 数据来源</h3>
-<p>本应用使用以下数据：</p>
-<ul>
-<li><strong>LTA DataMall</strong>：实时公交到站和路线信息</li>
-<li><strong>OneMap</strong>：地图和路线规划服务</li>
-</ul>
-<p>所有公共交通数据均由相关数据提供方拥有并提供，我们不创建或修改交通数据。</p>
-<p>我们不保证这些数据的准确性、完整性或时效性。实际公交到站时间可能与显示信息有所不同。</p>
-<h3 id="4-应用使用">4. 应用使用</h3>
-<p>您同意：</p>
-<ul>
-<li>仅将本应用用于个人非商业目的</li>
-<li>不尝试逆向工程、修改或分发本应用</li>
-<li>不以任何违反适用法律的方式使用本应用</li>
-<li>不干扰或破坏本应用的功能</li>
-</ul>
-<h3 id="5-定位权限使用">5. 定位权限使用</h3>
-<p>本应用可能会请求访问您的设备定位，用于显示附近公交站点和路线规划。定位数据仅在设备本地处理，我们不会将其存储到服务器。您可以随时通过设备设置控制定位权限。</p>
-<h3 id="6-广告">6. 广告</h3>
-<p>本应用展示由 Google AdMob 提供的广告。使用本应用即表示您确认：</p>
-<ul>
-<li>广告可能根据您的设备信息进行个性化</li>
-<li>您可以通过 App Tracking Transparency 选择退出个性化广告</li>
-<li>广告内容由第三方提供，我们对此不承担责任</li>
-</ul>
-<h3 id="7-应用内购买">7. 应用内购买</h3>
-<p>本应用提供可选的&quot;移除广告&quot;购买。所有购买：</p>
-<ul>
-<li>最终且不可退款（法律要求除外）</li>
-<li>通过 Apple App Store 处理</li>
-<li>受 Apple 条款和条件约束</li>
-</ul>
-<h3 id="8-免责声明">8. 免责声明</h3>
-<p>本应用按&quot;原样&quot;提供，不提供任何形式的保证。我们否认所有保证，包括但不限于：</p>
-<ul>
-<li>公交到站时间的准确性</li>
-<li>服务的可用性</li>
-<li>特定用途的适用性</li>
-<li>不侵权</li>
-</ul>
-<h3 id="9-责任限制">9. 责任限制</h3>
-<p>在法律允许的最大范围内，我们不对以下情况承担责任：</p>
-<ul>
-<li>任何间接、附带或后果性损害</li>
-<li>因依赖本应用提供的信息而造成的损失</li>
-<li>错过公交或交通延误</li>
-<li>超过您为本应用支付金额（如有）的任何损害</li>
-</ul>
-<h3 id="10-条款变更">10. 条款变更</h3>
-<p>我们保留随时修改这些条款的权利。条款变更后继续使用本应用即表示接受新条款。</p>
-<h3 id="11-可分割性">11. 可分割性</h3>
-<p>如果本条款的任何条款被认定为不可执行或无效，该条款将被限制或消除至最小必要程度，以使本条款的其余部分仍然有效和可执行。</p>
-<h3 id="12-完整协议">12. 完整协议</h3>
-<p>本条款与我们的隐私政策共同构成您与我们之间关于使用本应用的完整协议，并取代所有先前的协议和理解。</p>
-<h3 id="13-适用法律">13. 适用法律</h3>
-<p>本条款应受新加坡法律管辖并据其解释。</p>
-<h3 id="14-联系方式">14. 联系方式</h3>
-<p>如对本条款有疑问，请联系：levi.duan.arts@gmail.com</p>
-<hr>
-<p>© 2024 SG Bus Lah! All rights reserved.</p>
-]]></content></item><item><title>Privacy Policy - FlipFocus</title><link>https://leviduan.github.io/posts/flipfocuspp/</link><pubDate>Tue, 09 Dec 2025 14:32:42 +0800</pubDate><guid>https://leviduan.github.io/posts/flipfocuspp/</guid><description>&lt;h1 id="privacy-policy--隐私政策--プライバシーポリシー"&gt;Privacy Policy / 隐私政策 / プライバシーポリシー&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Multi-Language Privacy Policy for FlipFocus&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;#&lt;/th&gt;
-&lt;th&gt;Language&lt;/th&gt;
-&lt;th&gt;Section&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;&lt;a href="#1-english"&gt;English&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Privacy Policy&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;&lt;a href="#2-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87"&gt;简体中文&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;隐私政策&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;&lt;a href="#3-%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87"&gt;繁體中文&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;隱私權政策&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;&lt;a href="#4-%E6%97%A5%E6%9C%AC%E8%AA%9E"&gt;日本語&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;プライバシーポリシー&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;&lt;a href="#5-%ED%95%9C%EA%B5%AD%EC%96%B4"&gt;한국어&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;개인정보처리방침&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;td&gt;&lt;a href="#6-deutsch"&gt;Deutsch&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Datenschutzrichtlinie&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;7&lt;/td&gt;
-&lt;td&gt;&lt;a href="#7-fran%C3%A7ais"&gt;Français&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Politique de Confidentialité&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;td&gt;&lt;a href="#8-espa%C3%B1ol"&gt;Español&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Política de Privacidad&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;td&gt;&lt;a href="#9-portugu%C3%AAs"&gt;Português&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Política de Privacidade&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;&lt;a href="#10-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9"&gt;Русский&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Политика конфиденциальности&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;11&lt;/td&gt;
-&lt;td&gt;&lt;a href="#11-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9"&gt;العربية&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;سياسة الخصوصية&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;12&lt;/td&gt;
-&lt;td&gt;&lt;a href="#12-%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%80"&gt;हिन्दी&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;गोपनीयता नीति&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;13&lt;/td&gt;
-&lt;td&gt;&lt;a href="#13-ti%E1%BA%BFng-vi%E1%BB%87t"&gt;Tiếng Việt&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Chính Sách Bảo Mật&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;14&lt;/td&gt;
-&lt;td&gt;&lt;a href="#14-%E0%B9%84%E0%B8%97%E0%B8%A2"&gt;ไทย&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;นโยบายความเป็นส่วนตัว&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;15&lt;/td&gt;
-&lt;td&gt;&lt;a href="#15-italiano"&gt;Italiano&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Informativa sulla Privacy&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h1 id="1-english"&gt;1. English&lt;/h1&gt;
-&lt;h2 id="privacy-policy"&gt;Privacy Policy&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Last Updated: December 10, 2025&lt;/strong&gt;&lt;/p&gt;</description><content type="html"><![CDATA[<h1 id="privacy-policy--隐私政策--プライバシーポリシー">Privacy Policy / 隐私政策 / プライバシーポリシー</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Levi Duan ">
+<meta name="description" content="Privacy Policy / 隐私政策 / プライバシーポリシー Multi-Language Privacy Policy for FlipFocus
+# Language Section 1 English Privacy Policy 2 简体中文 隐私政策 3 繁體中文 隱私權政策 4 日本語 プライバシーポリシー 5 한국어 개인정보처리방침 6 Deutsch Datenschutzrichtlinie 7 Français Politique de Confidentialité 8 Español Política de Privacidad 9 Português Política de Privacidade 10 Русский Политика конфиденциальности 11 العربية سياسة الخصوصية 12 हिन्दी गोपनीयता नीति 13 Tiếng Việt Chính Sách Bảo Mật 14 ไทย นโยบายความเป็นส่วนตัว 15 Italiano Informativa sulla Privacy 1. English Privacy Policy Last Updated: December 10, 2025
+" />
+<meta name="keywords" content="react native, iOS, front-end, Go, python, Java, C, C&#43;&#43;, leetcode, arithmetic, demo" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/posts/flipfocuspp-copy/" />
+
+
+    <title>
+        
+            Privacy Policy - FlipFocus :: Levi&#39;s Blog 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.96b3f26fd203e6e0b7624e459de234a43cea16e587f9be2bb2dda9d5ad346b24.css" integrity="sha256-lrPyb9ID5uC3Yk5FneI0pDzqFuWH&#43;b4rst2p1a00ayQ=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-go.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-java.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-swift.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-jsx.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-typescript.min.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Privacy Policy - FlipFocus">
+  <meta itemprop="description" content="Privacy Policy / 隐私政策 / プライバシーポリシー Multi-Language Privacy Policy for FlipFocus
+# Language Section 1 English Privacy Policy 2 简体中文 隐私政策 3 繁體中文 隱私權政策 4 日本語 プライバシーポリシー 5 한국어 개인정보처리방침 6 Deutsch Datenschutzrichtlinie 7 Français Politique de Confidentialité 8 Español Política de Privacidad 9 Português Política de Privacidade 10 Русский Политика конфиденциальности 11 العربية سياسة الخصوصية 12 हिन्दी गोपनीयता नीति 13 Tiếng Việt Chính Sách Bảo Mật 14 ไทย นโยบายความเป็นส่วนตัว 15 Italiano Informativa sulla Privacy 1. English Privacy Policy Last Updated: December 10, 2025">
+  <meta itemprop="datePublished" content="2025-12-09T14:32:42+08:00">
+  <meta itemprop="dateModified" content="2025-12-09T14:32:42+08:00">
+  <meta itemprop="wordCount" content="5482">
+  <meta itemprop="keywords" content="Demo">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Privacy Policy - FlipFocus">
+  <meta name="twitter:description" content="Privacy Policy / 隐私政策 / プライバシーポリシー Multi-Language Privacy Policy for FlipFocus
+# Language Section 1 English Privacy Policy 2 简体中文 隐私政策 3 繁體中文 隱私權政策 4 日本語 プライバシーポリシー 5 한국어 개인정보처리방침 6 Deutsch Datenschutzrichtlinie 7 Français Politique de Confidentialité 8 Español Política de Privacidad 9 Português Política de Privacidade 10 Русский Политика конфиденциальности 11 العربية سياسة الخصوصية 12 हिन्दी गोपनीयता नीति 13 Tiếng Việt Chính Sách Bảo Mật 14 ไทย นโยบายความเป็นส่วนตัว 15 Italiano Informativa sulla Privacy 1. English Privacy Policy Last Updated: December 10, 2025">
+
+
+
+    <meta property="og:url" content="http://localhost:1313/posts/flipfocuspp-copy/">
+  <meta property="og:site_name" content="Levi&#39;s Blog">
+  <meta property="og:title" content="Privacy Policy - FlipFocus">
+  <meta property="og:description" content="Privacy Policy / 隐私政策 / プライバシーポリシー Multi-Language Privacy Policy for FlipFocus
+# Language Section 1 English Privacy Policy 2 简体中文 隐私政策 3 繁體中文 隱私權政策 4 日本語 プライバシーポリシー 5 한국어 개인정보처리방침 6 Deutsch Datenschutzrichtlinie 7 Français Politique de Confidentialité 8 Español Política de Privacidad 9 Português Política de Privacidade 10 Русский Политика конфиденциальности 11 العربية سياسة الخصوصية 12 हिन्दी गोपनीयता नीति 13 Tiếng Việt Chính Sách Bảo Mật 14 ไทย นโยบายความเป็นส่วนตัว 15 Italiano Informativa sulla Privacy 1. English Privacy Policy Last Updated: December 10, 2025">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-12-09T14:32:42+08:00">
+    <meta property="article:modified_time" content="2025-12-09T14:32:42+08:00">
+    <meta property="article:tag" content="Demo">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2025-12-09 14:32:42 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+            
+                <li><a href="/posts/">Posts</a></li>
+            
+                <li><a href="/tags/">Tags</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+  <div class="content">
+    <main class="post">
+
+      <div class="post-info">
+        <p>
+
+          
+        </p>
+      </div>
+
+      <article>
+        <h1 class="post-title">
+          <a href="http://localhost:1313/posts/flipfocuspp-copy/">Privacy Policy - FlipFocus</a>
+        </h1>
+
+        
+
+        
+
+        
+
+        <div class="post-content">
+          <h1 id="privacy-policy--隐私政策--プライバシーポリシー">Privacy Policy / 隐私政策 / プライバシーポリシー</h1>
 <p><strong>Multi-Language Privacy Policy for FlipFocus</strong></p>
 <table>
   <thead>
@@ -2679,897 +2033,228 @@ Round 4: Focus (25m) → Long Break (15m)
 </table>
 <hr>
 <p><em>End of Privacy Policy / 隐私政策结束 / プライバシーポリシー終了</em></p>
-]]></content></item><item><title>Privacy Policy - SG Bus Lah!</title><link>https://leviduan.github.io/posts/sgbuslahpp/</link><pubDate>Tue, 09 Dec 2025 14:32:42 +0800</pubDate><guid>https://leviduan.github.io/posts/sgbuslahpp/</guid><description>&lt;h1 id="privacy-policy--隐私政策"&gt;Privacy Policy / 隐私政策&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Last Updated: December 2024&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;最后更新：2024年12月&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="english-version"&gt;English Version&lt;/h2&gt;
-&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
-&lt;p&gt;SG Bus Lah! (&amp;ldquo;we&amp;rdquo;, &amp;ldquo;our&amp;rdquo;, or &amp;ldquo;the App&amp;rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.&lt;/p&gt;
-&lt;h3 id="information-we-collect"&gt;Information We Collect&lt;/h3&gt;
-&lt;h4 id="1-location-information"&gt;1. Location Information&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;When Collected&lt;/strong&gt;: Only when you actively use features that require location (e.g., finding nearby stops, trip tracking)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Purpose&lt;/strong&gt;: To show nearby bus stops/MRT stations and provide real-time trip tracking&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Storage&lt;/strong&gt;: Location data is processed locally on your device and is not stored on our servers&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Background Location&lt;/strong&gt;: Used only during active trip tracking to provide arrival notifications. You can disable this in Settings.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="2-usage-data"&gt;2. Usage Data&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;What We Collect&lt;/strong&gt;: App interactions, feature usage patterns, crash reports&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Purpose&lt;/strong&gt;: To improve app performance and user experience&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Third-Party Analytics&lt;/strong&gt;: We use Google AdMob which may collect anonymous usage data&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="3-saved-preferences"&gt;3. Saved Preferences&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;What We Collect&lt;/strong&gt;: Favorite stops, saved routes, language preferences, theme settings&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Storage&lt;/strong&gt;: Stored locally on your device only&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Sync&lt;/strong&gt;: This data is not synced to any cloud service&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="third-party-services"&gt;Third-Party Services&lt;/h3&gt;
-&lt;h4 id="google-admob"&gt;Google AdMob&lt;/h4&gt;
-&lt;p&gt;We use Google AdMob to display advertisements. AdMob may collect:&lt;/p&gt;</description><content type="html"><![CDATA[<h1 id="privacy-policy--隐私政策">Privacy Policy / 隐私政策</h1>
-<p><strong>Last Updated: December 2024</strong></p>
-<p><strong>最后更新：2024年12月</strong></p>
-<hr>
-<h2 id="english-version">English Version</h2>
-<h3 id="introduction">Introduction</h3>
-<p>SG Bus Lah! (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;the App&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
-<h3 id="information-we-collect">Information We Collect</h3>
-<h4 id="1-location-information">1. Location Information</h4>
-<ul>
-<li><strong>When Collected</strong>: Only when you actively use features that require location (e.g., finding nearby stops, trip tracking)</li>
-<li><strong>Purpose</strong>: To show nearby bus stops/MRT stations and provide real-time trip tracking</li>
-<li><strong>Storage</strong>: Location data is processed locally on your device and is not stored on our servers</li>
-<li><strong>Background Location</strong>: Used only during active trip tracking to provide arrival notifications. You can disable this in Settings.</li>
-</ul>
-<h4 id="2-usage-data">2. Usage Data</h4>
-<ul>
-<li><strong>What We Collect</strong>: App interactions, feature usage patterns, crash reports</li>
-<li><strong>Purpose</strong>: To improve app performance and user experience</li>
-<li><strong>Third-Party Analytics</strong>: We use Google AdMob which may collect anonymous usage data</li>
-</ul>
-<h4 id="3-saved-preferences">3. Saved Preferences</h4>
-<ul>
-<li><strong>What We Collect</strong>: Favorite stops, saved routes, language preferences, theme settings</li>
-<li><strong>Storage</strong>: Stored locally on your device only</li>
-<li><strong>Sync</strong>: This data is not synced to any cloud service</li>
-</ul>
-<h3 id="third-party-services">Third-Party Services</h3>
-<h4 id="google-admob">Google AdMob</h4>
-<p>We use Google AdMob to display advertisements. AdMob may collect:</p>
-<ul>
-<li>Device identifiers (with your consent via App Tracking Transparency)</li>
-<li>IP address</li>
-<li>General location (city-level)</li>
-<li>App usage data</li>
-</ul>
-<p>For more information, see <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a></p>
-<h4 id="lta-datamall-api">LTA DataMall API</h4>
-<p>We use Singapore&rsquo;s Land Transport Authority (LTA) DataMall API to fetch real-time bus arrival and route information. This is public transport data and does not involve personal information.</p>
-<h4 id="onemap-api">OneMap API</h4>
-<p>We use Singapore&rsquo;s OneMap API for route planning and map services. No personal data is shared with this service.</p>
-<h3 id="data-sharing">Data Sharing</h3>
-<p>We do NOT:</p>
-<ul>
-<li>Sell your personal data to third parties</li>
-<li>Share your location history with anyone</li>
-<li>Store your data on external servers</li>
-<li>Create user profiles or accounts</li>
-</ul>
-<h3 id="your-rights">Your Rights</h3>
-<p>You have the right to:</p>
-<ul>
-<li><strong>Disable Location</strong>: Turn off location services for this app in your device Settings</li>
-<li><strong>Opt-out of Tracking</strong>: Deny tracking permission when prompted (iOS 14.5+)</li>
-<li><strong>Delete Local Data</strong>: Uninstall the app to remove all locally stored data</li>
-<li><strong>Disable Notifications</strong>: Turn off notifications in device Settings</li>
-</ul>
-<h3 id="childrens-privacy">Children&rsquo;s Privacy</h3>
-<p>This app is not directed to children under 13. We do not knowingly collect personal information from children.</p>
-<h3 id="data-security">Data Security</h3>
-<p>We implement appropriate security measures:</p>
-<ul>
-<li>All API communications use HTTPS encryption</li>
-<li>No personal data is transmitted to our servers</li>
-<li>Local data is protected by iOS security features</li>
-</ul>
-<h3 id="changes-to-this-policy">Changes to This Policy</h3>
-<p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the &ldquo;Last Updated&rdquo; date.</p>
-<h3 id="contact-us">Contact Us</h3>
-<p>If you have questions about this Privacy Policy, please contact us at:</p>
-<ul>
-<li>Email: <a href="mailto:levi.duan.arts@gmail.com">levi.duan.arts@gmail.com</a></li>
-</ul>
-<hr>
-<h2 id="中文版本">中文版本</h2>
-<h3 id="简介">简介</h3>
-<p>SG Bus Lah!（以下简称&quot;我们&quot;或&quot;本应用&quot;）致力于保护您的隐私。本隐私政策说明了我们在您使用本移动应用时如何收集、使用和保护您的信息。</p>
-<h3 id="我们收集的信息">我们收集的信息</h3>
-<h4 id="1-位置信息">1. 位置信息</h4>
-<ul>
-<li><strong>收集时机</strong>：仅在您主动使用需要位置的功能时（如查找附近站点、行程追踪）</li>
-<li><strong>用途</strong>：显示附近的公交站/地铁站，提供实时行程追踪</li>
-<li><strong>存储</strong>：位置数据在您的设备上本地处理，不会存储在我们的服务器上</li>
-<li><strong>后台定位</strong>：仅在活跃行程追踪期间使用，用于提供到站提醒。您可以在设置中禁用此功能。</li>
-</ul>
-<h4 id="2-使用数据">2. 使用数据</h4>
-<ul>
-<li><strong>收集内容</strong>：应用交互、功能使用模式、崩溃报告</li>
-<li><strong>用途</strong>：改善应用性能和用户体验</li>
-<li><strong>第三方分析</strong>：我们使用 Google AdMob，可能收集匿名使用数据</li>
-</ul>
-<h4 id="3-保存的偏好设置">3. 保存的偏好设置</h4>
-<ul>
-<li><strong>收集内容</strong>：收藏的站点、保存的路线、语言偏好、主题设置</li>
-<li><strong>存储</strong>：仅存储在您的设备本地</li>
-<li><strong>同步</strong>：这些数据不会同步到任何云服务</li>
-</ul>
-<h3 id="第三方服务">第三方服务</h3>
-<h4 id="google-admob-1">Google AdMob</h4>
-<p>我们使用 Google AdMob 展示广告。AdMob 可能收集：</p>
-<ul>
-<li>设备标识符（需您通过 App Tracking Transparency 授权）</li>
-<li>IP 地址</li>
-<li>大致位置（城市级别）</li>
-<li>应用使用数据</li>
-</ul>
-<p>更多信息请参阅 <a href="https://policies.google.com/privacy">Google 隐私政策</a></p>
-<h4 id="lta-datamall-api-1">LTA DataMall API</h4>
-<p>我们使用新加坡陆路交通管理局（LTA）DataMall API 获取实时公交到站和路线信息。这是公共交通数据，不涉及个人信息。</p>
-<h4 id="onemap-api-1">OneMap API</h4>
-<p>我们使用新加坡 OneMap API 进行路线规划和地图服务。不会与此服务共享任何个人数据。</p>
-<h3 id="数据共享">数据共享</h3>
-<p>我们不会：</p>
-<ul>
-<li>将您的个人数据出售给第三方</li>
-<li>与任何人分享您的位置历史</li>
-<li>将您的数据存储在外部服务器</li>
-<li>创建用户档案或账户</li>
-</ul>
-<h3 id="您的权利">您的权利</h3>
-<p>您有权：</p>
-<ul>
-<li><strong>禁用定位</strong>：在设备设置中关闭本应用的位置服务</li>
-<li><strong>拒绝追踪</strong>：在提示时拒绝追踪权限（iOS 14.5+）</li>
-<li><strong>删除本地数据</strong>：卸载应用以删除所有本地存储的数据</li>
-<li><strong>禁用通知</strong>：在设备设置中关闭通知</li>
-</ul>
-<h3 id="儿童隐私">儿童隐私</h3>
-<p>本应用不面向 13 岁以下儿童。我们不会故意收集儿童的个人信息。</p>
-<h3 id="数据安全">数据安全</h3>
-<p>我们实施适当的安全措施：</p>
-<ul>
-<li>所有 API 通信使用 HTTPS 加密</li>
-<li>不向我们的服务器传输个人数据</li>
-<li>本地数据受 iOS 安全功能保护</li>
-</ul>
-<h3 id="政策变更">政策变更</h3>
-<p>我们可能会不时更新本隐私政策。我们将通过更新&quot;最后更新&quot;日期来通知您任何变更。</p>
-<h3 id="联系我们">联系我们</h3>
-<p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：</p>
-<ul>
-<li>电子邮件：levi.duan.arts@gmail.com</li>
-</ul>
-<hr>
-<p>© 2024 SG Bus Lah! All rights reserved.</p>
-]]></content></item><item><title>SG Bus Lah! One page</title><link>https://leviduan.github.io/posts/sgbuslah/</link><pubDate>Tue, 09 Dec 2025 14:32:42 +0800</pubDate><guid>https://leviduan.github.io/posts/sgbuslah/</guid><description>&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Singapore&amp;rsquo;s Smartest Public Transport Companion&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id="-the-problem-we-solve"&gt;🎯 The Problem We Solve&lt;/h2&gt;
-&lt;h3 id="every-day-in-singapore-commuters-face-these-challenges"&gt;Every Day in Singapore, Commuters Face These Challenges:&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;&amp;ldquo;Will I miss my stop?&amp;rdquo;&lt;/strong&gt;&lt;br&gt;
-Unlike MRT trains, Singapore buses don&amp;rsquo;t announce stops. Foreign tourists and even locals often miss their destination, especially on unfamiliar routes.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&amp;ldquo;When will my bus actually arrive?&amp;rdquo;&lt;/strong&gt;&lt;br&gt;
-Bus stop displays show estimated times, but they&amp;rsquo;re not always accurate. Commuters waste time waiting or rush unnecessarily.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&amp;ldquo;How do I get there?&amp;rdquo;&lt;/strong&gt;&lt;br&gt;
-Planning trips across multiple transport modes (bus + MRT + walking) is complex. Most apps only show one mode at a time.&lt;/p&gt;</description><content type="html"><![CDATA[<blockquote>
-<p><strong>Singapore&rsquo;s Smartest Public Transport Companion</strong></p>
-</blockquote>
-<hr>
-<h2 id="-the-problem-we-solve">🎯 The Problem We Solve</h2>
-<h3 id="every-day-in-singapore-commuters-face-these-challenges">Every Day in Singapore, Commuters Face These Challenges:</h3>
-<p><strong>&ldquo;Will I miss my stop?&rdquo;</strong><br>
-Unlike MRT trains, Singapore buses don&rsquo;t announce stops. Foreign tourists and even locals often miss their destination, especially on unfamiliar routes.</p>
-<p><strong>&ldquo;When will my bus actually arrive?&rdquo;</strong><br>
-Bus stop displays show estimated times, but they&rsquo;re not always accurate. Commuters waste time waiting or rush unnecessarily.</p>
-<p><strong>&ldquo;How do I get there?&rdquo;</strong><br>
-Planning trips across multiple transport modes (bus + MRT + walking) is complex. Most apps only show one mode at a time.</p>
-<p><strong>&ldquo;Where are the nearby stops?&rdquo;</strong><br>
-New residents and tourists struggle to find bus stops and understand which services to take.</p>
-<hr>
-<h2 id="-introducing-sg-bus-lah">✨ Introducing SG Bus Lah!</h2>
-<p><img src="https://i.imgur.com/G4x53Bz.png" alt="hi"></p>
-<p><strong>Your AI-Powered Transport Assistant</strong></p>
-<p>SG Bus Lah! is the ultimate companion for navigating Singapore&rsquo;s public transport system. With real-time data, intelligent route planning, and smart arrival alerts, we make every journey effortless and stress-free.</p>
-<h3 id="-winner-features">🏆 Winner Features</h3>
-<p><strong>🔔 Never Miss Your Stop Again</strong><br>
-Our unique &ldquo;Smart Stop Alert&rdquo; uses GPS tracking to notify you exactly 1 stop before your destination. With vibration, sound, and visual alerts, you&rsquo;ll never miss your stop again.</p>
-<p><strong>⏱️ Real-Time Arrivals You Can Trust</strong><br>
-Live arrival times for all 5,000+ bus stops island-wide, powered by official LTA data. See the next 3 buses with wheelchair accessibility information.</p>
-<p><strong>🗺️ One-Tap Journey Planning</strong><br>
-Planning a trip? Just enter your destination. We&rsquo;ll calculate the best route combining buses, MRT, and walking - with fare estimates and journey time.</p>
-<p><strong>📍 Live Trip Tracking</strong><br>
-Track your journey in real-time on an interactive map. See exactly where you are on the route, how many stops remaining, and when you&rsquo;ll arrive.</p>
-<p><strong>⭐ Your Personal Transport Hub</strong><br>
-Save your favorite stops, routes, and destinations. Quick access from the home screen widget means your commute is just one tap away.</p>
-<p><strong>🌏 Designed for Everyone</strong><br>
-Available in 6 languages: English, 简体中文, Bahasa Melayu, தமிழ், 日本語, 한국어. Perfect for locals, expats, and tourists.</p>
-<hr>
-<h2 id="-beautiful-by-design">🎨 Beautiful by Design</h2>
-<h3 id="modern-interface-effortless-experience">Modern Interface, Effortless Experience</h3>
-<p><strong>Dark Mode Native</strong><br>
-Stunning dark theme reduces eye strain during night commutes. Automatic switching based on system settings or manual control.</p>
-<p><strong>Gradient Design System</strong><br>
-Beautiful purple-to-blue gradients create a premium, modern feel. Every screen is crafted with attention to detail.</p>
-<p><strong>Intuitive Navigation</strong><br>
-Clean, simple interface that anyone can use. Large buttons, clear labels, and logical flow make navigation effortless.</p>
-<p><strong>Smooth Animations</strong><br>
-Delightful micro-interactions and smooth transitions make every tap feel responsive and premium.</p>
-<hr>
-<h2 id="-core-features">🚌 Core Features</h2>
-<h3 id="1-real-time-bus-arrivals">1. Real-Time Bus Arrivals</h3>
-<p><strong>See What&rsquo;s Coming, Right Now</strong></p>
-<ul>
-<li><strong>Live Updates:</strong> Arrival times update every 20 seconds</li>
-<li><strong>Next 3 Buses:</strong> See all upcoming buses at once</li>
-<li><strong>Bus Capacity:</strong> Know if the bus is crowded before it arrives</li>
-<li><strong>Wheelchair Info:</strong> Accessibility information for every bus</li>
-<li><strong>Service Details:</strong> Full route information and operating hours</li>
-</ul>
-<p><strong>Use Case:</strong><br>
-<em>&ldquo;It&rsquo;s 8:45 AM. You need to catch the 190 bus. Open SG Bus Lah!, see it&rsquo;s arriving in 3 minutes, and leave your flat at the perfect time.&rdquo;</em></p>
-<hr>
-<h3 id="2-mrt--lrt-network-hub">2. MRT &amp; LRT Network Hub</h3>
-<p><strong>Complete MRT System at Your Fingertips</strong></p>
-<ul>
-<li>
-<p><strong>9 MRT/LRT Lines:</strong> Coverage of entire Singapore network</p>
-<ul>
-<li>East-West Line (Green)</li>
-<li>North-South Line (Red)</li>
-<li>Circle Line (Yellow)</li>
-<li>Downtown Line (Blue)</li>
-<li>Thomson-East Coast Line (Brown)</li>
-<li>North-East Line (Purple)</li>
-<li>Bukit Panjang LRT (Grey)</li>
-<li>Sengkang LRT (Grey)</li>
-<li>Punggol LRT (Grey)</li>
-</ul>
-</li>
-<li>
-<p><strong>Station Details:</strong> Exit information, first/last train times</p>
-</li>
-<li>
-<p><strong>Service Alerts:</strong> Real-time disruption updates</p>
-</li>
-<li>
-<p><strong>Interactive Map:</strong> Visual network map with station search</p>
-</li>
-<li>
-<p><strong>Line-Specific Themes:</strong> Each line has its authentic color</p>
-</li>
-</ul>
-<p><strong>Use Case:</strong><br>
-<em>&ldquo;You&rsquo;re at Orchard. Going to Changi Airport. MRT Hub shows you: Take Red Line to Tanah Merah, transfer to Green Line. 45 minutes total.&rdquo;</em></p>
-<hr>
-<h3 id="3-multi-modal-trip-planning">3. Multi-Modal Trip Planning</h3>
-<p><strong>The Smartest Way to Get Around</strong></p>
-<p><strong>How It Works:</strong></p>
-<ol>
-<li><strong>Enter Destination</strong> - Type any address or place name</li>
-<li><strong>See Route Options</strong> - Multiple routes with different combinations</li>
-<li><strong>Choose Your Route</strong> - Compare by time, transfers, or walking distance</li>
-<li><strong>Start Trip</strong> - One tap begins live tracking</li>
-</ol>
-<p><strong>Route Details Include:</strong></p>
-<ul>
-<li>Total journey time</li>
-<li>Number of transfers</li>
-<li>Walking distance and duration</li>
-<li>Bus numbers and MRT lines</li>
-<li>Fare estimate (coming soon)</li>
-<li>Step-by-step instructions</li>
-</ul>
-<p><strong>Example Route:</strong></p>
-<pre><code>Home → Vivocity (35 minutes)
-├─ Walk 5 min to Bus Stop 12345
-├─ Bus 100 (8 stops, 12 min)
-├─ Walk 2 min to Harbourfront MRT
-├─ MRT Circle Line (3 stops, 8 min)
-└─ Walk 3 min to destination
-</code></pre>
-<p><strong>Use Case:</strong><br>
-<em>&ldquo;Meeting friends at Marina Bay Sands. One tap shows 3 route options. You choose the fastest: Bus + MRT combo. 28 minutes door-to-door.&rdquo;</em></p>
-<hr>
-<h3 id="4-smart-stop-alerts">4. Smart Stop Alerts</h3>
-<p><strong>Our Signature Feature - Never Miss Your Stop</strong></p>
-<p><strong>The Problem:</strong><br>
-Singapore buses don&rsquo;t announce stops. Tourists and locals alike miss their destination, especially when unfamiliar with the route or distracted by their phone.</p>
-<p><strong>Our Solution:</strong><br>
-GPS-based proximity detection with multiple alert types:</p>
-<p><strong>Alert Triggers:</strong></p>
-<ul>
-<li><strong>2 Stops Away:</strong> Heads up notification</li>
-<li><strong>1 Stop Away:</strong> Strong alert (vibration + sound + visual)</li>
-<li><strong>Destination Reached:</strong> Confirmation notification</li>
-</ul>
-<p><strong>Alert Modes:</strong></p>
-<ul>
-<li>🔊 <strong>Sound Alert:</strong> Clear &ldquo;Next stop!&rdquo; announcement</li>
-<li>📳 <strong>Vibration:</strong> Strong haptic feedback</li>
-<li>📱 <strong>Visual Alert:</strong> Full-screen notification</li>
-<li>🌙 <strong>Silent Mode:</strong> Visual only for quiet environments</li>
-</ul>
-<p><strong>Smart Features:</strong></p>
-<ul>
-<li>Works in background (app closed)</li>
-<li>Battery optimized</li>
-<li>Accurate to within 50 meters</li>
-<li>Adapts to bus speed</li>
-</ul>
-<p><strong>Use Case:</strong><br>
-<em>&ldquo;You&rsquo;re on Bus 170 reading a book. GPS detects you&rsquo;re 1 stop away. Phone vibrates strongly, shows &lsquo;Next Stop: Orchard Road.&rsquo; You press the stop button. Perfect.&rdquo;</em></p>
-<hr>
-<h3 id="5-live-trip-tracking">5. Live Trip Tracking</h3>
-<p><strong>See Your Journey Unfold in Real-Time</strong></p>
-<p><strong>During Your Trip:</strong></p>
-<ul>
-<li><strong>Interactive Map:</strong> Your position updates every 5 seconds</li>
-<li><strong>Progress Timeline:</strong> Visual indicator showing completed and upcoming stops</li>
-<li><strong>Dynamic Updates:</strong> &ldquo;Next stop in 2 minutes&rdquo; countdown</li>
-<li><strong>Arrival Prediction:</strong> Estimated arrival time at destination</li>
-</ul>
-<p><strong>Multi-Segment Support:</strong></p>
-<ul>
-<li>Track bus segments</li>
-<li>Track MRT segments</li>
-<li>Walking navigation between transfers</li>
-<li>Seamless transitions between modes</li>
-</ul>
-<p><strong>Trip Information:</strong></p>
-<ul>
-<li>Current segment (e.g., &ldquo;On Bus 190&rdquo;)</li>
-<li>Stops remaining</li>
-<li>Next stop name</li>
-<li>Time to destination</li>
-<li>Transfer instructions when approaching</li>
-</ul>
-<p><strong>Use Case:</strong><br>
-<em>&ldquo;First time taking this route. Map shows exactly where you are. Timeline highlights your current position. You can relax knowing the app is watching.&rdquo;</em></p>
-<hr>
-<h3 id="6-nearby-stops-discovery">6. Nearby Stops Discovery</h3>
-<p><strong>Find Stops Around You Instantly</strong></p>
-<p><strong>Features:</strong></p>
-<ul>
-<li><strong>Auto-Detection:</strong> Shows nearest 20 stops automatically</li>
-<li><strong>Distance Display:</strong> &ldquo;50m away&rdquo; or &ldquo;5 min walk&rdquo;</li>
-<li><strong>Type Indicators:</strong> Bus stop or MRT station</li>
-<li><strong>Service List:</strong> See which buses serve each stop</li>
-<li><strong>Map View:</strong> Visual layout of all nearby stops</li>
-<li><strong>Quick Actions:</strong> One tap to see arrivals</li>
-</ul>
-<p><strong>Smart Sorting:</strong></p>
-<ul>
-<li>By distance (closest first)</li>
-<li>By stop type (bus/MRT)</li>
-<li>By number of services</li>
-</ul>
-<p><strong>Use Case:</strong><br>
-<em>&ldquo;New office location, first day. Open Nearby Stops. See 3 bus stops within 200m. Find one serving your home route. Save it to favorites.&rdquo;</em></p>
-<hr>
-<h3 id="7-favorites--quick-access">7. Favorites &amp; Quick Access</h3>
-<p><strong>Your Commute, One Tap Away</strong></p>
-<p><strong>What You Can Save:</strong></p>
-<ul>
-<li><strong>Favorite Stops:</strong> Home stop, office stop, gym stop</li>
-<li><strong>Favorite Bus Lines:</strong> Your regular services</li>
-<li><strong>Saved Routes:</strong> Complete door-to-door journeys</li>
-<li><strong>Recent Searches:</strong> Quick re-access to recent destinations</li>
-</ul>
-<p><strong>Home Screen Widget:</strong></p>
-<ul>
-<li>Live arrivals for your saved stops</li>
-<li>One-tap access to saved routes</li>
-<li>Quick trip start button</li>
-</ul>
-<p><strong>Smart Features:</strong></p>
-<ul>
-<li>Nickname your stops (&ldquo;Home,&rdquo; &ldquo;Office,&rdquo; &ldquo;Mom&rsquo;s Place&rdquo;)</li>
-<li>Group favorites by category</li>
-<li>Sync across devices (coming soon)</li>
-</ul>
-<p><strong>Use Case:</strong><br>
-<em>&ldquo;Every morning: Check widget → See Bus 190 in 5 min → Leave house. Every evening: One tap &lsquo;Go Home&rsquo; → Navigation starts.&rdquo;</em></p>
-<hr>
-<h3 id="8-bus-route-explorer">8. Bus Route Explorer</h3>
-<p><strong>Understand Singapore&rsquo;s Bus Network</strong></p>
-<p><strong>Complete Route Information:</strong></p>
-<ul>
-<li><strong>Full Route Map:</strong> Interactive map showing entire route</li>
-<li><strong>All Stops Listed:</strong> Both directions with stop codes</li>
-<li><strong>Operating Hours:</strong> First and last bus times</li>
-<li><strong>Service Type:</strong> Express, trunk, feeder, night bus</li>
-<li><strong>Operator:</strong> SBS Transit, SMRT, etc.</li>
-<li><strong>Loop Routes:</strong> Clearly marked circular routes</li>
-</ul>
-<p><strong>Visual Timeline:</strong></p>
-<ul>
-<li>See all stops in order</li>
-<li>Tap any stop to see arrivals</li>
-<li>Distance between stops</li>
-<li>Current bus positions (when tracking)</li>
-</ul>
-<p><strong>Use Case:</strong><br>
-<em>&ldquo;Thinking of taking a new bus. Open Route Explorer. See it passes through Orchard and Marina Bay. Perfect for weekend trips. Add to favorites.&rdquo;</em></p>
-<hr>
-<h3 id="9-intelligent-search">9. Intelligent Search</h3>
-<p><strong>Find Anything, Fast</strong></p>
-<p><strong>Unified Search Bar:</strong>
-Type once, find everything:</p>
-<ul>
-<li><strong>Bus Stops:</strong> By name, code, or road</li>
-<li><strong>Bus Services:</strong> By number</li>
-<li><strong>MRT Stations:</strong> By name or code</li>
-<li><strong>Places:</strong> &ldquo;Changi Airport,&rdquo; &ldquo;Marina Bay Sands&rdquo;</li>
-<li><strong>Addresses:</strong> Full Singapore addresses</li>
-</ul>
-<p><strong>Smart Features:</strong></p>
-<ul>
-<li><strong>Instant Results:</strong> As you type</li>
-<li><strong>Fuzzy Matching:</strong> &ldquo;ochard&rdquo; finds &ldquo;Orchard&rdquo;</li>
-<li><strong>Recent Searches:</strong> Quick access to history</li>
-<li><strong>Popular Destinations:</strong> Trending searches</li>
-<li><strong>Multilingual:</strong> Search in any supported language</li>
-</ul>
-<p><strong>Search Examples:</strong></p>
-<ul>
-<li>&ldquo;12345&rdquo; → Finds stop code 12345</li>
-<li>&ldquo;190&rdquo; → Finds Bus Service 190</li>
-<li>&ldquo;Orchard&rdquo; → Shows stops on Orchard Road + Orchard MRT</li>
-<li>&ldquo;airport&rdquo; → Changi Airport + buses + MRT route</li>
-</ul>
-<p><strong>Use Case:</strong><br>
-<em>&ldquo;Friend says &lsquo;Meet at Vivo.&rsquo; Type &lsquo;vivo&rsquo; → See Vivocity, HarbourFront MRT, nearby bus stops. Pick one → Get directions.&rdquo;</em></p>
-<hr>
-<h2 id="-why-choose-sg-bus-lah">🌟 Why Choose SG Bus Lah!</h2>
-<h3 id="for-daily-commuters">For Daily Commuters</h3>
-<p><strong>Save Time Every Day</strong></p>
-<ul>
-<li>Check arrivals before leaving home</li>
-<li>Never wait unnecessarily at stops</li>
-<li>Optimize your commute route</li>
-</ul>
-<p><strong>Reduce Stress</strong></p>
-<ul>
-<li>Smart alerts mean no missed stops</li>
-<li>Real-time tracking eliminates uncertainty</li>
-<li>Backup routes when buses are delayed</li>
-</ul>
-<p><strong>Your Routine, Simplified</strong></p>
-<ul>
-<li>Favorites and widgets make regular trips effortless</li>
-<li>Predictable journey times</li>
-<li>Plan around actual arrival times, not schedules</li>
-</ul>
-<hr>
-<h3 id="for-tourists--visitors">For Tourists &amp; Visitors</h3>
-<p><strong>Navigate with Confidence</strong></p>
-<ul>
-<li>6 languages support</li>
-<li>Visual route guidance</li>
-<li>No local knowledge required</li>
-</ul>
-<p><strong>Cultural Sensitivity</strong></p>
-<ul>
-<li>Interface adapted for Asian markets</li>
-<li>Familiar UI patterns</li>
-<li>Clear, simple English</li>
-</ul>
-<p><strong>Stress-Free Exploration</strong></p>
-<ul>
-<li>Discover Singapore independently</li>
-<li>Avoid tourist taxi traps</li>
-<li>Experience local transport safely</li>
-</ul>
-<hr>
-<h3 id="for-families">For Families</h3>
-<p><strong>Peace of Mind</strong></p>
-<ul>
-<li>Track elderly parents&rsquo; journeys</li>
-<li>Teach kids public transport safely</li>
-<li>Family-friendly interface</li>
-</ul>
-<p><strong>Accessibility</strong></p>
-<ul>
-<li>Wheelchair-accessible bus information</li>
-<li>Large text options</li>
-<li>Voice guidance for visually impaired</li>
-</ul>
-<hr>
-<h3 id="for-students">For Students</h3>
-<p><strong>Budget-Friendly Travel</strong></p>
-<ul>
-<li>Public transport is cheapest</li>
-<li>Fare estimates help planning</li>
-<li>Optimize routes to save time</li>
-</ul>
-<p><strong>Campus Commuting</strong></p>
-<ul>
-<li>Save school stops and routes</li>
-<li>Share routes with classmates</li>
-<li>Night bus information for late library sessions</li>
-</ul>
-<hr>
-<h2 id="-by-the-numbers">📊 By The Numbers</h2>
-<h3 id="singapore-transport-stats">Singapore Transport Stats</h3>
-<p><strong>5,000+ Bus Stops</strong><br>
-Complete coverage of Singapore&rsquo;s entire bus network</p>
-<p><strong>200+ Bus Services</strong><br>
-All SBS Transit and SMRT services included</p>
-<p><strong>130+ MRT/LRT Stations</strong><br>
-9 lines, full network coverage</p>
-<p><strong>20 Seconds</strong><br>
-Real-time arrival updates frequency</p>
-<p><strong>30+ Million</strong><br>
-Annual public transport trips in Singapore</p>
-<hr>
-<h3 id="app-performance">App Performance</h3>
-<p><strong>4.8★ Average Rating</strong> (Target)<br>
-Based on beta testing feedback</p>
-<p><strong>95% Accuracy</strong><br>
-Stop alert precision rate</p>
-<p><strong>&lt; 2 Seconds</strong><br>
-Average search response time</p>
-<p><strong>99.9% Uptime</strong><br>
-Service availability</p>
-<p><strong>50MB</strong><br>
-App storage (includes offline data)</p>
-<hr>
-<h2 id="-pricing--premium-features">🎁 Pricing &amp; Premium Features</h2>
-<h3 id="free-forever-core-features">Free Forever Core Features</h3>
-<p><strong>Everything You Need:</strong></p>
-<ul>
-<li>✅ Real-time bus arrivals</li>
-<li>✅ MRT network information</li>
-<li>✅ Multi-modal trip planning</li>
-<li>✅ Live GPS tracking</li>
-<li>✅ Smart stop alerts</li>
-<li>✅ Favorites and saved routes</li>
-<li>✅ Nearby stops discovery</li>
-<li>✅ Complete search functionality</li>
-<li>✅ All 6 languages</li>
-</ul>
-<p><strong>With Ads:</strong><br>
-Non-intrusive banner ads at bottom of screens. Limited interstitial ads after trip completion (max 3 per session).</p>
-<hr>
-<h3 id="premium-ad-free-experience">Premium: Ad-Free Experience</h3>
-<p><strong>One-Time Purchase: $4.99 SGD</strong></p>
-<p><strong>Benefits:</strong></p>
-<ul>
-<li>✅ Remove all advertisements</li>
-<li>✅ Support app development</li>
-<li>✅ Lifetime access (one-time payment)</li>
-<li>✅ All future features included</li>
-<li>✅ Priority customer support</li>
-</ul>
-<p><strong>Also Get Ad-Free Through:</strong></p>
-<ul>
-<li>🎁 <strong>Invite Codes:</strong> Special promotional codes</li>
-<li>🎥 <strong>Watch Ad:</strong> Get 1 hour ad-free by watching one video</li>
-<li>🎁 <strong>New User Grace Period:</strong> 3 days ad-free for new installs</li>
-</ul>
-<hr>
-<h2 id="-coming-soon">🚀 Coming Soon</h2>
-<h3 id="planned-features-2025-roadmap">Planned Features (2025 Roadmap)</h3>
-<p><strong>Q1 2025: Enhanced Trip Planning</strong></p>
-<ul>
-<li>🔄 Real-time bus crowding predictions</li>
-<li>💰 Actual fare calculations</li>
-<li>🕐 Historical arrival time analysis</li>
-<li>☔ Weather-aware route suggestions</li>
-</ul>
-<p><strong>Q2 2025: Social Features</strong></p>
-<ul>
-<li>👥 Share routes with friends</li>
-<li>💬 Community stop ratings</li>
-<li>📊 Crowding reports from users</li>
-<li>🎯 Popular destinations</li>
-</ul>
-<p><strong>Q3 2025: Smart Integrations</strong></p>
-<ul>
-<li>📱 Apple Watch app</li>
-<li>🎧 Siri Shortcuts</li>
-<li>📍 CarPlay for taxis/Grab</li>
-<li>🏠 Smart home integration</li>
-</ul>
-<p><strong>Q4 2025: AI-Powered Features</strong></p>
-<ul>
-<li>🤖 Predictive route suggestions</li>
-<li>📈 Commute pattern learning</li>
-<li>⚡ Real-time disruption avoidance</li>
-<li>🎯 Personalized recommendations</li>
-</ul>
-<hr>
-<h2 id="-multi-language-support">🌐 Multi-Language Support</h2>
-<h3 id="truly-local-globally-accessible">Truly Local, Globally Accessible</h3>
-<p><strong>6 Languages, Fully Translated:</strong></p>
-<p><strong>🇬🇧 English</strong><br>
-Primary language, complete coverage</p>
-<p><strong>🇨🇳 简体中文 (Simplified Chinese)</strong><br>
-For Chinese-speaking residents and tourists</p>
-<p><strong>🇲🇾 Bahasa Melayu (Malay)</strong><br>
-For Malay-speaking community</p>
-<p><strong>🇮🇳 தமிழ் (Tamil)</strong><br>
-For Tamil-speaking community</p>
-<p><strong>🇯🇵 日本語 (Japanese)</strong><br>
-For Japanese tourists and residents</p>
-<p><strong>🇰🇷 한국어 (Korean)</strong><br>
-For Korean tourists and residents</p>
-<p><strong>What&rsquo;s Translated:</strong></p>
-<ul>
-<li>All UI text and buttons</li>
-<li>Stop and station names (Romanized)</li>
-<li>Instruction text</li>
-<li>Error messages</li>
-<li>Notification text</li>
-<li>Settings and preferences</li>
-</ul>
-<hr>
-<h2 id="-privacy--security">🛡️ Privacy &amp; Security</h2>
-<h3 id="your-data-stays-yours">Your Data Stays Yours</h3>
-<p><strong>We Don&rsquo;t Collect:</strong></p>
-<ul>
-<li>❌ Personal information</li>
-<li>❌ Location history</li>
-<li>❌ Search history (stored remotely)</li>
-<li>❌ Travel patterns</li>
-<li>❌ Payment information (handled by Apple)</li>
-</ul>
-<p><strong>We Only Use:</strong></p>
-<ul>
-<li>✅ Current location (for nearby stops and tracking)</li>
-<li>✅ App preferences (stored locally)</li>
-<li>✅ Favorites (stored on your device)</li>
-<li>✅ Anonymous crash reports (optional)</li>
-</ul>
-<p><strong>Data Processing:</strong></p>
-<ul>
-<li>All location processing happens on-device</li>
-<li>No data sent to our servers</li>
-<li>API calls only to LTA and OneMap (official sources)</li>
-<li>No third-party analytics</li>
-</ul>
-<p><strong>Your Control:</strong></p>
-<ul>
-<li>Disable location anytime</li>
-<li>Clear all data in settings</li>
-<li>Delete app removes all data</li>
-<li>No account required</li>
-</ul>
-<hr>
-<h2 id="-awards--recognition">🏅 Awards &amp; Recognition</h2>
-<p><strong>Featured by Apple</strong> (Target)<br>
-&ldquo;New Apps We Love&rdquo; - Singapore App Store</p>
-<p><strong>Beta Tester Reviews:</strong></p>
-<blockquote>
-<p>&ldquo;Finally! An app that actually works for Singapore transport. The stop alerts are a game-changer.&rdquo;<br>
-— Sarah T., Daily Commuter</p>
-</blockquote>
-<blockquote>
-<p>&ldquo;As a tourist, this made exploring Singapore so much easier. The multi-language support is excellent.&rdquo;<br>
-— Kenji M., Japan</p>
-</blockquote>
-<blockquote>
-<p>&ldquo;Better than Google Maps for Singapore. The real-time tracking actually works.&rdquo;<br>
-— Michael L., Expat</p>
-</blockquote>
-<blockquote>
-<p>&ldquo;Clean interface, fast, accurate. My go-to transport app now.&rdquo;<br>
-— Priya S., Student</p>
-</blockquote>
-<hr>
-<h2 id="-technical-excellence">📱 Technical Excellence</h2>
-<h3 id="built-for-performance">Built for Performance</h3>
-<p><strong>Fast &amp; Responsive</strong></p>
-<ul>
-<li>60 FPS smooth animations</li>
-<li>&lt; 3 second cold start</li>
-<li>Instant search results</li>
-<li>Optimized battery usage</li>
-</ul>
-<p><strong>Reliable</strong></p>
-<ul>
-<li>Offline mode with cached data</li>
-<li>Automatic retry on network errors</li>
-<li>Graceful degradation</li>
-<li>Background refresh</li>
-</ul>
-<p><strong>Modern</strong></p>
-<ul>
-<li>Native iOS design</li>
-<li>Dark mode support</li>
-<li>Haptic feedback</li>
-<li>Dynamic Type support</li>
-</ul>
-<p><strong>Accessible</strong></p>
-<ul>
-<li>VoiceOver compatible</li>
-<li>Large text support</li>
-<li>High contrast mode</li>
-<li>Reduced motion option</li>
-</ul>
-<hr>
-<h2 id="-data-sources">🌏 Data Sources</h2>
-<h3 id="official-reliable-real-time">Official, Reliable, Real-Time</h3>
-<p><strong>Land Transport Authority (LTA) Singapore</strong></p>
-<ul>
-<li>Real-time bus arrival data</li>
-<li>Bus stop locations and codes</li>
-<li>Bus service routes</li>
-<li>MRT service alerts</li>
-</ul>
-<p><strong>OneMap Singapore</strong></p>
-<ul>
-<li>Official government mapping service</li>
-<li>Location search and geocoding</li>
-<li>Route planning algorithms</li>
-<li>Walking directions</li>
-</ul>
-<p><strong>Why Official Sources Matter:</strong></p>
-<ul>
-<li>✅ Most accurate data available</li>
-<li>✅ Real-time updates</li>
-<li>✅ Government-backed reliability</li>
-<li>✅ Comprehensive coverage</li>
-</ul>
-<hr>
-<h2 id="-use-cases--scenarios">🎯 Use Cases &amp; Scenarios</h2>
-<h3 id="morning-commute">Morning Commute</h3>
-<p><strong>6:45 AM - Time to Leave?</strong></p>
-<p><em>Traditional way:</em><br>
-Estimate bus time → Leave house → Wait 15 minutes → Bus packed</p>
-<p><em>With SG Bus Lah!:</em></p>
-<ul>
-<li>Check widget: &ldquo;Bus 190 - 8 min&rdquo;</li>
-<li>Finish coffee</li>
-<li>Leave at 6:52</li>
-<li>Arrive at stop at 6:53</li>
-<li>Bus arrives 6:54 ✅</li>
-</ul>
-<hr>
-<h3 id="tourist-exploration">Tourist Exploration</h3>
-<p><strong>Visiting Singapore for 5 Days</strong></p>
-<p><em>Day 1:</em><br>
-Land at Changi → Search &ldquo;Marina Bay Sands&rdquo;<br>
-→ See MRT + Bus options → Choose fastest route<br>
-→ Live tracking all the way → Arrive confident ✅</p>
-<p><em>Day 2-5:</em><br>
-All favorites saved → One-tap navigation<br>
-→ Explore like a local → Save money on taxis<br>
-→ Use Tamil language mode → Share routes with family ✅</p>
-<hr>
-<h3 id="evening-journey-home">Evening Journey Home</h3>
-<p><strong>6:30 PM - Heading Home After Work</strong></p>
-<p><em>The Challenge:</em><br>
-Unfamiliar bus route, might miss stop while scrolling social media</p>
-<p><em>With Smart Stop Alert:</em></p>
-<ul>
-<li>Start trip in app</li>
-<li>Use phone freely</li>
-<li>Get &ldquo;1 stop away&rdquo; alert</li>
-<li>Press stop button</li>
-<li>Exit perfectly ✅</li>
-</ul>
-<hr>
-<h3 id="weekend-adventure">Weekend Adventure</h3>
-<p><strong>Saturday - Trying New Restaurant</strong></p>
-<p><em>Planning:</em></p>
-<ul>
-<li>Search &ldquo;East Coast Park&rdquo;</li>
-<li>See 3 route options</li>
-<li>Choose: Bus + MRT (35 min, 1 transfer)</li>
-<li>Save route</li>
-</ul>
-<p><em>During Trip:</em></p>
-<ul>
-<li>Live map shows progress</li>
-<li>Walking navigation between transfers</li>
-<li>&ldquo;Arriving in 5 minutes&rdquo; countdown</li>
-<li>Reach on time ✅</li>
-</ul>
-<hr>
-<h3 id="emergency-route-change">Emergency Route Change</h3>
-<p><strong>MRT Breakdown - Need Alternative</strong></p>
-<p><em>Real Scenario:</em><br>
-Downtown Line disrupted, need to reach office</p>
-<p><em>With SG Bus Lah!:</em></p>
-<ul>
-<li>App shows MRT alert</li>
-<li>Re-plan trip with bus-only route</li>
-<li>See alternative: 2 buses, 15 min longer</li>
-<li>Track journey in real-time</li>
-<li>Update ETA to colleagues ✅</li>
-</ul>
-<hr>
-<h2 id="-frequently-asked-questions">💬 Frequently Asked Questions</h2>
-<h3 id="general">General</h3>
-<p><strong>Q: Is SG Bus Lah! free to use?</strong><br>
-A: Yes! All core features are completely free. We offer an optional ad-free premium experience for $4.99 SGD (one-time purchase).</p>
-<p><strong>Q: Does it work offline?</strong><br>
-A: Partially. We cache 5,000+ bus stops and routes, so you can browse offline. Real-time arrivals require internet.</p>
-<p><strong>Q: Which languages are supported?</strong><br>
-A: English, 简体中文, Bahasa Melayu, தமிழ், 日本語, and 한국어.</p>
-<p><strong>Q: Do I need to create an account?</strong><br>
-A: No account needed! All your data stays on your device.</p>
-<hr>
-<h3 id="features">Features</h3>
-<p><strong>Q: How accurate are the arrival times?</strong><br>
-A: We use official LTA data, updated every 20 seconds. Accuracy is typically within 1 minute.</p>
-<p><strong>Q: Will I get notified if I&rsquo;m about to miss my stop?</strong><br>
-A: Yes! Our Smart Stop Alert uses GPS to notify you 1 stop before your destination, even if the app is closed.</p>
-<p><strong>Q: Can I plan trips that combine bus and MRT?</strong><br>
-A: Absolutely! Our multi-modal planning automatically combines buses, MRT, and walking for the best route.</p>
-<p><strong>Q: Does it show bus crowding?</strong><br>
-A: Yes, we show capacity levels (Seats Available / Standing Available / Limited Standing) for each arriving bus.</p>
-<hr>
-<h3 id="technical">Technical</h3>
-<p><strong>Q: Does it drain my battery?</strong><br>
-A: No. Location tracking is optimized and only active during trips. Background refresh is minimal.</p>
-<p><strong>Q: What iOS version do I need?</strong><br>
-A: iOS 15.0 or later. Works on all iPhones from iPhone 6S onwards.</p>
-<p><strong>Q: Does it work on iPad?</strong><br>
-A: Yes, universal app optimized for both iPhone and iPad.</p>
-<p><strong>Q: Can I use it on Apple Watch?</strong><br>
-A: Coming Q2 2025!</p>
-<hr>
-<h3 id="privacy">Privacy</h3>
-<p><strong>Q: Do you track my location?</strong><br>
-A: We only use your location when you actively use location features (nearby stops, trip tracking). Location is processed on-device and never stored.</p>
-<p><strong>Q: Do you sell my data?</strong><br>
-A: Never. We don&rsquo;t collect personal data, so there&rsquo;s nothing to sell.</p>
-<p><strong>Q: What data do ads collect?</strong><br>
-A: Ads are served by Google AdMob. They may collect device identifiers for personalized ads (you can opt-out via iOS settings).</p>
-<hr>
-<h2 id="-contact--support">📞 Contact &amp; Support</h2>
-<h3 id="get-help-share-feedback">Get Help, Share Feedback</h3>
-<p><strong>Email Support</strong><br>
-<a href="mailto:levi.duan.arts@gmail.com">levi.duan.arts@gmail.com</a><br>
-Response within 24 hours</p>
-<p><strong>App Store Reviews</strong><br>
-Leave feedback on the App Store<br>
-We read every review</p>
-<p><strong>Bug Reports</strong><br>
-Found an issue? Email us with:</p>
-<ul>
-<li>What happened</li>
-<li>Which screen/feature</li>
-<li>Screenshots if possible</li>
-</ul>
-<p><strong>Feature Requests</strong><br>
-We love hearing your ideas!<br>
-Email your suggestions</p>
-<hr>
-<h2 id="-download-today">🎉 Download Today</h2>
-<h3 id="ready-to-transform-your-commute">Ready to Transform Your Commute?</h3>
-<p><strong>Available on the App Store</strong></p>
-<p><strong>Get Started in 3 Steps:</strong></p>
-<ol>
-<li>Download SG Bus Lah! (Free)</li>
-<li>Allow location permission</li>
-<li>Start exploring Singapore!</li>
-</ol>
-<p><strong>What You Get Immediately:</strong></p>
-<ul>
-<li>✅ Real-time arrivals for 5,000+ stops</li>
-<li>✅ Complete MRT network</li>
-<li>✅ Smart trip planning</li>
-<li>✅ Live GPS tracking</li>
-<li>✅ Stop alerts</li>
-<li>✅ Multi-language support</li>
-</ul>
-<p><strong>No Credit Card Required</strong><br>
-<strong>No Account Needed</strong><br>
-<strong>No Ads for First 3 Days</strong></p>
-]]></content></item></channel></rss>
+
+        </div>
+      </article>
+
+      <hr />
+
+      <div class="post-info">
+        
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/demo/">demo</a></span>
+        
+    </p>
+
+        
+
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          5482 Words
+        </p>
+
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          
+            2025-12-09 14:32
+          
+
+           
+            
+          
+        </p>
+      </div>
+        <hr />
+        <div class="sharing-buttons">
+          
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Privacy%20Policy%20-%20FlipFocus&amp;caption=Privacy%20Policy%20-%20FlipFocus&amp;canonicalUrl=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Privacy%20Policy%20-%20FlipFocus&amp;body=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f&amp;media=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f;description=Privacy%20Policy%20-%20FlipFocus" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f&amp;title=Privacy%20Policy%20-%20FlipFocus&amp;summary=Privacy%20Policy%20-%20FlipFocus&amp;source=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f&amp;resubmit=true&amp;title=Privacy%20Policy%20-%20FlipFocus" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f;title=Privacy%20Policy%20-%20FlipFocus" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Privacy%20Policy%20-%20FlipFocus%20http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f&amp;t=Privacy%20Policy%20-%20FlipFocus" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Privacy%20Policy%20-%20FlipFocus&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fflipfocuspp-copy%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+        </div>
+
+      
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="http://localhost:1313/posts/sgbuslahtermsofservice/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">FlipFocus - Product Documentation</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="http://localhost:1313/posts/flipfocuspp/">
+                    <span class="button__text">Privacy Policy - FlipFocus</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+      
+        
+          <div id="comments">
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-leviduan-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+      
+
+      
+
+      
+
+    </main>
+  </div>
+
+
+            
+                <footer class="footer">
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Love iOS ☀ Mac ☀ React native</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.08b680078a3cf9c69e3dd217a5aa52cfddd4a1d850f8cdff127fdd7421a71f8b2b474be69386f67819edace92273916e7230c9054f38107db9dc6730b3530ab5.js" integrity="sha512-CLaAB4o8&#43;caePdIXpapSz93UodhQ&#43;M3/En/ddCGnH4srR0vmk4b2eBntrOkic5FucjDJBU84EH253Gcws1MKtQ=="></script>
+
+
+
+
+    </body>
+</html>
