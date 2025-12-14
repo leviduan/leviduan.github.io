@@ -26,6 +26,9 @@ disqusShortname = "https-leviduan-github-io"
 
   # 自定义 CSS
   customCSS = ["/css/custom.css"]
+  
+  # 自定义 JS
+  customJS = ["/js/disqus-dark.js"]
 
   # 作者配置
   [params.author]

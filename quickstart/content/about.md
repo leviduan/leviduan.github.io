@@ -17,3 +17,6 @@ I'm a software developer passionate about:
 
 *Connection Not Perfection*
 
+
+
+
