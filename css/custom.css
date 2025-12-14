@@ -139,23 +139,27 @@ article p {
     font-weight: bold !important;
 }
 
-/* Disqus 评论区样式 */
+/* Disqus 评论区样式 - 移除背景色让 Disqus 自己控制 */
 #comments {
     margin-top: 2rem;
-    padding: 1.5rem;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    padding: 0;
+    background: transparent !important;
 }
 
 /* 黑暗模式下的 Disqus 评论区 */
 .dark-theme #comments,
 [data-theme=dark] #comments {
-    background-color: #3b3d42 !important;
-    border: 1px solid #6b7280 !important;
+    background: transparent !important;
+    border: none !important;
 }
 
 /* Disqus iframe 容器 */
+#disqus_thread {
+    background: transparent !important;
+}
+
 .dark-theme #disqus_thread,
 [data-theme=dark] #disqus_thread {
     color-scheme: dark !important;
+    background: transparent !important;
 }
