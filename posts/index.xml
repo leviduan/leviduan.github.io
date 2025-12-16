@@ -1,6 +1,177 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 14 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>MDX Reader</title><link>https://leviduan.github.io/posts/mdxmac/</link><pubDate>Sun, 14 Dec 2025 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/mdxmac/</guid><description>&lt;h2 id="-product-positioning"&gt;🎯 Product Positioning&lt;/h2&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 16 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>[iOS] MDX Reader</title><link>https://leviduan.github.io/posts/mdxiospp/</link><pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/mdxiospp/</guid><description>&lt;h1 id="privacy-policy"&gt;Privacy Policy&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Last Updated: December 16, 2025&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;MDX Reader (&amp;ldquo;we&amp;rdquo;, &amp;ldquo;our&amp;rdquo;, or &amp;ldquo;the app&amp;rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use our application.&lt;/p&gt;
+&lt;h2 id="information-we-collect"&gt;Information We Collect&lt;/h2&gt;
+&lt;h3 id="what-we-dont-collect"&gt;What We DON&amp;rsquo;T Collect&lt;/h3&gt;
+&lt;p&gt;MDX Reader is designed with privacy in mind. We &lt;strong&gt;DO NOT&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Collect any personal information&lt;/li&gt;
+&lt;li&gt;Track your usage or behavior&lt;/li&gt;
+&lt;li&gt;Access your contacts, location, or photos&lt;/li&gt;
+&lt;li&gt;Use analytics or tracking services&lt;/li&gt;
+&lt;li&gt;Share any data with third parties&lt;/li&gt;
+&lt;li&gt;Require account creation or login&lt;/li&gt;
+&lt;li&gt;Connect to external servers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="what-we-store-locally"&gt;What We Store Locally&lt;/h3&gt;
+&lt;p&gt;All data is stored &lt;strong&gt;locally on your device only&lt;/strong&gt;:&lt;/p&gt;</description><content type="html"><![CDATA[<h1 id="privacy-policy">Privacy Policy</h1>
+<p><strong>Last Updated: December 16, 2025</strong></p>
+<h2 id="introduction">Introduction</h2>
+<p>MDX Reader (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;the app&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use our application.</p>
+<h2 id="information-we-collect">Information We Collect</h2>
+<h3 id="what-we-dont-collect">What We DON&rsquo;T Collect</h3>
+<p>MDX Reader is designed with privacy in mind. We <strong>DO NOT</strong>:</p>
+<ul>
+<li>Collect any personal information</li>
+<li>Track your usage or behavior</li>
+<li>Access your contacts, location, or photos</li>
+<li>Use analytics or tracking services</li>
+<li>Share any data with third parties</li>
+<li>Require account creation or login</li>
+<li>Connect to external servers</li>
+</ul>
+<h3 id="what-we-store-locally">What We Store Locally</h3>
+<p>All data is stored <strong>locally on your device only</strong>:</p>
+<ul>
+<li><strong>Dictionary Files</strong>: MDX/MDD dictionary files you import</li>
+<li><strong>Search History</strong>: Words you&rsquo;ve looked up (stored locally)</li>
+<li><strong>Favorites</strong>: Words you&rsquo;ve bookmarked (stored locally)</li>
+<li><strong>App Settings</strong>: Your preferences (font size, theme, etc.)</li>
+</ul>
+<h2 id="how-we-use-your-information">How We Use Your Information</h2>
+<p>All data remains on your device and is used solely to:</p>
+<ul>
+<li>Display dictionary definitions</li>
+<li>Remember your search history for quick access</li>
+<li>Save your favorite words</li>
+<li>Apply your personalized settings</li>
+</ul>
+<h2 id="data-storage--security">Data Storage &amp; Security</h2>
+<ul>
+<li>All data is stored in your device&rsquo;s local storage</li>
+<li>No cloud synchronization or backup occurs</li>
+<li>Data is protected by your device&rsquo;s security features</li>
+<li>You can delete all app data at any time through Settings</li>
+</ul>
+<h2 id="third-party-services">Third-Party Services</h2>
+<p>MDX Reader <strong>does not use</strong> any third-party services, including:</p>
+<ul>
+<li>Analytics platforms (e.g., Google Analytics, Firebase)</li>
+<li>Advertising networks</li>
+<li>Social media integrations</li>
+<li>Cloud storage services</li>
+<li>Crash reporting tools</li>
+</ul>
+<h2 id="your-rights">Your Rights</h2>
+<p>You have complete control over your data:</p>
+<ul>
+<li><strong>Access</strong>: View all locally stored data within the app</li>
+<li><strong>Delete</strong>: Clear search history, favorites, or all data through Settings</li>
+<li><strong>Export</strong>: Dictionary files remain accessible in your device&rsquo;s file system</li>
+<li><strong>Uninstall</strong>: Deleting the app removes all associated data</li>
+</ul>
+<h2 id="childrens-privacy">Children&rsquo;s Privacy</h2>
+<p>MDX Reader does not collect any personal information from anyone, including children under 13. The app is safe for all ages.</p>
+<h2 id="changes-to-this-policy">Changes to This Policy</h2>
+<p>We may update this Privacy Policy occasionally. Changes will be reflected with a new &ldquo;Last Updated&rdquo; date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+<h2 id="data-portability">Data Portability</h2>
+<p>Your dictionary files and data remain in standard formats:</p>
+<ul>
+<li><strong>MDX/MDD files</strong>: Industry-standard dictionary format</li>
+<li><strong>SQLite database</strong>: Standard database format for history and favorites</li>
+</ul>
+<p>You can back up or transfer these files independently.</p>
+<hr>
+<h2 id="summary">Summary</h2>
+<p><strong>MDX Reader respects your privacy:</strong></p>
+<p>✅ <strong>No data collection</strong> - We don&rsquo;t collect personal information<br>
+✅ <strong>No internet required</strong> - Works completely offline<br>
+✅ <strong>No tracking</strong> - No analytics or user tracking<br>
+✅ <strong>Local storage only</strong> - All data stays on your device<br>
+✅ <strong>No third parties</strong> - No data sharing with anyone<br>
+✅ <strong>Full control</strong> - You own and control all your data</p>
+<hr>
+<p><em>This privacy policy is effective as of December 16, 2025.</em></p>
+<h2 id="简介">简介</h2>
+<p>MDX Reader（&ldquo;我们&rdquo;、&ldquo;本应用&rdquo;）致力于保护您的隐私。本隐私政策说明我们在您使用本应用时如何处理您的信息。</p>
+<h2 id="我们收集的信息">我们收集的信息</h2>
+<h3 id="我们不收集的信息">我们不收集的信息</h3>
+<p>MDX Reader 采用隐私优先的设计理念。我们<strong>不会</strong>：</p>
+<ul>
+<li>收集任何个人信息</li>
+<li>追踪您的使用情况或行为</li>
+<li>访问您的联系人、位置或照片</li>
+<li>使用分析或追踪服务</li>
+<li>与第三方共享数据</li>
+<li>要求账户创建或登录</li>
+<li>连接到外部服务器</li>
+</ul>
+<h3 id="我们本地存储的内容">我们本地存储的内容</h3>
+<p>所有数据<strong>仅存储在您的设备上</strong>：</p>
+<ul>
+<li><strong>词典文件</strong>：您导入的 MDX/MDD 词典文件</li>
+<li><strong>搜索历史</strong>：您查找过的单词（本地存储）</li>
+<li><strong>收藏夹</strong>：您收藏的单词（本地存储）</li>
+<li><strong>应用设置</strong>：您的偏好设置（字体大小、主题等）</li>
+</ul>
+<h2 id="我们如何使用您的信息">我们如何使用您的信息</h2>
+<p>所有数据都保存在您的设备上，仅用于：</p>
+<ul>
+<li>显示词典定义</li>
+<li>记住您的搜索历史以便快速访问</li>
+<li>保存您收藏的单词</li>
+<li>应用您个性化的设置</li>
+</ul>
+<h2 id="数据存储与安全">数据存储与安全</h2>
+<ul>
+<li>所有数据都存储在您设备的本地存储中</li>
+<li>不进行云同步或备份</li>
+<li>数据受您设备的安全功能保护</li>
+<li>您可以随时通过设置删除所有应用数据</li>
+</ul>
+<h2 id="第三方服务">第三方服务</h2>
+<p>MDX Reader <strong>不使用</strong>任何第三方服务，包括：</p>
+<ul>
+<li>分析平台（如 Google Analytics、Firebase）</li>
+<li>广告网络</li>
+<li>社交媒体集成</li>
+<li>云存储服务</li>
+<li>崩溃报告工具</li>
+</ul>
+<h2 id="您的权利">您的权利</h2>
+<p>您拥有对数据的完全控制权：</p>
+<ul>
+<li><strong>访问权</strong>：在应用内查看所有本地存储的数据</li>
+<li><strong>删除权</strong>：通过设置清除搜索历史、收藏夹或所有数据</li>
+<li><strong>导出权</strong>：词典文件在您设备的文件系统中保持可访问</li>
+<li><strong>注销权</strong>：删除应用会移除所有关联数据</li>
+</ul>
+<h2 id="儿童隐私">儿童隐私</h2>
+<p>MDX Reader 不收集任何人（包括 13 岁以下儿童）的任何个人信息。本应用对所有年龄段都是安全的。</p>
+<h2 id="政策变更">政策变更</h2>
+<p>我们可能会不时更新本隐私政策。变更将反映在新的&quot;最后更新&quot;日期中。在变更后继续使用本应用即表示您接受更新后的政策。</p>
+<h2 id="数据可迁移性">数据可迁移性</h2>
+<p>您的词典文件和数据采用标准格式：</p>
+<ul>
+<li><strong>MDX/MDD 文件</strong>：业界标准的词典格式</li>
+<li><strong>SQLite 数据库</strong>：用于历史记录和收藏夹的标准数据库格式</li>
+</ul>
+<p>您可以独立备份或传输这些文件。</p>
+<hr>
+<h2 id="总结">总结</h2>
+<p><strong>MDX Reader 尊重您的隐私：</strong></p>
+<p>✅ <strong>无数据收集</strong> - 我们不收集个人信息<br>
+✅ <strong>无需互联网</strong> - 完全离线工作<br>
+✅ <strong>无追踪</strong> - 没有分析或用户追踪<br>
+✅ <strong>仅本地存储</strong> - 所有数据保留在您的设备上<br>
+✅ <strong>无第三方</strong> - 不与任何人共享数据<br>
+✅ <strong>完全控制</strong> - 您拥有和控制所有您的数据</p>
+<hr>
+<p><em>本隐私政策自 2025年12月16日 起生效。</em></p>
+]]></content></item><item><title>MDX Reader</title><link>https://leviduan.github.io/posts/mdxmac/</link><pubDate>Sun, 14 Dec 2025 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/mdxmac/</guid><description>&lt;h2 id="-product-positioning"&gt;🎯 Product Positioning&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;MDX Reader - Your Professional Offline Dictionary Reader&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;A modern dictionary reading application designed for macOS, supporting MDX format dictionaries with complete offline functionality, privacy protection, and excellent user experience.&lt;/p&gt;
+&lt;p&gt;A modern dictionary reading application designed for macOS &amp;amp; iOS, supporting MDX format dictionaries with complete offline functionality, privacy protection, and excellent user experience.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="-core-features"&gt;✨ Core Features&lt;/h2&gt;
 &lt;h3 id="1--professional-dictionary-support"&gt;1. 📚 Professional Dictionary Support&lt;/h3&gt;
@@ -55,7 +226,7 @@
 &lt;h3 id="7--international-support"&gt;7. 🌏 International Support&lt;/h3&gt;
 &lt;p&gt;Supports 10 language interfaces:&lt;/p&gt;</description><content type="html"><![CDATA[<h2 id="-product-positioning">🎯 Product Positioning</h2>
 <p><strong>MDX Reader - Your Professional Offline Dictionary Reader</strong></p>
-<p>A modern dictionary reading application designed for macOS, supporting MDX format dictionaries with complete offline functionality, privacy protection, and excellent user experience.</p>
+<p>A modern dictionary reading application designed for macOS &amp; iOS, supporting MDX format dictionaries with complete offline functionality, privacy protection, and excellent user experience.</p>
 <hr>
 <h2 id="-core-features">✨ Core Features</h2>
 <h3 id="1--professional-dictionary-support">1. 📚 Professional Dictionary Support</h3>
