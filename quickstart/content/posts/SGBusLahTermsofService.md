@@ -1,5 +1,5 @@
 ---
-title: "Terms of Service - SG Bus Lah!"
+title: "Terms of Service - SG BusGo!"
 date: 2025-12-10
 draft: false
 tags: ["Project"]
@@ -17,11 +17,11 @@ tags: ["Project"]
 
 ### 1. Acceptance of Terms
 
-By downloading, installing, or using SG Bus Lah! ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.
+By downloading, installing, or using SG BusGo! ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.
 
 ### 2. Description of Service
 
-SG Bus Lah! is a public transport companion app for Singapore that provides:
+SG BusGo! is a public transport companion app for Singapore that provides:
 - Real-time bus arrival information
 - MRT/LRT route planning
 - Nearby stops discovery
@@ -108,11 +108,11 @@ For questions about these Terms, contact us at: levi.duan.arts@gmail.com
 
 ### 1. 条款接受
 
-下载、安装或使用 SG Bus Lah!（以下简称"本应用"），即表示您同意受本服务条款的约束。如果您不同意这些条款，请不要使用本应用。
+下载、安装或使用 SG BusGo!（以下简称"本应用"），即表示您同意受本服务条款的约束。如果您不同意这些条款，请不要使用本应用。
 
 ### 2. 服务描述
 
-SG Bus Lah! 是新加坡公共交通伴侣应用，提供：
+SG BusGo! 是新加坡公共交通伴侣应用，提供：
 - 实时公交到站信息
 - 地铁/轻轨路线规划
 - 附近站点发现
@@ -193,7 +193,7 @@ SG Bus Lah! 是新加坡公共交通伴侣应用，提供：
 
 ---
 
-© 2025 SG Bus Lah! All rights reserved.
+© 2025 SG BusGo! All rights reserved.
 
 
 

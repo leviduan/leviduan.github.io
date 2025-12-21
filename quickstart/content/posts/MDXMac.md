@@ -1,5 +1,5 @@
 ---
-title: "MDX Reader - Product Marketing Document"
+title: "MDX Reader"
 date: 2025-12-14
 draft: false
 tags: ["Project"]
@@ -9,7 +9,7 @@ tags: ["Project"]
 
 **MDX Reader - Your Professional Offline Dictionary Reader**
 
-A modern dictionary reading application designed for macOS, supporting MDX format dictionaries with complete offline functionality, privacy protection, and excellent user experience.
+A modern dictionary reading application designed for macOS & iOS, supporting MDX format dictionaries with complete offline functionality, privacy protection, and excellent user experience.
 
 ---
 

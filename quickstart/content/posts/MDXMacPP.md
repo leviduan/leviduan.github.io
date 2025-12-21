@@ -116,9 +116,8 @@ If we update this Privacy Policy, we will:
 
 If you have questions about this Privacy Policy:
 
-- **Email**: privacy@yourcompany.com
-- **Website**: https://yourwebsite.com/privacy
-- **GitHub**: https://github.com/yourusername/MDX/issues
+- **Email**: levi.duan.arts@gmail.com
+- **Website**: https://leviduan.github.io/
 
 ### 11. Compliance
 
@@ -237,8 +236,8 @@ MDX Reader 适合所有年龄段的用户。由于我们不收集任何个人信
 
 如果您对本隐私政策有疑问：
 
-- **邮箱**：levi.duan.arts@me.com
-- **网站**：https://yourwebsite.com/privacy
+- **Email**: levi.duan.arts@gmail.com
+- **Website**: https://leviduan.github.io/
 
 ### 11. 合规性
 

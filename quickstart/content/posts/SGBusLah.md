@@ -1,5 +1,5 @@
 ---
-title: "SG Bus Lah! One page"
+title: "SG BusGo! One page"
 date: 2025-12-09T14:32:42+08:00
 draft: false
 toc: false
@@ -30,12 +30,12 @@ New residents and tourists struggle to find bus stops and understand which servi
 
 ---
 
-## ✨ Introducing SG Bus Lah!
+## ✨ Introducing SG BusGo!
 ![hi](https://i.imgur.com/G4x53Bz.png)
 
 **Your AI-Powered Transport Assistant**
 
-SG Bus Lah! is the ultimate companion for navigating Singapore's public transport system. With real-time data, intelligent route planning, and smart arrival alerts, we make every journey effortless and stress-free.
+SG BusGo! is the ultimate companion for navigating Singapore's public transport system. With real-time data, intelligent route planning, and smart arrival alerts, we make every journey effortless and stress-free.
 
 ### 🏆 Winner Features
 
@@ -90,7 +90,7 @@ Delightful micro-interactions and smooth transitions make every tap feel respons
 - **Service Details:** Full route information and operating hours
 
 **Use Case:**  
-*"It's 8:45 AM. You need to catch the 190 bus. Open SG Bus Lah!, see it's arriving in 3 minutes, and leave your flat at the perfect time."*
+*"It's 8:45 AM. You need to catch the 190 bus. Open SG BusGo!, see it's arriving in 3 minutes, and leave your flat at the perfect time."*
 
 ---
 
@@ -312,7 +312,7 @@ Type once, find everything:
 
 ---
 
-## 🌟 Why Choose SG Bus Lah!
+## 🌟 Why Choose SG BusGo!
 
 ### For Daily Commuters
 
@@ -637,7 +637,7 @@ For Korean tourists and residents
 *Traditional way:*  
 Estimate bus time → Leave house → Wait 15 minutes → Bus packed
 
-*With SG Bus Lah!:*  
+*With SG BusGo!:*  
 - Check widget: "Bus 190 - 8 min"
 - Finish coffee
 - Leave at 6:52
@@ -703,7 +703,7 @@ Unfamiliar bus route, might miss stop while scrolling social media
 *Real Scenario:*  
 Downtown Line disrupted, need to reach office
 
-*With SG Bus Lah!:*  
+*With SG BusGo!:*  
 - App shows MRT alert
 - Re-plan trip with bus-only route
 - See alternative: 2 buses, 15 min longer
@@ -716,7 +716,7 @@ Downtown Line disrupted, need to reach office
 
 ### General
 
-**Q: Is SG Bus Lah! free to use?**  
+**Q: Is SG BusGo! free to use?**  
 A: Yes! All core features are completely free. We offer an optional ad-free premium experience for $4.99 SGD (one-time purchase).
 
 **Q: Does it work offline?**  
@@ -806,7 +806,7 @@ Email your suggestions
 **Available on the App Store**
 
 **Get Started in 3 Steps:**
-1. Download SG Bus Lah! (Free)
+1. Download SG BusGo! (Free)
 2. Allow location permission
 3. Start exploring Singapore!
 
