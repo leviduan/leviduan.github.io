@@ -1,5 +1,5 @@
 ---
-title: "Privacy Policy - SG BusGo!"
+title: "Privacy Policy - SG BusNow!"
 date: 2025-12-09T14:32:42+08:00
 draft: false
 toc: false
@@ -20,7 +20,7 @@ tags:
 
 ### Introduction
 
-SG BusGo! ("we", "our", or "the App") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.
+SG BusNow! ("we", "our", or "the App") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.
 
 ### Information We Collect
 
@@ -99,7 +99,7 @@ If you have questions about this Privacy Policy, please contact us at:
 
 ### 简介
 
-SG BusGo!（以下简称"我们"或"本应用"）致力于保护您的隐私。本隐私政策说明了我们在您使用本移动应用时如何收集、使用和保护您的信息。
+SG BusNow!（以下简称"我们"或"本应用"）致力于保护您的隐私。本隐私政策说明了我们在您使用本移动应用时如何收集、使用和保护您的信息。
 
 ### 我们收集的信息
 
@@ -174,7 +174,7 @@ SG BusGo!（以下简称"我们"或"本应用"）致力于保护您的隐私。�
 
 ---
 
-© 2025 SG BusGo! All rights reserved.
+© 2025 SG BusNow! All rights reserved.
 
 
 
