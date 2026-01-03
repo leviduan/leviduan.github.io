@@ -1,4 +1,262 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Zendone - Privacy Policy</title><link>https://leviduan.github.io/posts/ztdpp/</link><pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/ztdpp/</guid><description>&lt;p&gt;&lt;strong&gt;Last Updated / 最后更新&lt;/strong&gt;: December 30, 2025 / 2025年12月30日&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 03 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Privacy Policy for Cubby Calendar</title><link>https://leviduan.github.io/posts/calendarpp/</link><pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/calendarpp/</guid><description>&lt;h1 id="privacy-policy-for-cubby-calendar"&gt;Privacy Policy for Cubby Calendar&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Last Updated: January 3, 2026&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Welcome to Cubby Calendar (&amp;ldquo;we,&amp;rdquo; &amp;ldquo;our,&amp;rdquo; or &amp;ldquo;the App&amp;rdquo;). This Privacy Policy explains how we handle information when you use our mobile application.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;In short: We do not collect, store, transmit, or share any of your personal data. Everything stays on your device.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="information-we-do-not-collect"&gt;Information We Do NOT Collect&lt;/h2&gt;
+&lt;p&gt;Cubby Calendar is designed with your privacy as the top priority. We do not collect any information about you, including but not limited to:&lt;/p&gt;</description><content type="html"><![CDATA[<h1 id="privacy-policy-for-cubby-calendar">Privacy Policy for Cubby Calendar</h1>
+<p><strong>Last Updated: January 3, 2026</strong></p>
+<h2 id="introduction">Introduction</h2>
+<p>Welcome to Cubby Calendar (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the App&rdquo;). This Privacy Policy explains how we handle information when you use our mobile application.</p>
+<p><strong>In short: We do not collect, store, transmit, or share any of your personal data. Everything stays on your device.</strong></p>
+<h2 id="information-we-do-not-collect">Information We Do NOT Collect</h2>
+<p>Cubby Calendar is designed with your privacy as the top priority. We do not collect any information about you, including but not limited to:</p>
+<ul>
+<li>❌ Personal identification information (name, email, phone number, etc.)</li>
+<li>❌ Calendar entries, notes, or diary content</li>
+<li>❌ Photos or images you upload</li>
+<li>❌ Usage data or analytics</li>
+<li>❌ Device information</li>
+<li>❌ Location data</li>
+<li>❌ IP addresses</li>
+<li>❌ Cookies or tracking technologies</li>
+<li>❌ Any other personal or non-personal information</li>
+</ul>
+<h2 id="how-your-data-is-stored">How Your Data is Stored</h2>
+<p>All data you create in Cubby Calendar, including:</p>
+<ul>
+<li>Calendar entries and notes</li>
+<li>Icons and decorations</li>
+<li>Custom photos</li>
+<li>Color preferences</li>
+<li>Language settings</li>
+<li>Text and icon size preferences</li>
+</ul>
+<p>&hellip;is stored <strong>locally on your device only</strong> using iOS&rsquo;s secure local storage (AsyncStorage).</p>
+<h3 id="what-this-means">What This Means:</h3>
+<p>✅ Your data never leaves your device
+✅ We have no access to your information
+✅ No data is transmitted to our servers (we don&rsquo;t have any servers)
+✅ No third parties can access your data through our app
+✅ Your privacy is completely protected</p>
+<h2 id="photo-library-access">Photo Library Access</h2>
+<p>The app requests access to your photo library <strong>only</strong> when you choose to:</p>
+<ul>
+<li>Upload a custom theme image for your calendar</li>
+<li>This permission is <strong>completely optional</strong></li>
+<li>Photos are stored locally on your device</li>
+<li>Photos are never uploaded to any server</li>
+<li>You can use the app fully without granting photo access</li>
+</ul>
+<h2 id="no-account-required">No Account Required</h2>
+<p>Cubby Calendar does not require:</p>
+<ul>
+<li>❌ Account creation</li>
+<li>❌ Email registration</li>
+<li>❌ Social media login</li>
+<li>❌ Any form of sign-up</li>
+</ul>
+<p>You can start using the app immediately without providing any personal information.</p>
+<h2 id="no-analytics-or-tracking">No Analytics or Tracking</h2>
+<p>We do not use:</p>
+<ul>
+<li>❌ Analytics services (Google Analytics, Firebase, etc.)</li>
+<li>❌ Crash reporting tools</li>
+<li>❌ Advertising networks</li>
+<li>❌ Social media tracking pixels</li>
+<li>❌ Any third-party tracking or monitoring tools</li>
+</ul>
+<h2 id="no-advertising">No Advertising</h2>
+<p>Cubby Calendar is completely free and does not display any advertisements. We do not:</p>
+<ul>
+<li>❌ Show ads</li>
+<li>❌ Share data with advertisers</li>
+<li>❌ Track you for advertising purposes</li>
+</ul>
+<h2 id="data-backup-and-sync">Data Backup and Sync</h2>
+<p><strong>Important:</strong> Because all data is stored locally on your device:</p>
+<ul>
+<li>📱 Data is not automatically backed up to the cloud</li>
+<li>📱 If you delete the app, your data will be lost</li>
+<li>📱 If you switch to a new device, your data will not transfer</li>
+<li>📱 We recommend using your device&rsquo;s backup system (iCloud Backup) to preserve your data</li>
+</ul>
+<h2 id="internet-connectivity">Internet Connectivity</h2>
+<p>Cubby Calendar works <strong>completely offline</strong>. The app does not:</p>
+<ul>
+<li>❌ Require an internet connection</li>
+<li>❌ Make any network requests</li>
+<li>❌ Connect to any servers</li>
+<li>❌ Transmit any data over the internet</li>
+</ul>
+<h2 id="childrens-privacy">Children&rsquo;s Privacy</h2>
+<p>Cubby Calendar does not collect any information from anyone, including children under the age of 13. Parents can feel confident allowing their children to use the app as no personal information is collected or shared.</p>
+<h2 id="third-party-services">Third-Party Services</h2>
+<p>We do not integrate with any third-party services that could access your data. The app is completely self-contained.</p>
+<h2 id="changes-to-this-privacy-policy">Changes to This Privacy Policy</h2>
+<p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated &ldquo;Last Updated&rdquo; date. Since we don&rsquo;t collect any contact information, we cannot notify you directly of changes. We encourage you to review this Privacy Policy periodically.</p>
+<h2 id="your-rights">Your Rights</h2>
+<p>Since we do not collect any data about you, there is no data to:</p>
+<ul>
+<li>Access</li>
+<li>Modify</li>
+<li>Delete</li>
+<li>Export</li>
+<li>Or request information about</li>
+</ul>
+<p>Your data is entirely under your control on your device.</p>
+<h2 id="data-security">Data Security</h2>
+<p>While we do not collect or store your data on any servers, we use iOS&rsquo;s secure local storage mechanisms to protect your data on your device. Your device&rsquo;s built-in security features (passcode, Face ID, Touch ID) provide additional protection.</p>
+<h2 id="international-users">International Users</h2>
+<p>Cubby Calendar can be used anywhere in the world. Since no data is collected or transmitted, there are no international data transfer concerns.</p>
+<h2 id="legal-basis-gdpr-compliance">Legal Basis (GDPR Compliance)</h2>
+<p>For users in the European Union: Since we do not collect any personal data, the GDPR does not apply to our data handling practices. There is no personal data processing occurring.</p>
+<h2 id="california-privacy-rights-ccpa-compliance">California Privacy Rights (CCPA Compliance)</h2>
+<p>For California residents: We do not sell, share, or collect personal information as defined by the California Consumer Privacy Act.</p>
+<h2 id="contact-us">Contact Us</h2>
+<p>If you have any questions about this Privacy Policy, please contact us at:</p>
+<p><strong>Email：</strong> [levi.duan.arts@gmail.com]<br>
+<strong>Developer：</strong> [Levi Duan]</p>
+<hr>
+<h2 id="summary">Summary</h2>
+<p><strong>Cubby Calendar respects your privacy completely:</strong></p>
+<p>✅ No data collection<br>
+✅ No tracking<br>
+✅ No advertising<br>
+✅ No accounts required<br>
+✅ No internet connection needed<br>
+✅ Everything stays on your device<br>
+✅ Complete privacy protection</p>
+<p>Your calendar, your data, your privacy. 🐻📅</p>
+<hr>
+<p><em>This privacy policy is designed to be transparent and easy to understand. We believe in complete privacy, and this policy reflects our commitment to protecting your information by simply not collecting it.</em></p>
+<h1 id="熊熊日历隐私政策">熊熊日历隐私政策</h1>
+<p><strong>最后更新日期：2026年1月3日</strong></p>
+<h2 id="引言">引言</h2>
+<p>欢迎使用熊熊日历（以下简称&quot;我们&quot;、&ldquo;本应用&quot;或&quot;App&rdquo;）。本隐私政策说明了您在使用我们的移动应用程序时，我们如何处理信息。</p>
+<p><strong>简而言之：我们不收集、存储、传输或共享您的任何个人数据。所有内容都保存在您的设备上。</strong></p>
+<h2 id="我们不收集的信息">我们不收集的信息</h2>
+<p>熊熊日历在设计时将您的隐私作为首要考虑。我们不收集任何关于您的信息，包括但不限于：</p>
+<ul>
+<li>❌ 个人身份信息（姓名、邮箱、电话号码等）</li>
+<li>❌ 日历条目、笔记或日记内容</li>
+<li>❌ 您上传的照片或图片</li>
+<li>❌ 使用数据或分析数据</li>
+<li>❌ 设备信息</li>
+<li>❌ 位置数据</li>
+<li>❌ IP 地址</li>
+<li>❌ Cookie 或跟踪技术</li>
+<li>❌ 任何其他个人或非个人信息</li>
+</ul>
+<h2 id="您的数据如何存储">您的数据如何存储</h2>
+<p>您在熊熊日历中创建的所有数据，包括：</p>
+<ul>
+<li>日历条目和笔记</li>
+<li>图标和装饰</li>
+<li>自定义照片</li>
+<li>颜色偏好</li>
+<li>语言设置</li>
+<li>文字和图标大小偏好</li>
+</ul>
+<p>&hellip;<strong>仅存储在您的设备本地</strong>，使用 iOS 的安全本地存储（AsyncStorage）。</p>
+<h3 id="这意味着什么">这意味着什么：</h3>
+<p>✅ 您的数据永远不会离开您的设备
+✅ 我们无法访问您的信息
+✅ 没有数据传输到我们的服务器（我们没有任何服务器）
+✅ 第三方无法通过我们的应用访问您的数据
+✅ 您的隐私得到完全保护</p>
+<h2 id="相册访问权限">相册访问权限</h2>
+<p>应用程序<strong>仅在</strong>您选择以下操作时请求访问相册：</p>
+<ul>
+<li>为日历上传自定义主题图片</li>
+<li>此权限<strong>完全可选</strong></li>
+<li>照片存储在您的设备本地</li>
+<li>照片永远不会上传到任何服务器</li>
+<li>您可以在不授予相册访问权限的情况下完整使用本应用</li>
+</ul>
+<h2 id="无需账号">无需账号</h2>
+<p>熊熊日历不需要：</p>
+<ul>
+<li>❌ 创建账号</li>
+<li>❌ 邮箱注册</li>
+<li>❌ 社交媒体登录</li>
+<li>❌ 任何形式的注册</li>
+</ul>
+<p>您可以立即开始使用应用，无需提供任何个人信息。</p>
+<h2 id="无分析或跟踪">无分析或跟踪</h2>
+<p>我们不使用：</p>
+<ul>
+<li>❌ 分析服务（Google Analytics、Firebase 等）</li>
+<li>❌ 崩溃报告工具</li>
+<li>❌ 广告网络</li>
+<li>❌ 社交媒体跟踪像素</li>
+<li>❌ 任何第三方跟踪或监控工具</li>
+</ul>
+<h2 id="无广告">无广告</h2>
+<p>熊熊日历完全免费，不显示任何广告。我们不会：</p>
+<ul>
+<li>❌ 显示广告</li>
+<li>❌ 与广告商共享数据</li>
+<li>❌ 出于广告目的跟踪您</li>
+</ul>
+<h2 id="数据备份和同步">数据备份和同步</h2>
+<p><strong>重要提示：</strong> 由于所有数据都存储在您的设备本地：</p>
+<ul>
+<li>📱 数据不会自动备份到云端</li>
+<li>📱 如果您删除应用，您的数据将会丢失</li>
+<li>📱 如果您更换新设备，您的数据不会自动转移</li>
+<li>📱 我们建议使用设备的备份系统（如 iCloud 备份）来保护您的数据</li>
+</ul>
+<h2 id="网络连接">网络连接</h2>
+<p>熊熊日历<strong>完全离线工作</strong>。应用不会：</p>
+<ul>
+<li>❌ 需要互联网连接</li>
+<li>❌ 发起任何网络请求</li>
+<li>❌ 连接到任何服务器</li>
+<li>❌ 通过互联网传输任何数据</li>
+</ul>
+<h2 id="儿童隐私">儿童隐私</h2>
+<p>熊熊日历不从任何人（包括13岁以下的儿童）收集任何信息。家长可以放心让孩子使用本应用，因为不会收集或共享任何个人信息。</p>
+<h2 id="第三方服务">第三方服务</h2>
+<p>我们不集成任何可能访问您数据的第三方服务。本应用完全独立运行。</p>
+<h2 id="隐私政策变更">隐私政策变更</h2>
+<p>我们可能会不时更新本隐私政策。任何更改都会在本页面发布，并更新&quot;最后更新日期&quot;。由于我们不收集任何联系信息，无法直接通知您这些变更。我们建议您定期查看本隐私政策。</p>
+<h2 id="您的权利">您的权利</h2>
+<p>由于我们不收集任何关于您的数据，因此没有数据可以：</p>
+<ul>
+<li>访问</li>
+<li>修改</li>
+<li>删除</li>
+<li>导出</li>
+<li>或请求相关信息</li>
+</ul>
+<p>您的数据完全在您的设备上，由您自己控制。</p>
+<h2 id="数据安全">数据安全</h2>
+<p>虽然我们不在任何服务器上收集或存储您的数据，但我们使用 iOS 的安全本地存储机制来保护您设备上的数据。您设备的内置安全功能（密码、Face ID、Touch ID）提供了额外的保护。</p>
+<h2 id="国际用户">国际用户</h2>
+<p>熊熊日历可在全球任何地方使用。由于不收集或传输数据，因此不存在国际数据传输的问题。</p>
+<h2 id="法律依据gdpr-合规">法律依据（GDPR 合规）</h2>
+<p>对于欧盟用户：由于我们不收集任何个人数据，GDPR 不适用于我们的数据处理实践。没有进行个人数据处理。</p>
+<h2 id="加州隐私权ccpa-合规">加州隐私权（CCPA 合规）</h2>
+<p>对于加州居民：我们不出售、共享或收集《加州消费者隐私法案》定义的个人信息。</p>
+<h2 id="联系我们">联系我们</h2>
+<p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：</p>
+<p><strong>邮箱：</strong> [levi.duan.arts@gmail.com]<br>
+<strong>开发者：</strong> [Levi Duan]</p>
+<hr>
+<h2 id="总结">总结</h2>
+<p><strong>熊熊日历完全尊重您的隐私：</strong></p>
+<p>✅ 不收集数据<br>
+✅ 不跟踪<br>
+✅ 无广告<br>
+✅ 无需账号<br>
+✅ 无需联网<br>
+✅ 所有内容保存在您的设备上<br>
+✅ 完全隐私保护</p>
+<p>您的日历，您的数据，您的隐私。🐻📅</p>
+<hr>
+<p><em>本隐私政策旨在透明且易于理解。我们相信完全的隐私保护，本政策反映了我们通过简单地不收集数据来保护您信息的承诺。</em></p>
+]]></content></item><item><title>Zendone - Privacy Policy</title><link>https://leviduan.github.io/posts/ztdpp/</link><pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/ztdpp/</guid><description>&lt;p&gt;&lt;strong&gt;Last Updated / 最后更新&lt;/strong&gt;: December 30, 2025 / 2025年12月30日&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Zendone&lt;/strong&gt; is committed to protecting your privacy. This Privacy Policy explains how we handle your information.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Zendone&lt;/strong&gt; 致力于保护您的隐私。本隐私政策说明我们如何处理您的信息。&lt;/p&gt;
 &lt;hr&gt;
