@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Privacy Policy for Cubby Calendar</title><link>https://leviduan.github.io/posts/calendarpp/</link><pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/calendarpp/</guid><description>&lt;p&gt;&lt;strong&gt;Last Updated: January 3, 2026&lt;/strong&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 03 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Privacy Policy for Cubby Calendar</title><link>https://leviduan.github.io/posts/calendarpp/</link><pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/calendarpp/</guid><description>&lt;p&gt;&lt;strong&gt;Last Updated: January 3, 2026&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Welcome to Cubby Calendar (&amp;ldquo;we,&amp;rdquo; &amp;ldquo;our,&amp;rdquo; or &amp;ldquo;the App&amp;rdquo;). This Privacy Policy explains how we handle information when you use our mobile application.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;In short: We do not collect, store, transmit, or share any of your personal data. Everything stays on your device.&lt;/strong&gt;&lt;/p&gt;
@@ -5090,4 +5090,209 @@ Email your suggestions</p>
 <p><strong>No Credit Card Required</strong><br>
 <strong>No Account Needed</strong><br>
 <strong>No Ads for First 3 Days</strong></p>
+]]></content></item><item><title>Privacy Policy for TidyPic</title><link>https://leviduan.github.io/posts/tidypicpp/</link><pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/tidypicpp/</guid><description>&lt;p&gt;&lt;strong&gt;Last Updated: January 5, 2026&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;TidyPic (&amp;ldquo;we,&amp;rdquo; &amp;ldquo;our,&amp;rdquo; or &amp;ldquo;the App&amp;rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our mobile application.&lt;/p&gt;
+&lt;h2 id="information-we-collect"&gt;Information We Collect&lt;/h2&gt;
+&lt;h3 id="1-photo-library-access"&gt;1. Photo Library Access&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What We Access&lt;/strong&gt;: TidyPic requires access to your photo library to scan for screenshots, videos, duplicate photos, and similar photos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How We Use It&lt;/strong&gt;: All photo scanning and analysis is performed &lt;strong&gt;locally on your device&lt;/strong&gt;. We do not upload, store, or transmit your photos to any external servers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;User Control&lt;/strong&gt;: You can revoke photo library access at any time through your device&amp;rsquo;s Settings &amp;gt; Privacy &amp;gt; Photos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-device-storage-information"&gt;2. Device Storage Information&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;We collect information about your device&amp;rsquo;s storage capacity and usage to display storage statistics.&lt;/li&gt;
+&lt;li&gt;This data is processed locally and is not transmitted to external servers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3-in-app-purchase-information"&gt;3. In-App Purchase Information&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;When you purchase the Premium version, Apple processes the transaction through their secure payment system.&lt;/li&gt;
+&lt;li&gt;We do not collect or store your payment information.&lt;/li&gt;
+&lt;li&gt;We only receive a verification that the purchase was successful.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="4-analytics-and-crash-reports-optional"&gt;4. Analytics and Crash Reports (Optional)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;We may collect anonymous usage statistics and crash reports to improve app performance.&lt;/li&gt;
+&lt;li&gt;This information does not include any personal data or photos.&lt;/li&gt;
+&lt;li&gt;You can opt out of analytics in your device settings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="how-we-use-your-information"&gt;How We Use Your Information&lt;/h2&gt;
+&lt;p&gt;We use the information we collect to:&lt;/p&gt;</description><content type="html"><![CDATA[<p><strong>Last Updated: January 5, 2026</strong></p>
+<h2 id="introduction">Introduction</h2>
+<p>TidyPic (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the App&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our mobile application.</p>
+<h2 id="information-we-collect">Information We Collect</h2>
+<h3 id="1-photo-library-access">1. Photo Library Access</h3>
+<ul>
+<li><strong>What We Access</strong>: TidyPic requires access to your photo library to scan for screenshots, videos, duplicate photos, and similar photos.</li>
+<li><strong>How We Use It</strong>: All photo scanning and analysis is performed <strong>locally on your device</strong>. We do not upload, store, or transmit your photos to any external servers.</li>
+<li><strong>User Control</strong>: You can revoke photo library access at any time through your device&rsquo;s Settings &gt; Privacy &gt; Photos.</li>
+</ul>
+<h3 id="2-device-storage-information">2. Device Storage Information</h3>
+<ul>
+<li>We collect information about your device&rsquo;s storage capacity and usage to display storage statistics.</li>
+<li>This data is processed locally and is not transmitted to external servers.</li>
+</ul>
+<h3 id="3-in-app-purchase-information">3. In-App Purchase Information</h3>
+<ul>
+<li>When you purchase the Premium version, Apple processes the transaction through their secure payment system.</li>
+<li>We do not collect or store your payment information.</li>
+<li>We only receive a verification that the purchase was successful.</li>
+</ul>
+<h3 id="4-analytics-and-crash-reports-optional">4. Analytics and Crash Reports (Optional)</h3>
+<ul>
+<li>We may collect anonymous usage statistics and crash reports to improve app performance.</li>
+<li>This information does not include any personal data or photos.</li>
+<li>You can opt out of analytics in your device settings.</li>
+</ul>
+<h2 id="how-we-use-your-information">How We Use Your Information</h2>
+<p>We use the information we collect to:</p>
+<ul>
+<li>Identify and help you delete duplicate or similar photos</li>
+<li>Display storage and memory usage statistics</li>
+<li>Provide premium features to paying users</li>
+<li>Improve app performance and fix bugs</li>
+</ul>
+<h2 id="data-storage-and-security">Data Storage and Security</h2>
+<ul>
+<li><strong>Local Processing</strong>: All photo analysis is performed <strong>locally on your device</strong>.</li>
+<li><strong>No Cloud Storage</strong>: We do not upload or store your photos on any external servers.</li>
+<li><strong>No Third-Party Access</strong>: Your photos are never shared with third parties.</li>
+<li><strong>Secure Deletion</strong>: When you delete photos through TidyPic, they are permanently removed from your device according to iOS system policies.</li>
+</ul>
+<h2 id="third-party-services">Third-Party Services</h2>
+<p>TidyPic uses the following Apple services:</p>
+<ul>
+<li><strong>StoreKit</strong>: For processing in-app purchases</li>
+<li><strong>PhotoKit</strong>: For accessing your photo library</li>
+<li><strong>WidgetKit</strong>: For displaying home screen widgets</li>
+</ul>
+<p>These are Apple&rsquo;s native frameworks and follow Apple&rsquo;s privacy policies.</p>
+<h2 id="childrens-privacy">Children&rsquo;s Privacy</h2>
+<p>TidyPic does not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+<h2 id="your-rights">Your Rights</h2>
+<p>You have the right to:</p>
+<ul>
+<li><strong>Access</strong>: View what data the app uses (locally on your device)</li>
+<li><strong>Deletion</strong>: Delete the app and all associated data at any time</li>
+<li><strong>Opt-Out</strong>: Disable photo library access in device settings</li>
+<li><strong>Contact</strong>: Reach out with privacy concerns</li>
+</ul>
+<h2 id="changes-to-this-privacy-policy">Changes to This Privacy Policy</h2>
+<p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+<ul>
+<li>Posting the new Privacy Policy in the app</li>
+<li>Updating the &ldquo;Last Updated&rdquo; date</li>
+</ul>
+<h2 id="data-retention">Data Retention</h2>
+<ul>
+<li>We do not retain any of your photos or personal data.</li>
+<li>All processing is done locally on your device.</li>
+<li>Deleting the app removes all associated data.</li>
+</ul>
+<h2 id="international-users">International Users</h2>
+<p>TidyPic is available worldwide. By using the app, you consent to the processing of your information as described in this Privacy Policy, regardless of your location.</p>
+<h2 id="consent">Consent</h2>
+<p>By using TidyPic, you consent to this Privacy Policy.</p>
+<hr>
+<h2 id="summary">Summary</h2>
+<p><strong>TidyPic respects your privacy:</strong></p>
+<ul>
+<li>✅ All processing is done locally on your device</li>
+<li>✅ We never upload your photos</li>
+<li>✅ We don&rsquo;t collect personal information</li>
+<li>✅ You have full control over your data</li>
+<li>✅ Your photos remain private and secure</li>
+</ul>
+<hr>
+<p><em>This privacy policy complies with Apple&rsquo;s App Store Review Guidelines and applicable data protection laws.</em></p>
+<h1 id="tidypic净图隐私政策">TidyPic（净图）隐私政策</h1>
+<p><strong>最后更新日期：2026年1月5日</strong></p>
+<h2 id="引言">引言</h2>
+<p>TidyPic（净图，以下简称&quot;我们&quot;、&ldquo;本应用&rdquo;）致力于保护您的隐私。本隐私政策说明了您在使用我们的移动应用程序时，我们如何处理您的信息。</p>
+<h2 id="我们收集的信息">我们收集的信息</h2>
+<h3 id="1-照片库访问权限">1. 照片库访问权限</h3>
+<ul>
+<li><strong>访问内容</strong>：TidyPic 需要访问您的照片库，以扫描截图、视频、重复照片和相似照片。</li>
+<li><strong>使用方式</strong>：所有照片扫描和分析均在<strong>您的设备本地</strong>完成。我们不会上传、存储或传输您的照片到任何外部服务器。</li>
+<li><strong>用户控制</strong>：您可以随时通过设备的&quot;设置 &gt; 隐私 &gt; 照片&quot;撤销照片库访问权限。</li>
+</ul>
+<h3 id="2-设备存储信息">2. 设备存储信息</h3>
+<ul>
+<li>我们会收集您设备的存储容量和使用情况信息，以显示存储统计数据。</li>
+<li>这些数据在本地处理，不会传输到外部服务器。</li>
+</ul>
+<h3 id="3-应用内购买信息">3. 应用内购买信息</h3>
+<ul>
+<li>当您购买高级版时，Apple 通过其安全支付系统处理交易。</li>
+<li>我们不收集或存储您的支付信息。</li>
+<li>我们仅收到购买成功的验证信息。</li>
+</ul>
+<h3 id="4-分析和崩溃报告可选">4. 分析和崩溃报告（可选）</h3>
+<ul>
+<li>我们可能会收集匿名使用统计数据和崩溃报告，以改进应用性能。</li>
+<li>这些信息不包含任何个人数据或照片。</li>
+<li>您可以在设备设置中选择退出分析。</li>
+</ul>
+<h2 id="我们如何使用您的信息">我们如何使用您的信息</h2>
+<p>我们使用收集的信息用于：</p>
+<ul>
+<li>识别并帮助您删除重复或相似的照片</li>
+<li>显示存储和内存使用统计数据</li>
+<li>为付费用户提供高级功能</li>
+<li>改进应用性能并修复错误</li>
+</ul>
+<h2 id="数据存储和安全">数据存储和安全</h2>
+<ul>
+<li><strong>本地处理</strong>：所有照片分析均在<strong>您的设备本地</strong>完成。</li>
+<li><strong>无云存储</strong>：我们不会将您的照片上传或存储到任何外部服务器。</li>
+<li><strong>无第三方访问</strong>：您的照片绝不会与第三方共享。</li>
+<li><strong>安全删除</strong>：当您通过 TidyPic 删除照片时，它们会根据 iOS 系统策略从您的设备中永久删除。</li>
+</ul>
+<h2 id="第三方服务">第三方服务</h2>
+<p>TidyPic 使用以下 Apple 服务：</p>
+<ul>
+<li><strong>StoreKit</strong>：用于处理应用内购买</li>
+<li><strong>PhotoKit</strong>：用于访问您的照片库</li>
+<li><strong>WidgetKit</strong>：用于显示主屏幕小组件</li>
+</ul>
+<p>这些是 Apple 的原生框架，遵循 Apple 的隐私政策。</p>
+<h2 id="儿童隐私">儿童隐私</h2>
+<p>TidyPic 不会故意收集 13 岁以下儿童的个人信息。如果您是父母或监护人，并认为您的孩子向我们提供了个人信息，请联系我们。</p>
+<h2 id="您的权利">您的权利</h2>
+<p>您有权：</p>
+<ul>
+<li><strong>访问</strong>：查看应用使用的数据（本地存储在您的设备上）</li>
+<li><strong>删除</strong>：随时删除应用及所有相关数据</li>
+<li><strong>退出</strong>：在设备设置中禁用照片库访问</li>
+<li><strong>联系</strong>：提出隐私问题</li>
+</ul>
+<h2 id="隐私政策变更">隐私政策变更</h2>
+<p>我们可能会不时更新本隐私政策。我们将通过以下方式通知您任何更改：</p>
+<ul>
+<li>在应用中发布新的隐私政策</li>
+<li>更新&quot;最后更新日期&quot;</li>
+</ul>
+<h2 id="数据保留">数据保留</h2>
+<ul>
+<li>我们不保留您的任何照片或个人数据。</li>
+<li>所有处理均在您的设备本地完成。</li>
+<li>删除应用将删除所有相关数据。</li>
+</ul>
+<h2 id="国际用户">国际用户</h2>
+<p>TidyPic 在全球范围内可用。使用本应用即表示您同意按照本隐私政策中的描述处理您的信息，无论您身在何处。</p>
+<h2 id="同意">同意</h2>
+<p>使用 TidyPic 即表示您同意本隐私政策。</p>
+<hr>
+<h2 id="总结">总结</h2>
+<p><strong>TidyPic 尊重您的隐私：</strong></p>
+<ul>
+<li>✅ 所有处理均在您的设备本地完成</li>
+<li>✅ 我们绝不上传您的照片</li>
+<li>✅ 我们不收集个人信息</li>
+<li>✅ 您可以完全控制您的数据</li>
+<li>✅ 您的照片保持私密和安全</li>
+</ul>
+<hr>
+<p><em>本隐私政策符合 Apple App Store 审核指南和适用的数据保护法律。</em></p>
 ]]></content></item></channel></rss>
