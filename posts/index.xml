@@ -254,6 +254,232 @@
 <p>您的日历，您的数据，您的隐私。🐻📅</p>
 <hr>
 <p><em>本隐私政策旨在透明且易于理解。我们相信完全的隐私保护，本政策反映了我们通过简单地不收集数据来保护您信息的承诺。</em></p>
+]]></content></item><item><title>Privacy Policy for MusiPaper</title><link>https://leviduan.github.io/posts/musipaperpp/</link><pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/musipaperpp/</guid><description>&lt;h1 id="privacy-policy-for-musipaper"&gt;Privacy Policy for MusiPaper&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Last Updated:&lt;/strong&gt; January 6, 2026&lt;/p&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;MusiPaper (&amp;ldquo;we,&amp;rdquo; &amp;ldquo;our,&amp;rdquo; or &amp;ldquo;the app&amp;rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our iOS application.&lt;/p&gt;
+&lt;h2 id="information-we-collect"&gt;Information We Collect&lt;/h2&gt;
+&lt;h3 id="information-we-do-not-collect"&gt;Information We DO NOT Collect&lt;/h3&gt;
+&lt;p&gt;MusiPaper is designed with privacy in mind. We &lt;strong&gt;do not&lt;/strong&gt; collect, store, or transmit any of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;❌ Personal identification information (name, email, phone number)&lt;/li&gt;
+&lt;li&gt;❌ Location data&lt;/li&gt;
+&lt;li&gt;❌ Usage analytics or behavioral data&lt;/li&gt;
+&lt;li&gt;❌ Device information or identifiers&lt;/li&gt;
+&lt;li&gt;❌ Contacts, photos, or other personal files&lt;/li&gt;
+&lt;li&gt;❌ Browsing history or search queries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="information-stored-locally-on-your-device"&gt;Information Stored Locally on Your Device&lt;/h3&gt;
+&lt;p&gt;The following information is stored &lt;strong&gt;only on your device&lt;/strong&gt; and never leaves your iPhone/iPad:&lt;/p&gt;</description><content type="html"><![CDATA[<h1 id="privacy-policy-for-musipaper">Privacy Policy for MusiPaper</h1>
+<p><strong>Last Updated:</strong> January 6, 2026</p>
+<h2 id="introduction">Introduction</h2>
+<p>MusiPaper (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the app&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our iOS application.</p>
+<h2 id="information-we-collect">Information We Collect</h2>
+<h3 id="information-we-do-not-collect">Information We DO NOT Collect</h3>
+<p>MusiPaper is designed with privacy in mind. We <strong>do not</strong> collect, store, or transmit any of the following:</p>
+<ul>
+<li>❌ Personal identification information (name, email, phone number)</li>
+<li>❌ Location data</li>
+<li>❌ Usage analytics or behavioral data</li>
+<li>❌ Device information or identifiers</li>
+<li>❌ Contacts, photos, or other personal files</li>
+<li>❌ Browsing history or search queries</li>
+</ul>
+<h3 id="information-stored-locally-on-your-device">Information Stored Locally on Your Device</h3>
+<p>The following information is stored <strong>only on your device</strong> and never leaves your iPhone/iPad:</p>
+<ul>
+<li>✅ <strong>Purchase Status</strong>: Whether you have unlocked the Pro version (stored via Apple&rsquo;s StoreKit)</li>
+<li>✅ <strong>Save Count</strong>: Daily wallpaper save count for free tier users (stored in UserDefaults)</li>
+<li>✅ <strong>Last Reset Date</strong>: The date when the daily save count was last reset</li>
+</ul>
+<p>This local data is:</p>
+<ul>
+<li>Not accessible to us or any third parties</li>
+<li>Automatically deleted if you uninstall the app</li>
+<li>Not backed up to iCloud (by default)</li>
+</ul>
+<h2 id="how-we-use-your-information">How We Use Your Information</h2>
+<p>Since we don&rsquo;t collect any personal information, there is nothing for us to use or share.</p>
+<p>The app operates entirely on your device, using:</p>
+<ul>
+<li><strong>iTunes Search API</strong>: To fetch album artwork and music information from Apple&rsquo;s public catalog</li>
+<li><strong>Photo Library Access</strong>: To save wallpapers to your device (only when you explicitly tap &ldquo;Save&rdquo;)</li>
+</ul>
+<h2 id="third-party-services">Third-Party Services</h2>
+<h3 id="apple-services">Apple Services</h3>
+<p>MusiPaper uses the following Apple services:</p>
+<ol>
+<li>
+<p><strong>iTunes Search API</strong></p>
+<ul>
+<li>Purpose: Fetch album artwork and metadata</li>
+<li>Data Shared: Search queries (e.g., artist names)</li>
+<li>Privacy: Queries are sent to Apple&rsquo;s servers but are not associated with your identity</li>
+<li>Policy: <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a></li>
+</ul>
+</li>
+<li>
+<p><strong>StoreKit (In-App Purchase)</strong></p>
+<ul>
+<li>Purpose: Process Pro version purchases</li>
+<li>Data Shared: Purchase transaction data (handled entirely by Apple)</li>
+<li>Privacy: We never see your payment information</li>
+<li>Policy: <a href="https://www.apple.com/legal/privacy/">Apple IAP Privacy</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Photo Library (Optional)</strong></p>
+<ul>
+<li>Purpose: Save wallpapers to your device</li>
+<li>Access: Only when you explicitly tap &ldquo;Save Wallpaper&rdquo;</li>
+<li>Privacy: We cannot access your existing photos; we can only save new images</li>
+</ul>
+</li>
+</ol>
+<h3 id="no-third-party-analytics-or-advertising">No Third-Party Analytics or Advertising</h3>
+<p>We <strong>do not</strong> use:</p>
+<ul>
+<li>❌ Google Analytics, Firebase, or any analytics services</li>
+<li>❌ Facebook SDK or social media tracking</li>
+<li>❌ Advertising networks (AdMob, etc.)</li>
+<li>❌ Crash reporting tools that collect personal data</li>
+</ul>
+<h2 id="data-security">Data Security</h2>
+<p>Since all data is stored locally on your device:</p>
+<ul>
+<li>Your data is protected by your device&rsquo;s built-in security (passcode, Face ID, Touch ID)</li>
+<li>We have no servers, so there&rsquo;s no risk of data breaches from our side</li>
+<li>Your purchase status is synced via Apple&rsquo;s secure infrastructure</li>
+</ul>
+<h2 id="childrens-privacy">Children&rsquo;s Privacy</h2>
+<p>MusiPaper does not knowingly collect personal information from anyone, including children under 13. Since we don&rsquo;t collect any data, the app is safe for all ages.</p>
+<h2 id="your-rights">Your Rights</h2>
+<p>You have full control over your data:</p>
+<ul>
+<li><strong>Delete Your Data</strong>: Uninstall the app to remove all local data</li>
+<li><strong>Reset Purchase Status</strong>: Use the &ldquo;Restore Purchase&rdquo; feature in the upgrade prompt</li>
+<li><strong>Revoke Photo Access</strong>: Go to iOS Settings → Privacy &amp; Security → Photos → MusiPaper → Remove Access</li>
+</ul>
+<h2 id="changes-to-this-policy">Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+<ul>
+<li>Updating the &ldquo;Last Updated&rdquo; date at the top</li>
+<li>Displaying an in-app notice (for significant changes)</li>
+</ul>
+<h2 id="transparency-commitment">Transparency Commitment</h2>
+<p>We believe in radical transparency:</p>
+<ul>
+<li>✅ This app is built to respect your privacy</li>
+<li>✅ We will never sell or share your data (because we don&rsquo;t have any)</li>
+<li>✅ Future updates will maintain the same privacy-first approach</li>
+</ul>
+<hr>
+<p><strong>Summary:</strong> MusiPaper does not collect, store, or share any personal information. Everything happens on your device. Your privacy is our priority.</p>
+<h1 id="musipaper-隐私政策">MusiPaper 隐私政策</h1>
+<p><strong>最后更新日期：</strong> 2026年1月6日</p>
+<h2 id="简介">简介</h2>
+<p>MusiPaper（&ldquo;我们&quot;或&quot;本应用&rdquo;）致力于保护您的隐私。本隐私政策说明了我们在您使用本 iOS 应用程序时如何处理信息。</p>
+<h2 id="我们收集的信息">我们收集的信息</h2>
+<h3 id="我们不会收集的信息">我们不会收集的信息</h3>
+<p>MusiPaper 在设计时充分考虑了隐私保护。我们<strong>不会</strong>收集、存储或传输以下任何信息：</p>
+<ul>
+<li>❌ 个人身份信息（姓名、邮箱、电话号码）</li>
+<li>❌ 位置数据</li>
+<li>❌ 使用分析或行为数据</li>
+<li>❌ 设备信息或标识符</li>
+<li>❌ 通讯录、照片或其他个人文件</li>
+<li>❌ 浏览历史或搜索记录</li>
+</ul>
+<h3 id="本地存储在您设备上的信息">本地存储在您设备上的信息</h3>
+<p>以下信息<strong>仅存储在您的设备上</strong>，绝不会离开您的 iPhone/iPad：</p>
+<ul>
+<li>✅ <strong>购买状态</strong>：您是否已解锁专业版（通过 Apple StoreKit 存储）</li>
+<li>✅ <strong>保存次数</strong>：免费版用户的每日壁纸保存次数（存储在 UserDefaults）</li>
+<li>✅ <strong>上次重置日期</strong>：每日保存次数上次重置的日期</li>
+</ul>
+<p>这些本地数据：</p>
+<ul>
+<li>我们或任何第三方无法访问</li>
+<li>卸载应用后自动删除</li>
+<li>默认不备份到 iCloud</li>
+</ul>
+<h2 id="我们如何使用您的信息">我们如何使用您的信息</h2>
+<p>由于我们不收集任何个人信息，因此没有任何信息可供使用或分享。</p>
+<p>本应用完全在您的设备上运行，使用：</p>
+<ul>
+<li><strong>iTunes Search API</strong>：从 Apple 公开目录获取专辑封面和音乐信息</li>
+<li><strong>相册访问权限</strong>：将壁纸保存到您的设备（仅在您明确点击&quot;保存&quot;时）</li>
+</ul>
+<h2 id="第三方服务">第三方服务</h2>
+<h3 id="apple-服务">Apple 服务</h3>
+<p>MusiPaper 使用以下 Apple 服务：</p>
+<ol>
+<li>
+<p><strong>iTunes Search API</strong></p>
+<ul>
+<li>用途：获取专辑封面和元数据</li>
+<li>共享数据：搜索查询（例如艺术家名称）</li>
+<li>隐私：查询发送到 Apple 服务器，但不与您的身份关联</li>
+<li>政策：<a href="https://www.apple.com/cn/legal/privacy/">Apple 隐私政策</a></li>
+</ul>
+</li>
+<li>
+<p><strong>StoreKit（应用内购买）</strong></p>
+<ul>
+<li>用途：处理专业版购买</li>
+<li>共享数据：购买交易数据（完全由 Apple 处理）</li>
+<li>隐私：我们绝不会看到您的支付信息</li>
+<li>政策：<a href="https://www.apple.com/cn/legal/privacy/">Apple IAP 隐私</a></li>
+</ul>
+</li>
+<li>
+<p><strong>相册（可选）</strong></p>
+<ul>
+<li>用途：将壁纸保存到您的设备</li>
+<li>访问：仅在您明确点击&quot;保存壁纸&quot;时</li>
+<li>隐私：我们无法访问您的现有照片；只能保存新图片</li>
+</ul>
+</li>
+</ol>
+<h3 id="无第三方分析或广告">无第三方分析或广告</h3>
+<p>我们<strong>不使用</strong>：</p>
+<ul>
+<li>❌ Google Analytics、Firebase 或任何分析服务</li>
+<li>❌ Facebook SDK 或社交媒体跟踪</li>
+<li>❌ 广告网络（AdMob 等）</li>
+<li>❌ 收集个人数据的崩溃报告工具</li>
+</ul>
+<h2 id="数据安全">数据安全</h2>
+<p>由于所有数据都存储在您的设备本地：</p>
+<ul>
+<li>您的数据受设备内置安全保护（密码、Face ID、Touch ID）</li>
+<li>我们没有服务器，因此不存在我们这边的数据泄露风险</li>
+<li>您的购买状态通过 Apple 的安全基础设施同步</li>
+</ul>
+<h2 id="儿童隐私">儿童隐私</h2>
+<p>MusiPaper 不会有意收集任何人的个人信息，包括 13 岁以下儿童。由于我们不收集任何数据，本应用对所有年龄段都是安全的。</p>
+<h2 id="您的权利">您的权利</h2>
+<p>您对自己的数据拥有完全控制权：</p>
+<ul>
+<li><strong>删除您的数据</strong>：卸载应用即可删除所有本地数据</li>
+<li><strong>重置购买状态</strong>：在升级提示中使用&quot;恢复购买&quot;功能</li>
+<li><strong>撤销相册访问</strong>：前往 iOS 设置 → 隐私与安全性 → 照片 → MusiPaper → 移除访问权限</li>
+</ul>
+<h2 id="本政策的变更">本政策的变更</h2>
+<p>我们可能会不时更新本隐私政策。我们将通过以下方式通知您任何变更：</p>
+<ul>
+<li>更新顶部的&quot;最后更新日期&quot;</li>
+<li>显示应用内通知（针对重大变更）</li>
+</ul>
+<h2 id="透明承诺">透明承诺</h2>
+<p>我们相信彻底的透明度：</p>
+<ul>
+<li>✅ 本应用旨在尊重您的隐私</li>
+<li>✅ 我们绝不会出售或分享您的数据（因为我们根本没有）</li>
+<li>✅ 未来的更新将保持同样的隐私优先方法</li>
+</ul>
+<hr>
+<p><strong>总结：</strong> MusiPaper 不收集、存储或共享任何个人信息。一切都在您的设备上进行。您的隐私是我们的首要任务。</p>
 ]]></content></item><item><title>Zendone - Privacy Policy</title><link>https://leviduan.github.io/posts/ztdpp/</link><pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/ztdpp/</guid><description>&lt;p&gt;&lt;strong&gt;Last Updated / 最后更新&lt;/strong&gt;: December 30, 2025 / 2025年12月30日&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Zendone&lt;/strong&gt; is committed to protecting your privacy. This Privacy Policy explains how we handle your information.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Zendone&lt;/strong&gt; 致力于保护您的隐私。本隐私政策说明我们如何处理您的信息。&lt;/p&gt;
