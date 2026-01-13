@@ -1,4 +1,381 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 03 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Privacy Policy for Cubby Calendar</title><link>https://leviduan.github.io/posts/calendarpp/</link><pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/calendarpp/</guid><description>&lt;p&gt;&lt;strong&gt;Last Updated: January 3, 2026&lt;/strong&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 12 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Privacy Policy for DanceTrace</title><link>https://leviduan.github.io/posts/dancetracepp/</link><pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/dancetracepp/</guid><description>&lt;h1 id="privacy-policy-for-dancetrace-舞迹"&gt;Privacy Policy for DanceTrace (舞迹)&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Last Updated: January 13, 2026&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;DanceTrace (&amp;ldquo;we,&amp;rdquo; &amp;ldquo;our,&amp;rdquo; or &amp;ldquo;the app&amp;rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our iOS application.&lt;/p&gt;
+&lt;h2 id="information-we-collect"&gt;Information We Collect&lt;/h2&gt;
+&lt;h3 id="1-information-you-provide-directly"&gt;1. Information You Provide Directly&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Dance Practice Data:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dance classes information (class name, date, time, location, teacher, dance style)&lt;/li&gt;
+&lt;li&gt;Skill elements and proficiency ratings&lt;/li&gt;
+&lt;li&gt;Practice reflections and notes&lt;/li&gt;
+&lt;li&gt;Studio and teacher information you add&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Videos:&lt;/strong&gt;&lt;/p&gt;</description><content type="html"><![CDATA[<h1 id="privacy-policy-for-dancetrace-舞迹">Privacy Policy for DanceTrace (舞迹)</h1>
+<p><strong>Last Updated: January 13, 2026</strong></p>
+<h2 id="introduction">Introduction</h2>
+<p>DanceTrace (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the app&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our iOS application.</p>
+<h2 id="information-we-collect">Information We Collect</h2>
+<h3 id="1-information-you-provide-directly">1. Information You Provide Directly</h3>
+<p><strong>Dance Practice Data:</strong></p>
+<ul>
+<li>Dance classes information (class name, date, time, location, teacher, dance style)</li>
+<li>Skill elements and proficiency ratings</li>
+<li>Practice reflections and notes</li>
+<li>Studio and teacher information you add</li>
+</ul>
+<p><strong>Videos:</strong></p>
+<ul>
+<li>Practice videos you record using the in-app camera</li>
+<li>Teacher demonstration videos you import from your photo library</li>
+<li>Video comparisons you create</li>
+</ul>
+<h3 id="2-information-automatically-collected">2. Information Automatically Collected</h3>
+<p><strong>Device Information:</strong></p>
+<ul>
+<li>Device type and model</li>
+<li>Operating system version</li>
+<li>App version</li>
+<li>Local storage usage statistics</li>
+</ul>
+<p><strong>Usage Data:</strong></p>
+<ul>
+<li>Features you use within the app</li>
+<li>Frequency and duration of app usage</li>
+<li>Performance and crash data (anonymous)</li>
+</ul>
+<h2 id="how-we-use-your-information">How We Use Your Information</h2>
+<p>We use the collected information solely for the following purposes:</p>
+<ol>
+<li>
+<p><strong>Core Functionality:</strong></p>
+<ul>
+<li>Store and organize your dance practice records</li>
+<li>Provide video comparison and playback features</li>
+<li>Track your skill development progress</li>
+<li>Generate practice insights and statistics</li>
+</ul>
+</li>
+<li>
+<p><strong>App Improvement:</strong></p>
+<ul>
+<li>Analyze app performance and fix bugs</li>
+<li>Understand feature usage to improve user experience</li>
+<li>Optimize video processing and AI tracking features</li>
+</ul>
+</li>
+<li>
+<p><strong>Local Notifications:</strong></p>
+<ul>
+<li>Send reminders for upcoming dance classes (if you enable notifications)</li>
+</ul>
+</li>
+</ol>
+<h2 id="data-storage-and-security">Data Storage and Security</h2>
+<h3 id="local-storage">Local Storage</h3>
+<ul>
+<li>All your data is stored <strong>locally on your device</strong> using iOS secure storage (UserDefaults and Core Data)</li>
+<li>Videos are saved in the app&rsquo;s local file system, not uploaded to external servers</li>
+<li>Your practice data, reflections, and skill ratings remain on your device</li>
+</ul>
+<h3 id="icloud-sync-optional">iCloud Sync (Optional)</h3>
+<ul>
+<li>If you enable iCloud sync in Settings, your data will be synchronized across your Apple devices using your iCloud account</li>
+<li>This data is encrypted and protected by Apple&rsquo;s iCloud security</li>
+<li>We do not have access to your iCloud data</li>
+</ul>
+<h3 id="security-measures">Security Measures</h3>
+<ul>
+<li>All data is protected by iOS system-level encryption</li>
+<li>We do not transmit your personal data to external servers</li>
+<li>No third-party analytics or advertising SDKs are integrated</li>
+</ul>
+<h2 id="data-sharing-and-disclosure">Data Sharing and Disclosure</h2>
+<p><strong>We do not sell, trade, or share your personal information with third parties.</strong></p>
+<p>We may only disclose information if:</p>
+<ul>
+<li>Required by law or legal process</li>
+<li>Necessary to protect our rights or safety</li>
+<li>You explicitly authorize us to share specific data</li>
+</ul>
+<h2 id="your-rights-and-choices">Your Rights and Choices</h2>
+<p>You have complete control over your data:</p>
+<h3 id="access-and-export">Access and Export</h3>
+<ul>
+<li>All your data is accessible within the app at any time</li>
+<li>You can export videos to your photo library</li>
+</ul>
+<h3 id="deletion">Deletion</h3>
+<ul>
+<li>Delete individual classes, videos, or skills within the app</li>
+<li>Uninstalling the app will permanently remove all locally stored data</li>
+<li>If using iCloud sync, delete data from iCloud settings in your device</li>
+</ul>
+<h3 id="permissions-management">Permissions Management</h3>
+<ul>
+<li><strong>Camera Access:</strong> Required for recording practice videos (can be revoked in iOS Settings)</li>
+<li><strong>Photo Library Access:</strong> Required for importing and exporting videos (can be revoked in iOS Settings)</li>
+<li><strong>Microphone Access:</strong> Required for recording audio with videos (can be revoked in iOS Settings)</li>
+<li><strong>Notifications:</strong> Optional, can be disabled in iOS Settings</li>
+</ul>
+<h2 id="camera-and-photo-library-access">Camera and Photo Library Access</h2>
+<ul>
+<li><strong>Camera:</strong> Used solely for recording your dance practice videos within the app</li>
+<li><strong>Photo Library Read:</strong> Used to import teacher demonstration videos or existing practice videos</li>
+<li><strong>Photo Library Write:</strong> Used to save your practice videos and comparison videos to your photo library</li>
+<li>We do not access, upload, or share any photos or videos beyond the ones you explicitly select</li>
+</ul>
+<h2 id="ai-and-video-processing">AI and Video Processing</h2>
+<ul>
+<li><strong>AI Body Tracking:</strong> Uses Apple&rsquo;s Vision Framework for local on-device pose detection</li>
+<li>All video processing happens <strong>locally on your device</strong></li>
+<li>No video data is sent to external servers for AI analysis</li>
+<li>Pose data is used only for visual overlay and is not permanently stored</li>
+</ul>
+<h2 id="childrens-privacy">Children&rsquo;s Privacy</h2>
+<p>DanceTrace is intended for users aged 13 and above. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us, and we will delete such information.</p>
+<h2 id="changes-to-this-privacy-policy">Changes to This Privacy Policy</h2>
+<p>We may update this Privacy Policy periodically. We will notify you of any significant changes by:</p>
+<ul>
+<li>Posting the new Privacy Policy in the app</li>
+<li>Updating the &ldquo;Last Updated&rdquo; date at the top of this policy</li>
+</ul>
+<p>Your continued use of DanceTrace after changes indicates your acceptance of the updated policy.</p>
+<h2 id="data-retention">Data Retention</h2>
+<ul>
+<li>Your data is retained locally on your device until you delete it or uninstall the app</li>
+<li>If using iCloud sync, data is retained in iCloud according to your iCloud storage settings</li>
+<li>We do not retain any data on our servers as all processing is local</li>
+</ul>
+<h2 id="international-users">International Users</h2>
+<p>DanceTrace is designed to work globally. All data processing occurs locally on your device, regardless of your location. If you use iCloud sync, your data is stored in accordance with Apple&rsquo;s iCloud Terms of Service and your regional iCloud data center.</p>
+<h2 id="third-party-services">Third-Party Services</h2>
+<p>DanceTrace uses the following Apple frameworks and services:</p>
+<ul>
+<li><strong>AVFoundation:</strong> For video recording and playback</li>
+<li><strong>Vision Framework:</strong> For AI pose detection (on-device only)</li>
+<li><strong>Core Data:</strong> For local data storage</li>
+<li><strong>CloudKit (Optional):</strong> For iCloud synchronization if enabled</li>
+</ul>
+<p>We do not integrate any third-party analytics, advertising, or tracking services.</p>
+<h2 id="contact-us">Contact Us</h2>
+<p>If you have questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us at:</p>
+<p><strong>Email:</strong> [Your Contact Email]</p>
+<p><strong>Developer:</strong> [Your Name or Company Name]</p>
+<hr>
+<h2 id="privacy-policy-summary">Privacy Policy Summary</h2>
+<p><strong>What we collect:</strong></p>
+<ul>
+<li>Dance practice records, videos, and notes you create</li>
+</ul>
+<p><strong>How we use it:</strong></p>
+<ul>
+<li>To provide core app functionality and improve your experience</li>
+</ul>
+<p><strong>Where it&rsquo;s stored:</strong></p>
+<ul>
+<li>Locally on your device (and optionally in your iCloud account)</li>
+</ul>
+<p><strong>Who we share with:</strong></p>
+<ul>
+<li>No one. Your data stays with you.</li>
+</ul>
+<p><strong>Your control:</strong></p>
+<ul>
+<li>Complete access, export, and deletion rights at any time</li>
+</ul>
+<hr>
+<p><strong>This Privacy Policy is available in the following languages:</strong></p>
+<ul>
+<li>English</li>
+<li>简体中文 (Simplified Chinese)</li>
+<li>日本語 (Japanese)</li>
+<li>한국어 (Korean)</li>
+</ul>
+<p>For other language versions, please refer to the in-app settings.</p>
+<h1 id="dancetrace舞迹隐私政策">DanceTrace（舞迹）隐私政策</h1>
+<p><strong>最后更新日期：2026年1月13日</strong></p>
+<h2 id="简介">简介</h2>
+<p>DanceTrace（&ldquo;我们&quot;或&quot;本应用&rdquo;）致力于保护您的隐私。本隐私政策说明了当您使用我们的 iOS 应用程序时，我们如何收集、使用和保护您的信息。</p>
+<h2 id="我们收集的信息">我们收集的信息</h2>
+<h3 id="1-您直接提供的信息">1. 您直接提供的信息</h3>
+<p><strong>舞蹈练习数据：</strong></p>
+<ul>
+<li>舞蹈课程信息（课程名称、日期、时间、地点、老师、舞种）</li>
+<li>技能元素和熟练度评分</li>
+<li>练习反思和笔记</li>
+<li>您添加的舞室和老师信息</li>
+</ul>
+<p><strong>视频：</strong></p>
+<ul>
+<li>使用应用内相机录制的练习视频</li>
+<li>从相册导入的老师示范视频</li>
+<li>您创建的视频对比</li>
+</ul>
+<h3 id="2-自动收集的信息">2. 自动收集的信息</h3>
+<p><strong>设备信息：</strong></p>
+<ul>
+<li>设备类型和型号</li>
+<li>操作系统版本</li>
+<li>应用版本</li>
+<li>本地存储使用统计</li>
+</ul>
+<p><strong>使用数据：</strong></p>
+<ul>
+<li>您在应用内使用的功能</li>
+<li>应用使用频率和时长</li>
+<li>性能和崩溃数据（匿名）</li>
+</ul>
+<h2 id="我们如何使用您的信息">我们如何使用您的信息</h2>
+<p>我们仅将收集的信息用于以下目的：</p>
+<ol>
+<li>
+<p><strong>核心功能：</strong></p>
+<ul>
+<li>存储和整理您的舞蹈练习记录</li>
+<li>提供视频对比和播放功能</li>
+<li>追踪您的技能发展进度</li>
+<li>生成练习洞察和统计数据</li>
+</ul>
+</li>
+<li>
+<p><strong>应用改进：</strong></p>
+<ul>
+<li>分析应用性能并修复错误</li>
+<li>了解功能使用情况以改善用户体验</li>
+<li>优化视频处理和 AI 追踪功能</li>
+</ul>
+</li>
+<li>
+<p><strong>本地通知：</strong></p>
+<ul>
+<li>发送即将到来的舞蹈课程提醒（如果您启用通知）</li>
+</ul>
+</li>
+</ol>
+<h2 id="数据存储和安全">数据存储和安全</h2>
+<h3 id="本地存储">本地存储</h3>
+<ul>
+<li>您的所有数据都<strong>本地存储在您的设备上</strong>，使用 iOS 安全存储（UserDefaults 和 Core Data）</li>
+<li>视频保存在应用的本地文件系统中，不会上传到外部服务器</li>
+<li>您的练习数据、反思和技能评分都保留在您的设备上</li>
+</ul>
+<h3 id="icloud-同步可选">iCloud 同步（可选）</h3>
+<ul>
+<li>如果您在设置中启用 iCloud 同步，您的数据将使用您的 iCloud 账户在您的 Apple 设备之间同步</li>
+<li>这些数据经过加密，受 Apple iCloud 安全保护</li>
+<li>我们无法访问您的 iCloud 数据</li>
+</ul>
+<h3 id="安全措施">安全措施</h3>
+<ul>
+<li>所有数据都受 iOS 系统级加密保护</li>
+<li>我们不会将您的个人数据传输到外部服务器</li>
+<li>未集成任何第三方分析或广告 SDK</li>
+</ul>
+<h2 id="数据共享和披露">数据共享和披露</h2>
+<p><strong>我们不会出售、交易或与第三方共享您的个人信息。</strong></p>
+<p>我们仅在以下情况下披露信息：</p>
+<ul>
+<li>法律或法律程序要求</li>
+<li>保护我们的权利或安全所必需</li>
+<li>您明确授权我们共享特定数据</li>
+</ul>
+<h2 id="您的权利和选择">您的权利和选择</h2>
+<p>您对数据拥有完全控制权：</p>
+<h3 id="访问和导出">访问和导出</h3>
+<ul>
+<li>您可以随时在应用内访问所有数据</li>
+<li>您可以将视频导出到相册</li>
+</ul>
+<h3 id="删除">删除</h3>
+<ul>
+<li>在应用内删除单个课程、视频或技能</li>
+<li>卸载应用将永久删除所有本地存储的数据</li>
+<li>如果使用 iCloud 同步，可在设备的 iCloud 设置中删除数据</li>
+</ul>
+<h3 id="权限管理">权限管理</h3>
+<ul>
+<li>**相机访问：**录制练习视频所需（可在 iOS 设置中撤销）</li>
+<li>**相册访问：**导入和导出视频所需（可在 iOS 设置中撤销）</li>
+<li>**麦克风访问：**录制视频音频所需（可在 iOS 设置中撤销）</li>
+<li>**通知：**可选，可在 iOS 设置中禁用</li>
+</ul>
+<h2 id="相机和相册访问">相机和相册访问</h2>
+<ul>
+<li>**相机：**仅用于在应用内录制您的舞蹈练习视频</li>
+<li>**读取相册：**用于导入老师示范视频或现有练习视频</li>
+<li>**保存到相册：**用于将您的练习视频和对比视频保存到相册</li>
+<li>我们不会访问、上传或共享您明确选择之外的任何照片或视频</li>
+</ul>
+<h2 id="ai-和视频处理">AI 和视频处理</h2>
+<ul>
+<li>**AI 身体追踪：**使用 Apple Vision Framework 进行本地设备端姿态检测</li>
+<li>所有视频处理都在<strong>您的设备本地进行</strong></li>
+<li>不会将视频数据发送到外部服务器进行 AI 分析</li>
+<li>姿态数据仅用于视觉叠加，不会永久存储</li>
+</ul>
+<h2 id="儿童隐私">儿童隐私</h2>
+<p>DanceTrace 适用于 13 岁及以上的用户。我们不会故意收集 13 岁以下儿童的个人信息。如果您认为 13 岁以下的儿童向我们提供了个人信息，请联系我们，我们将删除此类信息。</p>
+<h2 id="隐私政策变更">隐私政策变更</h2>
+<p>我们可能会定期更新本隐私政策。我们将通过以下方式通知您任何重大变更：</p>
+<ul>
+<li>在应用中发布新的隐私政策</li>
+<li>更新本政策顶部的&quot;最后更新日期&quot;</li>
+</ul>
+<p>您在变更后继续使用 DanceTrace 表示您接受更新后的政策。</p>
+<h2 id="数据保留">数据保留</h2>
+<ul>
+<li>您的数据在您删除或卸载应用之前会本地保留在您的设备上</li>
+<li>如果使用 iCloud 同步，数据将根据您的 iCloud 存储设置保留在 iCloud 中</li>
+<li>我们不会在服务器上保留任何数据，因为所有处理都是本地的</li>
+</ul>
+<h2 id="国际用户">国际用户</h2>
+<p>DanceTrace 设计为全球使用。无论您身在何处，所有数据处理都在您的设备本地进行。如果您使用 iCloud 同步，您的数据将根据 Apple iCloud 服务条款和您所在地区的 iCloud 数据中心进行存储。</p>
+<h2 id="第三方服务">第三方服务</h2>
+<p>DanceTrace 使用以下 Apple 框架和服务：</p>
+<ul>
+<li>**AVFoundation：**用于视频录制和播放</li>
+<li>**Vision Framework：**用于 AI 姿态检测（仅设备端）</li>
+<li>**Core Data：**用于本地数据存储</li>
+<li>**CloudKit（可选）：**用于 iCloud 同步（如果启用）</li>
+</ul>
+<p>我们不集成任何第三方分析、广告或跟踪服务。</p>
+<h2 id="联系我们">联系我们</h2>
+<p>如果您对本隐私政策或您的个人数据有疑问、疑虑或请求，请通过以下方式联系我们：</p>
+<p><strong>电子邮件：</strong>[您的联系邮箱]</p>
+<p><strong>开发者：</strong>[您的姓名或公司名称]</p>
+<hr>
+<h2 id="隐私政策摘要">隐私政策摘要</h2>
+<p><strong>我们收集什么：</strong></p>
+<ul>
+<li>您创建的舞蹈练习记录、视频和笔记</li>
+</ul>
+<p><strong>我们如何使用：</strong></p>
+<ul>
+<li>提供核心应用功能并改善您的体验</li>
+</ul>
+<p><strong>存储在哪里：</strong></p>
+<ul>
+<li>本地存储在您的设备上（以及可选的 iCloud 账户中）</li>
+</ul>
+<p><strong>与谁共享：</strong></p>
+<ul>
+<li>无人。您的数据只属于您。</li>
+</ul>
+<p><strong>您的控制权：</strong></p>
+<ul>
+<li>随时拥有完全的访问、导出和删除权</li>
+</ul>
+<hr>
+<p><strong>本隐私政策提供以下语言版本：</strong></p>
+<ul>
+<li>English（英语）</li>
+<li>简体中文</li>
+<li>日本語（日语）</li>
+<li>한국어（韩语）</li>
+</ul>
+<p>其他语言版本，请参阅应用内设置。</p>
+]]></content></item><item><title>Privacy Policy for Cubby Calendar</title><link>https://leviduan.github.io/posts/calendarpp/</link><pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/calendarpp/</guid><description>&lt;p&gt;&lt;strong&gt;Last Updated: January 3, 2026&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Welcome to Cubby Calendar (&amp;ldquo;we,&amp;rdquo; &amp;ldquo;our,&amp;rdquo; or &amp;ldquo;the App&amp;rdquo;). This Privacy Policy explains how we handle information when you use our mobile application.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;In short: We do not collect, store, transmit, or share any of your personal data. Everything stays on your device.&lt;/strong&gt;&lt;/p&gt;
