@@ -138,28 +138,3 @@ article p {
     font-family: HelveticaNeue, "trebuchet ms", Verdana, "verdana ref", "segoe ui", Candara, "lucida grande", "lucida sans unicode", "lucida sans", Tahoma, sans-serif !important;
     font-weight: bold !important;
 }
-
-/* Disqus 评论区样式 - 移除背景色让 Disqus 自己控制 */
-#comments {
-    margin-top: 2rem;
-    padding: 0;
-    background: transparent !important;
-}
-
-/* 黑暗模式下的 Disqus 评论区 */
-.dark-theme #comments,
-[data-theme=dark] #comments {
-    background: transparent !important;
-    border: none !important;
-}
-
-/* Disqus iframe 容器 */
-#disqus_thread {
-    background: transparent !important;
-}
-
-.dark-theme #disqus_thread,
-[data-theme=dark] #disqus_thread {
-    color-scheme: dark !important;
-    background: transparent !important;
-}
