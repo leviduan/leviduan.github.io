@@ -2,7 +2,6 @@ baseURL = 'https://leviduan.github.io/'
 languageCode = 'en-us'
 title = "Levi's Blog"
 theme = 'hello-friend-ng'
-disqusShortname = "https-leviduan-github-io"
 
 [params]
   # 日期格式
@@ -26,9 +25,6 @@ disqusShortname = "https-leviduan-github-io"
 
   # 自定义 CSS
   customCSS = ["/css/custom.css"]
-  
-  # 自定义 JS
-  customJS = ["/js/disqus-dark.js"]
 
   # 作者配置
   [params.author]

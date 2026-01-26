@@ -1,5 +1,5 @@
 ---
-title: "Zendo - Privacy Policy"
+title: "Zendone - Privacy Policy"
 date: 2025-12-30
 draft: false
 tags: ["Project"]
@@ -7,9 +7,9 @@ tags: ["Project"]
 
 **Last Updated / 最后更新**: December 30, 2025 / 2025年12月30日
 
-**Zendo** is committed to protecting your privacy. This Privacy Policy explains how we handle your information.
+**Zendone** is committed to protecting your privacy. This Privacy Policy explains how we handle your information.
 
-**Zendo** 致力于保护您的隐私。本隐私政策说明我们如何处理您的信息。
+**Zendone** 致力于保护您的隐私。本隐私政策说明我们如何处理您的信息。
 
 ---
 
@@ -19,7 +19,7 @@ tags: ["Project"]
 
 **We do NOT collect, store, or transmit any personal information.**
 
-Zendo is a privacy-first application. All your data including tasks, projects, habits, and settings are stored **locally on your device only**. We have no servers, no cloud storage, and no way to access your data.
+Zendone is a privacy-first application. All your data including tasks, projects, habits, and settings are stored **locally on your device only**. We have no servers, no cloud storage, and no way to access your data.
 
 ### 2. Data Storage
 
@@ -41,7 +41,7 @@ The app may request the following permissions:
 
 ### 5. Children's Privacy
 
-Zendo does not knowingly collect any information from children. The app is suitable for all ages and contains no inappropriate content.
+Zendone does not knowingly collect any information from children. The app is suitable for all ages and contains no inappropriate content.
 
 ### 6. Changes to This Policy
 
@@ -60,7 +60,7 @@ If you have any questions about this Privacy Policy, please contact us at:
 
 **我们不收集、存储或传输任何个人信息。**
 
-Zendo 是一款隐私优先的应用程序。您的所有数据，包括任务、项目、习惯和设置，都**仅存储在您的设备本地**。我们没有服务器，没有云存储，也无法访问您的数据。
+Zendone 是一款隐私优先的应用程序。您的所有数据，包括任务、项目、习惯和设置，都**仅存储在您的设备本地**。我们没有服务器，没有云存储，也无法访问您的数据。
 
 ### 2. 数据存储
 
@@ -82,7 +82,7 @@ Zendo 是一款隐私优先的应用程序。您的所有数据，包括任务�
 
 ### 5. 儿童隐私
 
-Zendo 不会故意收集儿童的任何信息。该应用适合所有年龄段使用，不包含任何不当内容。
+Zendone 不会故意收集儿童的任何信息。该应用适合所有年龄段使用，不包含任何不当内容。
 
 ### 6. 政策变更
 
@@ -111,7 +111,7 @@ Zendo 不会故意收集儿童的任何信息。该应用适合所有年龄段�
 
 ---
 
-**Note**: By using Zendo, you acknowledge that you have read and understood this Privacy Policy.
+**Note**: By using Zendone, you acknowledge that you have read and understood this Privacy Policy.
 
-**注意**：使用 Zendo 即表示您已阅读并理解本隐私政策。
+**注意**：使用 Zendone 即表示您已阅读并理解本隐私政策。
 
