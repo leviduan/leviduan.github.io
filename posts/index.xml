@@ -1,4 +1,113 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 14 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Privacy Policy for 算了么</title><link>https://leviduan.github.io/posts/suanlemepp/</link><pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/suanlemepp/</guid><description>&lt;p&gt;算了么 - 卦算天机
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 19 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Zendone - Privacy Policy</title><link>https://leviduan.github.io/posts/fixensepp/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/fixensepp/</guid><description>&lt;h1 id="privacy-policy"&gt;Privacy Policy&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Fixense&lt;/strong&gt;
+&lt;strong&gt;Last Updated: February 24, 2026&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Fixense (&amp;ldquo;we&amp;rdquo;, &amp;ldquo;our&amp;rdquo;, or &amp;ldquo;the app&amp;rdquo;) is a personal finance utility that helps you track fixed recurring expenses. We are committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.&lt;/p&gt;
+&lt;h2 id="information-we-collect"&gt;Information We Collect&lt;/h2&gt;
+&lt;h3 id="information-you-provide"&gt;Information You Provide&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Financial data&lt;/strong&gt;: Expense names, amounts, categories, billing cycles, and monthly income that you manually enter into the app.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Preferences&lt;/strong&gt;: Your chosen app language, notification settings, and display preferences.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All financial data you enter is stored &lt;strong&gt;locally on your device&lt;/strong&gt; and is never transmitted to our servers. We do not have access to your financial information.&lt;/p&gt;</description><content type="html"><![CDATA[<h1 id="privacy-policy">Privacy Policy</h1>
+<p><strong>Fixense</strong>
+<strong>Last Updated: February 24, 2026</strong></p>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>Fixense (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;the app&rdquo;) is a personal finance utility that helps you track fixed recurring expenses. We are committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+<h2 id="information-we-collect">Information We Collect</h2>
+<h3 id="information-you-provide">Information You Provide</h3>
+<ul>
+<li><strong>Financial data</strong>: Expense names, amounts, categories, billing cycles, and monthly income that you manually enter into the app.</li>
+<li><strong>Preferences</strong>: Your chosen app language, notification settings, and display preferences.</li>
+</ul>
+<p>All financial data you enter is stored <strong>locally on your device</strong> and is never transmitted to our servers. We do not have access to your financial information.</p>
+<h3 id="information-collected-automatically">Information Collected Automatically</h3>
+<ul>
+<li><strong>Advertising data</strong>: We use Google AdMob to display ads in the free version of the app. AdMob may collect device identifiers, IP address, and usage data for the purpose of serving personalized or non-personalized ads. Please refer to <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a> for more details.</li>
+</ul>
+<h3 id="information-we-do-not-collect">Information We Do NOT Collect</h3>
+<ul>
+<li>Personal identification (name, email, phone number, address)</li>
+<li>Location data</li>
+<li>Contacts or call logs</li>
+<li>Photos or media</li>
+<li>Health data</li>
+<li>Browsing history</li>
+<li>Purchase history outside the app</li>
+</ul>
+<h2 id="how-we-use-your-information">How We Use Your Information</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Data</th>
+          <th>Purpose</th>
+          <th>Storage</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Expense &amp; income data</td>
+          <td>App functionality (tracking, analysis, reminders)</td>
+          <td>On-device only</td>
+      </tr>
+      <tr>
+          <td>App preferences</td>
+          <td>Personalize your experience</td>
+          <td>On-device only</td>
+      </tr>
+      <tr>
+          <td>Advertising identifiers</td>
+          <td>Serve ads (free version only)</td>
+          <td>Processed by Google AdMob</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="icloud-backup">iCloud Backup</h2>
+<p>If you are a premium member and choose to use the iCloud backup feature, your expense data is stored in your personal iCloud account via Apple&rsquo;s iCloud Documents. This data is:</p>
+<ul>
+<li>Encrypted by Apple in transit and at rest</li>
+<li>Accessible only through your Apple ID</li>
+<li>Not accessible by us or any third party</li>
+<li>Stored and deleted at your discretion</li>
+</ul>
+<p>We do not operate any cloud servers. The iCloud backup feature uses Apple&rsquo;s infrastructure exclusively.</p>
+<h2 id="third-party-services">Third-Party Services</h2>
+<h3 id="google-admob">Google AdMob</h3>
+<p>The free version of Fixense displays ads provided by Google AdMob. AdMob may collect and process certain data as described in:</p>
+<ul>
+<li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+<li><a href="https://policies.google.com/technologies/partner-sites">How Google Uses Information from Sites or Apps</a></li>
+</ul>
+<p>Premium members who purchase the lifetime membership will have all ads removed, and no advertising data will be collected.</p>
+<h3 id="apple-storekit">Apple StoreKit</h3>
+<p>We use Apple&rsquo;s StoreKit framework to process in-app purchases. All payment information is handled entirely by Apple. We do not collect, store, or have access to any payment or billing information.</p>
+<h3 id="apple-push-notification-service">Apple Push Notification Service</h3>
+<p>If you enable payment reminders, we use Apple&rsquo;s local notification system to deliver reminders. These notifications are scheduled entirely on your device and do not involve any external server.</p>
+<h2 id="data-security">Data Security</h2>
+<ul>
+<li>All expense data is stored locally on your device using Apple&rsquo;s SwiftData framework.</li>
+<li>Optional biometric authentication (Face ID / Touch ID) is available for premium members to protect app access.</li>
+<li>We do not transmit your financial data over the internet (except to your own iCloud account if you explicitly choose to back up).</li>
+</ul>
+<h2 id="childrens-privacy">Children&rsquo;s Privacy</h2>
+<p>Fixense does not knowingly collect personal information from children under the age of 13. The app does not require account creation or any personal information to function.</p>
+<h2 id="your-rights">Your Rights</h2>
+<p>Since all your data is stored locally on your device, you have full control:</p>
+<ul>
+<li><strong>Access</strong>: All your data is visible within the app at all times.</li>
+<li><strong>Export</strong>: Premium members can export data as PDF or CSV.</li>
+<li><strong>Delete</strong>: Uninstalling the app removes all locally stored data. iCloud backups can be managed through your device&rsquo;s iCloud settings.</li>
+</ul>
+<h2 id="changes-to-this-policy">Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Any changes will be reflected by updating the &ldquo;Last Updated&rdquo; date at the top of this page. We encourage you to review this policy periodically.</p>
+<h2 id="contact-us">Contact Us</h2>
+<p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
+<p><strong>Email</strong>: (<a href="mailto:suiyun@me.com">suiyun@me.com</a>)</p>
+<hr>
+<p><em>This privacy policy applies to the Fixense app available on the Apple App Store.</em></p>
+]]></content></item><item><title>Privacy Policy for 算了么</title><link>https://leviduan.github.io/posts/suanlemepp/</link><pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/suanlemepp/</guid><description>&lt;p&gt;算了么 - 卦算天机
 隐私政策 / PRIVACY POLICY&lt;/p&gt;
 &lt;p&gt;最后更新日期：2026年1月15日
 Last Updated: January 15, 2026&lt;/p&gt;
