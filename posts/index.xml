@@ -1,4 +1,254 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 19 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Fixense - Privacy Policy</title><link>https://leviduan.github.io/posts/fixensepp/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/fixensepp/</guid><description>&lt;h1 id="privacy-policy"&gt;Privacy Policy&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Levi's Blog</title><link>https://leviduan.github.io/posts/</link><description>Recent content in Posts on Levi's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://leviduan.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Clipstudy</title><link>https://leviduan.github.io/posts/clipstudy/</link><pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/clipstudy/</guid><description>&lt;h1 id="clipstudy"&gt;ClipStudy&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;中文&lt;/strong&gt; | &lt;a href="#english"&gt;English&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="用视频片段学英语的-macos-工具"&gt;用视频片段学英语的 macOS 工具&lt;/h2&gt;
+&lt;p&gt;ClipStudy 是一款专为英语学习者设计的 macOS 应用。你可以直接粘贴 YouTube 链接一键下载带字幕的视频，也可以把本地视频文件导入资料库，配合听写模式、AB 循环、倍速播放等功能，把每一段视频素材榨干用尽。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="核心功能"&gt;核心功能&lt;/h3&gt;
+&lt;h4 id="-一键下载-youtube-视频"&gt;📥 一键下载 YouTube 视频&lt;/h4&gt;
+&lt;p&gt;粘贴 YouTube 链接，ClipStudy 自动完成以下所有步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载最高画质视频与音频并合并为单个有声 MP4&lt;/li&gt;
+&lt;li&gt;同步获取英文字幕（含自动生成字幕）&lt;/li&gt;
+&lt;li&gt;下载完成后自动跳转资料库并开始播放&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;无需安装任何依赖&lt;/strong&gt;：yt-dlp、FFmpeg、ffprobe 均已内置，装好 app 即可使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="-导入本地视频与字幕"&gt;📂 导入本地视频与字幕&lt;/h4&gt;
+&lt;p&gt;除了下载，你也可以直接把视频文件放入 ClipStudy 的存储文件夹，app 会自动识别并加入资料库：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持格式：&lt;strong&gt;MP4、MKV、MOV、WebM&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;字幕文件（&lt;strong&gt;SRT、VTT&lt;/strong&gt;）与视频同名即可自动关联&lt;/li&gt;
+&lt;li&gt;MKV 文件会自动用内置 FFmpeg 快速转换（仅重封装，不重新编码，速度极快），无需手动转格式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="-听写模式"&gt;✍️ 听写模式&lt;/h4&gt;
+&lt;p&gt;学英语最有效的方式之一是「精听默写」——ClipStudy 的听写模式专为此而生：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;按字幕中的标点符号自动将音频切分为完整句子&lt;/li&gt;
+&lt;li&gt;每句自动循环播放，直到你主动跳过&lt;/li&gt;
+&lt;li&gt;可隐藏字幕文本，听完后按「显示答案」核对&lt;/li&gt;
+&lt;li&gt;键盘快捷键：&lt;code&gt;←&lt;/code&gt; 上一句 / &lt;code&gt;→&lt;/code&gt; 下一句 / &lt;code&gt;Enter&lt;/code&gt; 显示/隐藏答案 / &lt;code&gt;空格&lt;/code&gt; 播放暂停&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="-a-b-循环"&gt;🔁 A-B 循环&lt;/h4&gt;
+&lt;p&gt;对任意片段反复精听：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点击 A 设置起点，点击 B 设置终点&lt;/li&gt;
+&lt;li&gt;该区间将无限循环播放，适合拆解难点句子&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="-倍速播放"&gt;🐢 倍速播放&lt;/h4&gt;
+&lt;p&gt;支持 0.5×、0.75×、1×、1.25×、1.5×、2× 六档倍速，慢速练听力，快速复习已掌握的内容。&lt;/p&gt;</description><content type="html"><![CDATA[<h1 id="clipstudy">ClipStudy</h1>
+<p><strong>中文</strong> | <a href="#english">English</a></p>
+<hr>
+<h2 id="用视频片段学英语的-macos-工具">用视频片段学英语的 macOS 工具</h2>
+<p>ClipStudy 是一款专为英语学习者设计的 macOS 应用。你可以直接粘贴 YouTube 链接一键下载带字幕的视频，也可以把本地视频文件导入资料库，配合听写模式、AB 循环、倍速播放等功能，把每一段视频素材榨干用尽。</p>
+<hr>
+<h3 id="核心功能">核心功能</h3>
+<h4 id="-一键下载-youtube-视频">📥 一键下载 YouTube 视频</h4>
+<p>粘贴 YouTube 链接，ClipStudy 自动完成以下所有步骤：</p>
+<ul>
+<li>下载最高画质视频与音频并合并为单个有声 MP4</li>
+<li>同步获取英文字幕（含自动生成字幕）</li>
+<li>下载完成后自动跳转资料库并开始播放</li>
+<li><strong>无需安装任何依赖</strong>：yt-dlp、FFmpeg、ffprobe 均已内置，装好 app 即可使用</li>
+</ul>
+<h4 id="-导入本地视频与字幕">📂 导入本地视频与字幕</h4>
+<p>除了下载，你也可以直接把视频文件放入 ClipStudy 的存储文件夹，app 会自动识别并加入资料库：</p>
+<ul>
+<li>支持格式：<strong>MP4、MKV、MOV、WebM</strong></li>
+<li>字幕文件（<strong>SRT、VTT</strong>）与视频同名即可自动关联</li>
+<li>MKV 文件会自动用内置 FFmpeg 快速转换（仅重封装，不重新编码，速度极快），无需手动转格式</li>
+</ul>
+<h4 id="-听写模式">✍️ 听写模式</h4>
+<p>学英语最有效的方式之一是「精听默写」——ClipStudy 的听写模式专为此而生：</p>
+<ul>
+<li>按字幕中的标点符号自动将音频切分为完整句子</li>
+<li>每句自动循环播放，直到你主动跳过</li>
+<li>可隐藏字幕文本，听完后按「显示答案」核对</li>
+<li>键盘快捷键：<code>←</code> 上一句 / <code>→</code> 下一句 / <code>Enter</code> 显示/隐藏答案 / <code>空格</code> 播放暂停</li>
+</ul>
+<h4 id="-a-b-循环">🔁 A-B 循环</h4>
+<p>对任意片段反复精听：</p>
+<ul>
+<li>点击 A 设置起点，点击 B 设置终点</li>
+<li>该区间将无限循环播放，适合拆解难点句子</li>
+</ul>
+<h4 id="-倍速播放">🐢 倍速播放</h4>
+<p>支持 0.5×、0.75×、1×、1.25×、1.5×、2× 六档倍速，慢速练听力，快速复习已掌握的内容。</p>
+<h4 id="-实时字幕">📝 实时字幕</h4>
+<p>播放时在视频底部实时显示字幕，可随时一键隐藏/显示，不干扰听力练习。</p>
+<h4 id="-全屏与可调侧边栏">🖥️ 全屏与可调侧边栏</h4>
+<ul>
+<li>一键全屏，进入沉浸式学习模式</li>
+<li>左侧视频列表栏可自由拖拽宽度（200–520px）</li>
+<li>侧边栏可隐藏，让视频区域更大；隐藏后点击左上角按钮随时唤出</li>
+</ul>
+<h4 id="-中英文界面">🌐 中英文界面</h4>
+<p>界面语言跟随系统自动设置（中文系统默认中文，其他默认英文），也可在任意页面右上角手动切换。</p>
+<hr>
+<h3 id="键盘快捷键">键盘快捷键</h3>
+<table>
+  <thead>
+      <tr>
+          <th>按键</th>
+          <th>功能</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>空格</code></td>
+          <td>播放 / 暂停</td>
+      </tr>
+      <tr>
+          <td><code>←</code></td>
+          <td>上一句（听写模式）/ 后退 5 秒</td>
+      </tr>
+      <tr>
+          <td><code>→</code></td>
+          <td>下一句（听写模式）/ 前进 5 秒</td>
+      </tr>
+      <tr>
+          <td><code>Enter</code></td>
+          <td>显示 / 隐藏答案（听写模式）</td>
+      </tr>
+      <tr>
+          <td><code>F</code></td>
+          <td>全屏 / 退出全屏</td>
+      </tr>
+      <tr>
+          <td><code>⌘ Return</code></td>
+          <td>开始下载（下载页面）</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="系统要求">系统要求</h3>
+<ul>
+<li>macOS（Apple Silicon / Intel 均支持）</li>
+<li>无需额外安装任何工具</li>
+</ul>
+<hr>
+<h3 id="试用与激活">试用与激活</h3>
+<ul>
+<li>首次使用享 <strong>14 天免费试用</strong>，无需注册</li>
+<li>试用结束后，在「关于」页面查看你的机器码，联系作者获取激活码</li>
+<li>激活码绑定本机，永久有效</li>
+</ul>
+<hr>
+<h3 id="关于作者">关于作者</h3>
+<p><strong>levi.duan</strong> — 独立开发者，把自己学英语的需求做成了这款工具。</p>
+<ul>
+<li>Email：levi.duan.arts@gmail.com</li>
+<li>Instagram：levi.duan</li>
+<li>WeChat：86745690</li>
+<li>Telegram：@Levitwan</li>
+</ul>
+<blockquote>
+<p>本应用下载 YouTube 视频仅用于个人英语学习目的，请勿用于商业用途或公开传播，并尊重视频原作者版权。</p>
+</blockquote>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="learn-english-with-video-clips-on-macos">Learn English with Video Clips on macOS</h2>
+<p>ClipStudy is a macOS app built for English learners. Paste a YouTube link to download a subtitled video in one click, or drop your own local video files into the library. Then use dictation mode, A-B loop, and variable speed playback to squeeze every last drop of learning out of each clip.</p>
+<hr>
+<h3 id="features">Features</h3>
+<h4 id="-one-click-youtube-download">📥 One-Click YouTube Download</h4>
+<p>Paste a YouTube URL and ClipStudy handles everything automatically:</p>
+<ul>
+<li>Downloads the best available video and audio, merges them into a single MP4</li>
+<li>Fetches English subtitles (including auto-generated captions)</li>
+<li>Jumps straight to the library and starts playing when done</li>
+<li><strong>Zero setup required</strong> — yt-dlp, FFmpeg, and ffprobe are all bundled inside the app</li>
+</ul>
+<h4 id="-import-local-videos--subtitles">📂 Import Local Videos &amp; Subtitles</h4>
+<p>You can also add your own files directly — no downloading needed:</p>
+<ul>
+<li>Supported video formats: <strong>MP4, MKV, MOV, WebM</strong></li>
+<li>Subtitle files (<strong>SRT, VTT</strong>) are automatically matched to videos with the same filename</li>
+<li>MKV files are remuxed on the fly using the bundled FFmpeg (stream copy only — no re-encoding, near-instant)</li>
+</ul>
+<h4 id="-dictation-mode">✍️ Dictation Mode</h4>
+<p>One of the most effective ways to improve listening is to shadow and transcribe. Dictation mode is built exactly for this:</p>
+<ul>
+<li>Automatically splits audio into complete sentences based on subtitle punctuation</li>
+<li>Loops each sentence until you manually move on</li>
+<li>Hide the subtitle text, listen carefully, then press &ldquo;Reveal&rdquo; to check your answer</li>
+<li>Keyboard-driven: <code>←</code> previous · <code>→</code> next · <code>Enter</code> show/hide answer · <code>Space</code> play/pause</li>
+</ul>
+<h4 id="-a-b-loop">🔁 A-B Loop</h4>
+<p>Set a start point (A) and an end point (B) to loop any segment indefinitely — perfect for drilling a tricky phrase or sentence.</p>
+<h4 id="-variable-speed-playback">🐢 Variable Speed Playback</h4>
+<p>Six speed settings: 0.5×, 0.75×, 1×, 1.25×, 1.5×, 2×. Slow down to catch every word; speed up to review content you&rsquo;ve already mastered.</p>
+<h4 id="-live-subtitles">📝 Live Subtitles</h4>
+<p>Subtitles are displayed at the bottom of the video in real time. Toggle them on or off at any moment without interrupting playback.</p>
+<h4 id="-fullscreen--resizable-sidebar">🖥️ Fullscreen &amp; Resizable Sidebar</h4>
+<ul>
+<li>One-click fullscreen for distraction-free study sessions</li>
+<li>The video list sidebar is freely resizable by dragging (200–520 px)</li>
+<li>Hide the sidebar entirely to maximize the video area; a small button in the top-left brings it back</li>
+</ul>
+<h4 id="-chinese--english-interface">🌐 Chinese / English Interface</h4>
+<p>The UI language follows your system locale automatically (Chinese systems default to Chinese, everything else defaults to English). You can switch manually at any time from the menu in the top-right corner.</p>
+<hr>
+<h3 id="keyboard-shortcuts">Keyboard Shortcuts</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Space</code></td>
+          <td>Play / Pause</td>
+      </tr>
+      <tr>
+          <td><code>←</code></td>
+          <td>Previous sentence (dictation) / Back 5 s</td>
+      </tr>
+      <tr>
+          <td><code>→</code></td>
+          <td>Next sentence (dictation) / Forward 5 s</td>
+      </tr>
+      <tr>
+          <td><code>Enter</code></td>
+          <td>Show / Hide answer (dictation mode)</td>
+      </tr>
+      <tr>
+          <td><code>F</code></td>
+          <td>Toggle fullscreen</td>
+      </tr>
+      <tr>
+          <td><code>⌘ Return</code></td>
+          <td>Start download (Download tab)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>macOS — Apple Silicon and Intel both supported</li>
+<li>No additional tools or dependencies to install</li>
+</ul>
+<hr>
+<h3 id="trial--activation">Trial &amp; Activation</h3>
+<ul>
+<li>Enjoy a <strong>14-day free trial</strong> on first launch — no account needed</li>
+<li>After the trial, open the About page to find your machine code, then contact the author for a license key</li>
+<li>License keys are tied to your machine and never expire</li>
+</ul>
+<hr>
+<h3 id="about-the-author">About the Author</h3>
+<p><strong>levi.duan</strong> — indie developer, built this tool to solve his own English-learning problem.</p>
+<ul>
+<li>Email: <a href="mailto:levi.duan.arts@gmail.com">levi.duan.arts@gmail.com</a></li>
+<li>Instagram: levi.duan</li>
+<li>WeChat: 86745690</li>
+<li>Telegram: @Levitwan</li>
+</ul>
+<blockquote>
+<p>ClipStudy is intended for personal English-learning use only. Please do not use it for commercial purposes or redistribution, and always respect the copyright of original content creators.</p>
+</blockquote>
+]]></content></item><item><title>Fixense - Privacy Policy</title><link>https://leviduan.github.io/posts/fixensepp/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate><guid>https://leviduan.github.io/posts/fixensepp/</guid><description>&lt;h1 id="privacy-policy"&gt;Privacy Policy&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Fixense&lt;/strong&gt;
 &lt;strong&gt;Last Updated: February 24, 2026&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
